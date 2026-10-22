@@ -3,6 +3,8 @@
 Mestres das artes marciais que transformam o corpo em arma. Sem armadura e sem lâmina, movem-se como o vento e golpeiam como o trovão.
 { .epigrafe }
 
+![Monge descalço em posição de luta](../assets/images/classes/monge.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Base.** d8: 3 habilidades iniciais, 3 de Mana por nível, 2 avanços nos níveis 3, 6 e 9 (1 nos outros).
 
 **Atributo principal.** Destreza ou Sabedoria.

@@ -3,6 +3,8 @@
 Boticários, cirurgiões e médicos da peste de máscara de bico. Atravessam cidades doentes com uma bolsa de frascos: o que cura num, mata no outro.
 { .epigrafe }
 
+![Médico da peste de máscara de bico erguendo um frasco fumegante](../assets/images/classes/alquimista.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Base.** d8: 3 habilidades iniciais, 3 de Mana por nível, 2 avanços nos níveis 3, 6 e 9 (1 nos outros).
 
 **Atributo principal.** Inteligência.

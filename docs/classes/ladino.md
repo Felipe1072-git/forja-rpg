@@ -3,6 +3,8 @@
 Ladrões, batedores, assassinos e trapaceiros que vencem pela astúcia, pela agilidade e por um bom golpe pelas costas.
 { .epigrafe }
 
+![Ladino encapuzado e mascarado, agachado com uma adaga](../assets/images/classes/ladino.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Base.** d6: 3 habilidades iniciais, 4 de Mana por nível, 2 avanços nos níveis 3, 5, 7, 9 e 10 (1 nos outros).
 
 **Atributo principal.** Destreza.

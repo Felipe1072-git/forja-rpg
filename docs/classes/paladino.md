@@ -3,6 +3,8 @@
 Cavaleiros sagrados, cruzados e vingadores juramentados que levam o poder de uma divindade na ponta da espada. Protegem os seus e castigam os inimigos da fé.
 { .epigrafe }
 
+![Paladino de elmo fechado, com espada e escudo](../assets/images/classes/paladino.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Base.** d10: 2 habilidades iniciais, 2 de Mana por nível, 2 avanços nos níveis 5 e 10 (1 nos outros).
 
 **Atributo principal.** Carisma.

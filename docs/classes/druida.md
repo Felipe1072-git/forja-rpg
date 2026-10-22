@@ -3,6 +3,8 @@
 Guardiões dos bosques, xamãs e eremitas que falam pela natureza. Chamam o raio, fazem a terra tremer e vestem a pele das feras.
 { .epigrafe }
 
+![Druida com capuz de lobo e cajado retorcido, faíscas na mão](../assets/images/classes/druida.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Base.** d8: 3 habilidades iniciais, 3 de Mana por nível, 2 avanços nos níveis 3, 6 e 9 (1 nos outros).
 
 **Atributo principal.** Sabedoria.

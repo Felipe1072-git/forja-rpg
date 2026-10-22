@@ -3,6 +3,8 @@
 Guerreiros de olhos em brasa que cobrem a pele de lama e pedra. Lutam imitando o basilisco: imóveis como rocha, e de repente um bote que ninguém vê chegar. Um olhar deles transforma carne em pedra.
 { .epigrafe }
 
+![Guerreiro coberto de lama e pedra, com lança e escudo](../assets/images/classes/guerreiro-basilisco.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Base.** d8: 3 habilidades iniciais, 3 de Mana por nível, 2 avanços nos níveis 3, 6 e 9 (1 nos outros).
 
 **Atributo principal.** Constituição.

@@ -3,6 +3,8 @@
 Menestréis, poetas, trapaceiros e cronistas que tecem magia com música e palavras. Inspiram os aliados, confundem os inimigos e sempre têm uma história para contar.
 { .epigrafe }
 
+![Bardo de chapéu de pluma tocando alaúde](../assets/images/classes/bardo.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Base.** d6: 3 habilidades iniciais, 4 de Mana por nível, 2 avanços nos níveis 3, 5, 7, 9 e 10 (1 nos outros).
 
 **Atributo principal.** Carisma.

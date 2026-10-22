@@ -3,6 +3,8 @@
 Guerreiros das terras selvagens que trocam técnica por fúria. Aguentam o que mataria qualquer outro e respondem com o dobro.
 { .epigrafe }
 
+![Bárbaro de peles gritando com um machado erguido](../assets/images/classes/barbaro.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Base.** d12: 2 habilidades iniciais, 2 de Mana por nível, 1 avanço por nível.
 
 **Atributo principal.** Força.

@@ -3,6 +3,8 @@
 Estudiosos, feiticeiros e bruxos que dobram a realidade com fórmulas, palavras e gestos. Frágeis, mas capazes de mudar uma batalha com uma única magia.
 { .epigrafe }
 
+![Mago velho de barba e cajado, lançando uma magia](../assets/images/classes/mago.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Base.** d4: 4 habilidades iniciais, 5 de Mana por nível, 2 avanços em todo nível.
 
 **Atributo principal.** Inteligência.

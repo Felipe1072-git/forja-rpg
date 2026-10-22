@@ -3,6 +3,8 @@
 Clérigos, profetas, cultistas e pactuários que recebem poder de uma divindade, seja ela um deus da luz ou um príncipe demoníaco.
 { .epigrafe }
 
+![Sacerdote encapuzado erguendo um símbolo sagrado e uma maça](../assets/images/classes/sacerdote.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Base.** d8: 3 habilidades iniciais, 3 de Mana por nível, 2 avanços nos níveis 3, 6 e 9 (1 nos outros).
 
 **Atributo principal.** Sabedoria.

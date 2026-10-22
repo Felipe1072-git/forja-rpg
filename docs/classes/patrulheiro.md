@@ -3,6 +3,8 @@
 Caçadores, batedores e guardiões das fronteiras que conhecem os ermos como a própria casa. Rastreiam qualquer presa e atiram antes de serem vistos.
 { .epigrafe }
 
+![Patrulheiro encapuzado com arco longo e aljava](../assets/images/classes/patrulheiro.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Base.** d8: 3 habilidades iniciais, 3 de Mana por nível, 2 avanços nos níveis 3, 6 e 9 (1 nos outros).
 
 **Atributo principal.** Destreza ou Sabedoria.

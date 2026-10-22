@@ -3,6 +3,8 @@
 A magia não foi estudada: ela nasceu no sangue. Herdeiros de dragões, de fadas, de tempestades ou do próprio caos, que dobram os elementos pela força de quem são.
 { .epigrafe }
 
+![Feiticeira de cabelo solto, com fogo e relâmpagos saindo das mãos](../assets/images/classes/feiticeiro.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Base.** d6: 3 habilidades iniciais, 4 de Mana por nível, 2 avanços nos níveis 3, 5, 7, 9 e 10 (1 nos outros).
 
 **Atributo principal.** Carisma ou Constituição. Suas magias usam o atributo principal.
