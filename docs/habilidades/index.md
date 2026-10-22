@@ -116,6 +116,8 @@ Magias causam dano elemental e pertencem a uma escola.
 
 **Opostos se vencem.** Elementos ligados por ⇄ vencem um ao outro. Criaturas e efeitos podem ter um elemento. Uma criatura de um elemento é **resistente** ao próprio elemento (sofre metade do dano) e **vulnerável** ao seu oposto (sofre o dobro do dano).
 
+**Sem acúmulo.** Resistências ao mesmo elemento, de fontes diferentes (ancestralidade, classe, item), não se somam: você continua sofrendo metade do dano. O mesmo vale para vulnerabilidades.
+
 **Exemplo.** Um elemental de fogo é resistente a fogo e vulnerável a gelo. Um elemental de gelo é resistente a gelo e vulnerável a fogo.
 
 **Corpo.** Veneno e ácido não têm oposto. Eles atacam a carne: mortos-vivos, constructos e elementais costumam ser imunes a veneno.
