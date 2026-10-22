@@ -89,6 +89,7 @@ nav:
     - Druida: classes/druida.md
     - Paladino: classes/paladino.md
     - Feiticeiro: classes/feiticeiro.md
+    - Monge: classes/monge.md
   - Habilidades:
     - habilidades/index.md
     - Criando Habilidades: habilidades/criando.md

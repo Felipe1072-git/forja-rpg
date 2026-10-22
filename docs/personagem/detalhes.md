@@ -135,6 +135,15 @@ Títulos são só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Cao
 | 5 | Sangue Real | Voz do Dragão | Bruxo Selvagem |
 | 6 | Avatar da Ordem | Avatar Elemental | Senhor do Caos |
 
+| d6 | Monge: Ordem | Monge: Neutro | Monge: Caos |
+|---|---|---|---|
+| 1 | Noviço | Andarilho | Punho Sombrio |
+| 2 | Discípulo | Asceta | Lutador de Rua |
+| 3 | Irmão do Templo | Punho Errante | Mãos Vazias |
+| 4 | Mestre do Punho | Mestre do Vento | Morte Silenciosa |
+| 5 | Grão-Mestre | Sábio Silencioso | Dragão Rebelde |
+| 6 | Mão Sagrada | Iluminado | Punho do Caos |
+
 ## Divindade
 
 Seguir uma divindade é opcional. Os jogadores criam as divindades, com domínio, bênçãos e responsabilidades. Veja Divindades.
