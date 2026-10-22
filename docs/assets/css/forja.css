@@ -133,6 +133,20 @@
   max-width: min(100%, 26rem);
 }
 
+/* arte de classe: traço preto em fundo branco, sem moldura; o branco some
+   no pergaminho e, no tema escuro, a arte inverte e vira traço claro */
+.md-typeset img.fj-arte-classe {
+  max-width: min(100%, 22rem);
+  border: none;
+  box-shadow: none;
+  mix-blend-mode: multiply;
+}
+
+[data-md-color-scheme="slate"] .md-typeset img.fj-arte-classe {
+  filter: invert(1);
+  mix-blend-mode: screen;
+}
+
 /* "**Regra.** texto": o negrito de abertura vira cabeçalho de bloco */
 .md-typeset p > strong:first-child {
   font-variant: small-caps;

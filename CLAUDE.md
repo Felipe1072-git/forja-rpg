@@ -78,7 +78,7 @@ Ainda a escrever: referência rápida para imprimir.
 
 - Cada página começa com `#` (título da página); seções em `##` e `###`. Remissões em texto ("veja Combate") usam o nome da página ou seção.
 - **Página nova precisa entrar no `nav` do `mkdocs.yml`.**
-- Visual "tinta e papel" (Shadowdark): `docs/assets/css/forja.css`. Frase de ambientação de classe usa `{ .epigrafe }` na linha seguinte ao parágrafo.
+- Visual "tinta e papel" (Shadowdark): `docs/assets/css/forja.css`. Frase de ambientação de classe usa `{ .epigrafe }` na linha seguinte ao parágrafo. Arte de classe (preto em fundo branco, gerada com `notas/prompts-artes.md`) fica em `docs/assets/images/classes/` e usa `{ .fj-arte .fj-arte-classe loading=lazy }` logo depois da epígrafe: o branco some no pergaminho e a arte inverte no tema escuro.
 - **Listas de regras automáticas:** dois ou mais parágrafos seguidos no formato `**Termo.** texto` viram uma lista em duas colunas no site (`hooks/forja.py`). Para isso funcionar, cada item precisa ser um parágrafo próprio (linha em branco entre eles), não um item de lista com `- `.
 - **Cartões:** blocos destacados (ex.: cada ancestralidade) usam `<div class="fj-card" markdown>` … `</div>`, com `## Nome`, a frase de ambientação com `{ .epigrafe }` e os traços como parágrafos `**Traço.** texto`. Sempre deixe linha em branco antes de uma lista Markdown, senão ela vira texto corrido.
 - Conferir antes de publicar: `python -m mkdocs build --strict` (o executável `mkdocs` não está no PATH). Prévia: `python -m mkdocs serve` (servida em `/forja-rpg/`).
