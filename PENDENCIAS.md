@@ -12,7 +12,7 @@ Dúvidas de regra em aberto. Remova o item quando for resolvido e aplicado no te
 - **Avanços por base** (substituem os PF, decisão do autor): níveis com 2 avanços — d4 todos, d6 3/5/7/9/10, d8 3/6/9, d10 5/10, d12 nenhum. Proficiências por base (só no Personagem Forjado). (Habilidades iniciais 4/3/3/2/2 aprovadas.)
 - **Guerreiro:** lista d12 de habilidades, custos e melhorias; sugestão inicial Maestria com Arma + Golpe Poderoso.
 - **Sacerdote:** lista d12, abordagem benigna/maligna com versões, elemento divino da divindade, todas as habilidades divinas.
-- **Ladino:** lista d12; Ladinagem (passiva) é mais forte que um traço menor, por ser o núcleo da classe; Ataque Furtivo usa a regra de alvo restrito (+2d6 por 1); escalonamento só +1d6 (decisão do autor).
+- **Ladino:** lista d12; Ladinagem (passiva) é mais forte que um traço menor, por ser o núcleo da classe; Ataque Furtivo com +1d6 de base, custo 1 e escalonamento +1d6 (decisão do autor, para equilibrar com o Guerreiro). Se o Ladino seguir com mais fôlego que o Guerreiro, considerar Guerreiro com 3 de Mana por nível.
 - **Listas d20 em todas as classes** (decisão do autor). Revisar as habilidades 13–20 de Guerreiro, Sacerdote e Ladino.
 - **Custos estimados** (fora da tabela de componentes): Contramágica, Sono (atordoado = dormindo), Ilusão, Ataque Duplo, Arma Espiritual, Revivificar, Augúrio.
 - **Ancestralidades prontas** (13, pedidas pelo autor; poderosas de propósito) e tabela d20. Criação própria com 2 pontos de traço continua como opção.

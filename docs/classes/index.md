@@ -35,6 +35,6 @@ Sua classe é o seu ofício. Ela define seu dado de vida, suas proficiências, s
 
 **Melhorias com alvos.** Se uma melhoria adiciona um alvo, ela também escalona: +1 alvo por +1 de Mana.
 
-**Exemplo.** Um Golpe Poderoso (custo 1) com a melhoria Derrubar passa a custar 2. Com mais um avanço de +1 dado, ele causa +2d6 e continua custando 2.
+**Exemplo.** Um Golpe Poderoso (custo 2) com a melhoria Derrubar passa a custar 3. Com mais um avanço de +1 dado, ele causa +2d8 e continua custando 3.
 
 **Habilidade própria.** Com o Mestre, você pode criar uma habilidade no lugar de uma da lista (veja Criando Habilidades).
