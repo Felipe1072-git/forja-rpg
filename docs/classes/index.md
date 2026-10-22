@@ -15,6 +15,7 @@ Sua classe é o seu ofício. Ela define seu dado de vida, suas proficiências, s
 | Paladino | d10 | Carisma | Todas | Todas e escudo |
 | Feiticeiro | d6 | Carisma ou Constituição | Adaga, bordão, besta leve | Nenhuma |
 | Monge | d8 | Destreza ou Sabedoria | Simples e espada curta | Nenhuma |
+| Alquimista | d8 | Inteligência | Simples | Leves |
 
 **Base.** Toda classe usa uma base, que define o dado de vida, a Mana por nível (veja Mana), quantas habilidades você tem no nível 1 e quantos avanços você ganha por nível.
 

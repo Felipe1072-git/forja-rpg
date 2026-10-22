@@ -90,6 +90,7 @@ nav:
     - Paladino: classes/paladino.md
     - Feiticeiro: classes/feiticeiro.md
     - Monge: classes/monge.md
+    - Alquimista: classes/alquimista.md
   - Habilidades:
     - habilidades/index.md
     - Criando Habilidades: habilidades/criando.md

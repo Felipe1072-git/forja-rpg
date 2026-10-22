@@ -144,6 +144,15 @@ Títulos são só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Cao
 | 5 | Grão-Mestre | Sábio Silencioso | Dragão Rebelde |
 | 6 | Mão Sagrada | Iluminado | Punho do Caos |
 
+| d6 | Alquimista: Ordem | Alquimista: Neutro | Alquimista: Caos |
+|---|---|---|---|
+| 1 | Boticário | Curandeiro | Envenenador |
+| 2 | Médico da Peste | Doutor da Praga | Doutor Sombrio |
+| 3 | Cirurgião | Ervanário | Açougueiro de Bisturi |
+| 4 | Doutor da Corte | Mestre das Misturas | Senhor da Praga |
+| 5 | Alquimista Real | Homem do Bico | Médico Louco |
+| 6 | Grão-Mestre da Pedra | Mestre da Pedra Filosofal | Pai da Pestilência |
+
 ## Divindade
 
 Seguir uma divindade é opcional. Os jogadores criam as divindades, com domínio, bênçãos e responsabilidades. Veja Divindades.
