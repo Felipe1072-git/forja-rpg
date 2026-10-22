@@ -44,12 +44,31 @@ def campo(rotulo, cls=''):
     return f'<div class="fh-campo{c}"><span class="fh-rotulo">{rotulo}</span></div>'
 
 
-def caixa(rotulo, sub=None):
+def dica(texto):
+    return f'<span class="fh-dica">{texto}</span>' if texto else ''
+
+
+def caixa(rotulo, sub=None, formula=''):
+    """Caixa de valor. `formula` aparece clarinha, para escrever por cima."""
     if sub:
-        inner = ''.join(f'<div class="fh-sub"><span>{x}</span></div>' for x in sub)
+        inner = ''
+        for i, x in enumerate(sub):
+            inner += f'<div class="fh-sub"><span>{x}</span>{dica(formula) if i == 0 else ""}</div>'
         return (f'<div class="fh-caixa fh-dupla"><div class="fh-caixa-rot">{rotulo}</div>'
                 f'<div class="fh-subs">{inner}</div></div>')
-    return f'<div class="fh-caixa"><div class="fh-caixa-rot">{rotulo}</div><div class="fh-caixa-val"></div></div>'
+    return (f'<div class="fh-caixa"><div class="fh-caixa-rot">{rotulo}</div>'
+            f'<div class="fh-caixa-val">{dica(formula)}</div></div>')
+
+
+EXAUSTAO = ['Desvantagem em testes', 'Movimento à metade', 'Desvantagem em ataques',
+            'PV e Mana máx. à metade', 'Não pode se mover', 'Morte']
+
+
+def exaustao():
+    itens = ''.join(f'<div class="fh-exa-item"><i></i><b>{n}</b><span>{e}</span></div>'
+                    for n, e in enumerate(EXAUSTAO, 1))
+    return ('<div class="fh-exaustao"><div class="fh-exa-rot"><span class="fh-rotulo">Exaustão</span>'
+            '<em>descanso longo remove 1</em></div><div class="fh-exa-itens">' + itens + '</div></div>')
 
 
 def bolinhas(n):
@@ -98,26 +117,29 @@ def ficha_personagem():
         campo('Título') + campo('Divindade') + campo('Atributo principal') +
         '</div></header>'
         '<div class="fh-meio">'
-        '<div class="fh-atributos">' + atributos + '</div>'
+        '<div class="fh-esquerda"><div class="fh-atributos">' + atributos + '</div>' + exaustao() + '</div>'
         '<div class="fh-recursos">' +
-        caixa('Pontos de Vida', ['Máx.', 'Atual']) +
-        caixa('Mana', ['Máx.', 'Atual']) +
-        caixa('Sanidade', ['Máx.', 'Atual']) +
-        '<div class="fh-trio">' + caixa('CA') + caixa('CD de habilidade') + caixa('Mana extra máx.') + '</div>'
+        caixa('Pontos de Vida', ['Máx.', 'Atual'], 'nível 1: dado de vida + Con · cada nível: + dado de vida') +
+        caixa('Mana', ['Máx.', 'Atual'], 'Mana da base × nível + mod. do atributo principal') +
+        caixa('Sanidade', ['Máx.', 'Atual'], '10 + mod. de Int + Sab + Car') +
+        '<div class="fh-trio">' +
+        caixa('CA', formula='10 + Des, ou armadura (+ escudo)') +
+        caixa('CD de habilidade', formula='10 + mod. do atributo principal') +
+        caixa('Mana extra máx.', formula='igual ao seu nível') + '</div>'
         '<div class="fh-marcas">'
-        f'<div><span class="fh-rotulo">Exaustão</span>{bolinhas(6)}</div>'
-        f'<div><span class="fh-rotulo">Inspiração</span>{bolinhas(5)}</div>'
+        f'<div><span class="fh-rotulo">Inspiração</span>{bolinhas(6)}</div>'
+        '<div><span class="fh-rotulo">Movimento</span><span class="fh-dica-fixa">6 casas</span></div>'
         '</div>'
         '</div></div>' +
         titulo('Ataques') +
         tabela(['Arma', 'Ataque', 'Dano', 'Tipo', 'Propriedades'], 4, 'fh-ataques') +
         titulo('Habilidades') +
-        tabela(['Habilidade', 'Custo', 'Ação', 'Efeito e escalonamento', 'Melhorias'], 12, 'fh-habilidades') +
+        tabela(['Habilidade', 'Custo', 'Ação', 'Efeito, escalonamento e melhorias'], 10, 'fh-habilidades') +
         '</div>'
     )
 
     carga = ''.join(f'<div class="fh-espaco"><span>{i}</span></div>' for i in range(1, 17))
-    avancos = ''.join(f'<tr><td>{n}</td><td></td></tr>' for n in range(2, 11))
+    avancos = ''.join(f'<tr><td>{n}</td><td></td><td></td></tr>' for n in range(1, 11))
     verso = (
         '<div class="fh-folha">'
         '<header class="fh-topo fh-topo-curto">' + LOGO + campo('Nome', 'fh-larga') + '</header>' +
@@ -126,12 +148,12 @@ def ficha_personagem():
         campo('Armadura e escudo') + '</div>'
         '<div class="fh-carga">' + carga + '</div>'
         '<div class="fh-duas">'
-        '<div>' + titulo('Ancestralidade e traços') + '<div class="fh-bloco fh-alto"></div>' +
+        '<div>' + titulo('Ancestralidade e traços') + '<div class="fh-bloco fh-ancestral"></div>' +
         titulo('Proficiências e idiomas') + '<div class="fh-bloco fh-prof"></div></div>'
         '<div>' + titulo('Divindade') +
         '<div class="fh-bloco fh-alto"><span class="fh-rotulo">Domínio · Responsabilidades · Bênçãos</span></div>' +
         titulo('Avanços') +
-        '<table class="fh-tabela fh-avancos"><thead><tr><th>Nível</th><th>Avanço(s)</th></tr></thead>'
+        '<table class="fh-tabela fh-avancos"><thead><tr><th>Nível</th><th>Dado de vida</th><th>Avanço(s)</th></tr></thead>'
         '<tbody>' + avancos + '</tbody></table>'
         '</div></div>' +
         titulo('Notas') + '<div class="fh-bloco fh-notas"></div>'

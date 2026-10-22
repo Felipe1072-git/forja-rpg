@@ -234,6 +234,26 @@ body {
   font-style: italic;
 }
 
+.fh-dica {
+  display: block;
+  margin-top: 1.2mm;
+  font-size: 6.5pt;
+  font-style: italic;
+  line-height: 1.15;
+  color: #9a9a9a;
+}
+
+.fh-caixa-val .fh-dica {
+  margin: 0.8mm 1.2mm 0;
+  text-align: center;
+}
+
+.fh-dica-fixa {
+  font-size: 8pt;
+  color: #9a9a9a;
+  font-style: italic;
+}
+
 .fh-sub + .fh-sub {
   border-left: 1px dashed var(--fh-fino);
 }
@@ -327,6 +347,60 @@ body {
   background: #fff;
 }
 
+/* exaustão: uma bolinha por ponto, com o efeito ao lado */
+.fh-esquerda {
+  display: flex;
+  flex-direction: column;
+}
+
+.fh-exaustao {
+  border: 2px solid var(--fh-tinta);
+  margin-top: 1mm;
+}
+
+.fh-exa-rot {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.4mm 1.5mm;
+  border-bottom: 1px solid var(--fh-tinta);
+}
+
+.fh-exa-rot em {
+  font-size: 6.5pt;
+  color: #555;
+}
+
+.fh-exa-itens {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(3, auto);
+  gap: 0.6mm 2mm;
+  padding: 1mm 1.5mm;
+}
+
+.fh-exa-item {
+  display: flex;
+  align-items: center;
+  gap: 1.2mm;
+  font-size: 7.5pt;
+  line-height: 1.1;
+}
+
+.fh-exa-item i {
+  flex: none;
+  width: 3.4mm;
+  height: 3.4mm;
+  border: 1.5px solid var(--fh-tinta);
+  border-radius: 50%;
+}
+
+.fh-exa-item b {
+  font-weight: 700;
+  width: 2mm;
+}
+
 .fh-ataques th:nth-child(1) { width: 32%; }
 .fh-ataques th:nth-child(2),
 .fh-ataques th:nth-child(3) { width: 12%; }
@@ -335,13 +409,13 @@ body {
 .fh-habilidades th:nth-child(1) { width: 24%; }
 .fh-habilidades th:nth-child(2) { width: 7%; }
 .fh-habilidades th:nth-child(3) { width: 10%; }
-.fh-habilidades th:nth-child(5) { width: 13%; }
 
 .fh-folha table.fh-habilidades td {
   height: 10mm;
 }
 
 .fh-avancos th:first-child { width: 14%; }
+.fh-avancos th:nth-child(2) { width: 22%; }
 
 .fh-folha table.fh-avancos td {
   height: 6.2mm;
@@ -401,8 +475,12 @@ body {
   min-height: 60mm;
 }
 
+.fh-ancestral {
+  min-height: 60mm;
+}
+
 .fh-prof {
-  min-height: 58mm;
+  min-height: 39mm;
 }
 
 /* ------------------------------------------------------------ funil */
