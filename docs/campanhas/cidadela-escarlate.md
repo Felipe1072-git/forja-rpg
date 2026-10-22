@@ -26,7 +26,7 @@ Boatos da taverna da vila. Alguns são verdade.
 
 ## Quem É Você?
 
-Cada jogador cria 4 personagens de nível 0, sorteados (veja Personagem Aleatório). Para cada um, responda duas perguntas em uma frase.
+Cada jogador cria 4 personagens de nível 0 para [o Funil](../mestre/index.md#o-funil), sorteados (veja [Personagem Aleatório](../personagem/index.md#personagem-aleatorio)). Para cada um, responda duas perguntas em uma frase.
 
 **Por que você vai entrar?** Escolha ou role 1d8.
 
@@ -69,7 +69,7 @@ Ao chegar ao nível 1, responda: o que você viu lá embaixo e não consegue esq
 
 ## Segurança
 
-**Tom.** Fantasia sombria: mortos-vivos, cultos, demônios e loucura (veja Sanidade).
+**Tom.** Fantasia sombria: mortos-vivos, cultos, demônios e loucura (veja [Sanidade](../mestre/encontros.md#sanidade)).
 
 **Linhas.** Não aparecem: violência sexual; violência contra crianças.
 
