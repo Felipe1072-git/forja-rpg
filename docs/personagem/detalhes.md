@@ -189,6 +189,15 @@ Títulos são só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Cao
 | 5 | Tirano Sombrio | Senhor dos Ossos | Senhor dos Demônios |
 | 6 | Lorde Infernal | Lorde da Morte | Príncipe do Abismo |
 
+| d6 | Necromante: Ordem | Necromante: Neutro | Necromante: Caos |
+|---|---|---|---|
+| 1 | Coveiro | Aprendiz do Véu | Ladrão de Túmulos |
+| 2 | Guardião das Criptas | Ossário | Profanador |
+| 3 | Embalsamador | Vidente da Cova | Mestre dos Ossos |
+| 4 | Juiz dos Mortos | Barqueiro | Senhor da Praga |
+| 5 | Senhor da Necrópole | Guardião do Rio | Rei Cadáver |
+| 6 | Arquilich | Senhor do Véu | Lich |
+
 ## Divindade
 
 Seguir uma divindade é opcional. Os jogadores criam as divindades, com domínio, bênçãos e responsabilidades. Veja Divindades.
