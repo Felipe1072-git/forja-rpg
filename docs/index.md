@@ -20,3 +20,4 @@ Um jogador é o **Mestre**. Ele descreve o mundo, controla os monstros e decide 
 2. **[Criando seu Personagem](personagem/index.md).** Atributos, ancestralidade e nível inicial.
 3. **[Classes](classes/index.md).** Guerreiro, Sacerdote, Ladino ou Mago, com tabela de progressão e lista de habilidades.
 4. **[Habilidades](habilidades/index.md).** Como Mana, custo e escalonamento funcionam.
+5. **[Fichas](fichas/personagem.md).** Ficha de personagem e ficha de Funil em PDF, prontas para imprimir.
