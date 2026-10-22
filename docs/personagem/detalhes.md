@@ -108,6 +108,15 @@ Títulos são só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Cao
 | 5 | Bardo Real | Poeta Errante | Bufão Sombrio |
 | 6 | Voz do Reino | Lenda das Tavernas | Voz do Caos |
 
+| d6 | Druida: Ordem | Druida: Neutro | Druida: Caos |
+|---|---|---|---|
+| 1 | Guardião do Bosque | Eremita | Bruxo do Pântano |
+| 2 | Sentinela Verde | Andarilho Verde | Vingador Verde |
+| 3 | Druida do Círculo | Voz da Floresta | Senhor das Pragas |
+| 4 | Pastor das Estações | Mestre das Feras | Fera Antiga |
+| 5 | Ancião do Círculo | Pastor de Tempestades | Tempestade Viva |
+| 6 | Arquidruida | Coração Selvagem | Devorador de Mundos |
+
 ## Divindade
 
 Seguir uma divindade é opcional. Os jogadores criam as divindades, com domínio, bênçãos e responsabilidades. Veja Divindades.
