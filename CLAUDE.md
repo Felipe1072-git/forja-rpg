@@ -14,7 +14,7 @@ Dúvidas de regra sem resposta vão para [PENDENCIAS.md](PENDENCIAS.md), agrupad
 
 ## Princípios do jogo
 
-1. **Classes prontas + criação livre opcional.** Como no Shadowdark, há classes prontas (Guerreiro, Sacerdote, Ladino, Mago, Bárbaro, Patrulheiro), escritas uma de cada vez. Próximas sugeridas: Bardo (d6, Carisma), Druida (d8). Cada classe é um pacote montado **com** as regras de criação: uma base, um atributo principal e uma lista de habilidades com custo calculado pelos componentes e uma melhoria descrita. A criação livre (Personagem Forjado, Criando Habilidades) é uma **regra opcional incentivada** e fica no fim das seções Personagem (`personagem/forjado.md`) e Habilidades (`habilidades/criando.md`). Não mude as regras de criação ao escrever classes: use-as.
+1. **Classes prontas + criação livre opcional.** Como no Shadowdark, há classes prontas (Guerreiro, Sacerdote, Ladino, Mago, Bárbaro, Patrulheiro, Bardo), escritas uma de cada vez. Próxima sugerida: Druida (d8). Cada classe é um pacote montado **com** as regras de criação: uma base, um atributo principal e uma lista de habilidades com custo calculado pelos componentes e uma melhoria descrita. A criação livre (Personagem Forjado, Criando Habilidades) é uma **regra opcional incentivada** e fica no fim das seções Personagem (`personagem/forjado.md`) e Habilidades (`habilidades/criando.md`). Não mude as regras de criação ao escrever classes: use-as.
 2. **Escrita o mais direta possível**, no estilo do *Shadowdark RPG*.
 3. **Fantasia genérica.** Sem cenário próprio; o sistema serve para qualquer mundo. Não amarre regras ou exemplos a uma ambientação específica.
 

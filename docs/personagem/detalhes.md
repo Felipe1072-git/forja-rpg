@@ -99,6 +99,15 @@ Títulos são só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Cao
 | 5 | Protetor do Reino | Sombra Verde | Fera de Duas Pernas |
 | 6 | Senhor das Marcas | Lenda dos Ermos | Terror da Estrada |
 
+| d6 | Bardo: Ordem | Bardo: Neutro | Bardo: Caos |
+|---|---|---|---|
+| 1 | Arauto | Menestrel | Charlatão |
+| 2 | Cronista | Trovador | Agitador |
+| 3 | Menestrel da Corte | Contador de Histórias | Sedutor |
+| 4 | Mestre de Cerimônias | Saltimbanco | Trapaceiro de Palco |
+| 5 | Bardo Real | Poeta Errante | Bufão Sombrio |
+| 6 | Voz do Reino | Lenda das Tavernas | Voz do Caos |
+
 ## Divindade
 
 Seguir uma divindade é opcional. Os jogadores criam as divindades, com domínio, bênçãos e responsabilidades. Veja Divindades.
