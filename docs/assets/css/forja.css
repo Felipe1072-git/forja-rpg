@@ -243,6 +243,47 @@
   white-space: nowrap;
 }
 
+/* sem rolagem lateral: a tabela sempre cabe na coluna de texto */
+.md-typeset__scrollwrap {
+  overflow-x: visible;
+}
+
+.md-typeset__table {
+  display: block;
+  padding: 0;
+}
+
+.md-typeset table:not([class]) {
+  display: table;
+  width: 100%;
+  table-layout: auto;
+}
+
+.md-typeset table:not([class]) th,
+.md-typeset table:not([class]) td {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* tabelas largas (7 colunas ou mais): letra e espaçamento menores */
+.md-typeset table:not([class]):has(th:nth-child(7)) {
+  font-size: 0.7rem;
+}
+
+.md-typeset table:not([class]):has(th:nth-child(7)) th,
+.md-typeset table:not([class]):has(th:nth-child(7)) td {
+  padding: 0.4em 0.45em;
+}
+
+.md-typeset table:not([class]):has(th:nth-child(7)) td:first-child {
+  white-space: normal;
+}
+
+/* área de conteúdo um pouco mais larga em telas grandes */
+.md-grid {
+  max-width: 72rem;
+}
+
 /* ---------------------------------------------------------------- cabeçalho */
 
 .md-header,
