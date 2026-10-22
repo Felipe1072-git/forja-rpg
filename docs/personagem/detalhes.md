@@ -117,6 +117,15 @@ Títulos são só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Cao
 | 5 | Ancião do Círculo | Pastor de Tempestades | Tempestade Viva |
 | 6 | Arquidruida | Coração Selvagem | Devorador de Mundos |
 
+| d6 | Paladino: Ordem | Paladino: Neutro | Paladino: Caos |
+|---|---|---|---|
+| 1 | Escudeiro Sagrado | Guardião | Cavaleiro Caído |
+| 2 | Cavaleiro da Ordem | Cavaleiro Errante | Vingador |
+| 3 | Defensor da Fé | Juramentado | Cavaleiro Sombrio |
+| 4 | Cruzado | Protetor dos Caminhos | Carrasco Sagrado |
+| 5 | Paladino da Coroa | Vigia do Equilíbrio | Arauto da Ruína |
+| 6 | Campeão Celestial | Lâmina da Balança | Cavaleiro da Morte |
+
 ## Divindade
 
 Seguir uma divindade é opcional. Os jogadores criam as divindades, com domínio, bênçãos e responsabilidades. Veja Divindades.
