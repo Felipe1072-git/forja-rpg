@@ -1,0 +1,10 @@
+# material de referência protegido: nunca publicar
+*.pdf
+
+# build do MkDocs
+site/
+
+# sistema
+.DS_Store
+Thumbs.db
+__pycache__/
