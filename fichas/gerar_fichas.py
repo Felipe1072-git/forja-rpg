@@ -174,7 +174,7 @@ def ficha_funil():
             '<div class="fh-pj-campos">' + campo('Ancestralidade') + campo('Classe (dado de vida)') +
             campo('Antecedente') + campo('Tendência') + '</div>'
             '<div class="fh-minis">' + mini + '</div>'
-            '<div class="fh-trio">' + caixa('PV') + caixa('CA') + caixa('Sanidade') + '</div>'
+            '<div class="fh-trio">' + caixa('PV', formula='dado + Con (mín. 1)') + caixa('CA', formula='10 + Des, ou armadura') + caixa('Sanidade', formula='10 + Int + Sab + Car') + '</div>'
             '<div class="fh-pj-equip"><span class="fh-rotulo">Equipamento</span><i></i><i></i><i></i><i></i><i></i></div>'
             '<div class="fh-pj-fim"><span class="fh-check"></span> Morreu '
             '<span class="fh-check"></span> Sobreviveu</div>'
