@@ -1,6 +1,6 @@
 # Pendências
 
-Dúvidas de regra em aberto. Remova o item quando for resolvido e aplicado no texto.
+Dúvidas de regra em aberto. Remova o item quando for resolvido e aplicado no texto. Os números de capítulo abaixo são os antigos; o conteúdo agora está em `docs/` (veja CLAUDE.md).
 
 ## 01 — O Básico
 

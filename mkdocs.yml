@@ -1,0 +1,91 @@
+site_name: Forja RPG
+site_description: Regras da mesa — fantasia simples, perigosa e criada pelos jogadores
+site_author: Paulo Souza
+site_url: https://felipe1072-git.github.io/forja-rpg/
+repo_url: https://github.com/Felipe1072-git/forja-rpg
+repo_name: Felipe1072-git/forja-rpg
+
+theme:
+  name: material
+  language: pt-BR
+  palette:
+    - scheme: slate
+      primary: black
+      accent: red
+      toggle:
+        icon: material/weather-sunny
+        name: Papel (modo claro)
+    - scheme: default
+      primary: black
+      accent: red
+      toggle:
+        icon: material/weather-night
+        name: Tinta (modo escuro)
+  font:
+    text: EB Garamond
+    code: Roboto Mono
+  icon:
+    logo: material/anvil
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.path
+    - navigation.top
+    - navigation.footer
+    - search.highlight
+    - search.suggest
+    - content.tables
+    - toc.follow
+
+plugins:
+  - search:
+      lang: pt
+
+extra_css:
+  - assets/css/forja.css
+
+markdown_extensions:
+  - tables
+  - attr_list
+  - def_list
+  - admonition
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+  - toc:
+      permalink: true
+      toc_depth: 3
+
+nav:
+  - Início: index.md
+  - Regras:
+    - O Básico: jogo/basico.md
+    - Testes e Rolagens: jogo/testes.md
+    - Exploração: jogo/exploracao.md
+    - Combate: jogo/combate.md
+    - Viagem: jogo/viagem.md
+    - Tempo Livre: jogo/tempo-livre.md
+  - Personagem:
+    - personagem/index.md
+    - Ancestralidades: personagem/ancestralidades.md
+    - Antecedente, Tendência e Títulos: personagem/detalhes.md
+    - Avanço de Nível: personagem/avanco.md
+    - Personagem Forjado: personagem/forjado.md
+  - Classes:
+    - classes/index.md
+    - Guerreiro: classes/guerreiro.md
+    - Sacerdote: classes/sacerdote.md
+    - Ladino: classes/ladino.md
+    - Mago: classes/mago.md
+  - Habilidades:
+    - habilidades/index.md
+    - Criando Habilidades: habilidades/criando.md
+  - Divindades: divindades.md
+  - Equipamento: equipamento.md
+  - Mestre:
+    - mestre/index.md
+    - Encontros e Perigos: mestre/encontros.md
+    - Modos de Jogo e Monstros: mestre/modos-e-monstros.md
+    - Geradores: mestre/geradores.md

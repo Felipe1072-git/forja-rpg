@@ -14,7 +14,7 @@ Dúvidas de regra sem resposta vão para [PENDENCIAS.md](PENDENCIAS.md), agrupad
 
 ## Princípios do jogo
 
-1. **Classes prontas + criação livre opcional.** Como no Shadowdark, há classes prontas (Guerreiro, Sacerdote, Ladino, Mago), escritas uma de cada vez. Cada classe é um pacote montado **com** as regras de criação: uma base, um atributo principal e uma lista de habilidades com custo calculado pelos componentes e uma melhoria descrita. A criação livre (Personagem Forjado, Criando Habilidades) é uma **regra opcional incentivada** e fica no **fim** dos capítulos 2 e 3. Não mude as regras de criação ao escrever classes: use-as.
+1. **Classes prontas + criação livre opcional.** Como no Shadowdark, há classes prontas (Guerreiro, Sacerdote, Ladino, Mago), escritas uma de cada vez. Cada classe é um pacote montado **com** as regras de criação: uma base, um atributo principal e uma lista de habilidades com custo calculado pelos componentes e uma melhoria descrita. A criação livre (Personagem Forjado, Criando Habilidades) é uma **regra opcional incentivada** e fica no fim das seções Personagem (`personagem/forjado.md`) e Habilidades (`habilidades/criando.md`). Não mude as regras de criação ao escrever classes: use-as.
 2. **Escrita o mais direta possível**, no estilo do *Shadowdark RPG*.
 3. **Fantasia genérica.** Sem cenário próprio; o sistema serve para qualquer mundo. Não amarre regras ou exemplos a uma ambientação específica.
 
@@ -34,39 +34,48 @@ Público: **os jogadores da mesa do autor** (não é para publicação). O livro
 
 ## Termos fixos
 
-Use sempre estes termos (definidos em `01-introducao.md`, seção O Básico): **Mestre**, **personagem**, **casa** (1 casa = 1,5 m), faixas **adjacente / perto / longe / muito longe**, **teste**, **Classe de Dificuldade (CD)**, **modificador**, **vantagem / desvantagem**, **Pontos de Vida (PV)**, **Sanidade**, **Mana**, **ação**, **movimento**, **turno**, **rodada**, iniciativa **rápida / tática**, **surpresa**, **turno compartilhado**. Atributos: Força, Destreza, Constituição, Inteligência, Sabedoria, Carisma. De `02-personagens.md`: **classe**, **Base** (d4–d12, o motor de cada classe), **Personagem Forjado**, **avanço** (o que se ganha a cada nível: 1 ou 2, conforme a base; não existem mais Pontos de Forja), **ancestralidade**, **antecedente**, **tendência**, **divindade**.
+Use sempre estes termos (definidos em `docs/jogo/basico.md`): **Mestre**, **personagem**, **casa** (1 casa = 1,5 m), faixas **adjacente / perto / longe / muito longe**, **teste**, **Classe de Dificuldade (CD)**, **modificador**, **vantagem / desvantagem**, **Pontos de Vida (PV)**, **Sanidade**, **Mana**, **ação**, **movimento**, **turno**, **rodada**, iniciativa **rápida / tática**, **surpresa**, **turno compartilhado**. Atributos: Força, Destreza, Constituição, Inteligência, Sabedoria, Carisma. De `docs/personagem/` e `docs/classes/`: **classe**, **Base** (d4–d12, o motor de cada classe), **Personagem Forjado**, **avanço** (o que se ganha a cada nível: 1 ou 2, conforme a base; não existem mais Pontos de Forja), **ancestralidade**, **antecedente**, **tendência**, **divindade**.
 
-De `03-habilidades.md`: **atributo principal**, **Limite de Mana**, **componentes**, **escalonamento**, **CD de habilidade**, habilidade **ativa / passiva**, funções **ataque / suporte / controle / utilidade**, natureza **magia / marcial**, **elementos** e **escolas**, **descanso curto / longo**, **colapso**.
+De `docs/habilidades/`: **atributo principal**, **Limite de Mana**, **componentes**, **escalonamento**, **CD de habilidade**, habilidade **ativa / passiva**, funções **ataque / suporte / controle / utilidade**, natureza **magia / marcial**, **elementos** e **escolas**, **descanso curto / longo**, **colapso**.
 
-Capítulos próprios do Forja RPG, sem equivalente no Shadowdark: **Criação de Habilidades** (`03-habilidades.md`, substitui Classes e o capítulo Magia) e **Divindades** (`04-divindades.md`; mistura de clérigo e bruxo do 5e: qualquer entidade poderosa, vínculo de devoção ou pacto). Com isso, Jogo é `05`, Equipamento `06` (separado de Personagens), Mestre `07`, etc.
+Capítulos próprios do Forja RPG, sem equivalente no Shadowdark: **Criando Habilidades** (`docs/habilidades/criando.md`) e **Divindades** (`docs/divindades.md`; mistura de clérigo e bruxo do 5e: qualquer entidade poderosa, vínculo de devoção ou pacto).
 
-De `05-jogo.md`: **turno de exploração** (10 min), **Inspiração**, **crítico**, **ação livre**, **reação**, **ataque de oportunidade** (habilidades que movem provocam, salvo se disserem "sem provocar ataques de oportunidade"), **cobertura**, **Moral**, **morrendo**, **estabilizar**, **exaustão**, condições (**amedrontado, atordoado, caído, cego, enfeitiçado, lento, paralisado, surdo**), **tempo livre**, **farra**. Moeda única: **peça de ouro (po)** — não há prata nem cobre; itens baratos em lotes.
+De `docs/jogo/`: **turno de exploração** (10 min), **Inspiração**, **crítico**, **ação livre**, **reação**, **ataque de oportunidade** (habilidades que movem provocam, salvo se disserem "sem provocar ataques de oportunidade"), **cobertura**, **Moral**, **morrendo**, **estabilizar**, **exaustão**, condições (**amedrontado, atordoado, caído, cego, enfeitiçado, lento, paralisado, surdo**), **tempo livre**, **farra**. Moeda única: **peça de ouro (po)** — não há prata nem cobre; itens baratos em lotes.
 
-De `06-equipamento.md`: **espaço** de carga, **sobrecarga**, armas **simples / marciais**, propriedades **acuidade, alcance, arremesso, duas mãos, munição, pesada, recarga, versátil**, armaduras **leve / média / pesada**, **escudo**, **kit de exploração**, **pacote inicial**.
+De `docs/equipamento.md`: **espaço** de carga, **sobrecarga**, armas **simples / marciais**, propriedades **acuidade, alcance, arremesso, duas mãos, munição, pesada, recarga, versátil**, armaduras **leve / média / pesada**, **escudo**, **kit de exploração**, **pacote inicial**.
 
-De `04-divindades.md`: **divindade** (qualquer entidade que concede poder), **domínio**, **vínculo** (**devoção / pacto**), **responsabilidades**, **bênçãos** (**menor / maior / milagre**), habilidade **divina**, **penitência**.
+De `docs/divindades.md`: **divindade** (qualquer entidade que concede poder), **domínio**, **vínculo** (**devoção / pacto**), **responsabilidades**, **bênçãos** (**menor / maior / milagre**), habilidade **divina**, **penitência**.
 
 Diferenças em relação ao Shadowdark/D&D que não podem escapar: Mana é o combustível de **todas** as habilidades, mágicas ou marciais (não há slots vancianos nem usos por descanso); não existe bônus de proficiência; a morte com 0 PV vem em rodadas = mod. de Constituição (mínimo 1), sem o 1d4.
 
 ## Organização (base: Shadowdark)
 
-O PDF de referência é [pdfcoffee.com_shadowdark-rpg-v41.pdf](pdfcoffee.com_shadowdark-rpg-v41.pdf) (332 páginas, em inglês). Seus capítulos principais, que servem de esqueleto:
+O PDF de referência é [pdfcoffee.com_shadowdark-rpg-v41.pdf](pdfcoffee.com_shadowdark-rpg-v41.pdf) (332 páginas, em inglês), que serviu de esqueleto para a organização.
 
-1. Introdução (o jogo, o básico) — `01-introducao.md`
-2. Personagens — `02-personagens.md`
-3. Habilidades (regras gerais; Criando Habilidades opcional no fim) — `03-habilidades.md`
-4. Divindades — `04-divindades.md`
-5. Jogo — `05-jogo.md`
-6. Equipamento — `06-equipamento.md`
-7. Mestre (inclui armadilhas, Funil, Sanidade, conversão de monstros) — `07-mestre.md`
-8. Geradores (tabelas de improviso) — `08-geradores.md`
-9. Ficha de personagem, ficha de Funil (4 personagens de nível 0) e referência rápida — a escrever; terão página para imprimir no site
+O conteúdo é um site **MkDocs Material** em `docs/`, publicado no GitHub Pages (https://felipe1072-git.github.io/forja-rpg/, repositório `Felipe1072-git/forja-rpg`). **Os arquivos de `docs/` são a fonte única**; não existem mais os capítulos `01-...md` na raiz.
 
-**Sem capítulo de Tesouro**: o autor usa tesouros de outros livros.
+| Seção do site | Arquivos |
+|---|---|
+| Início | `docs/index.md` (o que é Forja RPG, por onde começar) |
+| Regras | `docs/jogo/`: `basico.md`, `testes.md`, `exploracao.md` (exploração, luz, descanso, furtividade), `combate.md` (inclui morte, exaustão, condições), `viagem.md`, `tempo-livre.md` |
+| Personagem | `docs/personagem/`: `index.md` (visão geral, nível inicial, personagem aleatório, atributos), `ancestralidades.md`, `detalhes.md` (antecedente, tendência, títulos, idiomas, CA), `avanco.md`, `forjado.md` (opcional) |
+| Classes | `docs/classes/`: `index.md` (bases e regras de habilidade de classe), uma página por classe |
+| Habilidades | `docs/habilidades/`: `index.md` (Mana, anatomia, testes, escalonamento, elementos), `criando.md` (opcional) |
+| Divindades, Equipamento | `docs/divindades.md`, `docs/equipamento.md` |
+| Mestre | `docs/mestre/`: `index.md` (papel, XP, Funil), `encontros.md` (encontros, Sanidade, armadilhas, perigos), `modos-e-monstros.md`, `geradores.md` |
 
-**Não há capítulo de Monstros:** o autor usa monstros do Shadowdark, do 5e e do Monster Overhaul, convertidos pela seção Monstros de `07-mestre.md`. O Mestre deve ter o mínimo de trabalho possível.
+Ainda a escrever: ficha de personagem, ficha de Funil (4 personagens de nível 0) e referência rápida, com página para imprimir.
 
-Convenção de arquivos sugerida (ajuste conforme os capítulos forem chegando): um arquivo por capítulo, numerado, ex. `01-introducao.md`, `02-personagens.md`. Use `#` para o capítulo e `##`/`###` para seções, para facilitar a geração futura de sumário, site ou PDF.
+**Sem capítulo de Tesouro nem de Monstros**: o autor usa material de outros livros (Shadowdark, 5e, Monster Overhaul), convertido pela seção Monstros de `docs/mestre/modos-e-monstros.md`.
+
+### TRABALHANDO NO SITE
+
+- Cada página começa com `#` (título da página); seções em `##` e `###`. Remissões em texto ("veja Combate") usam o nome da página ou seção.
+- **Página nova precisa entrar no `nav` do `mkdocs.yml`.**
+- Visual "tinta e papel" (Shadowdark): `docs/assets/css/forja.css`. Frase de ambientação de classe usa `{ .epigrafe }` na linha seguinte ao parágrafo.
+- Conferir antes de publicar: `python -m mkdocs build --strict` (o executável `mkdocs` não está no PATH). Prévia: `python -m mkdocs serve` (servida em `/forja-rpg/`).
+- Publicação: push na `main` dispara `.github/workflows/deploy.yml` (versões fixadas em `mkdocs<2`, `mkdocs-material<10`).
+- O PDF do Shadowdark é ignorado pelo git e **nunca** deve ser publicado.
 
 ## Consultando o PDF de referência
 

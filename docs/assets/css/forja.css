@@ -1,0 +1,250 @@
+/* =========================================================================
+   Forja RPG — tinta e papel.
+   Camada visual sobre o Material for MkDocs, no espírito do Shadowdark:
+   preto e branco de alto contraste, serifas antigas, um único vermelho.
+   ========================================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&display=swap");
+
+/* ---------------------------------------------------------------- tokens */
+
+:root {
+  --fj-papel: #efe7d6;
+  --fj-papel-escuro: #e3d8c1;
+  --fj-tinta: #141210;
+  --fj-tinta-suave: #3b352d;
+  --fj-sangue: #8e1b17;
+  --fj-linha: rgba(20, 18, 16, 0.85);
+  --fj-linha-fraca: rgba(20, 18, 16, 0.18);
+  --fj-titulo: "IM Fell English SC", "EB Garamond", Georgia, serif;
+  --fj-titulo-italico: "IM Fell English", "EB Garamond", Georgia, serif;
+}
+
+/* modo claro = papel envelhecido */
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: var(--fj-papel);
+  --md-default-fg-color: var(--fj-tinta);
+  --md-default-fg-color--light: var(--fj-tinta-suave);
+  --md-default-fg-color--lighter: rgba(20, 18, 16, 0.45);
+  --md-default-fg-color--lightest: rgba(20, 18, 16, 0.12);
+  --md-primary-fg-color: var(--fj-tinta);
+  --md-primary-bg-color: var(--fj-papel);
+  --md-accent-fg-color: var(--fj-sangue);
+  --md-typeset-color: var(--fj-tinta);
+  --md-typeset-a-color: var(--fj-sangue);
+  --md-code-bg-color: var(--fj-papel-escuro);
+  --md-footer-bg-color: var(--fj-tinta);
+  --md-footer-bg-color--dark: #0b0a09;
+  --fj-cabecalho-tabela: var(--fj-tinta);
+  --fj-texto-cabecalho: var(--fj-papel);
+  --fj-zebra: rgba(20, 18, 16, 0.045);
+}
+
+/* modo escuro = tinta preta */
+[data-md-color-scheme="slate"] {
+  --md-hue: 30;
+  --md-default-bg-color: #0f0e0c;
+  --md-default-fg-color: #e9e1cf;
+  --md-default-fg-color--light: #c9bfa9;
+  --md-default-fg-color--lighter: rgba(233, 225, 207, 0.5);
+  --md-default-fg-color--lightest: rgba(233, 225, 207, 0.12);
+  --md-primary-fg-color: #050505;
+  --md-primary-bg-color: #e9e1cf;
+  --md-accent-fg-color: #d23a2c;
+  --md-typeset-color: #e9e1cf;
+  --md-typeset-a-color: #e0533f;
+  --md-code-bg-color: #1b1916;
+  --md-footer-bg-color: #050505;
+  --md-footer-bg-color--dark: #000;
+  --fj-linha: rgba(233, 225, 207, 0.75);
+  --fj-linha-fraca: rgba(233, 225, 207, 0.15);
+  --fj-cabecalho-tabela: #e9e1cf;
+  --fj-texto-cabecalho: #0f0e0c;
+  --fj-zebra: rgba(233, 225, 207, 0.04);
+}
+
+/* ------------------------------------------------------------- tipografia */
+
+.md-typeset {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+  font-family: var(--fj-titulo);
+  color: var(--md-default-fg-color);
+  letter-spacing: 0.04em;
+  font-weight: 400;
+}
+
+.md-typeset h1 {
+  font-size: 2.6em;
+  line-height: 1.05;
+  margin-bottom: 0.4em;
+  padding-bottom: 0.25em;
+  border-bottom: 3px solid var(--fj-linha);
+}
+
+.md-typeset h2 {
+  font-size: 1.6em;
+  margin-top: 1.8em;
+  padding-bottom: 0.15em;
+  border-bottom: 1px solid var(--fj-linha);
+}
+
+.md-typeset h3 {
+  font-size: 1.15em;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-top: 1.6em;
+}
+
+/* frase de ambientação (marcada com { .epigrafe }) */
+.md-typeset .epigrafe {
+  font-family: var(--fj-titulo-italico);
+  font-style: italic;
+  font-size: 1.12em;
+  color: var(--md-default-fg-color--light);
+}
+
+/* "**Regra.** texto": o negrito de abertura vira cabeçalho de bloco */
+.md-typeset p > strong:first-child {
+  font-variant: small-caps;
+  letter-spacing: 0.03em;
+}
+
+.md-typeset a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.md-typeset hr {
+  border-bottom: 1px solid var(--fj-linha);
+}
+
+/* ---------------------------------------------------------------- tabelas */
+
+.md-typeset table:not([class]) {
+  font-size: 0.82rem;
+  border: 2px solid var(--fj-linha);
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--fj-cabecalho-tabela);
+  color: var(--fj-texto-cabecalho);
+  font-family: var(--fj-titulo);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  border-bottom: 2px solid var(--fj-linha);
+}
+
+.md-typeset table:not([class]) th,
+.md-typeset table:not([class]) td {
+  padding: 0.45em 0.75em;
+}
+
+.md-typeset table:not([class]) td {
+  border-top: 1px solid var(--fj-linha-fraca);
+  vertical-align: top;
+  line-height: 1.45;
+}
+
+.md-typeset table:not([class]) tbody tr:nth-child(even) {
+  background: var(--fj-zebra);
+}
+
+.md-typeset table:not([class]) tbody tr:hover {
+  background: var(--md-default-fg-color--lightest);
+  box-shadow: none;
+}
+
+/* primeira coluna (dado, nível, nome) em destaque */
+.md-typeset table:not([class]) td:first-child {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* ---------------------------------------------------------------- cabeçalho */
+
+.md-header,
+.md-tabs {
+  background-color: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+}
+
+[data-md-color-scheme="default"] .md-header,
+[data-md-color-scheme="default"] .md-tabs {
+  background-color: var(--fj-tinta);
+  color: var(--fj-papel);
+}
+
+.md-header__title,
+.md-tabs__link {
+  font-family: var(--fj-titulo);
+  letter-spacing: 0.08em;
+}
+
+.md-header__title {
+  font-size: 1.05rem;
+}
+
+.md-tabs__link {
+  font-size: 0.78rem;
+  opacity: 0.8;
+}
+
+.md-tabs__link--active,
+.md-tabs__link:hover {
+  opacity: 1;
+  color: var(--md-accent-fg-color);
+}
+
+.md-header {
+  border-bottom: 1px solid rgba(233, 225, 207, 0.12);
+  box-shadow: none;
+}
+
+/* ------------------------------------------------------------- navegação */
+
+.md-nav {
+  font-size: 0.74rem;
+}
+
+.md-nav__title {
+  font-family: var(--fj-titulo);
+  letter-spacing: 0.06em;
+}
+
+.md-nav__link--active {
+  color: var(--md-accent-fg-color);
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------- busca */
+
+.md-search__form {
+  border-radius: 0;
+}
+
+/* --------------------------------------------------------------- rodapé */
+
+.md-footer-meta {
+  font-family: var(--fj-titulo);
+  letter-spacing: 0.05em;
+}
+
+/* --------------------------------------------------------------- impressão */
+
+@media print {
+  .md-typeset table:not([class]) th {
+    background: #000 !important;
+    color: #fff !important;
+  }
+}

@@ -1,28 +1,10 @@
-# Introdução
+# O Básico
 
-## O que é Forja RPG?
-
-Forja RPG é um jogo de aventura e fantasia. Você e seus companheiros exploram ruínas esquecidas, florestas assombradas e covis de monstros em busca de ouro, glória e segredos.
-
-Forja RPG não tem um mundo próprio. Use-o em qualquer cenário de fantasia: um mundo inventado pelo Mestre, um cenário publicado ou o de seu livro favorito.
-
-Um jogador é o **Mestre**. Ele descreve o mundo, controla os monstros e decide o resultado das suas ações. Os outros jogadores controlam um **personagem** cada um: um aventureiro que você cria.
-
-### O QUE DEFINE ESTE JOGO?
-
-**Você forja seu personagem.** Escolha uma classe pronta ou, se preferir, invente as habilidades, magias e truques do seu personagem.
-
-**Regras simples.** Forja RPG é uma versão enxuta do jogo de fantasia clássico. As regras são poucas e diretas. Decida rápido e jogue, em vez de procurar respostas no livro.
-
-**Criatividade acima das regras.** Se você consegue descrever, pode tentar. O Mestre decide como as regras se aplicam.
-
-## O Básico
-
-### PERSONAGENS
+## PERSONAGENS
 
 Você decide as ações do seu personagem e as descreve ao Mestre. O Mestre determina se a ação funciona e narra o resultado.
 
-### DADOS
+## DADOS
 
 O jogo usa d4, d6, d8, d10, d12 e d20.
 
@@ -32,7 +14,7 @@ O jogo usa d4, d6, d8, d10, d12 e d20.
 
 **Desvantagem.** Role duas vezes e use o pior resultado.
 
-### DISTÂNCIA
+## DISTÂNCIA
 
 A unidade de distância é a **casa**. 1 casa = 1,5 m.
 
@@ -45,7 +27,7 @@ Tudo no jogo usa estas quatro faixas:
 | Longe | 7 a 12 casas |
 | Muito longe | 13 casas ou mais (até onde a vista alcança) |
 
-### ÁREAS
+## ÁREAS
 
 Efeitos em área cobrem um quadrado de casas centrado num ponto ou em você.
 
@@ -57,7 +39,7 @@ Efeitos em área cobrem um quadrado de casas centrado num ponto ou em você.
 
 **Exemplo.** Uma Bola de Fogo em área média, lançada a longe, atinge um quadrado de 5 × 5 casas em qualquer ponto entre 7 e 12 casas de você.
 
-### INICIATIVA
+## INICIATIVA
 
 O Mestre escolhe o modo de iniciativa de cada encontro.
 
@@ -67,7 +49,7 @@ O Mestre escolhe o modo de iniciativa de cada encontro.
 
 **Surpresa.** Quando há uma emboscada, cada criatura emboscada faz um teste de Sabedoria. Quem falha perde o primeiro turno, e ataques contra ela têm vantagem até lá.
 
-### TURNOS E RODADAS
+## TURNOS E RODADAS
 
 No seu turno, você tem **1 ação** e **1 movimento** de até 6 casas. Você pode dividir o movimento como quiser. Você pode trocar a ação por um segundo movimento.
 
@@ -75,7 +57,7 @@ No seu turno, você tem **1 ação** e **1 movimento** de até 6 casas. Você po
 
 Quando todas as criaturas agem, a rodada termina e uma nova começa.
 
-### ATRIBUTOS
+## ATRIBUTOS
 
 Cada personagem tem seis atributos. Cada atributo vai de 3 a 20 e tem um **modificador** de -4 a +5.
 
@@ -91,7 +73,7 @@ Cada personagem tem seis atributos. Cada atributo vai de 3 a 20 e tem um **modif
 
 **Carisma.** Presença, persuasão.
 
-### TESTES
+## TESTES
 
 Ao tentar uma ação arriscada, role d20 + modificador de atributo. Isso é um **teste**.
 
@@ -101,13 +83,13 @@ Não existe bônus de proficiência. Só o modificador de atributo e efeitos de 
 
 **1 natural.** Sempre que você tirar 1 no d20, em um ataque ou teste, perde 1 de Sanidade.
 
-### PONTOS DE VIDA
+## PONTOS DE VIDA
 
 Ferimentos causam dano e reduzem seus **Pontos de Vida (PV)**. Uma arma comum causa 1d6 de dano. Você recupera PV descansando (veja Descanso).
 
 **Morrendo.** Com 0 PV, você morre em um número de rodadas igual ao seu modificador de Constituição (mínimo 1).
 
-### SANIDADE
+## SANIDADE
 
 **Sanidade** é uma segunda barra de vida, para a mente. Seu valor máximo é 10 + modificadores de Inteligência, Sabedoria e Carisma.
 
@@ -115,11 +97,11 @@ Algumas habilidades e situações de estresse causam dano à Sanidade.
 
 **Colapso.** Ao chegar a 0 de Sanidade, faça um teste CD 10 com seu maior atributo mental (Inteligência, Sabedoria ou Carisma). Se falhar, você sofre um colapso mental e morre. Com 0 de Sanidade, repita o teste sempre que fizer uma ação que custe Mana ou Sanidade.
 
-### MANA
+## MANA
 
 **Mana** é o combustível de todas as habilidades: magias, golpes de guerreiro, truques de ladrão. Usar uma habilidade gasta Mana. Sem Mana, você pode gastar Sanidade no lugar. Veja Habilidades.
 
-### DESCANSO
+## DESCANSO
 
 **Descanso longo.** Uma noite de descanso. Recupere todos os PV, a Mana e a Sanidade.
 
