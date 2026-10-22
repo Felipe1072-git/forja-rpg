@@ -2,7 +2,7 @@
 
 Gere todas as artes **na mesma conversa**, uma por mensagem, para o estilo ficar igual. Mande o prompt base uma vez com a primeira classe; depois, só "Same style, same rules. Next:" + a linha da classe.
 
-Salve cada arte como `docs/assets/images/classes/<arquivo>.webp` (nome na tabela; converta de PNG para WebP para a página carregar rápido). Na página da classe, ponha a arte logo depois da epígrafe:
+Salve cada arte como `docs/assets/images/classes/<arquivo>.webp` (nome na tabela; converta para WebP com o fundo transparente: quase branco vira branco, e o alfa sai do escuro do traço, como em `guerreiro.webp`). Na página da classe, ponha a arte logo depois da epígrafe:
 
 ```markdown
 ![Guerreiro](../assets/images/classes/guerreiro.webp){ .fj-arte .fj-arte-classe loading=lazy }

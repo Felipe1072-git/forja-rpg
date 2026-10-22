@@ -3,6 +3,8 @@
 Soldados veteranos, duelistas, mercenários e arqueiros que confiam no aço e no treino.
 { .epigrafe }
 
+![Guerreiro de elmo e cota de malha, com espada e escudo de madeira rachado](../assets/images/classes/guerreiro.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Base.** d10: 2 habilidades iniciais, 2 de Mana por nível, 2 avanços nos níveis 5 e 10 (1 nos outros).
 
 **Atributo principal.** Força ou Destreza.
