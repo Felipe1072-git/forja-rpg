@@ -1,0 +1,511 @@
+/* =========================================================================
+   Forja RPG — fichas em PDF (A4). Fonte das fichas; os PDFs são gerados
+   por fichas/gerar_fichas.py. Preto e branco, linhas grossas, estilo OSR.
+   ========================================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap");
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+}
+
+* {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ------------------------------------------------------------ a folha */
+
+.fh-folha {
+  --fh-tinta: #111;
+  --fh-fino: rgba(0, 0, 0, 0.35);
+  width: 210mm;
+  height: 297mm;
+  padding: 11mm 11mm 10mm;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #fff;
+  color: var(--fh-tinta);
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: 9.5pt;
+  line-height: 1.25;
+  break-after: page;
+}
+
+.fh-folha:last-child {
+  break-after: auto;
+}
+
+.fh-folha * {
+  box-sizing: border-box;
+}
+
+.fh-rotulo,
+.fh-caixa-rot,
+.fh-attr-nome,
+.fh-secao,
+.fh-tabela th {
+  font-family: "IM Fell English SC", "EB Garamond", Georgia, serif;
+  letter-spacing: 0.05em;
+}
+
+.fh-rotulo {
+  font-size: 7.5pt;
+  text-transform: lowercase;
+  font-variant: small-caps;
+}
+
+/* ------------------------------------------------------------ topo */
+
+.fh-topo {
+  display: grid;
+  grid-template-columns: 46mm 1fr;
+  gap: 4mm;
+  align-items: end;
+  padding-bottom: 3mm;
+  border-bottom: 2.5px solid var(--fh-tinta);
+  margin-bottom: 3mm;
+}
+
+.fh-topo-curto {
+  grid-template-columns: 46mm 1fr auto;
+}
+
+.fh-logo {
+  display: flex;
+  align-items: center;
+  gap: 2mm;
+  font-family: "IM Fell English SC", "EB Garamond", Georgia, serif;
+  font-size: 17pt;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.fh-logo svg {
+  width: 11mm;
+  height: 11mm;
+}
+
+.fh-topo-curto > .fh-campo:last-child {
+  min-width: 50mm;
+}
+
+.fh-titulo-folha {
+  font-family: "IM Fell English SC", "EB Garamond", Georgia, serif;
+  font-size: 15pt;
+  text-align: center;
+}
+
+.fh-campos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2mm 3mm;
+}
+
+.fh-campo {
+  border-bottom: 1px solid var(--fh-tinta);
+  min-height: 7mm;
+  display: flex;
+  align-items: flex-end;
+}
+
+.fh-campo .fh-rotulo {
+  transform: translateY(2.6mm);
+}
+
+.fh-campo {
+  padding-bottom: 2.6mm;
+}
+
+.fh-larga {
+  grid-column: span 2;
+}
+
+/* ------------------------------------------------------------ atributos e recursos */
+
+.fh-meio {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4mm;
+  margin-bottom: 3mm;
+}
+
+.fh-atributos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5mm;
+}
+
+.fh-attr {
+  border: 2px solid var(--fh-tinta);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.fh-attr-nome {
+  background: var(--fh-tinta);
+  color: #fff;
+  font-size: 8pt;
+  padding: 0.6mm 0;
+}
+
+.fh-attr-valor {
+  height: 13mm;
+}
+
+.fh-attr-mod {
+  margin: 0 auto -3mm;
+  width: 13mm;
+  height: 8mm;
+  border: 2px solid var(--fh-tinta);
+  border-radius: 50%;
+  background: #fff;
+  position: relative;
+  top: -1mm;
+}
+
+.fh-attr-mod span {
+  position: absolute;
+  top: -3.4mm;
+  left: 0;
+  right: 0;
+  font-size: 6.5pt;
+  font-style: italic;
+}
+
+.fh-atributos .fh-attr {
+  margin-bottom: 3mm;
+}
+
+.fh-recursos {
+  display: flex;
+  flex-direction: column;
+  gap: 2mm;
+}
+
+.fh-caixa {
+  border: 2px solid var(--fh-tinta);
+  display: flex;
+  flex-direction: column;
+}
+
+.fh-caixa-rot {
+  font-size: 8pt;
+  padding: 0.5mm 1.5mm;
+  border-bottom: 1px solid var(--fh-tinta);
+}
+
+.fh-caixa-val {
+  min-height: 9mm;
+}
+
+.fh-dupla {
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.fh-dupla .fh-caixa-rot {
+  width: 24mm;
+  border-bottom: none;
+  border-right: 1px solid var(--fh-tinta);
+  display: flex;
+  align-items: center;
+}
+
+.fh-subs {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.fh-sub {
+  min-height: 9mm;
+  padding: 0.4mm 1.2mm;
+  font-size: 6.5pt;
+  font-style: italic;
+}
+
+.fh-sub + .fh-sub {
+  border-left: 1px dashed var(--fh-fino);
+}
+
+.fh-trio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2mm;
+}
+
+.fh-trio .fh-caixa-rot {
+  text-align: center;
+  font-size: 7pt;
+}
+
+.fh-marcas {
+  display: flex;
+  justify-content: space-between;
+  gap: 3mm;
+  padding-top: 0.5mm;
+}
+
+.fh-marcas > div {
+  display: flex;
+  align-items: center;
+  gap: 1.5mm;
+}
+
+.fh-bolinhas {
+  display: inline-flex;
+  gap: 1mm;
+}
+
+.fh-bolinhas i,
+.fh-check {
+  display: inline-block;
+  width: 3.6mm;
+  height: 3.6mm;
+  border: 1.5px solid var(--fh-tinta);
+  border-radius: 50%;
+}
+
+.fh-check {
+  border-radius: 0;
+  vertical-align: -0.6mm;
+}
+
+/* ------------------------------------------------------------ seções e tabelas */
+
+.fh-secao {
+  font-size: 11pt;
+  border-bottom: 2px solid var(--fh-tinta);
+  margin: 3mm 0 1.5mm;
+  padding-bottom: 0.3mm;
+}
+
+.fh-folha table.fh-tabela {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid var(--fh-tinta);
+  font-size: 8pt;
+  margin: 0;
+  background: #fff;
+}
+
+.fh-folha table.fh-tabela th {
+  background: var(--fh-tinta);
+  color: #fff;
+  font-weight: 400;
+  text-align: left;
+  padding: 0.6mm 1.5mm;
+  border: none;
+}
+
+.fh-folha table.fh-tabela td {
+  height: 7.5mm;
+  border: none;
+  border-top: 1px solid var(--fh-fino);
+  border-left: 1px solid var(--fh-fino);
+  padding: 0 1.5mm;
+  background: #fff;
+  font-weight: 400;
+}
+
+.fh-folha table.fh-tabela td:first-child {
+  border-left: none;
+}
+
+.fh-folha table.fh-tabela tbody tr:hover {
+  background: #fff;
+}
+
+.fh-ataques th:nth-child(1) { width: 32%; }
+.fh-ataques th:nth-child(2),
+.fh-ataques th:nth-child(3) { width: 12%; }
+.fh-ataques th:nth-child(4) { width: 12%; }
+
+.fh-habilidades th:nth-child(1) { width: 24%; }
+.fh-habilidades th:nth-child(2) { width: 7%; }
+.fh-habilidades th:nth-child(3) { width: 10%; }
+.fh-habilidades th:nth-child(5) { width: 13%; }
+
+.fh-folha table.fh-habilidades td {
+  height: 10mm;
+}
+
+.fh-avancos th:first-child { width: 14%; }
+
+.fh-folha table.fh-avancos td {
+  height: 6.2mm;
+}
+
+.fh-folha table.fh-avancos td:first-child {
+  text-align: center;
+}
+
+/* ------------------------------------------------------------ verso */
+
+.fh-carga-topo {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  gap: 3mm;
+  margin-bottom: 2mm;
+}
+
+.fh-carga {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(8, 7mm);
+  column-gap: 5mm;
+}
+
+.fh-espaco {
+  border-bottom: 1px solid var(--fh-fino);
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 0.6mm;
+}
+
+.fh-espaco span {
+  font-size: 7pt;
+  width: 5mm;
+  color: #555;
+}
+
+.fh-duas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5mm;
+}
+
+.fh-bloco {
+  border: 2px solid var(--fh-tinta);
+  min-height: 22mm;
+  padding: 0.8mm 1.5mm;
+}
+
+.fh-alto {
+  min-height: 34mm;
+}
+
+.fh-notas {
+  min-height: 60mm;
+}
+
+.fh-prof {
+  min-height: 58mm;
+}
+
+/* ------------------------------------------------------------ funil */
+
+.fh-pjs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5mm;
+}
+
+.fh-pj {
+  border: 2.5px solid var(--fh-tinta);
+  padding: 2.5mm 3mm 3mm;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4mm;
+}
+
+.fh-pj-topo {
+  display: grid;
+  grid-template-columns: 8mm 1fr;
+  gap: 2mm;
+  align-items: end;
+}
+
+.fh-num {
+  font-family: "IM Fell English SC", "EB Garamond", Georgia, serif;
+  font-size: 15pt;
+  width: 8mm;
+  height: 8mm;
+  border-radius: 50%;
+  background: var(--fh-tinta);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fh-pj-campos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5mm 3mm;
+}
+
+.fh-minis {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.5mm;
+}
+
+.fh-mini {
+  border: 1.5px solid var(--fh-tinta);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.fh-mini b {
+  background: var(--fh-tinta);
+  color: #fff;
+  font-weight: 400;
+  font-family: "IM Fell English SC", "EB Garamond", Georgia, serif;
+  font-size: 7.5pt;
+}
+
+.fh-mini span {
+  height: 7mm;
+}
+
+.fh-mini em {
+  border-top: 1px dashed var(--fh-fino);
+  font-size: 6pt;
+  height: 5mm;
+  text-align: left;
+  padding-left: 0.8mm;
+}
+
+.fh-pj-equip {
+  display: flex;
+  flex-direction: column;
+}
+
+.fh-pj-equip i {
+  display: block;
+  height: 6mm;
+  border-bottom: 1px solid var(--fh-fino);
+}
+
+.fh-pj-fim {
+  font-size: 8.5pt;
+  display: flex;
+  align-items: center;
+  gap: 1.5mm;
+}
+
+.fh-pj-fim .fh-check + .fh-check {
+  margin-left: 3mm;
+}
+
+.fh-rodape {
+  font-size: 7.5pt;
+  font-style: italic;
+  margin: 3mm 0 0;
+  text-align: center;
+}
+

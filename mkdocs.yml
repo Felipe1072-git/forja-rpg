@@ -93,5 +93,8 @@ nav:
     - Encontros e Perigos: mestre/encontros.md
     - Modos de Jogo e Monstros: mestre/modos-e-monstros.md
     - Geradores: mestre/geradores.md
+  - Fichas:
+    - Ficha de Personagem: fichas/personagem.md
+    - Ficha de Funil: fichas/funil.md
   - Campanhas:
     - A Cidadela Escarlate: campanhas/cidadela-escarlate.md

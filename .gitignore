@@ -1,11 +1,14 @@
 # material de referência protegido: nunca publicar
 *.pdf
+# exceção: as fichas do Forja RPG geradas por fichas/gerar_fichas.py
+!docs/assets/fichas/*.pdf
 
 # notas do Mestre das campanhas (spoilers): nunca publicar
 *-mestre.md
 
-# build do MkDocs
+# build do MkDocs e das fichas
 site/
+fichas/build/
 
 # sistema
 .DS_Store
