@@ -15,23 +15,25 @@ Videntes de olhos leitosos que leem a sina nos ossos e bruxas que rogam pragas s
 
 **Familiar.** Um animal pequeno (corvo, gato, rato, sapo) serve você e fala os seus idiomas. Ficha: CA 12, 2 PV por nível seu, movimento de 6 casas (ou voo, se tiver asas), sem ataque útil. Suas habilidades podem sair dele: conte o alcance a partir do familiar. Se ele morrer, traga-o de volta com 1 semana de ritual em tempo livre, ou na hora, perdendo 1 de PV máximo para sempre.
 
-**Fichas de sorte.** Você pode ter 1 ficha de sorte por vez. Gaste a ficha para somar 1d6 a um ataque ou teste seu, depois de rolar.
+**Fichas de sorte.** Você pode ter 1 ficha de sorte por vez. Gaste a ficha para somar 1d6 a um ataque ou teste seu ou de um aliado até longe, depois de rolar.
 
 **Quebra do fio.** Se você tirar 1 natural numa habilidade, além de perder 1 de Sanidade, essa habilidade fica bloqueada até você pagar um Preço 1.
 
-**Habilidades iniciais.** Escolha 4 na lista ou role 1d20 quatro vezes. Para começar rápido: Ler os Ossos, Mau-Olhado, Tropeço do Destino e Olhos do Familiar.
+**Habilidades iniciais.** Escolha 4 na lista ou role 1d20 quatro vezes. Para começar rápido: Ler os Ossos, Premonição, Mau-Olhado e Olhos do Familiar.
 
 ## O PREÇO
 
-Algumas habilidades e melhorias têm **Preço**, além da Mana. Pague o sacrifício do nível indicado ao usar a habilidade. Sem pagar, ela não funciona.
+Algumas habilidades e melhorias têm **Preço**, além da Mana. Sem pagar, elas não funcionam. Cada Preço pode ser pago de dois jeitos:
 
-| Preço | Sacrifício |
-|---|---|
-| 1 | Perca 1d4 de PV máximo. Eles voltam em 1 semana. |
-| 2 | Perca 1d4 de Sanidade máxima. Ela volta em 2 semanas. |
-| 3 | Perca 1 ponto de Carisma. Ele nunca volta. |
-| 4 | Destrua num ritual algo de grande valor: um barco, uma casa, um tesouro de 500 po ou mais. |
-| 5 | Sacrifique num ritual a vida de uma criatura inteligente. |
+**No ato.** Você paga com o próprio corpo, na hora. É o preço do desespero, no meio do combate.
+
+**Em ritual.** Outros pagam por você. A habilidade leva 1 turno de exploração para usar e exige o sacrifício da coluna Ritual.
+
+| Preço | No ato (você paga) | Em ritual (outros pagam) |
+|---|---|---|
+| 1 | Perca 1d4 de PV máximo. Eles voltam em 1 semana. | Destrua algo de grande valor: um barco, uma casa, um tesouro de 500 po ou mais. |
+| 2 | Perca 1d4 de Sanidade máxima. Ela volta em 2 semanas. | Destrua algo de grande valor: um barco, uma casa, um tesouro de 500 po ou mais. |
+| 3 | Perca 1 ponto de Carisma. Ele nunca volta. | Sacrifique a vida de uma criatura inteligente. |
 
 ## PROGRESSÃO DO MALVIDENTE
 
@@ -77,9 +79,9 @@ Todas são magias e usam o seu atributo principal. Testes de resistência contra
 
 | d20 | Habilidade | Custo | Efeito | Melhoria 1 | Melhoria 2 | Melhoria 3 |
 |---|---|---|---|---|---|---|
-| 1 | **Ler os Ossos** | 1 | Ação. Jogue os ossos e leia a sina: ganhe 1 ficha de sorte. | **Bolso cheio:** você pode ter até 2 fichas de sorte. | **Partilhar:** dê a ficha a um aliado até perto. | **Sorte grande:** suas fichas somam 1d8 em vez de 1d6. |
+| 1 | **Ler os Ossos** | 1 | Ação. Jogue os ossos e leia a sina: ganhe 1 ficha de sorte. | **Bolso cheio:** você pode ter até 2 fichas de sorte. | **Má sorte:** gaste uma ficha para tirar 1d6 do ataque ou teste de um inimigo até longe, depois de ele rolar. | **Sorte grande:** suas fichas somam 1d8 em vez de 1d6. |
 | 2 | **Mau-Olhado** | 2 | Ação. Uma criatura até perto faz um teste de resistência (Sabedoria). Se falhar, por 10 rodadas, tem desvantagem em testes de um atributo à sua escolha. | **Longo alcance:** alcance até longe. | **Praga que morde:** sempre que ela falhar num teste desse atributo, sofre 1d6 de dano psíquico. Escalonamento: +1d6 por +1 de Mana. | **Duplo:** mais um alvo até perto. Escalonamento: +1 alvo por +1 de Mana. |
-| 3 | **Presságio** | 1 | Um turno de exploração. Pergunte aos ossos se um plano para a próxima hora trará bem, mal, os dois ou nada. O Mestre responde com a verdade. | **Enigma:** o Mestre também dá uma pista curta. | **Mais longe:** vale para o próximo dia. | **Rápido:** leva 1 rodada. |
+| 3 | **Premonição** | 3 | Ao terminar um descanso longo. Você sonha com o dia que vem: role 2d20 e anote os resultados. Até o próximo descanso longo, antes de qualquer criatura até longe rolar um d20, troque essa rolagem por um dos resultados anotados, sem gastar ação. Cada resultado só pode ser usado uma vez. | **Três visões:** role 3d20. | **Qualquer distância:** vale para qualquer criatura que você veja. | **Cochilo profético:** ao terminar um descanso curto, se já usou algum resultado, role 1d20 e anote de novo. |
 | 4 | **Visão Distante** | 4 | Ação. Por 10 rodadas, veja e ouça um lugar que você já visitou ou uma pessoa que você conhece, a qualquer distância. | **Duradoura:** dura 1 hora. | **Através do véu:** funciona com um lugar ou pessoa que você nunca viu, se tiver um objeto ligado a ele. | **Mensagem:** fale uma frase que o alvo ouve. |
 | 5 | **Tropeço do Destino** | 2 | Reação. Uma criatura até perto rola de novo um ataque ou teste e fica com o pior resultado. | **Longo alcance:** até longe. | **Empurrão:** o novo resultado sofre -1d4. | **Sorte roubada:** se ela falhar, você ganha 1 ficha de sorte. |
 | 6 | **Presságio de Morte** | 2 | Ação. Mostre a uma criatura até perto a sua morte. Ela faz um teste de resistência (Sabedoria): 1d6 de dano psíquico e desvantagem no próximo ataque; metade do dano e sem desvantagem se passar. Escalonamento: +1d6 por +1 de Mana. | **Pavor:** se falhar por 5 ou mais, fica amedrontada por 1 rodada. | **Longo alcance:** alcance até longe. | **Visão que fica:** quem falha também perde 1d4 de Sanidade. |
@@ -93,7 +95,7 @@ Todas são magias e usam o seu atributo principal. Testes de resistência contra
 | 14 | **Olhos do Familiar** | 2 | Ação. Por 1 hora, veja e ouça através do seu familiar, a qualquer distância. | **Boca do familiar:** fale através dele. | **Duradouro:** dura 1 dia. | **Sentidos agudos:** através dele, você vê no escuro até perto. |
 | 15 | **Troca com o Familiar** | 2 | Movimento. Troque de lugar com seu familiar até longe, sem provocar ataques de oportunidade. | **Qualquer distância:** funciona a qualquer distância. | **Livre:** vira ação livre. | **Carona:** leve um aliado adjacente, que aparece adjacente a você. |
 | 16 | **Familiar Maior** | Passiva | Seu familiar cresce: um gato preto do tamanho de um lobo, uma coruja enorme ou um bode negro. Ficha: CA 14, 4 PV por nível seu, ataque d20 + seu atributo principal, dano 1d6. No seu turno, ele se move sozinho; mandar ele atacar gasta o seu movimento. | **Asas:** ele voa com movimento normal. | **Peçonha:** a mordida causa +1d6 de dano de veneno. | **Língua das feras:** através dele, você fala com animais. |
-| 17 | **Roubar a Sorte** | 2 | Ação. Uma criatura até perto faz um teste de resistência (Carisma). Se falhar, tem desvantagem no próximo ataque ou teste, e você ganha 1 ficha de sorte. | **Longo alcance:** alcance até longe. | **Azar duradouro:** a desvantagem vale por 10 rodadas. | **Sorte para os meus:** dê a ficha a um aliado até perto. |
+| 17 | **Roubar a Sorte** | 2 | Ação. Uma criatura até perto faz um teste de resistência (Carisma). Se falhar, tem desvantagem no próximo ataque ou teste, e você ganha 1 ficha de sorte. | **Longo alcance:** alcance até longe. | **Azar duradouro:** a desvantagem vale por 10 rodadas. | **Sorte guardada:** você fica com essa ficha mesmo que já tenha o máximo. |
 | 18 | **Profecia** | 3 | Um turno de exploração, Preço 1. Faça uma pergunta ao destino. O Mestre responde com a verdade numa frase, que pode ser enigmática. | **Três perguntas:** faça 3 perguntas. | **Passado:** a pergunta também pode ser sobre o passado. | **Sem preço:** a profecia não cobra Preço. |
 | 19 | **Amuleto** | 3 | Ação. Entregue um amuleto a um aliado adjacente. Por 1 hora, ele ganha +1 em testes de resistência. | **Proteção:** também +1 de CA. | **Grupo:** mais um aliado adjacente. Escalonamento: +1 alvo por +1 de Mana. | **Duradouro:** dura 1 dia. |
 | 20 | **Mudar o Destino** | 5 | Reação, Preço 2. Quando uma criatura até longe rolar um d20, escolha o resultado, de 1 a 20. | **Muito longe:** até muito longe. | **Fio da vida** (Preço 3)**:** use quando um aliado morrer: ele volta com 1 PV. | **Preço menor:** custa Preço 1 em vez de Preço 2. |
