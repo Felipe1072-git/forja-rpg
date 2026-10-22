@@ -126,6 +126,15 @@ Títulos são só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Cao
 | 5 | Paladino da Coroa | Vigia do Equilíbrio | Arauto da Ruína |
 | 6 | Campeão Celestial | Lâmina da Balança | Cavaleiro da Morte |
 
+| d6 | Feiticeiro: Ordem | Feiticeiro: Neutro | Feiticeiro: Caos |
+|---|---|---|---|
+| 1 | Herdeiro do Sangue | Andarilho Arcano | Renegado |
+| 2 | Portador da Chama | Filho da Tempestade | Herdeiro do Caos |
+| 3 | Guardião Arcano | Sangue Antigo | Sangue Maldito |
+| 4 | Magus da Corte | Senhor dos Elementos | Tormenta Viva |
+| 5 | Sangue Real | Voz do Dragão | Bruxo Selvagem |
+| 6 | Avatar da Ordem | Avatar Elemental | Senhor do Caos |
+
 ## Divindade
 
 Seguir uma divindade é opcional. Os jogadores criam as divindades, com domínio, bênçãos e responsabilidades. Veja Divindades.

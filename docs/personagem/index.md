@@ -88,7 +88,7 @@ Use para criar personagens de nível 0 em segundos, como no Funil (veja Mestre).
 
 1. **Atributos.** Role 4d6 e descarte o menor, seis vezes, em ordem: Força, Destreza, Constituição, Inteligência, Sabedoria, Carisma.
 2. **Ancestralidade.** Role 1d20 (veja Ancestralidade).
-3. **Classe.** Role 1d10: 1 Guerreiro, 2 Sacerdote, 3 Ladino, 4 Mago, 5 Bárbaro, 6 Patrulheiro, 7 Bardo, 8 Druida, 9 Paladino, 10 escolha. No nível 0, ela só dá o dado de vida.
+3. **Classe.** Role 1d10: 1 Guerreiro, 2 Sacerdote, 3 Ladino, 4 Mago, 5 Bárbaro, 6 Patrulheiro, 7 Bardo, 8 Druida, 9 Paladino, 10 Feiticeiro. No nível 0, ela só dá o dado de vida.
 4. **PV.** 1 dado de vida da classe + modificador de Constituição (mínimo 1).
 5. **Sanidade.** 10 + modificadores de Inteligência, Sabedoria e Carisma.
 6. **Antecedente.** Role 1d20 (veja Antecedente).
