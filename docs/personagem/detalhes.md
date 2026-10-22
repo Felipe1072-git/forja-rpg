@@ -81,6 +81,15 @@ Títulos são só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Cao
 | 5 | Conselheiro Real | Guardião do Saber | Tirano Arcano |
 | 6 | Arquimago | Mestre dos Elementos | Senhor das Sombras |
 
+| d6 | Bárbaro: Ordem | Bárbaro: Neutro | Bárbaro: Caos |
+|---|---|---|---|
+| 1 | Escudo da Tribo | Andarilho | Saqueador |
+| 2 | Guardião do Clã | Caçador | Berserker |
+| 3 | Juramentado | Selvagem | Devastador |
+| 4 | Campeão do Clã | Errante das Estepes | Açougueiro |
+| 5 | Chefe Guerreiro | Fera | Fúria Encarnada |
+| 6 | Rei Bárbaro | Lenda Viva | Senhor da Ruína |
+
 ## Divindade
 
 Seguir uma divindade é opcional. Os jogadores criam as divindades, com domínio, bênçãos e responsabilidades. Veja Divindades.
