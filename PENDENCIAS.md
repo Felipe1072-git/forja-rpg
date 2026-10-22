@@ -14,6 +14,7 @@ Dúvidas de regra em aberto. Remova o item quando for resolvido e aplicado no te
 - **Sacerdote:** lista d12, abordagem benigna/maligna com versões, elemento divino da divindade, todas as habilidades divinas.
 - **Ladino:** lista d12; Ladinagem (passiva) é mais forte que um traço menor, por ser o núcleo da classe; Ataque Furtivo com +1d6 de base, custo 1 e escalonamento +1d6 (decisão do autor, para equilibrar com o Guerreiro). Se o Ladino seguir com mais fôlego que o Guerreiro, considerar Guerreiro com 3 de Mana por nível.
 - **Bárbaro:** base d12, Força, armaduras leves e médias + escudo (como no 5e); lista d20. Custos estimados: Sangue de Troll (cura contínua), Espírito Animal (passiva com três opções), Pele Grossa (mais forte que um traço menor, por ser o núcleo da classe).
+- **Patrulheiro:** base d8, Destreza ou Sabedoria, todas as armas, armaduras leves/médias e escudo; magias da natureza sempre com Sabedoria. Custos estimados: Companheiro Animal (passiva com ficha própria, núcleo da classe), Falar com Animais, Armadilha, Disparo Perfurante. Personagem Aleatório agora rola 1d6 sem "escolha" (6 = Patrulheiro).
 - **Listas d20 em todas as classes** (decisão do autor). Revisar as habilidades 13–20 de Guerreiro, Sacerdote e Ladino.
 - **Custos estimados** (fora da tabela de componentes): Contramágica, Sono (atordoado = dormindo), Ilusão, Ataque Duplo, Arma Espiritual, Revivificar, Augúrio.
 - **Ancestralidades prontas** (13, pedidas pelo autor; poderosas de propósito) e tabela d20. Criação própria com 2 pontos de traço continua como opção.

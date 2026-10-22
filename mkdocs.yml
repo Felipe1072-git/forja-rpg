@@ -84,6 +84,7 @@ nav:
     - Ladino: classes/ladino.md
     - Mago: classes/mago.md
     - Bárbaro: classes/barbaro.md
+    - Patrulheiro: classes/patrulheiro.md
   - Habilidades:
     - habilidades/index.md
     - Criando Habilidades: habilidades/criando.md

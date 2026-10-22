@@ -90,6 +90,15 @@ Títulos são só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Cao
 | 5 | Chefe Guerreiro | Fera | Fúria Encarnada |
 | 6 | Rei Bárbaro | Lenda Viva | Senhor da Ruína |
 
+| d6 | Patrulheiro: Ordem | Patrulheiro: Neutro | Patrulheiro: Caos |
+|---|---|---|---|
+| 1 | Batedor | Caçador | Caçador de Cabeças |
+| 2 | Guarda da Fronteira | Rastreador | Salteador |
+| 3 | Guardião da Floresta | Andarilho dos Ermos | Lobo Solitário |
+| 4 | Capitão dos Batedores | Mestre da Caça | Assombração da Mata |
+| 5 | Protetor do Reino | Sombra Verde | Fera de Duas Pernas |
+| 6 | Senhor das Marcas | Lenda dos Ermos | Terror da Estrada |
+
 ## Divindade
 
 Seguir uma divindade é opcional. Os jogadores criam as divindades, com domínio, bênçãos e responsabilidades. Veja Divindades.
