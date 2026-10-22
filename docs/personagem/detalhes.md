@@ -171,6 +171,15 @@ Títulos são só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Cao
 | 5 | Lâmina do Rei | Bravo | Sedutor de Lâmina |
 | 6 | Lenda dos Duelos | Herói das Tavernas | Terror dos Salões |
 
+| d6 | Cavaleiro Verde: Ordem | Cavaleiro Verde: Neutro | Cavaleiro Verde: Caos |
+|---|---|---|---|
+| 1 | Guardião do Bosque | Andarilho da Galhada | Cavaleiro dos Espinhos |
+| 2 | Cavaleiro do Azevinho | Guardião do Ciclo | Fera Coroada |
+| 3 | Sentinela da Capela Verde | Cavaleiro do Inverno | Cavaleiro Podre |
+| 4 | Campeão das Estações | Caçador Selvagem | Arauto do Inverno |
+| 5 | Senhor do Verão | Cavaleiro Verde | Senhor da Caçada Selvagem |
+| 6 | Rei do Bosque | Lenda Verde | Rei dos Cervos Negros |
+
 ## Divindade
 
 Seguir uma divindade é opcional. Os jogadores criam as divindades, com domínio, bênçãos e responsabilidades. Veja Divindades.

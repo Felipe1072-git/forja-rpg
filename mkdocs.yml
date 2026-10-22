@@ -93,6 +93,7 @@ nav:
     - Alquimista: classes/alquimista.md
     - Guerreiro Basilisco: classes/guerreiro-basilisco.md
     - Duelista: classes/duelista.md
+    - Cavaleiro Verde: classes/cavaleiro-verde.md
   - Habilidades:
     - habilidades/index.md
     - Criando Habilidades: habilidades/criando.md
