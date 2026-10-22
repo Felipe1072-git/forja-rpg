@@ -216,6 +216,15 @@ Títulos são só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Cao
 | 5 | Senhor das Ilhas | Escolhido da Valquíria | Senhor dos Saqueadores |
 | 6 | Rei do Mar | Lenda das Sagas | Fera do Norte |
 
+| d6 | Malvidente: Ordem | Malvidente: Neutro | Malvidente: Caos |
+|---|---|---|---|
+| 1 | Leitor de Ossos | Benzedeiro | Rogador de Pragas |
+| 2 | Guardião do Fio | Olho Leitoso | Mau-Olhado |
+| 3 | Oráculo | Vidente da Encruzilhada | Tece-Praga |
+| 4 | Voz do Destino | Velho do Caldeirão | Bruxa da Charneca |
+| 5 | Juiz das Sinas | Guardião dos Segredos | Mãe das Pragas |
+| 6 | Senhor do Destino | Tecelão da Sina | Ruína dos Reinos |
+
 ## Divindade
 
 Seguir uma divindade é opcional. Os jogadores criam as divindades, com domínio, bênçãos e responsabilidades. Veja Divindades.
