@@ -53,10 +53,14 @@ Além disso, você **carrega** um número de espaços igual ao seu modificador d
 | Bordão | Simples | 1 po | 1d4 | Contusão | Adjacente | Versátil (1d6) |
 | Clava | Simples | 1 po | 1d4 | Contusão | Adjacente | — |
 | Lança | Simples | 1 po | 1d6 | Perfurante | Adjacente | Arremesso, versátil (1d8) |
+| Boleadeira | Simples | 2 po | 1d4 | Contusão | Adjacente | Arremesso |
+| Shuriken | Simples | 1 po | 1d4 | Perfurante | Adjacente | Acuidade, arremesso |
+| Zarabatana | Simples | 2 po | 1 | Perfurante | Perto | Munição |
 | Arco curto | Simples | 6 po | 1d6 | Perfurante | Longe | Duas mãos, munição |
 | Besta leve | Simples | 8 po | 1d6 | Perfurante | Longe | Duas mãos, munição, recarga |
 | Chicote | Marcial | 2 po | 1d4 | Cortante | Adjacente | Acuidade, alcance |
 | Cimitarra | Marcial | 8 po | 1d6 | Cortante | Adjacente | Acuidade |
+| Corrente de lâminas | Marcial | 10 po | 1d6 | Cortante | Adjacente | Acuidade, alcance |
 | Espada curta | Marcial | 7 po | 1d6 | Perfurante | Adjacente | Acuidade |
 | Florete | Marcial | 10 po | 1d8 | Perfurante | Adjacente | Acuidade |
 | Machadinha | Marcial | 3 po | 1d6 | Cortante | Adjacente | Arremesso |

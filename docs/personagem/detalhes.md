@@ -198,6 +198,15 @@ Títulos são só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Cao
 | 5 | Senhor da Necrópole | Guardião do Rio | Rei Cadáver |
 | 6 | Arquilich | Senhor do Véu | Lich |
 
+| d6 | Lâmina Silenciosa: Ordem | Lâmina Silenciosa: Neutro | Lâmina Silenciosa: Caos |
+|---|---|---|---|
+| 1 | Iniciado do Templo | Sombra | Faca de Aluguel |
+| 2 | Guarda Oculto | Pétala Negra | Lâmina Sangrenta |
+| 3 | Executor do Templo | Fumaça | Víbora |
+| 4 | Mão do Mestre | Lâmina Silenciosa | Flor da Morte |
+| 5 | Guardião do Lótus | Vento Noturno | Demônio Mascarado |
+| 6 | Grão-Mestre | Lenda Sem Rosto | Senhor do Lótus Negro |
+
 ## Divindade
 
 Seguir uma divindade é opcional. Os jogadores criam as divindades, com domínio, bênçãos e responsabilidades. Veja Divindades.

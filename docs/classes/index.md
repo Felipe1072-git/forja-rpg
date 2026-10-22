@@ -21,6 +21,7 @@ Sua classe é o seu ofício. Ela define seu dado de vida, suas proficiências, s
 | Cavaleiro Verde | d8 | Força ou Sabedoria | Adaga, bestas, bordão, espada longa, espadão, lança, machadinha, machado grande | Todas e escudo |
 | Cavaleiro Profano | d10 | Força ou Carisma | Todas as corpo a corpo e bestas | Todas e escudo |
 | Necromante | d6 | Inteligência | Adaga, bordão, cimitarra, espada longa, bestas | Leves e médias |
+| Lâmina Silenciosa | d8 | Destreza | Adaga, boleadeira, cimitarra, corrente de lâminas, lança, shuriken, zarabatana | Leves |
 
 **Base.** Toda classe usa uma base, que define o dado de vida, a Mana por nível (veja Mana), quantas habilidades você tem no nível 1 e quantos avanços você ganha por nível.
 
