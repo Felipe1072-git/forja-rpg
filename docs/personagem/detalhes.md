@@ -207,6 +207,15 @@ Títulos são só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Cao
 | 5 | Guardião do Lótus | Vento Noturno | Demônio Mascarado |
 | 6 | Grão-Mestre | Lenda Sem Rosto | Senhor do Lótus Negro |
 
+| d6 | Lobo do Mar: Ordem | Lobo do Mar: Neutro | Lobo do Mar: Caos |
+|---|---|---|---|
+| 1 | Remador | Marujo | Saqueador |
+| 2 | Guarda do Escudo | Caçador de Baleias | Lobo |
+| 3 | Timoneiro | Navegador | Incendiário |
+| 4 | Capitão | Andarilho das Ondas | Terror das Costas |
+| 5 | Senhor das Ilhas | Escolhido da Valquíria | Senhor dos Saqueadores |
+| 6 | Rei do Mar | Lenda das Sagas | Fera do Norte |
+
 ## Divindade
 
 Seguir uma divindade é opcional. Os jogadores criam as divindades, com domínio, bênçãos e responsabilidades. Veja Divindades.
