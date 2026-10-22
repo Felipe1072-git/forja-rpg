@@ -94,6 +94,7 @@ nav:
     - Guerreiro Basilisco: classes/guerreiro-basilisco.md
     - Duelista: classes/duelista.md
     - Cavaleiro Verde: classes/cavaleiro-verde.md
+    - Cavaleiro Profano: classes/cavaleiro-profano.md
   - Habilidades:
     - habilidades/index.md
     - Criando Habilidades: habilidades/criando.md

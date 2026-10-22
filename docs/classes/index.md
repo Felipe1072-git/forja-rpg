@@ -19,6 +19,7 @@ Sua classe é o seu ofício. Ela define seu dado de vida, suas proficiências, s
 | Guerreiro Basilisco | d8 | Constituição | Adaga, azagaia, bumerangue, clava, lança | Nenhuma |
 | Duelista | d8 | Destreza ou Carisma | Adaga e todas as espadas | Leves |
 | Cavaleiro Verde | d8 | Força ou Sabedoria | Adaga, bestas, bordão, espada longa, espadão, lança, machadinha, machado grande | Todas e escudo |
+| Cavaleiro Profano | d10 | Força ou Carisma | Todas as corpo a corpo e bestas | Todas e escudo |
 
 **Base.** Toda classe usa uma base, que define o dado de vida, a Mana por nível (veja Mana), quantas habilidades você tem no nível 1 e quantos avanços você ganha por nível.
 

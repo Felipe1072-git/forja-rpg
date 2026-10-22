@@ -180,6 +180,15 @@ Títulos são só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Cao
 | 5 | Senhor do Verão | Cavaleiro Verde | Senhor da Caçada Selvagem |
 | 6 | Rei do Bosque | Lenda Verde | Rei dos Cervos Negros |
 
+| d6 | Cavaleiro Profano: Ordem | Cavaleiro Profano: Neutro | Cavaleiro Profano: Caos |
+|---|---|---|---|
+| 1 | Carrasco | Andarilho do Túmulo | Possuído |
+| 2 | Cavaleiro de Ferro Negro | Cavaleiro Cinzento | Cavaleiro do Abismo |
+| 3 | Executor | Portador da Mortalha | Flagelo |
+| 4 | Senhor da Forca | Ceifador | Arauto da Ruína |
+| 5 | Tirano Sombrio | Senhor dos Ossos | Senhor dos Demônios |
+| 6 | Lorde Infernal | Lorde da Morte | Príncipe do Abismo |
+
 ## Divindade
 
 Seguir uma divindade é opcional. Os jogadores criam as divindades, com domínio, bênçãos e responsabilidades. Veja Divindades.
