@@ -11,9 +11,21 @@ A magia não foi estudada: ela nasceu no sangue. Herdeiros de dragões, de fadas
 
 **Armaduras.** Nenhuma.
 
-**Elemento inato.** No nível 1, escolha um elemento: fogo, gelo, tempestade, terra, ácido, veneno, arcano, psíquico, radiante ou necrótico. Habilidades que falam em "elemento inato" usam esse elemento.
-
 **Habilidades iniciais.** Escolha 3 na lista ou role 1d20 três vezes. Para começar rápido: Rajada Elemental, Linhagem e Magia Gêmea.
+
+## ELEMENTO INATO
+
+No nível 1, escolha um elemento ou role 1d10. Habilidades que falam em "elemento inato" usam esse elemento.
+
+| d10 | Elemento | d10 | Elemento |
+|---|---|---|---|
+| 1 | Fogo | 6 | Veneno |
+| 2 | Gelo | 7 | Arcano |
+| 3 | Tempestade | 8 | Psíquico |
+| 4 | Terra | 9 | Radiante |
+| 5 | Ácido | 10 | Necrótico |
+
+**Mais elementos.** Com o avanço Novo elemento, você ganha outro elemento inato. Ao usar uma habilidade, escolha qual dos seus elementos ela usa. Benefícios passivos que falam em elemento inato, como a resistência da Linhagem Dracônica, valem só para o primeiro.
 
 ## PROGRESSÃO DO FEITICEIRO
 
@@ -50,6 +62,7 @@ Ao subir de nível:
 | Atributos | +2 em atributos (distribua; máximo 20). |
 | Vigor | +1d6 (role e some ao PV máximo). |
 | Treino | Proficiência em uma arma, armadura ou escudo, ou um idioma novo. |
+| Novo elemento | Ganhe mais um elemento inato (veja Elemento inato). |
 
 **Constituição.** Se o seu modificador de Constituição aumentar, some a diferença ao seu PV máximo, uma vez.
 
@@ -67,7 +80,7 @@ Todas são magias e usam o atributo principal. "Ataque mágico" é d20 + modific
 | 6 | **Magia Potente** (metamagia) | 3 | Ação livre. Um alvo da sua próxima magia neste turno tem desvantagem no teste de resistência contra ela. | **Ampla:** vale para todos os alvos da magia. | **Perfurar:** a magia ignora resistência ao elemento. | **Implacável:** quem passar no teste ainda sofre o dano inteiro. |
 | 7 | **Magia Ampliada** (metamagia) | 3 | Ação livre. A área da sua próxima magia neste turno aumenta um tamanho (pequena vira média, média vira grande). | **Distante:** o alcance também aumenta uma faixa. | **Moldar:** escolha aliados na área; eles não são atingidos. | **Persistente:** se a magia tiver duração, ela dobra. |
 | 8 | **Explosão de Poder** | 5 | Ação. Uma explosão numa área média até longe. Quem estiver nela faz um teste de resistência (Destreza): 2d6 de dano do elemento inato. Escalonamento: +1d6 por +1 de Mana. | **Área grande:** área grande em vez de média. | **Moldar:** escolha aliados na área; eles não são atingidos. | **Sobrecarga:** quem falhar por 5 ou mais também fica caído. |
-| 9 | **Toque do Caos** | 3 | Ação. Ataque mágico contra um alvo adjacente: 1d10 de dano de um elemento aleatório (role 1d10 na lista do Elemento inato). Escalonamento: +1d10 por +1 de Mana. | **Alcance:** alcance até perto. | **Escolher:** role dois elementos e escolha. | **Explosão:** inimigos adjacentes ao alvo sofrem metade do dano. |
+| 9 | **Toque do Caos** | 3 | Ação. Ataque mágico contra um alvo adjacente: 1d10 de dano de um elemento aleatório (role 1d10 na tabela de Elemento inato). Escalonamento: +1d10 por +1 de Mana. | **Alcance:** alcance até perto. | **Escolher:** role dois elementos e escolha. | **Explosão:** inimigos adjacentes ao alvo sofrem metade do dano. |
 | 10 | **Escudo Elemental** | 3 | Reação. Quando sofrer dano, você ganha resistência a esse dano. Se o atacante estiver adjacente, ele sofre 1d6 de dano do elemento inato. | **Retribuição:** o atacante sofre +1d6. Escalonamento: +1d6 por +1 de Mana. | **Protetor:** use quando um aliado adjacente sofrer dano. | **Duradouro:** a resistência dura 10 rodadas. |
 | 11 | **Sangue como Combustível** | Passiva | Sem Mana, você pode pagar o custo das magias com PV, 1 por 1, em vez de Sanidade. | **Robustez:** +1 PV por nível (inclusive os já ganhos). | **Colheita:** ao reduzir uma criatura a 0 PV com uma magia, recupere 1d4 de Mana. | **Sem limites:** você pode pagar com PV mesmo tendo Mana. |
 | 12 | **Olhar Feérico** | 3 | Ação. Um alvo até perto faz um teste de resistência (Sabedoria) ou fica enfeitiçado por 1 rodada. | **Duradouro:** dura 10 rodadas; ele repete o teste no fim de cada turno dele. | **Duplo:** mais um alvo até perto. Escalonamento: +1 alvo por +1 de Mana. | **Esquecimento:** quando acabar, ele não lembra de ter sido enfeitiçado. |
