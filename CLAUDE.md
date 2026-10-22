@@ -63,6 +63,9 @@ O conteúdo é um site **MkDocs Material** em `docs/`, publicado no GitHub Pages
 | Habilidades | `docs/habilidades/`: `index.md` (Mana, anatomia, testes, escalonamento, elementos), `criando.md` (opcional) |
 | Divindades, Equipamento | `docs/divindades.md`, `docs/equipamento.md` |
 | Mestre | `docs/mestre/`: `index.md` (papel, XP, Funil), `encontros.md` (encontros, Sanidade, armadilhas, perigos), `modos-e-monstros.md`, `geradores.md` |
+| Campanhas | `docs/campanhas/`: guia dos jogadores de cada campanha, sem spoilers (ex.: `cidadela-escarlate.md`, da *Scarlet Citadel*) |
+
+**Notas do Mestre** de cada campanha ficam em `campanhas/<nome>-mestre.md`, fora de `docs/`. O `.gitignore` ignora `*-mestre.md`: elas têm spoilers e o repositório é público. Nunca coloque segredos de aventura em `docs/`.
 
 Ainda a escrever: ficha de personagem, ficha de Funil (4 personagens de nível 0) e referência rápida, com página para imprimir.
 

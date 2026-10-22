@@ -24,6 +24,7 @@ theme:
   font:
     text: EB Garamond
     code: Roboto Mono
+  favicon: assets/images/favicon.svg
   icon:
     logo: material/anvil
   features:
@@ -92,3 +93,5 @@ nav:
     - Encontros e Perigos: mestre/encontros.md
     - Modos de Jogo e Monstros: mestre/modos-e-monstros.md
     - Geradores: mestre/geradores.md
+  - Campanhas:
+    - A Cidadela Escarlate: campanhas/cidadela-escarlate.md

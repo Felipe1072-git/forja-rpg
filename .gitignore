@@ -1,6 +1,9 @@
 # material de referência protegido: nunca publicar
 *.pdf
 
+# notas do Mestre das campanhas (spoilers): nunca publicar
+*-mestre.md
+
 # build do MkDocs
 site/
 
