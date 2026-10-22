@@ -43,6 +43,9 @@ plugins:
   - search:
       lang: pt
 
+hooks:
+  - hooks/forja.py
+
 extra_css:
   - assets/css/forja.css
 

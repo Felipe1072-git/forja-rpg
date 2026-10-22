@@ -126,6 +126,78 @@
   border-bottom: 1px solid var(--fj-linha);
 }
 
+/* ------------------------------------------------- listas de regras */
+/* geradas pelo hook a partir de parágrafos "**Termo.** texto" */
+
+.md-typeset .fj-lista {
+  margin: 1em 0 1.4em;
+  border-top: 2px solid var(--fj-linha);
+  border-bottom: 2px solid var(--fj-linha);
+}
+
+.md-typeset .fj-item {
+  display: grid;
+  grid-template-columns: minmax(7.5em, 11em) 1fr;
+  gap: 0 1.2em;
+  padding: 0.5em 0.2em;
+  border-top: 1px solid var(--fj-linha-fraca);
+}
+
+.md-typeset .fj-item:first-child {
+  border-top: none;
+}
+
+.md-typeset .fj-termo {
+  font-family: var(--fj-titulo);
+  font-size: 1.02em;
+  letter-spacing: 0.04em;
+  color: var(--md-default-fg-color);
+  line-height: 1.35;
+  padding-top: 0.08em;
+}
+
+.md-typeset .fj-texto {
+  line-height: 1.55;
+}
+
+@media screen and (max-width: 44em) {
+  .md-typeset .fj-item {
+    grid-template-columns: 1fr;
+  }
+  .md-typeset .fj-termo {
+    margin-bottom: 0.1em;
+  }
+}
+
+/* --------------------------------------------------------------- cartões */
+
+.md-typeset .fj-card {
+  border: 2px solid var(--fj-linha);
+  background: var(--fj-zebra);
+  padding: 0.2em 1.2em 0.6em;
+  margin: 1.6em 0;
+}
+
+.md-typeset .fj-card > h2 {
+  margin-top: 0.5em;
+  margin-bottom: 0.2em;
+  font-size: 1.55em;
+  border-bottom: 1px solid var(--fj-linha);
+}
+
+.md-typeset .fj-card > .epigrafe {
+  margin: 0.2em 0 0.6em;
+}
+
+.md-typeset .fj-card .fj-lista {
+  border-bottom: none;
+  margin-bottom: 0.2em;
+}
+
+.md-typeset .fj-card table:not([class]) {
+  margin-top: 0.6em;
+}
+
 /* ---------------------------------------------------------------- tabelas */
 
 .md-typeset table:not([class]) {
