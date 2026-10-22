@@ -110,6 +110,29 @@
   color: var(--md-default-fg-color--light);
 }
 
+/* ilustrações (marcadas com { .fj-arte }): moldura de tinta, centralizadas */
+.md-typeset img.fj-arte {
+  display: block;
+  margin: 1.2em auto;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--fj-linha);
+  box-shadow: 0 0 0 4px var(--md-default-bg-color), 0 0 0 5px var(--fj-linha-fraca);
+}
+
+/* logotipo do módulo: sem moldura */
+.md-typeset img.fj-arte-logo {
+  max-width: min(100%, 30rem);
+  border: none;
+  box-shadow: none;
+  margin-top: 0.4em;
+}
+
+/* arte vertical: estreita para não ocupar a tela inteira */
+.md-typeset img.fj-arte-retrato {
+  max-width: min(100%, 26rem);
+}
+
 /* "**Regra.** texto": o negrito de abertura vira cabeçalho de bloco */
 .md-typeset p > strong:first-child {
   font-variant: small-caps;

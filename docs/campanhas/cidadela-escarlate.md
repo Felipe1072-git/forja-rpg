@@ -1,10 +1,14 @@
 # A Cidadela Escarlate
 
+![Scarlet Citadel: A Dungeon of Secrets](../assets/images/cidadela-escarlate/logo.webp){ .fj-arte .fj-arte-logo }
+
 Guia dos jogadores. Sistema: Forja RPG.
 
 ## A Proposta
 
 Torre Vermelha é uma vila de lenhadores na borda da Floresta Branca. Ela vive de quem chega querendo saquear a Cidadela Escarlate: um castelo de pedra vermelha em ruínas, no meio da mata, com túneis que descem mais fundo do que alguém já voltou para contar.
+
+![Torre Vermelha, com a torre de pedra vermelha junto à paliçada e uma carroça de toras chegando pela estrada](../assets/images/cidadela-escarlate/torre-vermelha.webp){ .fj-arte loading=lazy }
 
 Vocês não são aventureiros. São gente comum da vila. Quem sair vivo da primeira descida vira aventureiro. Depois disso, a campanha é descer, recuar, voltar à vila e descer de novo, cada vez mais fundo.
 
@@ -17,6 +21,8 @@ Boatos da taverna da vila. Alguns são verdade.
 - Cada vez que alguém morre na Cidadela, uma pedra da torre da vila amanhece pintada de vermelho.
 - Ursos-corujas e harpias guardam as ruínas.
 - Lá embaixo há ouro antigo, livros proibidos e uma magia que corre pela terra.
+
+![Aventureiros recuam por uma escadaria em chamas, perseguidos por mortos-vivos ensanguentados](../assets/images/cidadela-escarlate/capa.webp){ .fj-arte .fj-arte-retrato loading=lazy }
 
 ## Quem É Você?
 
