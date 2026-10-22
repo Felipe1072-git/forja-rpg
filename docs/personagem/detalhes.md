@@ -162,6 +162,15 @@ Títulos são só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Cao
 | 5 | Mestre do Bote | Estátua Viva | Flagelo de Pedra |
 | 6 | Rei Basilisco | Lenda de Pedra | Senhor das Estátuas |
 
+| d6 | Duelista: Ordem | Duelista: Neutro | Duelista: Caos |
+|---|---|---|---|
+| 1 | Espadachim da Guarda | Aventureiro | Fanfarrão |
+| 2 | Mosqueteiro | Espadachim Errante | Bandoleiro |
+| 3 | Campeão da Corte | Galante | Pirata |
+| 4 | Mestre de Esgrima | Mestre de Armas | Duelista Sangrento |
+| 5 | Lâmina do Rei | Bravo | Sedutor de Lâmina |
+| 6 | Lenda dos Duelos | Herói das Tavernas | Terror dos Salões |
+
 ## Divindade
 
 Seguir uma divindade é opcional. Os jogadores criam as divindades, com domínio, bênçãos e responsabilidades. Veja Divindades.

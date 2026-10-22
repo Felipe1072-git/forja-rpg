@@ -17,6 +17,7 @@ Sua classe é o seu ofício. Ela define seu dado de vida, suas proficiências, s
 | Monge | d8 | Destreza ou Sabedoria | Simples e espada curta | Nenhuma |
 | Alquimista | d8 | Inteligência | Simples | Leves |
 | Guerreiro Basilisco | d8 | Constituição | Adaga, azagaia, bumerangue, clava, lança | Nenhuma |
+| Duelista | d8 | Destreza ou Carisma | Adaga e todas as espadas | Leves |
 
 **Base.** Toda classe usa uma base, que define o dado de vida, a Mana por nível (veja Mana), quantas habilidades você tem no nível 1 e quantos avanços você ganha por nível.
 
