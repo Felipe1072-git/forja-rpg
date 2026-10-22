@@ -153,6 +153,15 @@ Títulos são só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Cao
 | 5 | Alquimista Real | Homem do Bico | Médico Louco |
 | 6 | Grão-Mestre da Pedra | Mestre da Pedra Filosofal | Pai da Pestilência |
 
+| d6 | Guerreiro Basilisco: Ordem | Guerreiro Basilisco: Neutro | Guerreiro Basilisco: Caos |
+|---|---|---|---|
+| 1 | Guardião de Pedra | Andarilho da Lama | Petrificador |
+| 2 | Sentinela Imóvel | Caçador de Pedra | Serpente do Pântano |
+| 3 | Olho do Clã | Olho Ardente | Devorador |
+| 4 | Escama de Ferro | Sangue Frio | Olhar da Morte |
+| 5 | Mestre do Bote | Estátua Viva | Flagelo de Pedra |
+| 6 | Rei Basilisco | Lenda de Pedra | Senhor das Estátuas |
+
 ## Divindade
 
 Seguir uma divindade é opcional. Os jogadores criam as divindades, com domínio, bênçãos e responsabilidades. Veja Divindades.

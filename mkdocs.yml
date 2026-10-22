@@ -91,6 +91,7 @@ nav:
     - Feiticeiro: classes/feiticeiro.md
     - Monge: classes/monge.md
     - Alquimista: classes/alquimista.md
+    - Guerreiro Basilisco: classes/guerreiro-basilisco.md
   - Habilidades:
     - habilidades/index.md
     - Criando Habilidades: habilidades/criando.md

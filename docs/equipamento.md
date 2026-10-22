@@ -49,6 +49,7 @@ Além disso, você **carrega** um número de espaços igual ao seu modificador d
 |---|---|---|---|---|---|---|
 | Adaga | Simples | 2 po | 1d4 | Perfurante | Adjacente | Acuidade, arremesso |
 | Azagaia | Simples | 1 po | 1d6 | Perfurante | Adjacente | Arremesso (longe) |
+| Bumerangue | Simples | 2 po | 1d4 | Contusão | Adjacente | Arremesso (longe) |
 | Bordão | Simples | 1 po | 1d4 | Contusão | Adjacente | Versátil (1d6) |
 | Clava | Simples | 1 po | 1d4 | Contusão | Adjacente | — |
 | Lança | Simples | 1 po | 1d6 | Perfurante | Adjacente | Arremesso, versátil (1d8) |
