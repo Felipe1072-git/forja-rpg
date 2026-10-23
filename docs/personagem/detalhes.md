@@ -234,6 +234,15 @@ Títulos são só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Cao
 | 5 | Mestre Forjador | Pai dos Golens | Rei da Sucata |
 | 6 | Forjador de Lendas | Coração de Ferro | Senhor da Fornalha |
 
+| d6 | Sangue de Dragão: Ordem | Sangue de Dragão: Neutro | Sangue de Dragão: Caos |
+|---|---|---|---|
+| 1 | Ouvinte da Montanha | Andarilho do Norte | Voz Selvagem |
+| 2 | Aprendiz da Voz | Caçador de Dragões | Devorador de Almas |
+| 3 | Guardião das Palavras | Voz da Tempestade | Garganta de Fogo |
+| 4 | Mestre da Voz | Matador de Dragões | Flagelo dos Céus |
+| 5 | Campeão dos Céus | Alma Antiga | Senhor das Almas |
+| 6 | Sangue de Dragão | Lenda Viva | Dragão Mortal |
+
 ## Divindade
 
 Seguir uma divindade é opcional. Os jogadores criam as divindades, com domínio, bênçãos e responsabilidades. Veja Divindades.

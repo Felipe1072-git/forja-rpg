@@ -46,6 +46,7 @@ Character: [CLASSE]
 | Lâmina Silenciosa | lamina-silenciosa | A masked samurai assassin in dark wraps, drawing a curved blade in a low stance, black lotus petals and smoke swirling around. |
 | Lobo do Mar | lobo-do-mar | A raider in a winged helm with long braided hair, round shield and axe, one foot on the prow of a longboat, waves crashing below. |
 | Ferreiro de Guerra | ferreiro-de-guerra | A burly blacksmith-artificer in a leather apron over patched armor, a heavy hammer in one hand and a smoking hand cannon in the other, a small brass spider-construct climbing on the shoulder, gears and tools hanging from the belt. |
+| Sangue de Dragão | sangue-de-dragao | A warrior in fur and scale armor with a horned helm, shouting a blast of fire and wind from the mouth, a sword in hand, the faint shape of a dragon skull in the smoke behind them. |
 | Malvidente | malvidente | A hunched seer-witch with milky white eyes, casting bones from one hand, a raven on the shoulder and a bubbling cauldron behind. |
 
 ## Dicas
