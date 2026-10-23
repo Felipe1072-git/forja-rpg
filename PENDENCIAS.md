@@ -105,4 +105,5 @@ Dúvidas de regra em aberto. Remova o item quando for resolvido e aplicado no te
 - **Dano improvisado** (pedido pelo autor para a Referência do Mestre): Leve 1d6, Grave 2d8, Mortal 3d10 (as faixas das armadilhas) e Catastrófico 6d10.
 - **Modos de jogo:** Mortal, Brutal, Escassez, Heroico, Impulso, Caçador, Caos, Sem loucura.
 - **Conversão de monstros:** distâncias, tendência, Moral = 10 + mod. Sab, sem Mana, elementos, Sanidade.
+- **Convertendo do 5e** (o autor pediu monstros, armadilhas e CDs na escala do Shadowdark, sem proficiência; os números são sugestão): NV = ND + 2 (ND 1/8–1/4 → 1, 1/2 → 2); PV = NV × 4,5 + mod. Con; CA igual; ataque = mod. do atributo (+1 NV 4–7, +2 NV 8+); dano sem modificador; magias 1d6 (truque) ou (círculo + 1)d6; CDs 5e ≤10 → 9, 11–15 → 12, 16–20 → 15, 21+ → 18; tabela de condições; armadilhas pelas faixas de Dano Improvisado, uma faixa acima no nível 6+.
 - **Todas as tabelas de 08-geradores.md.**

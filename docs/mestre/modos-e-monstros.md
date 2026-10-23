@@ -33,7 +33,7 @@ Forja RPG não tem um bestiário próprio. Use monstros do Shadowdark, do D&D 5e
 | Double near | 12 casas |
 | Far | Longe |
 
-**Valores.** Use CA, PV, ataques, dano e CDs como estão escritos.
+**Valores.** Monstros do Shadowdark, do Monster Overhaul e de outros livros old school: use CA, PV, ataques, dano e CDs como estão escritos. Monstros do 5e: converta (veja Convertendo do 5e).
 
 **Tendência.** Lawful vira Bem e Ordem, Chaotic vira Mal e Caos, Neutral vira Neutro. Ajuste se fizer sentido.
 
@@ -45,4 +45,64 @@ Forja RPG não tem um bestiário próprio. Use monstros do Shadowdark, do D&D 5e
 
 **Sanidade.** Monstros aterrorizantes causam dano à Sanidade na primeira vez que são vistos (veja Sanidade).
 
-**Equilíbrio.** Os PV dos personagens seguem a escala do Shadowdark. Monstros do Shadowdark e de livros old school encaixam direto. Monstros do 5e costumam ser mais resistentes; use os de nível de desafio menor.
+**Equilíbrio.** Os PV dos personagens seguem a escala do Shadowdark: um mago de nível 10 tem cerca de 25 PV. Monstros, armadilhas e CDs precisam estar na mesma escala.
+
+## Convertendo do 5e
+
+Aventuras e monstros do D&D 5e são mais resistentes e contam com o bônus de proficiência. Converta assim.
+
+**Prefira o original old school.** Se o monstro existe no Shadowdark ou no Monster Overhaul, use aquela ficha.
+
+**Nível (NV).** Nível de desafio (ND) 1/8 ou 1/4 vira NV 1; ND 1/2 vira NV 2; ND 1 ou mais vira NV = ND + 2.
+
+**PV.** NV × 4,5 (arredonde para baixo) + modificador de Constituição. Criaturas e objetos sem ND: metade dos PV do 5e.
+
+**CA.** A mesma do 5e.
+
+**Ataques.** O mesmo número de ataques. Bônus = modificador do atributo usado (+1 do NV 4 ao 7, +2 do NV 8 em diante).
+
+**Dano.** Os mesmos dados, sem somar o modificador. Ex.: 2d6 + 3 vira 2d6.
+
+**Movimento.** Até 50 pés vira perto. 60 pés ou mais vira 12 casas.
+
+**CDs.** Converta pela tabela de CDs abaixo, inclusive as de testes de resistência que o monstro força.
+
+**Recarga.** "Recarga 5–6": role 1d6 no começo do turno do monstro; com 5 ou 6, a habilidade volta.
+
+**Ações lendárias.** Troque por 1 ataque extra por rodada.
+
+**Magias.** Escreva como ataque: "1 magia +X", com o efeito em uma linha e a CD pela tabela. Dano: truque, 1d6; magia de círculo N, (N + 1)d6. Ex.: uma bola de fogo (3º círculo) causa 4d6.
+
+### CDS
+
+No Forja RPG, o teste é d20 + modificador do atributo, sem bônus de proficiência. Use as quatro CDs do jogo (veja Testes).
+
+| CD no 5e | CD no Forja RPG |
+|---|---|
+| 10 ou menos | 9 (Fácil) |
+| 11 a 15 | 12 (Normal) |
+| 16 a 20 | 15 (Difícil) |
+| 21 ou mais | 18 (Extrema) |
+
+**Perícias viram atributos.** Atletismo: Força. Acrobacia, Furtividade, Prestidigitação: Destreza. Arcanismo, História, Investigação, Natureza, Religião: Inteligência. Intuição, Lidar com Animais, Medicina, Percepção, Sobrevivência: Sabedoria. Atuação, Enganação, Intimidação, Persuasão: Carisma.
+
+### CONDIÇÕES
+
+| 5e | Forja RPG |
+|---|---|
+| Amedrontado, enfeitiçado, caído, cego, surdo, paralisado | A mesma condição |
+| Atordoado, incapacitado, inconsciente | Atordoado |
+| Agarrado, contido | Lento; contido também dá desvantagem em ataques |
+| Petrificado | Paralisado, até ser curado |
+| Envenenado | Desvantagem em ataques e testes |
+| Exaustão (cada nível) | 1 ponto de exaustão |
+
+### ARMADILHAS E PERIGOS
+
+**Gravidade.** Ignore o dano do 5e e use as faixas de Dano Improvisado (Leve, Grave, Mortal, Catastrófico). No 5e, um contratempo vira Leve, uma armadilha perigosa vira Grave e uma mortal vira Mortal.
+
+**Níveis altos.** Para personagens de nível 6 ou mais, suba uma faixa.
+
+**CDs.** Converta pela tabela de CDs.
+
+**Quedas.** Use a regra do Forja RPG: 1d6 a cada 2 casas (veja Movimento).
