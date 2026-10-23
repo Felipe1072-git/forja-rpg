@@ -3,6 +3,8 @@
 Mortais que nasceram com a alma de um dragão. Gritam palavras na língua antiga e o mundo obedece: o fogo sai da garganta, o vento empurra exércitos, o céu se abre em tempestade. Quando um dragão morre perto deles, a alma vem morar no seu peito.
 { .epigrafe }
 
+![Guerreiro de elmo com chifres gritando palavras de poder, com espada e escudo, pisando num crânio de dragão](../assets/images/classes/sangue-de-dragao.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Classe exótica.** Fica fora do Personagem Aleatório. Combine com o Mestre antes de escolher (veja Classes exóticas).
 
 **Base.** d10: 2 habilidades iniciais, 2 de Mana por nível, 2 avanços nos níveis 5 e 10 (1 nos outros).
