@@ -41,7 +41,7 @@ Classes estranhas, raras ou poderosas demais para todo mundo. Ficam fora do Pers
 
 | Classe | Base | Atributo principal | Armas | Armaduras |
 |---|---|---|---|---|
-| Artífice | d8 | Inteligência | Simples, maça, martelo de guerra, bestas | Leves, médias e escudo |
+| Ferreiro de Guerra | d8 | Inteligência | Simples, maça, martelo de guerra, bestas | Leves, médias e escudo |
 
 **Classe fixa.** Você escolhe sua classe na criação do personagem, no nível 0 ou 1. Ela nunca muda.
 

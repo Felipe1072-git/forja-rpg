@@ -1,9 +1,9 @@
-# Artífice
+# Ferreiro de Guerra
 
 Ferreiros de mãos queimadas que sabem que tudo pode ser consertado, melhorado ou explodido. Batem o martelo na bigorna até o aço cantar, dão vida a criaturas de ferro e carregam canhões que não deviam existir.
 { .epigrafe }
 
-![Ferreiro de avental com um martelo erguido e um canhão de mão fumegando, ferramentas e engrenagens no cinto](../assets/images/classes/artifice.webp){ .fj-arte .fj-arte-classe loading=lazy }
+![Ferreiro de avental com um martelo erguido e um canhão de mão fumegando, ferramentas e engrenagens no cinto](../assets/images/classes/ferreiro-de-guerra.webp){ .fj-arte .fj-arte-classe loading=lazy }
 
 **Classe exótica.** Fica fora do Personagem Aleatório. Combine com o Mestre antes de escolher (veja Classes exóticas).
 
@@ -21,7 +21,7 @@ Ferreiros de mãos queimadas que sabem que tudo pode ser consertado, melhorado o
 
 **Habilidades iniciais.** Escolha 3 na lista ou role 1d20 três vezes. Para começar rápido: Martelada, Ajudante Mecânico e Bomba de Pólvora.
 
-## PROGRESSÃO DO ARTÍFICE
+## PROGRESSÃO DO FERREIRO DE GUERRA
 
 | Nível | XP para subir | PV | Mana máxima | Mana extra máx. | Avanços | Especial |
 |---|---|---|---|---|---|---|
@@ -40,7 +40,7 @@ Ferreiros de mãos queimadas que sabem que tudo pode ser consertado, melhorado o
 
 \* Só se você seguir uma divindade (veja Divindades).
 
-## AVANÇOS DO ARTÍFICE
+## AVANÇOS DO FERREIRO DE GUERRA
 
 Ao subir de nível:
 
@@ -50,7 +50,7 @@ Ao subir de nível:
 
 | Avanço | Efeito |
 |---|---|
-| Nova habilidade | Escolha uma habilidade da lista do Artífice. |
+| Nova habilidade | Escolha uma habilidade da lista do Ferreiro de Guerra. |
 | Melhoria | Escolha uma das três melhorias de uma habilidade sua. O custo dela aumenta em 1. |
 | +1 dado | Uma habilidade com dados de dano ou cura ganha +1 dado, sem aumentar o custo. |
 | Atributos | +2 em atributos (distribua; máximo 20). |
@@ -59,7 +59,7 @@ Ao subir de nível:
 
 **Constituição.** Se o seu modificador de Constituição aumentar, some a diferença ao seu PV máximo, uma vez.
 
-## HABILIDADES DO ARTÍFICE
+## HABILIDADES DO FERREIRO DE GUERRA
 
 Todas são marciais (engenharia), exceto as marcadas como *(runa)*, que são magia e usam Inteligência. "Ataque com arma" usa o atributo e o dano normais da arma (veja Combate). Testes de resistência contra suas habilidades usam a sua CD de Inteligência. No escalonamento, cada dado ou alvo extra custa 1 de Mana a mais, até Mana extra igual ao seu nível. Cada melhoria aumenta o custo em 1.
 

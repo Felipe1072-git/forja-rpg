@@ -225,7 +225,7 @@ Títulos são só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Cao
 | 5 | Juiz das Sinas | Guardião dos Segredos | Mãe das Pragas |
 | 6 | Senhor do Destino | Tecelão da Sina | Ruína dos Reinos |
 
-| d6 | Artífice: Ordem | Artífice: Neutro | Artífice: Caos |
+| d6 | Ferreiro de Guerra: Ordem | Ferreiro de Guerra: Neutro | Ferreiro de Guerra: Caos |
 |---|---|---|---|
 | 1 | Aprendiz de Ferreiro | Funileiro | Fazedor de Bombas |
 | 2 | Ferreiro da Guilda | Remendão | Artilheiro |
