@@ -27,6 +27,8 @@ Todas falam a língua do seu povo (veja Idiomas).
 Ambiciosos e espalhados por todo canto.
 { .epigrafe }
 
+![Humano e humana](../assets/images/ancestralidades/humano.webp){ .fj-arte-ancestral loading=lazy }
+
 **Tamanho.** Médio.
 
 **Ambicioso.** Ao chegar ao nível 1, escolha 1 avanço da tabela da sua classe, como se tivesse subido de nível: uma habilidade nova, uma melhoria, +1 dado, +2 em atributos, Vigor ou Treino.
@@ -41,6 +43,8 @@ Ambiciosos e espalhados por todo canto.
 
 Teimosos e duros como a pedra das montanhas onde vivem.
 { .epigrafe }
+
+![Anão e anã](../assets/images/ancestralidades/anao.webp){ .fj-arte-ancestral loading=lazy }
 
 **Tamanho.** Médio.
 
@@ -58,6 +62,8 @@ Teimosos e duros como a pedra das montanhas onde vivem.
 
 Graciosos, longevos, guerreiros e magos ao mesmo tempo.
 { .epigrafe }
+
+![Elfo e elfa](../assets/images/ancestralidades/elfo.webp){ .fj-arte-ancestral loading=lazy }
 
 **Tamanho.** Médio.
 
@@ -80,6 +86,8 @@ Graciosos, longevos, guerreiros e magos ao mesmo tempo.
 Elfos das profundezas, cruéis e elegantes.
 { .epigrafe }
 
+![Drow homem e mulher](../assets/images/ancestralidades/drow.webp){ .fj-arte-ancestral loading=lazy }
+
 **Tamanho.** Médio.
 
 **Visão no escuro superior.** Enxerga no escuro até longe.
@@ -101,6 +109,8 @@ Elfos das profundezas, cruéis e elegantes.
 Filhos de dois mundos, à vontade em qualquer um.
 { .epigrafe }
 
+![Meio-elfo e meio-elfa](../assets/images/ancestralidades/meio-elfo.webp){ .fj-arte-ancestral loading=lazy }
+
 **Tamanho.** Médio.
 
 **Visão no escuro.** Enxerga no escuro até perto.
@@ -115,6 +125,8 @@ Filhos de dois mundos, à vontade em qualquer um.
 
 Pequenos, discretos, corajosos e abençoados pela sorte.
 { .epigrafe }
+
+![Halfling homem e mulher](../assets/images/ancestralidades/halfling.webp){ .fj-arte-ancestral loading=lazy }
 
 **Tamanho.** Pequeno.
 
@@ -133,6 +145,8 @@ Pequenos, discretos, corajosos e abençoados pela sorte.
 Descendentes de dragões, com escamas e sopro elemental.
 { .epigrafe }
 
+![Draconato e draconata](../assets/images/ancestralidades/draconato.webp){ .fj-arte-ancestral loading=lazy }
+
 **Tamanho.** Médio.
 
 **Linhagem.** Escolha um elemento: fogo, gelo, tempestade, ácido ou veneno. Você tem resistência a ele.
@@ -149,6 +163,8 @@ Descendentes de dragões, com escamas e sopro elemental.
 
 Curiosos, inventivos, ilusionistas natos.
 { .epigrafe }
+
+![Gnomo e gnoma](../assets/images/ancestralidades/gnomo.webp){ .fj-arte-ancestral loading=lazy }
 
 **Tamanho.** Pequeno.
 
@@ -169,6 +185,8 @@ Curiosos, inventivos, ilusionistas natos.
 Fortes, ferozes e temidos.
 { .epigrafe }
 
+![Orc homem e mulher](../assets/images/ancestralidades/orc.webp){ .fj-arte-ancestral loading=lazy }
+
 **Tamanho.** Médio.
 
 **Visão no escuro.** Enxerga no escuro até perto.
@@ -186,6 +204,8 @@ Fortes, ferozes e temidos.
 Filhos de humanos e orcs, sem lugar fixo em nenhum dos dois povos.
 { .epigrafe }
 
+![Meio-orc homem e mulher](../assets/images/ancestralidades/meio-orc.webp){ .fj-arte-ancestral loading=lazy }
+
 **Tamanho.** Médio.
 
 **Visão no escuro.** Enxerga no escuro até perto.
@@ -200,6 +220,8 @@ Filhos de humanos e orcs, sem lugar fixo em nenhum dos dois povos.
 
 Marcados por um ancestral infernal: chifres, cauda, olhos sem pupila.
 { .epigrafe }
+
+![Tiefling homem e mulher](../assets/images/ancestralidades/tiefling.webp){ .fj-arte-ancestral loading=lazy }
 
 **Tamanho.** Médio.
 
@@ -218,6 +240,8 @@ Marcados por um ancestral infernal: chifres, cauda, olhos sem pupila.
 Pequenos, nervosos, meio desastrados e ótimos em emboscadas.
 { .epigrafe }
 
+![Dois goblins](../assets/images/ancestralidades/goblin.webp){ .fj-arte-ancestral loading=lazy }
+
 **Tamanho.** Pequeno.
 
 **Visão no escuro.** Enxerga no escuro até perto.
@@ -234,6 +258,8 @@ Pequenos, nervosos, meio desastrados e ótimos em emboscadas.
 
 Construtos de metal e magia que ganharam consciência própria.
 { .epigrafe }
+
+![Dois autômatos, um robusto e um esguio](../assets/images/ancestralidades/automato.webp){ .fj-arte-ancestral loading=lazy }
 
 **Tamanho.** Médio.
 
