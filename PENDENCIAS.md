@@ -100,6 +100,7 @@ Dúvidas de regra em aberto. Remova o item quando for resolvido e aplicado no te
 - **Atividade da criatura** em d12.
 - **Sanidade:** teste CD 12 com o maior atributo mental (sucesso = metade); tabela de dano; mesma situação só causa dano uma vez por aventura.
 - **Armadilhas e perigos** (d12).
+- **Dano improvisado** (pedido pelo autor para a Referência do Mestre): Leve 1d6, Grave 2d8, Mortal 3d10 (as faixas das armadilhas) e Catastrófico 6d10.
 - **Modos de jogo:** Mortal, Brutal, Escassez, Heroico, Impulso, Caçador, Caos, Sem loucura.
 - **Conversão de monstros:** distâncias, tendência, Moral = 10 + mod. Sab, sem Mana, elementos, Sanidade.
 - **Todas as tabelas de 08-geradores.md.**

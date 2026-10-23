@@ -63,14 +63,12 @@ O conteúdo é um site **MkDocs Material** em `docs/`, publicado no GitHub Pages
 | Habilidades | `docs/habilidades/`: `index.md` (Mana, anatomia, testes, escalonamento, elementos), `criando.md` (opcional) |
 | Divindades, Equipamento | `docs/divindades.md`, `docs/equipamento.md` |
 | Mestre | `docs/mestre/`: `index.md` (papel, XP, Funil), `encontros.md` (encontros, Sanidade, armadilhas, perigos), `modos-e-monstros.md`, `geradores.md` |
-| Fichas | `docs/fichas/`: `personagem.md`, `funil.md` (mostram e oferecem os PDFs de `docs/assets/fichas/`) |
+| Fichas | `docs/fichas/`: `personagem.md`, `funil.md`, `jogador.md`, `mestre.md` (mostram e oferecem os PDFs de `docs/assets/fichas/`) |
 | Campanhas | `docs/campanhas/`: guia dos jogadores de cada campanha, sem spoilers (ex.: `cidadela-escarlate.md`, da *Scarlet Citadel*) |
 
 **Notas do Mestre** de cada campanha ficam em `campanhas/<nome>-mestre.md`, fora de `docs/`. O `.gitignore` ignora `*-mestre.md`: elas têm spoilers e o repositório é público. Nunca coloque segredos de aventura em `docs/`.
 
-Ainda a escrever: referência rápida para imprimir.
-
-**Fichas em PDF.** A fonte das fichas fica em `fichas/` (fora do site): `fichas/gerar_fichas.py` monta cada ficha como HTML A4 (estilo em `fichas/ficha.css`, preto e branco, estilo OSR, com o logo de bigorna) e imprime em PDF com o Chrome headless em `docs/assets/fichas/ficha-personagem.pdf` (2 páginas) e `ficha-funil.pdf` (1 página). Ao mudar uma ficha, rode `python fichas/gerar_fichas.py`, confira os PDFs (nada pode passar da margem inferior) e faça commit dos PDFs. O `.gitignore` ignora `*.pdf`, com exceção de `docs/assets/fichas/*.pdf`.
+**Fichas em PDF.** A fonte das fichas fica em `fichas/` (fora do site): `fichas/gerar_fichas.py` monta cada ficha como HTML A4 (estilo em `fichas/ficha.css`, preto e branco, estilo OSR, com o logo de bigorna) e imprime em PDF com o Chrome headless em `docs/assets/fichas/ficha-personagem.pdf` (2 páginas), `ficha-funil.pdf` (1 página) e nas referências rápidas `referencia-jogador.pdf` e `referencia-mestre.pdf` (1 página cada, em três colunas; o texto delas é um resumo escrito à mão em `gerar_fichas.py`, então mude-o junto quando uma regra mudar). Ao mudar uma ficha, rode `python fichas/gerar_fichas.py`, confira os PDFs (nada pode passar da margem inferior) e faça commit dos PDFs. O `.gitignore` ignora `*.pdf`, com exceção de `docs/assets/fichas/*.pdf`.
 
 **Sem capítulo de Tesouro nem de Monstros**: o autor usa material de outros livros (Shadowdark, 5e, Monster Overhaul), convertido pela seção Monstros de `docs/mestre/modos-e-monstros.md`.
 

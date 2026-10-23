@@ -192,6 +192,300 @@ def ficha_funil():
     return documento('Ficha de Funil', folha)
 
 
+# ------------------------------------------------------------ referências rápidas
+
+def regra(termo, texto):
+    return f'<p><b>{termo}.</b> {texto}</p>'
+
+
+def quadro(cabecalho, linhas, cls=''):
+    """Tabela preenchida. Cada linha é uma lista de células."""
+    c = f' class="{cls}"' if cls else ''
+    th = ''.join(f'<th>{h}</th>' for h in cabecalho)
+    tr = ''.join('<tr>' + ''.join(f'<td>{x}</td>' for x in linha) + '</tr>' for linha in linhas)
+    return f'<table{c}><thead><tr>{th}</tr></thead><tbody>{tr}</tbody></table>'
+
+
+def bloco(nome, *partes):
+    return f'<section class="rf-bloco"><h2>{nome}</h2>{"".join(partes)}</section>'
+
+
+def linha(cabecalho, valores):
+    """Tabela de uma linha só, deitada, para economizar altura."""
+    return quadro(cabecalho, [valores], 'rf-centro')
+
+
+def referencia(titulo_doc, subtitulo, blocos, cls):
+    folha = (
+        f'<div class="fh-folha rf-folha {cls}">'
+        '<header class="rf-topo">' + LOGO +
+        f'<div class="rf-titulo">{titulo_doc}</div><div class="rf-sub">{subtitulo}</div></header>'
+        '<div class="rf-colunas">' + ''.join(blocos) + '</div>'
+        '</div>'
+    )
+    return documento(titulo_doc, folha)
+
+
+CD = quadro(['Fácil', 'Normal', 'Difícil', 'Extrema'], [['9', '12', '15', '18']], 'rf-centro')
+
+EXAUSTAO_TAB = quadro(['Pontos', 'Efeito (acumula)'], [[n, e] for n, e in enumerate(EXAUSTAO, 1)])
+EXAUSTAO_CURTA = ('<p>Acumula; descanso longo remove 1. <b>1</b> desv. em testes · <b>2</b> movimento à metade · '
+                  '<b>3</b> desv. em ataques · <b>4</b> PV e Mana máx. à metade · <b>5</b> imóvel · <b>6</b> morte.</p>')
+
+CONDICOES = [
+    ('Amedrontado', 'Desvantagem em ataques e testes. Não se aproxima da fonte do medo.'),
+    ('Atordoado', 'Não age nem se move. Ataques contra você têm vantagem.'),
+    ('Caído', 'Desvantagem em ataques. Corpo a corpo contra você: vantagem; à distância: desvantagem.'),
+    ('Cego', 'Desvantagem no que exige visão. Ataques contra você têm vantagem.'),
+    ('Enfeitiçado', 'Não ataca quem o enfeitiçou e o trata como amigo.'),
+    ('Lento', 'Movimento à metade.'),
+    ('Paralisado', 'Não age, não se move, não fala. Ataques contra você têm vantagem; corpo a corpo que acerta é crítico.'),
+    ('Surdo', 'Não ouve. Falha em testes de audição.'),
+]
+
+LUZ = quadro(['Fonte', 'Ilumina', 'Dura'], [
+    ['Vela', 'adjacente', '3 turnos'],
+    ['Tocha', 'perto', '6 turnos (1 h)'],
+    ['Lanterna', 'longe', '4 h por frasco de óleo'],
+    ['Fogueira', 'perto', '8 h; fixa'],
+])
+
+MORRENDO = [
+    regra('0 PV', 'Inconsciente e morrendo. Morre em rodadas = mod. de Constituição (mín. 1). Ganha 1 de exaustão.'),
+    regra('Rolagem de morte', 'A cada turno seu, d20. Com 20, levanta com 1 PV e age. Com 1, morre.'),
+    regra('Estabilizar', 'Criatura adjacente, Inteligência CD 15. Para de morrer; inconsciente até um descanso longo.'),
+    regra('Cura', 'Qualquer cura faz parar de morrer e acordar.'),
+]
+
+
+def referencia_jogador():
+    blocos = [
+        bloco('Testes',
+              regra('Teste', 'd20 + modificador do atributo. Igual ou maior que a CD: sucesso. Não existe bônus de proficiência.'),
+              CD,
+              regra('Vantagem / desvantagem', 'Role 2d20 e use o melhor / o pior. As duas juntas se anulam.'),
+              regra('20 natural', 'Ataque: acerta e é crítico (dobre os dados de dano). Teste: o melhor sucesso possível.'),
+              regra('1 natural', 'Ataque erra, teste falha. Perca 1 de Sanidade.'),
+              regra('Resistido', 'Os dois lados rolam; o maior vence. Empate: rolem de novo.'),
+              regra('Inspiração', 'Comece a sessão com 1. Gaste 1 para rolar de novo um ataque ou teste seu. Pode passar a outro jogador. Some no fim da sessão.')),
+        bloco('Atributos',
+              quadro(['Valor', '1–3', '4–5', '6–7', '8–9', '10–11', '12–13', '14–15', '16–17', '18–19', '20'],
+                     [['Mod.', '-4', '-3', '-2', '-1', '+0', '+1', '+2', '+3', '+4', '+5']], 'rf-centro rf-mod'),
+              regra('For', 'golpear, arrombar, erguer, nadar.'),
+              regra('Des', 'atirar, desviar, escalar, esconder-se.'),
+              regra('Con', 'fôlego, dor, veneno.'),
+              regra('Int', 'primeiros socorros, saber, achar comida.'),
+              regra('Sab', 'notar, rastrear, instinto.'),
+              regra('Car', 'convencer, enganar, liderar.')),
+        bloco('Distância e áreas',
+              '<p>1 casa = 1,5 m.</p>',
+              quadro(['Adjacente', 'Perto', 'Longe', 'Muito longe'], [['1 casa', '2–6', '7–12', '13+']], 'rf-centro'),
+              quadro(['Área pequena', 'Média', 'Grande'], [['3 × 3', '5 × 5', '9 × 9']], 'rf-centro')),
+        bloco('Seu turno',
+              regra('Turno', '1 ação + 1 movimento de até 6 casas. Troque a ação por um segundo movimento.'),
+              regra('Ação livre', '1 por rodada: sacar arma, abrir porta, beber poção.'),
+              regra('Reação', '1 por rodada, fora do seu turno.'),
+              regra('Ataque de oportunidade', 'Inimigo sai do seu alcance com o próprio movimento: reação para um ataque corpo a corpo. Empurrão e teleporte não provocam. Habilidade que move provoca, salvo se disser o contrário.'),
+              regra('Levantar', 'Custa metade do movimento.'),
+              regra('Iniciativa', '<i>Rápida:</i> personagens, depois inimigos. <i>Tática:</i> d20 + Des, do maior ao menor.'),
+              regra('Surpresa', 'Teste de Sab. Falhou: perde o 1º turno, e ataques contra você têm vantagem.'),
+              regra('Turno compartilhado', 'O grupo age junto, na ordem que quiser.')),
+        bloco('Ataque e dano',
+              quadro(['Ataque', 'Rolagem', 'Dano'], [
+                  ['Corpo a corpo', 'd20 + For ≥ CA', 'arma + For'],
+                  ['À distância', 'd20 + Des ≥ CA', 'arma + Des'],
+                  ['Habilidade', 'd20 + atrib. ≥ CA', 'dados da habilidade'],
+                  ['Desarmado', 'd20 + For ≥ CA', '1 + For'],
+              ]),
+              regra('Acuidade', 'For ou Des. <b>Arremesso:</b> até perto, For ou Des.'),
+              regra('Nocaute', 'Ao levar alguém a 0 PV, deixe inconsciente em vez de matar.'),
+              quadro(['Cobertura', 'Metade', '3/4', 'Total'], [['CA', '+2', '+5', 'não é alvo']], 'rf-centro')),
+        bloco('Habilidades e Mana',
+              regra('Mana', 'Paga todas as habilidades, mágicas ou marciais. Sem Mana, pague com Sanidade, 1 por 1.'),
+              regra('CD de habilidade', '10 + mod. do atributo principal. Quem resiste sofre metade do dano e ignora as condições.'),
+              regra('Escalonamento', 'Cada compra custa +1 de Mana. Mana extra máx. = seu nível.'),
+              regra('Elementos', 'Fogo ⇄ Gelo · Tempestade ⇄ Terra · Radiante ⇄ Necrótico · Arcano ⇄ Psíquico · Veneno · Ácido. Mesmo elemento: metade do dano. Oposto: o dobro.'),
+              regra('Marcial', 'Imune a dissipar, antimagia e contramágica.')),
+        bloco('Morrendo', *MORRENDO),
+        bloco('Sanidade',
+              regra('Máxima', '10 + mod. de Int + Sab + Car.'),
+              regra('Colapso', 'Em 0: teste CD 10 com seu maior atributo mental. Falhou: morre. Repita a cada ação que custe Mana ou Sanidade.')),
+        bloco('Exaustão', EXAUSTAO_TAB, '<p>Descanso longo remove 1.</p>'),
+        bloco('Condições', *[regra(n, t) for n, t in CONDICOES]),
+        bloco('Descanso',
+              regra('Longo', '8 h e 1 ração. Recupere tudo (PV, Mana, Sanidade) e remova 1 de exaustão.'),
+              regra('Curto', '1 vez por dia, 1 h. Recupere metade dos PV, Mana e Sanidade máximos.'),
+              regra('Interrompido', 'Constituição CD 12. Falhou: sem benefício.')),
+        bloco('Exploração',
+              regra('Tempo', 'Rodada ≈ 6 s. Turno de exploração = 10 min. A cada 6 turnos, descanse 1 ou tenha desvantagem.'),
+              LUZ,
+              regra('Escuro', 'Desvantagem no que exige visão.'),
+              regra('Escalar', 'For ou Des; metade do movimento.'),
+              regra('Nadar', 'Metade do movimento. Água agitada: For.'),
+              regra('Cair', '1d6 a cada 2 casas. Onde se segurar: reação e Des.'),
+              regra('Fôlego', 'Sem ar, Con a cada rodada: CD 8, +1 por rodada. Falhou: 10 de dano por rodada.'),
+              regra('Terreno difícil', 'Metade do movimento.'),
+              regra('Atravessar', 'Aliados: livre. Inimigo: resistido de For ou Des.'),
+              regra('Esconder-se', 'Des. Atacar revela você.')),
+        bloco('Carga',
+              regra('Espaços', 'mod. de For + Con (mín. 1). Mochila: +5.'),
+              regra('Grátis', 'armadura vestida, armas em mãos, acessórios, roupas, até 100 po.'),
+              regra('Sobrecarga', 'Movimento à metade, -2 em ataques e testes. Máx. o dobro.'),
+              regra('Armas', '<i>Alcance</i> 2 casas · <i>Duas mãos</i> · <i>Munição</i> recupere metade · <i>Pesada</i> For &lt; 15 tem desvantagem · <i>Recarga</i> gasta o movimento · <i>Versátil</i> dado maior com duas mãos.'),
+              regra('Poções', 'Beber é ação livre.')),
+        bloco('Armaduras',
+              quadro(['Armadura', 'CA', 'For', 'Nota'], [
+                  ['Couro (leve)', '11 + Des', '—', ''],
+                  ['Couro batido (leve)', '12 + Des', '—', ''],
+                  ['Gibão de peles (média)', '12 + Des', '11', ''],
+                  ['Cota de malha (média)', '13 + Des', '13', 'desv. furtividade, nado'],
+                  ['Cota de talas (pesada)', '15', '13', 'desv. furtividade, nado'],
+                  ['Placas (pesada)', '16', '15', 'desv. furtividade; não nada'],
+                  ['Escudo', '+2', '—', 'ocupa uma mão'],
+              ], 'rf-armaduras'),
+              regra('Sem a Força', 'Movimento à metade.'),
+              regra('Sem proficiência', 'Movimento à metade, desvantagem em ataques e em testes de For e Des. Para usar habilidade, For CD 15 antes (falhou: Mana gasta).')),
+        bloco('Divindade',
+              regra('Bênçãos', 'Menor no nível 1, maior no 5, milagre no 9. Não gastam avanços.'),
+              regra('Quebrar uma responsabilidade', 'Perde bênçãos e habilidades divinas; -2 de Sanidade máx. Escolha: penitência, nova divindade ou seguir sem divindade.')),
+        bloco('Tempo livre',
+              '<p>Entre aventuras, uma atividade (ou role d10): <b>1</b> Farra · <b>2</b> Aprender · <b>3</b> Pesquisar · '
+              '<b>4</b> Trabalhar (2d6 × 5 po) · <b>5</b> Servir à divindade · <b>6</b> Recuperar-se (toda a exaustão) · '
+              '<b>7</b> Fazer contatos · <b>8</b> Fabricar · <b>9</b> Treinar (+1 Inspiração) · <b>10</b> Assuntos pessoais.</p>'),
+        bloco('Avanço',
+              regra('Subir', 'XP = nível atual × 10. O XP volta a 0. Máx. nível 10.'),
+              regra('Ao subir', 'Role o dado de vida e some ao PV máx. (tirou 1: role de novo, 1 vez). Ganhe 1 avanço, ou 2 nos níveis da sua base.'),
+              regra('Avanços', 'Nova habilidade · Melhoria (+1 no custo) · +1 dado · +2 em atributos · Vigor (+1 dado de vida) · Treino (proficiência ou idioma).')),
+    ]
+    return referencia('Referência do Jogador', 'regras na mão, sem abrir o livro', blocos, 'rf-jogador')
+
+
+def referencia_mestre():
+    blocos = [
+        bloco('Testes',
+              regra('Quando rolar', 'A falha tem consequência, a ação exige perícia ou há pressão de tempo. Se o personagem sabe fazer, faz.'),
+              quadro(['CD', 'Exemplo'], [
+                  ['9 Fácil', 'pular fosso estreito, passar por guarda distraído'],
+                  ['12 Normal', 'arrombar porta emperrada, fechadura simples'],
+                  ['15 Difícil', 'nadar contra a correnteza, estabilizar'],
+                  ['18 Extrema', 'escalar penhasco liso, segurar leão furioso'],
+              ]),
+              regra('Int x Sab', 'Sab é sentidos e instinto; Int é saber e lógica.')),
+        bloco('Exploração',
+              regra('Turno de exploração', '10 min. Uma atividade: explorar uma área, procurar, escutar, desarmar, abrir caminho, descansar.'),
+              regra('Encontros', 'A cada 2 turnos, 1d6: com 1, encontro. Barulho alto pede uma rolagem.'),
+              regra('Cansaço', 'A cada 6 turnos (1 h), 1 turno de descanso. Sem isso, desvantagem em ataques e testes.'),
+              LUZ),
+        bloco('Encontros',
+              linha(['d6', '1', '2–4', '5–6'], ['Distância', 'Adjacente', 'Perto', 'Longe']),
+              quadro(['d12', 'Atividade', 'd12', 'Atividade'], [
+                  ['1–3', 'Caçando', '8–9', 'Brincando, conversando'],
+                  ['4–5', 'Comendo', '10–11', 'De guarda'],
+                  ['6–7', 'Ninho, construindo', '12', 'Dormindo'],
+              ]),
+              linha(['d20 + Car', '1–5', '6–9', '10–12', '13–16', '17+'],
+                    ['Reação', 'Hostil', 'Descon&shy;fiada', 'Neutra', 'Curiosa', 'Amigável']),
+              '<p>Quem fala soma Car, mas revela o grupo.</p>',
+              regra('Surpresa', 'Emboscados testam Sab. Falhou: perde o 1º turno e ataques contra ele têm vantagem.')),
+        bloco('Moral',
+              regra('Quando', 'Primeira baixa do lado; metade do grupo caiu (ou o solitário perdeu metade dos PV).'),
+              regra('Teste', 'd20 maior que a Moral: foge ou se rende. Grupo rola uma vez. Passou duas vezes: luta até o fim.'),
+              linha(['5', '10', '15', '20'], ['covardes, animais', 'bandidos, soldados', 'elite, fanáticos', 'sem mente, nunca foge']),
+              '<p>Monstro convertido: 10 + mod. de Sab.</p>'),
+        bloco('Sanidade',
+              '<p>Teste com o maior atributo mental, CD 12. Sucesso: metade do dano. Mesma situação, só 1 vez por aventura.</p>',
+              quadro(['Situação', 'Dano'], [
+                  ['Cena macabra', '1'],
+                  ['Morte de um aliado', '1d4'],
+                  ['Criatura sobrenatural aterrorizante', '1d4'],
+                  ['Ser controlado por magia mental', '1d4'],
+                  ['Pesadelo mágico, tortura', '1d6'],
+                  ['Horror cósmico, outro plano', '2d6'],
+                  ['Ser antigo ou divindade em forma real', '3d6'],
+              ]),
+              regra('Colapso', 'Em 0: CD 10 com o maior atributo mental, ou morre.')),
+        bloco('Dano improvisado',
+              quadro(['Gravidade', 'Dano', 'Exemplos'], [
+                  ['Leve', '1d6', 'brasas, estante que cai'],
+                  ['Grave', '2d8', 'pisar na fogueira, um raio'],
+                  ['Mortal', '3d10', 'túnel que desaba, tonel de ácido'],
+                  ['Catastrófico', '6d10', 'paredes que esmagam, lava'],
+              ]),
+              regra('Cair', '1d6 a cada 2 casas. Onde se segurar: reação e Des.'),
+              regra('Fôlego', 'Con a cada rodada, CD 8 +1 por rodada. Falhou: 10 de dano por rodada; a 0 PV sem ar, morre.')),
+        bloco('Armadilhas',
+              '<p>Toda armadilha tem um sinal. Procurar no lugar certo encontra. Com tempo e bom método, desarma sem rolar. Quem cai testa para reduzir ou evitar.</p>',
+              quadro(['d12', 'Armadilha', 'Gatilho', 'Efeito'], [
+                  ['1', 'Dardo envenenado', 'fio esticado', '1d6'],
+                  ['2', 'Agulhas', 'placa de pressão', '1d6, lento'],
+                  ['3', 'Gás tóxico', 'abrir porta', '1d6, cego'],
+                  ['4', 'Rede com farpas', 'alavanca', '1d6, caído'],
+                  ['5', 'Lâmina pendular', 'degrau falso', '2d8'],
+                  ['6', 'Fosso com estacas', 'chão falso', '2d8, caído'],
+                  ['7', 'Bola de pedra', 'pegar objeto', '2d8, caído'],
+                  ['8', 'Runa de medo', 'ler inscrição', '1d6 San., amedrontado'],
+                  ['9', 'Jato de fogo', 'fechar porta', '3d10 fogo'],
+                  ['10', 'Teto desaba', 'falar alto', '3d10'],
+                  ['11', 'Sala inunda', 'abrir baú', '3d10, fôlego'],
+                  ['12', 'Estátua maldita', 'usar magia', '3d10, paralisado'],
+              ], 'rf-armadilhas')),
+        bloco('Perigos',
+              quadro(['d12', 'Movimento', 'Dano', 'Enfraquecimento'], [
+                  ['1', 'Areia movediça', 'Poças de ácido', 'Fumaça cegante'],
+                  ['2', 'Entulho solto', 'Vapor escaldante', 'Antimagia'],
+                  ['3', 'Gelo', 'Lava', 'Runas de exaustão'],
+                  ['4', 'Lama funda', 'Água congelante', 'Silêncio mágico'],
+                  ['5', 'Teias', 'Mofo tóxico', 'Esporos de sono'],
+                  ['6', 'Vinhas', 'Granizo', 'Cheiro nauseante'],
+                  ['7', 'Correnteza', 'Pedras caindo', 'Frio entorpecente'],
+                  ['8', 'Ventania', 'Cortina de fogo', 'Sons confusos'],
+                  ['9', 'Ladeira', 'Campo elétrico', 'Reflexos'],
+                  ['10', 'Piche', 'Chuva ácida', 'Névoa apaga-luz'],
+                  ['11', 'Chão ilusório', 'Gêiseres', 'Sussurros (San.)'],
+                  ['12', 'Gravidade louca', 'Cristais', 'Ar rarefeito'],
+              ], 'rf-perigos')),
+        bloco('Morrendo', *MORRENDO),
+        bloco('Exaustão', EXAUSTAO_CURTA),
+        bloco('Condições', *[regra(n, t) for n, t in CONDICOES]),
+        bloco('Combate',
+              regra('Iniciativa', '<i>Rápida:</i> personagens, depois inimigos. <i>Tática:</i> d20 + Des. <i>Caos</i> (opcional): role de novo a cada rodada.'),
+              quadro(['Cobertura', 'Metade', '3/4', 'Total'], [['CA', '+2', '+5', 'não é alvo']], 'rf-centro'),
+              regra('Improvisar', 'Lustre, estante, empurrão: peça um teste ou um ataque e decida o efeito.')),
+        bloco('Descanso',
+              regra('Interrompido', 'Con CD 12 ou perde o benefício. O longo gasta a ração mesmo assim.'),
+              '<p><b>Perigo.</b> 1d6, encontro com 1:</p>',
+              linha(['Inseguro', 'Arriscado', 'Mortal'], ['a cada 3 h', 'a cada 2 h', 'a cada hora'])),
+        bloco('Viagem',
+              '<p>Hexágono de 10 km:</p>',
+              linha(['A pé', 'Montado', 'Navegando', 'Difícil', 'Árduo'], ['4 h', '2 h', '1 h', 'o dobro', '8 h']),
+              regra('Ritmo', 'Até 8 h por dia. Encontros pela tabela de Perigo.'),
+              regra('Marcha forçada', 'Cada hora além de 8: Con CD 10, +2 por hora. Falhou: 1 de exaustão.'),
+              regra('Navegação', 'Terreno desconhecido: Int ao sair do hexágono. Falhou: hexágono vizinho aleatório.'),
+              regra('Comida', '3 dias sem ração; depois, 1 de exaustão por dia. Caçar: Int, 1 ração.')),
+        bloco('XP',
+              quadro(['Tesouro', 'XP', 'Outros', 'XP'], [
+                  ['Comum', '0', 'Ideia brilhante', '1'],
+                  ['Bom', '1', 'Combate difícil', '1'],
+                  ['Fabuloso', '3', 'Marco menor', '2'],
+                  ['Lendário', '10', 'Marco maior', '5'],
+              ], 'rf-xp'),
+              '<p>Cada personagem recebe tudo. Subir: nível × 10.</p>'),
+        bloco('Monstros',
+              linha(['Close', 'Near', 'Double near', 'Far'], ['Adjacente', 'Perto (6)', '12 casas', 'Longe']),
+              regra('Pés', '÷ 5 = casas.'),
+              regra('Valores', 'CA, PV, ataques, dano e CDs como estão. Sem Mana.'),
+              regra('Tendência', 'Lawful: Bem e Ordem. Chaotic: Mal e Caos. Neutral: Neutro.')),
+        bloco('O Funil',
+              regra('Nível 0', '4 personagens aleatórios por jogador, um em jogo por vez. Morrem a 0 PV. Perdeu todos: crie mais 1d4.'),
+              regra('Fim', 'Cada jogador escolhe um sobrevivente, que sobe para o nível 1.')),
+        bloco('Modos de jogo',
+              '<p><b>Mortal</b> morre a 0 PV · <b>Brutal</b> descanso longo recupera metade · <b>Escassez</b> sem descanso curto · '
+              '<b>Heroico</b> 1d4 Inspiração; gaste 1 para virar crítico · <b>Impulso</b> dano explode · '
+              '<b>Caçador</b> XP = metade do nível do monstro · <b>Caos</b> iniciativa a cada rodada · <b>Sem loucura</b> sem Sanidade.</p>'),
+    ]
+    return referencia('Referência do Mestre', 'escudo de bolso', blocos, 'rf-mestre')
+
+
 # ------------------------------------------------------------ impressão
 
 def achar_chrome():
@@ -215,7 +509,11 @@ def main():
     BUILD.mkdir(parents=True, exist_ok=True)
     SAIDA.mkdir(parents=True, exist_ok=True)
     chrome = achar_chrome()
-    for nome, gerar in [('ficha-personagem', ficha_personagem), ('ficha-funil', ficha_funil)]:
+    fichas = [
+        ('ficha-personagem', ficha_personagem), ('ficha-funil', ficha_funil),
+        ('referencia-jogador', referencia_jogador), ('referencia-mestre', referencia_mestre),
+    ]
+    for nome, gerar in fichas:
         html = BUILD / f'{nome}.html'
         html.write_text(gerar(), encoding='utf-8')
         pdf = SAIDA / f'{nome}.pdf'

@@ -92,3 +92,14 @@ Perigos são ameaças do ambiente. Quase sempre são visíveis e não podem ser 
 | 10 | Chão de piche | Chuva ácida | Névoa que apaga luzes |
 | 11 | Terreno ilusório | Gêiseres | Sussurros que roubam Sanidade |
 | 12 | Gravidade instável | Cristais cortantes | Ar rarefeito |
+
+## Dano Improvisado
+
+Quando algo fere e não tem dano definido, escolha pela gravidade. As faixas são as mesmas das armadilhas.
+
+| Gravidade | Dano | Exemplos |
+|---|---|---|
+| Leve | 1d6 | Queimar-se em brasas, levar uma estante na cabeça |
+| Grave | 2d8 | Pisar numa fogueira, ser atingido por um raio |
+| Mortal | 3d10 | Ser soterrado num túnel, cair num tonel de ácido |
+| Catastrófico | 6d10 | Ser esmagado por paredes, cair na lava |

@@ -587,3 +587,131 @@ body {
   text-align: center;
 }
 
+
+/* ------------------------------------------------------------ referências rápidas (1 página) */
+
+.rf-folha {
+  padding: 8mm 8mm 7mm;
+  font-size: 7.4pt;
+  line-height: 1.17;
+  display: flex;
+  flex-direction: column;
+}
+
+.rf-jogador {
+  font-size: 7.6pt;
+}
+
+.rf-mestre {
+  font-size: 7.3pt;
+}
+
+.rf-topo {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: end;
+  gap: 4mm;
+  padding-bottom: 1.5mm;
+  border-bottom: 2.5px solid var(--fh-tinta);
+  margin-bottom: 2mm;
+}
+
+.rf-topo .fh-logo {
+  font-size: 13pt;
+}
+
+.rf-topo .fh-logo svg {
+  width: 8mm;
+  height: 8mm;
+}
+
+.rf-titulo {
+  font-family: "IM Fell English SC", "EB Garamond", Georgia, serif;
+  font-size: 15pt;
+  line-height: 1;
+  text-align: center;
+}
+
+.rf-sub {
+  font-style: italic;
+  font-size: 8pt;
+}
+
+.rf-colunas {
+  flex: 1;
+  min-height: 0;
+  column-count: 3;
+  column-gap: 4mm;
+  column-rule: 1px solid var(--fh-fino);
+  column-fill: auto;
+}
+
+.rf-bloco {
+  break-inside: avoid;
+  margin: 0 0 1.6mm;
+}
+
+.rf-bloco h2 {
+  font-family: "IM Fell English SC", "EB Garamond", Georgia, serif;
+  font-weight: 400;
+  font-size: 9pt;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  background: var(--fh-tinta);
+  color: #fff;
+  padding: 0.7mm 1.5mm 0.5mm;
+  margin: 0 0 0.8mm;
+}
+
+.rf-bloco p {
+  margin: 0 0 0.5mm;
+}
+
+.rf-bloco b {
+  font-weight: 700;
+}
+
+.rf-bloco table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1.5px solid var(--fh-tinta);
+  margin: 0.6mm 0 0.9mm;
+  font-size: 0.95em;
+  line-height: 1.12;
+}
+
+.rf-bloco th {
+  font-family: "IM Fell English SC", "EB Garamond", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  text-align: left;
+  border-bottom: 1.5px solid var(--fh-tinta);
+  padding: 0.3mm 1mm;
+}
+
+.rf-bloco td {
+  border-top: 1px solid var(--fh-fino);
+  padding: 0.25mm 1mm;
+  vertical-align: top;
+}
+
+.rf-bloco tbody tr:nth-child(even) td {
+  background: #eee;
+}
+
+.rf-bloco table:not(.rf-centro) td:first-child,
+.rf-xp td:nth-child(3),
+.rf-armaduras td:nth-child(2) {
+  white-space: nowrap;
+}
+
+.rf-centro th,
+.rf-centro td {
+  text-align: center;
+}
+
+.rf-mod th,
+.rf-mod td {
+  padding: 0.3mm 0.2mm;
+  font-size: 6.6pt;
+}
