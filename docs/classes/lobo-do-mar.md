@@ -3,6 +3,8 @@
 Saqueadores de barcos longos que chegam com a maré e partem com o saque. Lutam ombro a ombro atrás dos escudos, rezam para deuses antigos e não temem a morte: uma morte corajosa é o único fim que vale a pena.
 { .epigrafe }
 
+![Saqueador de cabelo trançado, com machado e escudo redondo](../assets/images/classes/lobo-do-mar.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Base.** d8: 3 habilidades iniciais, 3 de Mana por nível, 2 avanços nos níveis 3, 6 e 9 (1 nos outros).
 
 **Atributo principal.** Força ou Constituição.

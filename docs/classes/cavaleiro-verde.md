@@ -3,6 +3,8 @@
 Cavaleiros de armadura coberta de musgo e elmo de galhada, juramentados ao bosque antigo e às cortes das fadas. Belos como o verão, cruéis como o inverno. Oferecem um golpe por golpe, e quem aceita raramente volta para cobrar o seu.
 { .epigrafe }
 
+![Cavaleiro de armadura coberta de folhas e elmo de chifres, com espadão e escudo](../assets/images/classes/cavaleiro-verde.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Base.** d8: 3 habilidades iniciais, 3 de Mana por nível, 2 avanços nos níveis 3, 6 e 9 (1 nos outros).
 
 **Atributo principal.** Força ou Sabedoria.

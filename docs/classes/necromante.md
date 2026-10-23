@@ -3,6 +3,8 @@
 Estudiosos da morte que olharam para além do véu e voltaram. Vestem cota de malha e carregam a espada tão bem quanto o cajado, cercados por ossos que se levantam ao seu comando. Os mais ambiciosos guardam a alma num frasco e nunca mais morrem.
 { .epigrafe }
 
+![Necromante encapuzado de cota de malha, com espada e cajado de crânio, cercado de esqueletos](../assets/images/classes/necromante.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Base.** d6: 3 habilidades iniciais, 4 de Mana por nível, 2 avanços nos níveis 3, 5, 7, 9 e 10 (1 nos outros).
 
 **Atributo principal.** Inteligência.

@@ -3,6 +3,8 @@
 Espadachins de chapéu de pluma, mosqueteiros e fanfarrões de língua afiada. Lutam com estilo, riem dos ferimentos e transformam cada luta numa história que vão contar na taverna.
 { .epigrafe }
 
+![Duelista de chapéu de pluma e capa, avançando com um florete](../assets/images/classes/duelista.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Base.** d8: 3 habilidades iniciais, 3 de Mana por nível, 2 avanços nos níveis 3, 6 e 9 (1 nos outros).
 
 **Atributo principal.** Destreza ou Carisma.

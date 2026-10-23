@@ -3,6 +3,8 @@
 Videntes de olhos leitosos que leem a sina nos ossos e bruxas que rogam pragas sobre o caldeirão. Enxergam os fios do destino e sabem puxá-los, para o bem de poucos e o mal de muitos. Todo fio puxado cobra um preço.
 { .epigrafe }
 
+![Bruxa de cabelo desgrenhado com cajado de crânio, ossos na mão e um caldeirão fervendo](../assets/images/classes/malvidente.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Base.** d4: 4 habilidades iniciais, 5 de Mana por nível, 2 avanços em todo nível.
 
 **Atributo principal.** Sabedoria ou Carisma.

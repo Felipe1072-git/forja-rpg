@@ -3,6 +3,8 @@
 Assassinos de máscara negra treinados num templo escondido, onde cresce a flor do lótus negro, guardada por um demônio. Quem come uma pétala e sobrevive ganha dons que nenhum mestre ensina. Chegam em silêncio, matam em silêncio e somem na fumaça.
 { .epigrafe }
 
+![Assassina mascarada saltando com uma lâmina curva no meio da fumaça](../assets/images/classes/lamina-silenciosa.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Base.** d8: 3 habilidades iniciais, 3 de Mana por nível, 2 avanços nos níveis 3, 6 e 9 (1 nos outros).
 
 **Atributo principal.** Destreza.
