@@ -225,6 +225,15 @@ Títulos são só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Cao
 | 5 | Juiz das Sinas | Guardião dos Segredos | Mãe das Pragas |
 | 6 | Senhor do Destino | Tecelão da Sina | Ruína dos Reinos |
 
+| d6 | Artífice: Ordem | Artífice: Neutro | Artífice: Caos |
+|---|---|---|---|
+| 1 | Aprendiz de Ferreiro | Funileiro | Fazedor de Bombas |
+| 2 | Ferreiro da Guilda | Remendão | Artilheiro |
+| 3 | Armeiro Real | Mecânico | Mão de Pólvora |
+| 4 | Mestre da Bigorna | Engenhoqueiro | Senhor dos Canhões |
+| 5 | Mestre Forjador | Pai dos Golens | Rei da Sucata |
+| 6 | Forjador de Lendas | Coração de Ferro | Senhor da Fornalha |
+
 ## Divindade
 
 Seguir uma divindade é opcional. Os jogadores criam as divindades, com domínio, bênçãos e responsabilidades. Veja Divindades.

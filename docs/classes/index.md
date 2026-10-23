@@ -35,6 +35,14 @@ Sua classe é o seu ofício. Ela define seu dado de vida, suas proficiências, s
 | d10 | 2 | 5 e 10 | 11 |
 | d12 | 2 | Nenhum | 9 |
 
+## CLASSES EXÓTICAS
+
+Classes estranhas, raras ou poderosas demais para todo mundo. Ficam fora do Personagem Aleatório: combine com o Mestre antes de escolher uma.
+
+| Classe | Base | Atributo principal | Armas | Armaduras |
+|---|---|---|---|---|
+| Artífice | d8 | Inteligência | Simples, maça, martelo de guerra, bestas | Leves, médias e escudo |
+
 **Classe fixa.** Você escolhe sua classe na criação do personagem, no nível 0 ou 1. Ela nunca muda.
 
 ## HABILIDADES DA CLASSE
