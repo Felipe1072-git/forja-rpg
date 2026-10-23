@@ -55,7 +55,7 @@ Character: [CLASSE]
 
 ## Ancestralidades
 
-Retratos pequenos para os cartões de Ancestralidades: **dois rostos da mesma ancestralidade, um masculino e um feminino, lado a lado**. Use uma conversa nova só para eles, com o prompt abaixo na primeira e depois "Same style, same rules. Next:" + a linha.
+Retratos pequenos para os cartões de Ancestralidades: **dois rostos da mesma ancestralidade, um masculino e um feminino, lado a lado**. Escolha a proporção **4:3** no Gemini. Use uma conversa nova só para eles, com o prompt abaixo na primeira e depois "Same style, same rules. Next:" + a linha.
 
 Salve como `docs/assets/images/ancestralidades/<arquivo>.webp` (mesmo tratamento das classes). No cartão, ponha a arte logo depois da epígrafe; ela vai para o canto direito, ao lado do título:
 
@@ -66,7 +66,7 @@ Salve como `docs/assets/images/ancestralidades/<arquivo>.webp` (mesmo tratamento
 ```text
 Black and white pen-and-ink portraits for an old-school fantasy RPG rulebook, in the gritty OSR style of books like Shadowdark: bold black ink lines, solid blacks, crosshatching for shadows, rough hand-drawn texture, high contrast, no gray tones, no color.
 
-Composition: two head-and-shoulders portraits of the same fantasy people side by side, a man on the left and a woman on the right, both in three-quarter view turned slightly toward each other. Same scale, same style, same eye level, a little empty space between and around them. Horizontal 3:2 format. Simple, strong shapes that still read clearly when printed small (about 5 cm wide): big shadows, few fine details.
+Composition: two head-and-shoulders portraits of the same fantasy people side by side, a man on the left and a woman on the right, both in three-quarter view turned slightly toward each other. Same scale, same style, same eye level, a little empty space between and around them. Horizontal 4:3 format. Simple, strong shapes that still read clearly when printed small (about 5 cm wide): big shadows, few fine details.
 
 Background: pure flat white (#FFFFFF) everywhere outside the drawing. No paper texture, no beige, no gradient, no vignette, no frame, no border, no circles or panels behind the heads.
 
