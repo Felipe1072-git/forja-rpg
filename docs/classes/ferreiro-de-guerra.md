@@ -19,6 +19,19 @@ Ferreiros de mãos queimadas que sabem que tudo pode ser consertado, melhorado o
 
 **Engenhocas.** Suas habilidades são engenharia, não magia: não podem ser dissipadas nem anuladas por antimagia, exceto as marcadas como *(runa)*. A Mana representa material, peças e pólvora. Ataques com suas engenhocas usam Inteligência.
 
+**Material de fera.** Quando uma criatura poderosa é derrotada perto de você (um troll, um dragão, um basilisco, a critério do Mestre), só você enxerga as partes que guardam o poder dela: couro, escamas, presas, ossos, glândulas. Colher leva 1 turno de exploração. Cada criatura dá um material.
+
+**Obra-Prima.** No tempo livre, forje um item com um material de fera: 1 semana de trabalho. O item é mágico e ganha um traço da criatura, escolhido com o Mestre, mais fraco que o original. Um traço passivo (uma resistência, visão no escuro, escalar paredes) funciona sempre. Um traço ativo (um sopro, um olhar, um salto) é usado como habilidade por quem empunha o item, pagando Mana; o Mestre calcula o custo pela tabela de componentes (veja Criando Habilidades). Sem material de fera, uma obra-prima feita de material raro (ferro de meteoro, prata de lua) ganha +1 em ataques e dano ou +1 de CA. Você mantém um número de obras-primas igual a metade do seu nível (mínimo 1); ao forjar mais uma, a mais antiga perde a magia.
+
+| Material | Item | Traço |
+|---|---|---|
+| Couro de troll | Capa | Em combate, cure 1 PV no início de cada turno seu. Dano de fogo ou ácido interrompe até o seu próximo turno. |
+| Escama de dragão | Escudo | Resistência ao elemento do dragão. |
+| Presa de behir | Lança | Ação, 3 de Mana: descarga à sua frente, numa área pequena adjacente; teste de resistência (Destreza), 1d8 de dano de tempestade. |
+| Olho de basilisco | Amuleto | Imunidade a petrificação. |
+| Pena de grifo | Botas | Movimento, 2 de Mana: salte até perto, sem provocar ataques de oportunidade. |
+| Glândula de aranha gigante | Luvas | Escale paredes e tetos com o movimento normal. |
+
 **Habilidades iniciais.** Escolha 3 na lista ou role 1d20 três vezes. Para começar rápido: Martelada, Ajudante Mecânico e Bomba de Pólvora.
 
 ## PROGRESSÃO DO FERREIRO DE GUERRA
@@ -86,4 +99,4 @@ Todas são marciais (engenharia), exceto as marcadas como *(runa)*, que são mag
 | 17 | **Armadilha Mecânica** | 2 | Ação. Arme uma armadilha numa casa adjacente. A primeira criatura que pisar nela faz um teste de resistência (Destreza): 1d8 de dano perfurante e fica presa (lenta) até gastar uma ação para se soltar. Escalonamento: +1d8 por +1 de Mana. | **Escondida:** só quem procurar ativamente a encontra. | **Duas armadilhas:** arme mais uma. | **Alarme:** quando dispara, você ouve de qualquer distância. |
 | 18 | **Estilhaçar** | 3 | Ação. Ataque com arma contra a arma, o escudo ou a armadura de um inimigo adjacente. Se acertar, o item não mágico se parte; uma armadura cai 2 de CA até ser consertada. | **Golpe duplo:** se acertar, também causa o dano normal da arma ao inimigo. | **Mágico:** funciona também em itens mágicos, que perdem a magia por 1 dia. | **Fragmentos:** inimigos adjacentes ao alvo sofrem 1d6 de dano perfurante. |
 | 19 | **Engenhoca** | 2 | Um turno de exploração. Monte uma ferramenta simples para o problema da vez: um gancho com corda, um pé de cabra, uma ponte dobrável de 3 casas, uma roldana, uma escada. Ela dura até o próximo descanso longo. | **Rápida:** leva 1 rodada. | **Grande:** pode fazer uma ponte de 6 casas, uma balsa ou uma carroça simples. | **Precisa:** quem usa a engenhoca tem vantagem no teste. |
-| 20 | **Obra-Prima** *(runa)* | Passiva | No tempo livre, você pode forjar um item mágico permanente: 1 semana de trabalho e um material raro que o Mestre define (escama de dragão, ferro de meteoro, coração de golem). O item tem uma propriedade, como +1 em ataques e dano, +1 de CA ou um elemento. Você pode manter de pé um número de obras-primas igual a metade do seu nível (mínimo 1). | **Duas propriedades:** cada obra-prima pode ter duas propriedades. | **Ferreiro famoso:** forjar leva só 3 dias, e nobres pagam bem por seu trabalho. | **Arma lendária:** uma das suas obras-primas pode ter +2 em vez de +1. |
+| 20 | **Forja de Lendas** | Passiva | Suas obras-primas podem ter dois traços de material de fera, ou um traço e +1 em ataques e dano ou +1 de CA. | **Ferreiro famoso:** forjar uma obra-prima leva só 3 dias, e nobres pagam bem pelo seu trabalho. | **Arma lendária:** uma das suas obras-primas pode ter +2 em vez de +1. | **Força plena:** um traço de uma das suas obras-primas funciona com a força total da criatura. |
