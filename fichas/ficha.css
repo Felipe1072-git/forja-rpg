@@ -606,6 +606,23 @@ body {
   font-size: 7.3pt;
 }
 
+.rf-criacao {
+  font-size: 7.3pt;
+}
+
+.rf-armas {
+  font-size: 0.88em !important;
+}
+
+.rf-passos {
+  margin: 0;
+  padding-left: 4.5mm;
+}
+
+.rf-passos li {
+  margin: 0 0 0.3mm;
+}
+
 .rf-topo {
   display: grid;
   grid-template-columns: auto 1fr auto;

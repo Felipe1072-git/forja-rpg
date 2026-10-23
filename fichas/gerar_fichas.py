@@ -486,6 +486,146 @@ def referencia_mestre():
     return referencia('Referência do Mestre', 'escudo de bolso', blocos, 'rf-mestre')
 
 
+def passos(*itens):
+    return '<ol class="rf-passos">' + ''.join(f'<li>{i}</li>' for i in itens) + '</ol>'
+
+
+def guia_criacao():
+    blocos = [
+        bloco('Passo a passo',
+              passos('<b>Atributos.</b> Role e distribua.',
+                     '<b>Ancestralidade.</b> Escolha ou role d20.',
+                     '<b>Classe.</b> Escolha ou role d20. Anote base, atributo principal e proficiências.',
+                     '<b>Números.</b> PV, Mana, Sanidade, CA e o resto.',
+                     '<b>Habilidades.</b> As iniciais, da lista da classe.',
+                     '<b>Antecedente.</b> Escolha ou role d20.',
+                     '<b>Tendência e título.</b>',
+                     '<b>Divindade.</b> Opcional.',
+                     '<b>Idiomas.</b>',
+                     '<b>Equipamento.</b> Ouro ou pacote inicial.',
+                     '<b>Nome.</b> E um motivo para se aventurar.')),
+        bloco('1. Atributos',
+              regra('Rolagem', '4d6, descarte o menor dado e some. Repita até ter seis valores e distribua como quiser. Máximo 18 na criação.'),
+              quadro(['Valor', '3', '4–5', '6–7', '8–9', '10–11', '12–13', '14–15', '16–17', '18'],
+                     [['Mod.', '-4', '-3', '-2', '-1', '+0', '+1', '+2', '+3', '+4']], 'rf-centro rf-mod')),
+        bloco('2. Ancestralidade',
+              quadro(['d20', 'Povo', 'Traços'], [
+                  ['1–3', 'Humano', '1 avanço extra no nível 1; +1 Inspiração por sessão.'],
+                  ['4–5', 'Anão', 'Visão no escuro; +1 PV por nível e dados de vida com vantagem; resiste a veneno.'],
+                  ['6–7', 'Elfo', 'Visão no escuro; vantagem para notar escondidos; transe; 1 magia de Mago de custo até 2; espada longa e arco longo.'],
+                  ['8', 'Drow', 'Visão no escuro até longe; sensível ao sol; transe; escuridão e luz que revela; besta leve, espada curta, florete.'],
+                  ['9', 'Meio-elfo', 'Visão no escuro; 1 traço de Humano e 1 de Elfo.'],
+                  ['10–11', 'Halfling*', 'Rola de novo o 1 natural; vantagem contra medo; passa por criaturas maiores.'],
+                  ['12', 'Draconato', 'Resiste a um elemento; +1 de CA; sopro de 2d6 em área pequena.'],
+                  ['13', 'Gnomo*', 'Visão no escuro; vantagem contra magia (Int, Sab, Car); conhece Ilusão; fala com bichos pequenos.'],
+                  ['14', 'Orc', 'Visão no escuro; 1 vez fica com 1 PV ao cair a 0; +1 de dano corpo a corpo.'],
+                  ['15', 'Meio-orc', 'Visão no escuro; 1 traço de Humano e 1 de Orc.'],
+                  ['16', 'Tiefling', 'Visão no escuro; imune a fogo; escuridão mágica.'],
+                  ['17–18', 'Goblin*', 'Visão no escuro; vantagem para se esconder e +1d6 contra surpreendidos; foge 2 casas sem provocar.'],
+                  ['19–20', 'Autômato', 'Não respira, come nem dorme; imune a veneno e doença; corpo é a armadura: CA 13 + Des ou 17.'],
+              ], 'rf-ancestral'),
+              '<p>* Pequeno. Detalhes e usos por descanso: veja Ancestralidades. <b>Própria:</b> 2 pontos de traço (menor 1, maior 2).</p>'),
+        bloco('3. Classe',
+              quadro(['d20', 'Classe', 'Base', 'Atributo', 'Armaduras'], [
+                  ['1', 'Guerreiro', 'd10', 'For ou Des', 'Todas, escudo'],
+                  ['2', 'Sacerdote', 'd8', 'Sab', 'Todas, escudo'],
+                  ['3', 'Ladino', 'd6', 'Des', 'Leves'],
+                  ['4', 'Mago', 'd4', 'Int', '—'],
+                  ['5', 'Bárbaro', 'd12', 'For', 'L, M, escudo'],
+                  ['6', 'Patrulheiro', 'd8', 'Des ou Sab', 'L, M, escudo'],
+                  ['7', 'Bardo', 'd6', 'Car', 'Leves'],
+                  ['8', 'Druida', 'd8', 'Sab', 'L, M, escudo'],
+                  ['9', 'Paladino', 'd10', 'Car', 'Todas, escudo'],
+                  ['10', 'Feiticeiro', 'd6', 'Car ou Con', '—'],
+                  ['11', 'Monge', 'd8', 'Des ou Sab', '—'],
+                  ['12', 'Alquimista', 'd8', 'Int', 'Leves'],
+                  ['13', 'Guerreiro Basilisco', 'd8', 'Con', '—'],
+                  ['14', 'Duelista', 'd8', 'Des ou Car', 'Leves'],
+                  ['15', 'Cavaleiro Verde', 'd8', 'For ou Sab', 'Todas, escudo'],
+                  ['16', 'Cavaleiro Profano', 'd10', 'For ou Car', 'Todas, escudo'],
+                  ['17', 'Necromante', 'd6', 'Int', 'L, M'],
+                  ['18', 'Lâmina Silenciosa', 'd8', 'Des', 'Leves'],
+                  ['19', 'Lobo do Mar', 'd8', 'For ou Con', 'L, M, escudo'],
+                  ['20', 'Malvidente', 'd4', 'Sab ou Car', 'Leves'],
+              ], 'rf-classes'),
+              '<p>L leves, M médias. As armas de cada classe estão na página dela. Com dois atributos, escolha um.</p>',
+              quadro(['Base', 'Mana por nível', 'Habilidades no nível 1', 'Níveis com 2 avanços'], [
+                  ['d4', '5', '4', 'todos'],
+                  ['d6', '4', '3', '3, 5, 7, 9, 10'],
+                  ['d8', '3', '3', '3, 6, 9'],
+                  ['d10', '2', '2', '5, 10'],
+                  ['d12', '2', '2', 'nenhum'],
+              ], 'rf-centro')),
+        bloco('4. Números',
+              regra('PV', 'dado de vida (a base) + mod. de Con (mín. 1).'),
+              regra('Mana', 'Mana por nível da base + mod. do atributo principal (mín. 1).'),
+              regra('Sanidade', '10 + mod. de Int + Sab + Car.'),
+              regra('CA', '10 + Des, ou a da armadura. Escudo +2.'),
+              regra('CD de habilidade', '10 + mod. do atributo principal.'),
+              regra('Mana extra máxima', 'igual ao nível (1).'),
+              regra('Espaços de carga', 'mod. de For + Con (mín. 1). Mochila +5.'),
+              regra('Movimento', '6 casas. <b>Inspiração:</b> 1 por sessão.')),
+        bloco('5. Habilidades',
+              '<p>Escolha na lista da sua classe quantas a base manda, ou role d20 na lista. Anote na ficha o custo, a ação, o efeito e o escalonamento. As três melhorias de cada uma ficam para os avanços. Toda habilidade ativa gasta Mana.</p>'),
+        bloco('6. Antecedente',
+              '<p>Vantagem em testes ligados a ele. <b>1</b> Trombadinha · <b>2</b> Marinheiro · <b>3</b> Ferreiro · <b>4</b> Caçador · '
+              '<b>5</b> Acólito · <b>6</b> Erudito · <b>7</b> Soldado · <b>8</b> Nobre · <b>9</b> Herbalista · <b>10</b> Mercador · '
+              '<b>11</b> Artista · <b>12</b> Saqueador de tumbas · <b>13</b> Mineiro · <b>14</b> Fazendeiro · <b>15</b> Cirurgião-barbeiro · '
+              '<b>16</b> Aprendiz de mago · <b>17</b> Guarda · <b>18</b> Andarilho · <b>19</b> Contrabandista · <b>20</b> Cultista.</p>'),
+        bloco('7. Tendência e título',
+              regra('Tendência', 'Um lado em cada eixo: Bem, Neutro ou Mal; Ordem, Neutro ou Caos. Escreva "Bem e Ordem", "Mal e Neutro"... Neutro nos dois é só "Neutro". Aleatório: 1d6 por eixo (1–2 Bem/Ordem, 3–4 Neutro, 5–6 Mal/Caos).'),
+              regra('Título', 'Só sabor. 1d6 na tabela da sua classe, na coluna do eixo Ordem x Caos (veja Títulos).')),
+        bloco('8. Divindade (opcional)',
+              '<p>Você cria a sua: <b>nome</b>, <b>entidade</b> (deus, demônio, fada, ser antigo...), <b>domínio</b> (vantagem em testes ligados a ele), '
+              '<b>vínculo</b> (devoção ou pacto) e <b>2 responsabilidades</b>. Quebrou uma: perde as bênçãos e -2 de Sanidade máx.</p>',
+              regra('Bênção menor (nível 1)', 'd6: <b>1</b> resistência ao elemento divino · <b>2</b> visão no escuro · <b>3</b> +1 de CA · '
+                    '<b>4</b> imune a medo · <b>5</b> não é surpreendido · <b>6</b> +1 com a arma sagrada. Maior no 5, milagre no 9.')),
+        bloco('9. Idiomas',
+              '<p>Não há língua comum. Você fala a do seu povo e mais idiomas = mod. de Int (se positivo).</p>'),
+        bloco('10. Equipamento',
+              regra('Ouro', '2d6 × 5 po e compre o que quiser.'),
+              regra('Ou pacote inicial', 'Kit de exploração + uma arma de até 10 po + uma armadura de até 15 po.'),
+              regra('Kit de exploração', '7 po, 2 espaços: mochila, pederneira, 5 tochas, 3 rações, corda de 15 m, gancho de escalada, 10 cravos.'),
+              quadro(['Armadura', 'Custo', 'CA', 'For'], [
+                  ['Couro (L)', '10 po', '11 + Des', '—'], ['Couro batido (L)', '25 po', '12 + Des', '—'],
+                  ['Gibão de peles (M)', '15 po', '12 + Des', '11'], ['Cota de malha (M)', '60 po', '13 + Des', '13'],
+                  ['Cota de talas (P)', '100 po', '15', '13'], ['Placas (P)', '200 po', '16', '15'],
+                  ['Escudo', '10 po', '+2', '—'],
+              ], 'rf-armaduras')),
+        bloco('Armas',
+              quadro(['Simples', 'po', 'Dano', 'Propriedades'], [
+                  ['Adaga', '2', '1d4', 'acuidade, arremesso'], ['Azagaia', '1', '1d6', 'arremesso (longe)'],
+                  ['Bumerangue', '2', '1d4', 'arremesso (longe)'], ['Bordão', '1', '1d4', 'versátil (1d6)'],
+                  ['Clava', '1', '1d4', '—'], ['Lança', '1', '1d6', 'arremesso, versátil (1d8)'],
+                  ['Boleadeira', '2', '1d4', 'arremesso'], ['Shuriken', '1', '1d4', 'acuidade, arremesso'],
+                  ['Zarabatana', '2', '1', 'perto, munição'], ['Arco curto', '6', '1d6', 'longe, duas mãos, munição'],
+                  ['Besta leve', '8', '1d6', 'longe, duas mãos, munição, recarga'],
+              ], 'rf-armas'),
+              quadro(['Marciais', 'po', 'Dano', 'Propriedades'], [
+                  ['Chicote', '2', '1d4', 'acuidade, alcance'], ['Cimitarra', '8', '1d6', 'acuidade'],
+                  ['Corrente de lâminas', '10', '1d6', 'acuidade, alcance'], ['Espada curta', '7', '1d6', 'acuidade'],
+                  ['Florete', '10', '1d8', 'acuidade'], ['Machadinha', '3', '1d6', 'arremesso'],
+                  ['Maça', '5', '1d6', '—'], ['Mangual', '8', '1d8', '—'],
+                  ['Espada longa', '10', '1d8', 'versátil (1d10)'], ['Machado de batalha', '10', '1d8', 'versátil (1d10)'],
+                  ['Martelo de guerra', '10', '1d8', 'versátil (1d10)'], ['Alabarda', '15', '1d10', 'alcance, duas mãos, pesada'],
+                  ['Pique', '8', '1d10', 'alcance, duas mãos, pesada'], ['Espadão', '15', '1d12', 'duas mãos, pesada'],
+                  ['Machado grande', '15', '1d12', 'duas mãos, pesada'], ['Arco longo', '12', '1d8', 'muito longe, duas mãos, munição, pesada'],
+                  ['Besta pesada', '15', '1d10', 'muito longe, duas mãos, munição, recarga, pesada'],
+              ], 'rf-armas')),
+        bloco('Nível 0 e o Funil',
+              '<p>Atributos em ordem (For, Des, Con, Int, Sab, Car). Ancestralidade, classe (só o dado de vida), antecedente e tendência rolados. '
+              'Sem Mana, sem habilidades; usa qualquer arma e armadura. Equipamento: 1d4 itens em d12: '
+              '<b>1</b> tocha · <b>2</b> adaga · <b>3</b> vara de 3 m · <b>4</b> arco curto e 5 flechas · <b>5</b> corda · <b>6</b> óleo · '
+              '<b>7</b> pé de cabra · <b>8</b> 10 cravos · <b>9</b> pederneira · <b>10</b> gancho · <b>11</b> clava · <b>12</b> estrepes.</p>',
+              regra('Sobreviveu', 'Vira nível 1: ganha o resto da classe e soma mais um dado de vida aos PV.')),
+        bloco('Personagem Forjado (opcional)',
+              '<p>Sem classe: escolha uma base e qualquer atributo principal, e crie suas habilidades iniciais (custo até 6, veja Criando Habilidades).</p>',
+              linha(['d4', 'd6', 'd8', 'd10', 'd12'],
+                    ['simples', 'simples; leves', 'simples e marciais; leves, escudo', 'todas', 'todas'])),
+    ]
+    return referencia('Criação de Personagem', 'do zero ao nível 1 numa página', blocos, 'rf-criacao')
+
+
 # ------------------------------------------------------------ impressão
 
 def achar_chrome():
@@ -512,6 +652,7 @@ def main():
     fichas = [
         ('ficha-personagem', ficha_personagem), ('ficha-funil', ficha_funil),
         ('referencia-jogador', referencia_jogador), ('referencia-mestre', referencia_mestre),
+        ('guia-criacao', guia_criacao),
     ]
     for nome, gerar in fichas:
         html = BUILD / f'{nome}.html'
