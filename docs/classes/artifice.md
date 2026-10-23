@@ -3,6 +3,8 @@
 Ferreiros de mãos queimadas que sabem que tudo pode ser consertado, melhorado ou explodido. Batem o martelo na bigorna até o aço cantar, dão vida a criaturas de ferro e carregam canhões que não deviam existir.
 { .epigrafe }
 
+![Ferreiro de avental com um martelo erguido e um canhão de mão fumegando, ferramentas e engrenagens no cinto](../assets/images/classes/artifice.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Classe exótica.** Fica fora do Personagem Aleatório. Combine com o Mestre antes de escolher (veja Classes exóticas).
 
 **Base.** d8: 3 habilidades iniciais, 3 de Mana por nível, 2 avanços nos níveis 3, 6 e 9 (1 nos outros).
