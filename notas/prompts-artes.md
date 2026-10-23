@@ -55,38 +55,38 @@ Character: [CLASSE]
 
 ## Ancestralidades
 
-Retratos pequenos (cabeça e ombros) para os cartões de Ancestralidades. Use uma conversa nova só para eles, com o prompt abaixo na primeira e depois "Same style, same rules. Next:" + a linha.
+Retratos pequenos para os cartões de Ancestralidades: **dois rostos da mesma ancestralidade, um masculino e um feminino, lado a lado**. Use uma conversa nova só para eles, com o prompt abaixo na primeira e depois "Same style, same rules. Next:" + a linha.
 
 Salve como `docs/assets/images/ancestralidades/<arquivo>.webp` (mesmo tratamento das classes). No cartão, ponha a arte logo depois da epígrafe; ela vai para o canto direito, ao lado do título:
 
 ```markdown
-![Humano](../assets/images/ancestralidades/humano.webp){ .fj-arte-ancestral loading=lazy }
+![Humano e humana](../assets/images/ancestralidades/humano.webp){ .fj-arte-ancestral loading=lazy }
 ```
 
 ```text
-Black and white pen-and-ink portrait for an old-school fantasy RPG rulebook, in the gritty OSR style of books like Shadowdark: bold black ink lines, solid blacks, crosshatching for shadows, rough hand-drawn texture, high contrast, no gray tones, no color.
+Black and white pen-and-ink portraits for an old-school fantasy RPG rulebook, in the gritty OSR style of books like Shadowdark: bold black ink lines, solid blacks, crosshatching for shadows, rough hand-drawn texture, high contrast, no gray tones, no color.
 
-Composition: head and shoulders only, three-quarter view, centered, square 1:1 format, with empty space around the head. Simple, strong shapes that still read clearly when printed very small (about 3 cm wide): big shadows, few fine details.
+Composition: two head-and-shoulders portraits of the same fantasy people side by side, a man on the left and a woman on the right, both in three-quarter view turned slightly toward each other. Same scale, same style, same eye level, a little empty space between and around them. Horizontal 3:2 format. Simple, strong shapes that still read clearly when printed small (about 5 cm wide): big shadows, few fine details.
 
-Background: pure flat white (#FFFFFF) everywhere outside the drawing. No paper texture, no beige, no gradient, no vignette, no frame, no border, no circle behind the head.
+Background: pure flat white (#FFFFFF) everywhere outside the drawing. No paper texture, no beige, no gradient, no vignette, no frame, no border, no circles or panels behind the heads.
 
 No text, no letters, no logo, no signature, no watermark.
 
-Character: [ANCESTRALIDADE]
+People: [ANCESTRALIDADE]
 ```
 
 | Ancestralidade | Arquivo | Linha para [ANCESTRALIDADE] |
 |---|---|---|
-| Humano | humano | A determined human woman with a scar on her cheek and a traveler's hood, ambitious stare. |
-| Anão | anao | A stern dwarf man with a long braided beard tied with metal rings and a heavy iron helm. |
-| Elfo | elfo | An elegant elf woman with long pointed ears, long straight hair and a calm, ageless face, a thin circlet on her brow. |
-| Drow | drow | A drow man with skin rendered in solid black ink and hatching, long white hair, long pointed ears and a cruel, elegant smile, a spider-shaped earring. |
-| Meio-elfo | meio-elfo | A half-elf man with slightly pointed ears, mixed human and elven features and a friendly half-smile, a traveling cloak. |
-| Halfling | halfling | A cheerful halfling woman with curly hair, round cheeks and a long pipe in her mouth, small and confident. |
-| Draconato | draconato | A dragonborn with a reptilian head, swept-back horns and scaled skin, smoke curling from the nostrils. |
-| Gnomo | gnomo | A gnome man with a big nose, wild hair and brass goggles pushed up on his forehead, mischievous grin. |
-| Orc | orc | A fierce orc woman with big tusks, a heavy brow, war paint and a fur collar. |
-| Meio-orc | meio-orc | A half-orc man with small tusks, a broken nose and a stoic expression, a worn hood. |
-| Tiefling | tiefling | A tiefling woman with large curved horns, blank pupil-less eyes and a sly smile, the tip of her tail curling over the shoulder. |
-| Goblin | goblin | A nervous goblin with huge ears, sharp crooked teeth and wide eyes, holding a dagger close to the face. |
-| Autômato | automato | An automaton with a face of riveted metal plates, glowing eye slits and visible gears and cables at the neck. |
+| Humano | humano | Humans: weathered adventurers with determined, ambitious stares; one has a scar on the cheek, the other a traveler's hood. |
+| Anão | anao | Dwarves: stern and stocky; he has a long beard braided with metal rings, she has thick braided hair with metal rings; heavy iron helm or fur collar. |
+| Elfo | elfo | Elves: elegant, with long pointed ears, long straight hair and calm, ageless faces; thin circlets on the brow. |
+| Drow | drow | Drow: skin rendered in solid black ink and hatching, long white hair, long pointed ears, cruel and elegant expressions, spider-shaped jewelry. |
+| Meio-elfo | meio-elfo | Half-elves: slightly pointed ears, a mix of human and elven features, friendly half-smiles, traveling cloaks. |
+| Halfling | halfling | Halflings: small folk with curly hair, round cheeks and cheerful, confident faces; one holds a long pipe. |
+| Draconato | draconato | Dragonborn: reptilian heads with swept-back horns and scaled skin, smoke curling from the nostrils; she has a slightly slimmer snout and a frill. |
+| Gnomo | gnomo | Gnomes: big noses, wild hair, mischievous grins, brass goggles pushed up on the forehead. |
+| Orc | orc | Orcs: fierce faces with big tusks, heavy brows, war paint and fur collars. |
+| Meio-orc | meio-orc | Half-orcs: small tusks, strong jaws and stoic expressions; one has a broken nose, the other a worn hood. |
+| Tiefling | tiefling | Tieflings: large curved horns, blank pupil-less eyes and sly smiles, tail tips curling over the shoulders. |
+| Goblin | goblin | Goblins: huge ears, sharp crooked teeth, wide nervous eyes; one holds a dagger close to the face. |
+| Autômato | automato | Automatons: faces of riveted metal plates, glowing eye slits, visible gears and cables at the neck; one with a broad, heavy build, the other with a slender, graceful build. |

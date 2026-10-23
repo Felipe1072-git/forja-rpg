@@ -261,7 +261,7 @@
 
 .md-typeset img.fj-arte-ancestral {
   display: block;
-  width: 6.5rem;
+  width: min(11rem, 38vw);
   height: auto;
   mix-blend-mode: multiply;
 }
