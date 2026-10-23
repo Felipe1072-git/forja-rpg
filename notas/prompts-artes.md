@@ -1,4 +1,4 @@
-# Prompts de arte das classes (Gemini / Nano Banana)
+# Prompts de arte (Gemini / Nano Banana)
 
 Gere todas as artes **na mesma conversa**, uma por mensagem, para o estilo ficar igual. Mande o prompt base uma vez com a primeira classe; depois, só "Same style, same rules. Next:" + a linha da classe.
 
@@ -52,3 +52,41 @@ Character: [CLASSE]
 - **Fundo.** Se vier com fundo bege ou cinza, peça: "Make the background pure flat white #FFFFFF." O site cuida do resto: no tema claro o branco vira pergaminho; no escuro a arte inverte e vira traço claro.
 - **Rosto e corpo.** Para variar ancestralidade e gênero, acrescente na linha, por exemplo, "a dwarf woman" ou "an orc man".
 - **Formato.** Mantenha sempre 3:4 vertical, para todas as páginas terem o mesmo tamanho de arte.
+
+## Ancestralidades
+
+Retratos pequenos (cabeça e ombros) para os cartões de Ancestralidades. Use uma conversa nova só para eles, com o prompt abaixo na primeira e depois "Same style, same rules. Next:" + a linha.
+
+Salve como `docs/assets/images/ancestralidades/<arquivo>.webp` (mesmo tratamento das classes). No cartão, ponha a arte logo depois da epígrafe; ela vai para o canto direito, ao lado do título:
+
+```markdown
+![Humano](../assets/images/ancestralidades/humano.webp){ .fj-arte-ancestral loading=lazy }
+```
+
+```text
+Black and white pen-and-ink portrait for an old-school fantasy RPG rulebook, in the gritty OSR style of books like Shadowdark: bold black ink lines, solid blacks, crosshatching for shadows, rough hand-drawn texture, high contrast, no gray tones, no color.
+
+Composition: head and shoulders only, three-quarter view, centered, square 1:1 format, with empty space around the head. Simple, strong shapes that still read clearly when printed very small (about 3 cm wide): big shadows, few fine details.
+
+Background: pure flat white (#FFFFFF) everywhere outside the drawing. No paper texture, no beige, no gradient, no vignette, no frame, no border, no circle behind the head.
+
+No text, no letters, no logo, no signature, no watermark.
+
+Character: [ANCESTRALIDADE]
+```
+
+| Ancestralidade | Arquivo | Linha para [ANCESTRALIDADE] |
+|---|---|---|
+| Humano | humano | A determined human woman with a scar on her cheek and a traveler's hood, ambitious stare. |
+| Anão | anao | A stern dwarf man with a long braided beard tied with metal rings and a heavy iron helm. |
+| Elfo | elfo | An elegant elf woman with long pointed ears, long straight hair and a calm, ageless face, a thin circlet on her brow. |
+| Drow | drow | A drow man with skin rendered in solid black ink and hatching, long white hair, long pointed ears and a cruel, elegant smile, a spider-shaped earring. |
+| Meio-elfo | meio-elfo | A half-elf man with slightly pointed ears, mixed human and elven features and a friendly half-smile, a traveling cloak. |
+| Halfling | halfling | A cheerful halfling woman with curly hair, round cheeks and a long pipe in her mouth, small and confident. |
+| Draconato | draconato | A dragonborn with a reptilian head, swept-back horns and scaled skin, smoke curling from the nostrils. |
+| Gnomo | gnomo | A gnome man with a big nose, wild hair and brass goggles pushed up on his forehead, mischievous grin. |
+| Orc | orc | A fierce orc woman with big tusks, a heavy brow, war paint and a fur collar. |
+| Meio-orc | meio-orc | A half-orc man with small tusks, a broken nose and a stoic expression, a worn hood. |
+| Tiefling | tiefling | A tiefling woman with large curved horns, blank pupil-less eyes and a sly smile, the tip of her tail curling over the shoulder. |
+| Goblin | goblin | A nervous goblin with huge ears, sharp crooked teeth and wide eyes, holding a dagger close to the face. |
+| Autômato | automato | An automaton with a face of riveted metal plates, glowing eye slits and visible gears and cables at the neck. |

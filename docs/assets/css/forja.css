@@ -235,6 +235,42 @@
   margin-top: 0.6em;
 }
 
+/* retrato no cartão (marcado com { .fj-arte-ancestral }): canto direito,
+   ao lado do título e da epígrafe; o resto do cartão ocupa a largura toda */
+.md-typeset .fj-card:has(img.fj-arte-ancestral) {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 1em;
+}
+
+.md-typeset .fj-card:has(img.fj-arte-ancestral) > * {
+  grid-column: 1 / -1;
+}
+
+.md-typeset .fj-card:has(img.fj-arte-ancestral) > h2,
+.md-typeset .fj-card:has(img.fj-arte-ancestral) > .epigrafe {
+  grid-column: 1;
+}
+
+.md-typeset .fj-card > p:has(> img.fj-arte-ancestral) {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: end;
+  margin: 0.4em 0 0.4em;
+}
+
+.md-typeset img.fj-arte-ancestral {
+  display: block;
+  width: 6.5rem;
+  height: auto;
+  mix-blend-mode: multiply;
+}
+
+[data-md-color-scheme="slate"] .md-typeset img.fj-arte-ancestral {
+  filter: invert(1);
+  mix-blend-mode: screen;
+}
+
 /* ---------------------------------------------------------------- tabelas */
 
 .md-typeset table:not([class]) {
