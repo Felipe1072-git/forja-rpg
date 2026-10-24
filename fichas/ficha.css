@@ -959,3 +959,34 @@ body {
   font-size: 9pt;
   flex: none;
 }
+
+/* caixa de virtude (colapso): mesma forma da exaustão, com rodapé para traumas */
+.fh-virtude .fh-exa-item b {
+  width: auto;
+  margin-right: 0.3mm;
+}
+
+.fh-virtude .fh-exa-item {
+  font-size: 7pt;
+}
+
+.fh-vir-rodape {
+  display: flex;
+  align-items: flex-end;
+  gap: 2mm;
+  padding: 0 1.5mm 3mm;
+}
+
+.fh-vir-rodape .fh-campo {
+  min-height: 4mm;
+}
+
+.fh-vir-rodape em {
+  flex: none;
+  font-size: 6.5pt;
+  color: #555;
+}
+
+.fh-vir-rodape .fh-campo {
+  flex: 1;
+}

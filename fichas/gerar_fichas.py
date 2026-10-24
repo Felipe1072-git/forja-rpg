@@ -71,6 +71,20 @@ def exaustao():
             '<em>descanso longo remove 1</em></div><div class="fh-exa-itens">' + itens + '</div></div>')
 
 
+VIRTUDES = [('Firme', 'imune a medo e encanto'), ('Corajoso', 'aliado perto +1 San./turno'),
+            ('Focado', '+1 ataque; vant. Int, Sab, Car'), ('Poderoso', '+1d4 de dano'),
+            ('Vigoroso', 'cura 1d6; +1 de CA'), ('Inabalável', 'vant. em resistências')]
+
+
+def virtude():
+    itens = ''.join(f'<div class="fh-exa-item"><i></i><b>{n}</b><span>{e}</span></div>' for n, e in VIRTUDES)
+    return ('<div class="fh-exaustao fh-virtude"><div class="fh-exa-rot"><span class="fh-rotulo">Virtude (d6)</span>'
+            '<em>Sanidade 0: CD 10, maior atributo mental · falhou: morre</em></div>'
+            '<div class="fh-exa-itens">' + itens + '</div>'
+            '<div class="fh-vir-rodape"><em>até o descanso longo, imune a dano de Sanidade; depois, trauma</em>'
+            + campo('Traumas') + '</div></div>')
+
+
 def bolinhas(n):
     return '<span class="fh-bolinhas">' + '<i></i>' * n + '</span>'
 
@@ -129,12 +143,12 @@ def ficha_personagem():
         '<div class="fh-marcas">'
         f'<div><span class="fh-rotulo">Inspiração</span>{bolinhas(6)}</div>'
         '<div><span class="fh-rotulo">Movimento</span><span class="fh-dica-fixa">6 casas</span></div>'
-        '</div>'
+        '</div>' + virtude() +
         '</div></div>' +
         titulo('Ataques') +
         tabela(['Arma', 'Ataque', 'Dano', 'Tipo', 'Propriedades'], 4, 'fh-ataques') +
         titulo('Habilidades') +
-        tabela(['Habilidade', 'Custo', 'Ação', 'Efeito, escalonamento e melhorias'], 10, 'fh-habilidades') +
+        tabela(['Habilidade', 'Custo', 'Ação', 'Efeito, escalonamento e melhorias'], 9, 'fh-habilidades') +
         '</div>'
     )
 
