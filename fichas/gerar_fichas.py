@@ -628,6 +628,100 @@ def guia_criacao():
     return referencia('Criação de Personagem', 'do zero ao nível 1 numa página', blocos, 'rf-criacao')
 
 
+# ------------------------------------------------------------ ficha de exploração (Mestre)
+
+def fx_bolas(n, grupo=0, cls=''):
+    """Bolinhas para marcar. `grupo` separa de tantas em tantas (ex.: 6 = 1 hora)."""
+    c = f' {cls}' if cls else ''
+    bolas = ''
+    for i in range(1, n + 1):
+        bolas += '<i></i>'
+        if grupo and i % grupo == 0 and i < n:
+            bolas += '<b class="fx-sep"></b>'
+    return f'<span class="fx-bolas{c}">{bolas}</span>'
+
+
+def fx_turnos(horas):
+    cab = '<th>Hora</th>' + ''.join(
+        f'<th>{t}{" · 1d6" if t % 2 == 0 else ""}{" · desc." if t == 6 else ""}</th>' for t in range(1, 7)) + '<th>Onde / notas</th>'
+    linhas = ''
+    for h in range(1, horas + 1):
+        celulas = ''
+        for t in range(1, 7):
+            n = (h - 1) * 6 + t
+            extra = '<span class="fx-d6"></span>' if t % 2 == 0 else ''
+            extra += '<span class="fx-desc"></span>' if t == 6 else ''
+            celulas += f'<td><span class="fx-n">{n}</span><i></i>{extra}</td>'
+        linhas += f'<tr><td class="fx-hora">{h}</td>{celulas}<td></td></tr>'
+    return f'<table class="fx-turnos"><thead><tr>{cab}</tr></thead><tbody>{linhas}</tbody></table>'
+
+
+def fx_luz():
+    linhas = ''
+    for _ in range(5):
+        linhas += f'<tr><td>Tocha</td><td></td><td>{fx_bolas(6)}</td></tr>'
+    for _ in range(2):
+        linhas += f'<tr><td>Lanterna</td><td></td><td>{fx_bolas(24, 6, "fx-miudas")}</td></tr>'
+    linhas += f'<tr><td>Vela</td><td></td><td>{fx_bolas(9, 3)}</td></tr>'
+    return ('<table class="fx-tab fx-luz"><thead><tr><th>Fonte</th><th>Quem carrega</th>'
+            '<th>Turnos (marque um por turno)</th></tr></thead><tbody>' + linhas + '</tbody></table>')
+
+
+def fx_vazia(cabecalho, n, cls=''):
+    th = ''.join(f'<th>{h}</th>' for h in cabecalho)
+    tr = ''.join('<tr>' + '<td></td>' * len(cabecalho) + '</tr>' for _ in range(n))
+    return f'<table class="fx-tab {cls}"><thead><tr>{th}</tr></thead><tbody>{tr}</tbody></table>'
+
+
+def ficha_exploracao():
+    regras = (
+        '<div class="fx-regras">'
+        + bloco('Turno de exploração',
+                '<p>10 minutos. O grupo faz <b>uma</b> atividade: explorar uma área; procurar armadilhas, portas secretas ou tesouro; '
+                'escutar, abrir caminho ou desarmar; descansar.</p>')
+        + bloco('Encontros',
+                '<p>A cada 2 turnos, role 1d6: com <b>1</b>, encontro. <b>Barulho alto</b> pede uma rolagem na hora. '
+                'Distância 1d6: 1 adjacente, 2–4 perto, 5–6 longe.</p>')
+        + bloco('Cansaço',
+                '<p>A cada 6 turnos (1 hora), o grupo descansa 1 turno. Sem isso: desvantagem em ataques e testes até descansar.</p>')
+        + bloco('Luz', LUZ)
+        + '</div>'
+    )
+    folha = (
+        '<div class="fh-folha fx-folha">'
+        '<header class="fh-topo fx-topo">' + LOGO +
+        '<div class="fh-titulo-folha">Ficha de Exploração</div>'
+        '<div class="fx-campos">' + campo('Local') + campo('Andar ou área') + campo('Sessão') + '</div>'
+        '</header>'
+        + regras +
+        titulo('Turnos <span class="fx-dica">marque a bolinha de cada turno · nos pares, anote o 1d6 de encontro · '
+               'no 6º, marque o descanso do grupo</span>')
+        + fx_turnos(6) +
+        '<div class="fx-duas">'
+        '<div>' + titulo('Luz <span class="fx-dica">tocha 6 · lanterna 24 por frasco · vela 3</span>') + fx_luz() + '</div>'
+        '<div>' + titulo('Barulho <span class="fx-dica">cada barulho alto: role 1d6 de encontro</span>')
+        + fx_vazia(['Turno', 'O que fez barulho', '1d6'], 8, 'fx-barulho') + '</div>'
+        '</div>'
+        + titulo('Encontros <span class="fx-dica">atividade 1d12 · reação d20 + Car: 1–5 hostil, 6–9 desconfiada, '
+                 '10–12 neutra, 13–16 curiosa, 17+ amigável</span>')
+        + fx_vazia(['Turno', 'Onde', 'Quem ou o quê', 'Dist.', 'Atividade', 'Reação', 'Resultado'], 6, 'fx-encontros') +
+        '<div class="fx-duas fx-fim">'
+        '<div>' + titulo('Ordem de marcha') +
+        '<div class="fx-marcha">' + ''.join(
+            f'<div class="fx-pos"><span class="fh-num">{i}</span><span class="fx-linha"></span></div>' for i in range(1, 7)) +
+        '</div><p class="fx-nota">1 vai na frente (pisa primeiro nas armadilhas); 6 fecha a retaguarda.</p></div>'
+        '<div>' + titulo('Descanso') +
+        '<p class="fx-nota"><b>Curto:</b> 1 vez por dia, 1 hora; recupera metade de PV, Mana e Sanidade. '
+        '<b>Longo:</b> 8 horas e 1 ração; recupera tudo e remove 1 de exaustão. '
+        '<b>Interrompido:</b> Constituição CD 12 ou perde o benefício. '
+        '<b>Lugar perigoso:</b> 1d6 de encontro a cada 3 h (inseguro), 2 h (arriscado) ou 1 h (mortal).</p>'
+        + fx_vazia(['Dia', 'Curto', 'Longo', 'Rações'], 2, 'fx-descanso') + '</div>'
+        '</div>'
+        '</div>'
+    )
+    return documento('Ficha de Exploração', folha)
+
+
 # ------------------------------------------------------------ impressão
 
 def achar_chrome():
@@ -654,7 +748,7 @@ def main():
     fichas = [
         ('ficha-personagem', ficha_personagem), ('ficha-funil', ficha_funil),
         ('referencia-jogador', referencia_jogador), ('referencia-mestre', referencia_mestre),
-        ('guia-criacao', guia_criacao),
+        ('guia-criacao', guia_criacao), ('ficha-exploracao', ficha_exploracao),
     ]
     for nome, gerar in fichas:
         html = BUILD / f'{nome}.html'

@@ -732,3 +732,230 @@ body {
   padding: 0.3mm 0.2mm;
   font-size: 6.6pt;
 }
+
+/* ------------------------------------------------------------ ficha de exploração (Mestre) */
+
+.fx-folha {
+  padding: 9mm 10mm 8mm;
+  font-size: 8.4pt;
+}
+
+.fx-topo {
+  grid-template-columns: 46mm auto 1fr;
+}
+
+.fx-campos {
+  display: grid;
+  grid-template-columns: 1.6fr 1.2fr 0.6fr;
+  gap: 3mm;
+}
+
+.fx-regras {
+  display: grid;
+  grid-template-columns: 1.15fr 1.15fr 1fr 1.15fr;
+  gap: 3mm;
+  font-size: 7.4pt;
+  line-height: 1.17;
+}
+
+.fx-regras .rf-bloco {
+  margin: 0;
+}
+
+.fx-folha .fh-secao {
+  margin: 2.6mm 0 1.2mm;
+}
+
+.fx-dica {
+  font-family: "EB Garamond", Georgia, serif;
+  font-style: italic;
+  font-size: 7.2pt;
+  letter-spacing: 0;
+  margin-left: 2mm;
+}
+
+.fx-nota {
+  font-size: 7.4pt;
+  line-height: 1.2;
+  margin: 1mm 0;
+}
+
+/* bolinhas */
+
+.fx-bolas {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9mm;
+  vertical-align: middle;
+}
+
+.fx-bolas i,
+.fx-turnos td i {
+  display: inline-block;
+  width: 3.4mm;
+  height: 3.4mm;
+  border: 1.4px solid var(--fh-tinta);
+  border-radius: 50%;
+}
+
+.fx-miudas {
+  gap: 0.55mm;
+}
+
+.fx-miudas i {
+  width: 2.5mm;
+  height: 2.5mm;
+  border-width: 1.1px;
+}
+
+.fx-sep {
+  display: inline-block;
+  width: 1px;
+  height: 3.4mm;
+  background: var(--fh-tinta);
+  margin: 0 0.6mm;
+}
+
+/* grade de turnos */
+
+.fx-folha table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid var(--fh-tinta);
+  background: #fff;
+}
+
+.fx-folha th {
+  font-family: "IM Fell English SC", "EB Garamond", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  background: var(--fh-tinta);
+  color: #fff;
+  text-align: left;
+  padding: 0.6mm 1.5mm;
+  font-size: 7.6pt;
+}
+
+.fx-folha td {
+  border-top: 1px solid var(--fh-fino);
+  border-left: 1px solid var(--fh-fino);
+  padding: 0 1.5mm;
+  height: 6.3mm;
+  font-size: 7.6pt;
+}
+
+.fx-folha td:first-child {
+  border-left: none;
+}
+
+.fx-turnos td {
+  height: 7.6mm;
+  white-space: nowrap;
+}
+
+.fx-turnos th:not(:first-child):not(:last-child) {
+  width: 13mm;
+}
+
+.fx-turnos th:first-child {
+  width: 9mm;
+}
+
+.fx-hora {
+  font-family: "IM Fell English SC", "EB Garamond", Georgia, serif;
+  font-size: 11pt;
+  text-align: center;
+}
+
+.fx-n {
+  display: inline-block;
+  min-width: 3.4mm;
+  font-size: 6.4pt;
+  color: #555;
+  vertical-align: middle;
+}
+
+.fx-turnos td i {
+  vertical-align: middle;
+}
+
+.fx-d6,
+.fx-desc {
+  display: inline-block;
+  width: 3.6mm;
+  height: 3.6mm;
+  border: 1px solid var(--fh-tinta);
+  margin-left: 0.8mm;
+  vertical-align: middle;
+}
+
+.fx-desc {
+  border-radius: 0.8mm;
+  background: repeating-linear-gradient(45deg, #fff 0 0.6mm, #ddd 0.6mm 1.2mm);
+}
+
+/* metades */
+
+.fx-duas {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 4mm;
+}
+
+.fx-luz td:first-child {
+  width: 15mm;
+  font-size: 7.2pt;
+}
+
+.fx-luz th:nth-child(2) {
+  width: 24mm;
+}
+
+.fx-barulho th:first-child,
+.fx-barulho th:last-child {
+  width: 11mm;
+}
+
+.fx-encontros th:first-child,
+.fx-encontros th:nth-child(4) {
+  width: 11mm;
+}
+
+.fx-encontros th:nth-child(2) {
+  width: 22mm;
+}
+
+.fx-encontros th:nth-child(5),
+.fx-encontros th:nth-child(6) {
+  width: 19mm;
+}
+
+.fx-marcha {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2mm 3mm;
+  margin-top: 1.5mm;
+}
+
+.fx-pos {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.5mm;
+}
+
+.fx-linha {
+  flex: 1;
+  border-bottom: 1px solid var(--fh-tinta);
+  height: 5mm;
+}
+
+.fx-descanso td {
+  height: 6mm;
+}
+
+.fx-pos .fh-num {
+  width: 5mm;
+  height: 5mm;
+  font-size: 9pt;
+  flex: none;
+}
