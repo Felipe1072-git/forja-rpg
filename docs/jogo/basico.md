@@ -95,15 +95,28 @@ Ferimentos causam dano e reduzem seus **Pontos de Vida (PV)**. Uma arma comum ca
 
 Algumas habilidades e situações de estresse causam dano à Sanidade.
 
-**Colapso.** Ao chegar a 0 de Sanidade, faça um teste CD 10 com seu maior atributo mental (Inteligência, Sabedoria ou Carisma). Se falhar, você sofre um colapso mental e morre. Com 0 de Sanidade, repita o teste sempre que fizer uma ação que custe Mana ou Sanidade.
-
-**Trauma.** Na primeira vez que passar no teste de colapso, você sobrevive com um trauma: role 1d12 na tabela abaixo (repetiu, role de novo). Cada trauma tira 1 de Sanidade máxima até ser tratado (veja Recuperar-se em Tempo Livre).
-
 **Terror.** Ao falhar num teste contra ficar amedrontado, perca 1 de Sanidade, ou 1d4 se a fonte for sobrenatural (morto-vivo, demônio, magia).
 
 **Coragem protege a mente.** Quem tem vantagem contra ficar amedrontado também tem vantagem nos testes de Sanidade contra o horror (criaturas aterrorizantes, cenas macabras). Quem não pode ficar amedrontado sofre metade desse dano e não perde Sanidade pelo Terror.
 
 **Monstros.** As criaturas do Mestre não têm Sanidade. Dano de Sanidade numa delas obriga um teste de Moral.
+
+**Colapso.** Ao chegar a 0 de Sanidade, faça um teste CD 10 com seu maior atributo mental (Inteligência, Sabedoria ou Carisma), uma vez só. Se falhar, você sofre um colapso mental e morre. Se passar, você fica virtuoso.
+
+**Virtude.** Até o próximo descanso longo, você está anestesiado: imune a dano de Sanidade. Role 1d6 na tabela de virtudes; o efeito dura o mesmo tempo.
+
+**Sem Sanidade.** Com 0 de Sanidade, você não pode pagar habilidades com Sanidade.
+
+| d6 | Virtude | Efeito |
+|---|---|---|
+| 1 | Firme | Você não pode ficar amedrontado nem enfeitiçado. |
+| 2 | Corajoso | No início de cada turno seu, um aliado até perto recupera 1 de Sanidade. |
+| 3 | Focado | +1 em ataques e vantagem em testes de Inteligência, Sabedoria e Carisma. |
+| 4 | Poderoso | Seus ataques causam +1d4 de dano. |
+| 5 | Vigoroso | Cure 1d6 PV agora e ganhe +1 de CA. |
+| 6 | Inabalável | Vantagem em testes de resistência. |
+
+**Trauma.** Quando a virtude acaba, no descanso longo, o preço chega: role 1d12 na tabela de traumas (repetiu, role de novo). Cada trauma tira 1 de Sanidade máxima até ser tratado (veja Recuperar-se em Tempo Livre).
 
 | d12 | Trauma | Efeito |
 |---|---|---|

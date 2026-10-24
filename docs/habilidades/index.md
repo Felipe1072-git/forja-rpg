@@ -24,7 +24,7 @@ Personagens de nível 0 não têm Mana nem habilidades.
 
 **Recuperação.** Descanso longo: toda a Mana. Descanso curto (1 vez por dia): metade da Mana máxima.
 
-**Sem Mana.** Você pode pagar o custo de uma habilidade com Sanidade, 1 por 1. Veja Colapso em O Básico.
+**Sem Mana.** Você pode pagar o custo de uma habilidade com Sanidade, 1 por 1. Com 0 de Sanidade, não pode mais. Veja Colapso em O Básico.
 
 ## Anatomia de uma Habilidade
 
