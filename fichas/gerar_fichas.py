@@ -314,6 +314,7 @@ def referencia_jogador():
               ]),
               regra('Acuidade', 'For ou Des. <b>Arremesso:</b> até perto, For ou Des.'),
               regra('Nocaute', 'Ao levar alguém a 0 PV, deixe inconsciente em vez de matar.'),
+              regra('Armas comuns', 'Alguns monstros resistem a armas não mágicas. Magia vence; prata vence contra os malignos e sobrenaturais.'),
               quadro(['Cobertura', 'Metade', '3/4', 'Total'], [['CA', '+2', '+5', 'não é alvo']], 'rf-centro')),
         bloco('Habilidades e Mana',
               regra('Mana', 'Paga todas as habilidades, mágicas ou marciais. Sem Mana, pague com Sanidade, 1 por 1 (com 0 de Sanidade, não).'),

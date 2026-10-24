@@ -96,6 +96,8 @@ Além disso, você **carrega** um número de espaços igual ao seu modificador d
 
 **Versátil.** Use com uma ou duas mãos. Com duas mãos, use o dado entre parênteses.
 
+**Arma de prata.** Qualquer arma pode ser banhada em prata por +20 po. Ela vence a resistência a armas comuns de criaturas malignas e sobrenaturais (veja Armas comuns em Combate).
+
 ## Armaduras
 
 | Armadura | Categoria | Custo | CA | Força | Propriedades |

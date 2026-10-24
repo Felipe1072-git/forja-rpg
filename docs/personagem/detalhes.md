@@ -243,6 +243,15 @@ Títulos são só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Cao
 | 5 | Campeão dos Céus | Alma Antiga | Senhor das Almas |
 | 6 | Sangue de Dragão | Lenda Viva | Dragão Mortal |
 
+| d6 | Caçador de Prata: Ordem | Caçador de Prata: Neutro | Caçador de Prata: Caos |
+|---|---|---|---|
+| 1 | Aprendiz da Ordem | Rastreador | Caçador de Recompensas |
+| 2 | Vigia da Noite | Andarilho Cinzento | Mutante |
+| 3 | Caçador Juramentado | Mestre do Bestiário | Matador de Aluguel |
+| 4 | Inquisidor | Lâmina de Prata | Lobo Solitário |
+| 5 | Mestre da Ordem | Terror dos Monstros | Flagelo da Noite |
+| 6 | Herdeiro da Linhagem | Lenda da Caçada | Monstro Entre Monstros |
+
 ## Divindade
 
 Seguir uma divindade é opcional. Os jogadores criam as divindades, com domínio, bênçãos e responsabilidades. Veja Divindades.
