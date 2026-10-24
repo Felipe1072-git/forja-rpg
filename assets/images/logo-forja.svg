@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 60" role="img" aria-label="Forja RPG">
+  <g transform="translate(4 6) scale(2)">
+    <path fill="currentColor" d="M9 5v5c4.03 2.47-.56 4.97-3 6v3h15v-3c-6.41-2.73-3.53-7 1-8V5zM2 6c.81 2.13 2.42 3.5 5 4V6z"/>
+  </g>
+  <text x="62" y="41" fill="currentColor" font-family="'IM Fell English SC', 'EB Garamond', Georgia, serif" font-size="34" letter-spacing="1.5">Forja RPG</text>
+</svg>
