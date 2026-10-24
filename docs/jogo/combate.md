@@ -90,7 +90,7 @@ Para lembrar: **testes, movimento, ataques, vida, imóvel, morte.**
 
 ## CONDIÇÕES
 
-**Amedrontado.** Desvantagem em ataques e testes. Não pode se aproximar da fonte do medo.
+**Amedrontado.** Desvantagem em ataques e testes. Não pode se aproximar da fonte do medo. Falhar no teste contra o medo custa Sanidade (veja Terror).
 
 **Atordoado.** Não pode agir nem se mover. Ataques contra você têm vantagem.
 

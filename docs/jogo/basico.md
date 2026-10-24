@@ -97,6 +97,29 @@ Algumas habilidades e situações de estresse causam dano à Sanidade.
 
 **Colapso.** Ao chegar a 0 de Sanidade, faça um teste CD 10 com seu maior atributo mental (Inteligência, Sabedoria ou Carisma). Se falhar, você sofre um colapso mental e morre. Com 0 de Sanidade, repita o teste sempre que fizer uma ação que custe Mana ou Sanidade.
 
+**Trauma.** Na primeira vez que passar no teste de colapso, você sobrevive com um trauma: role 1d12 na tabela abaixo (repetiu, role de novo). Cada trauma tira 1 de Sanidade máxima até ser tratado (veja Recuperar-se em Tempo Livre).
+
+**Terror.** Ao falhar num teste contra ficar amedrontado, perca 1 de Sanidade, ou 1d4 se a fonte for sobrenatural (morto-vivo, demônio, magia).
+
+**Coragem protege a mente.** Quem tem vantagem contra ficar amedrontado também tem vantagem nos testes de Sanidade contra o horror (criaturas aterrorizantes, cenas macabras). Quem não pode ficar amedrontado sofre metade desse dano e não perde Sanidade pelo Terror.
+
+**Monstros.** As criaturas do Mestre não têm Sanidade. Dano de Sanidade numa delas obriga um teste de Moral.
+
+| d12 | Trauma | Efeito |
+|---|---|---|
+| 1 | Medo do escuro | Sem luz, desvantagem em testes. |
+| 2 | Fobia | Desvantagem em ataques e testes contra o tipo de criatura que causou o trauma. |
+| 3 | Tremedeira | Desvantagem em testes de Destreza que pedem precisão (fechaduras, armadilhas). |
+| 4 | Pesadelos | O descanso longo não remove exaustão. |
+| 5 | Paranoia | Desvantagem em testes de Carisma com desconhecidos. Você não dorme sem alguém de vigia. |
+| 6 | Hesitação | Desvantagem na iniciativa tática. |
+| 7 | Claustrofobia | Em lugares apertados (túneis, celas), desvantagem em testes. |
+| 8 | Sede de sangue | Quando um inimigo cai a 0 PV, faça um teste de Sabedoria CD 12 ou continue atacando o corpo no seu próximo turno. |
+| 9 | Silêncio | Você quase não fala. Desvantagem em testes de Carisma. |
+| 10 | Vozes | Tirar 1 natural custa 2 de Sanidade em vez de 1. |
+| 11 | Insônia | O descanso curto não recupera Sanidade. |
+| 12 | Apatia | Você não recebe Inspiração. |
+
 ## MANA
 
 **Mana** é o combustível de todas as habilidades: magias, golpes de guerreiro, truques de ladrão. Usar uma habilidade gasta Mana. Sem Mana, você pode gastar Sanidade no lugar. Veja Habilidades.

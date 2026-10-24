@@ -9,7 +9,7 @@ Entre aventuras, cada personagem escolhe uma atividade de tempo livre. Role na t
 | 3 | **Pesquisar** | Passe dias em bibliotecas, tavernas ou arquivos. Teste de Inteligência (CD do Mestre): descubra um rumor ou segredo útil. |
 | 4 | **Trabalhar** | Exerça seu antecedente ou um ofício. Ganhe 2d6 × 5 po. |
 | 5 | **Servir à divindade** | Avance uma penitência ou faça um rito. O Mestre decide o resultado. |
-| 6 | **Recuperar-se** | Descanse de verdade. Remova toda a exaustão. |
+| 6 | **Recuperar-se** | Descanse de verdade. Remova toda a exaustão e trate um trauma: teste de Sabedoria CD 12, com vantagem num templo ou com um curandeiro. Se passar, o trauma some e a Sanidade máxima volta. |
 | 7 | **Fazer contatos** | Circule pela cidade. Teste de Carisma CD 12: ganhe um contato útil. |
 | 8 | **Fabricar** | Faça um item mundano ligado ao seu antecedente pela metade do preço. |
 | 9 | **Treinar** | Prepare-se para o perigo. Comece a próxima sessão com 1 Inspiração extra. |
