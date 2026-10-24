@@ -35,7 +35,7 @@
 
 ## Sanidade
 
-Situações de estresse causam dano à Sanidade. A vítima faz um teste com o seu maior atributo mental (Inteligência, Sabedoria ou Carisma), CD 12. Com sucesso, sofre metade do dano.
+Situações de estresse causam dano à Sanidade. A vítima faz um teste com o seu maior atributo mental (Inteligência, Sabedoria ou Carisma), CD 12. Com sucesso, não perde Sanidade.
 
 | Situação | Dano |
 |---|---|

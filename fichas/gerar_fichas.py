@@ -409,7 +409,7 @@ def referencia_mestre():
               linha(['5', '10', '15', '20'], ['covardes, animais', 'bandidos, soldados', 'elite, fanáticos', 'sem mente, nunca foge']),
               '<p>Monstro convertido: 10 + mod. de Sab.</p>'),
         bloco('Sanidade',
-              '<p>Teste com o maior atributo mental, CD 12. Sucesso: metade do dano. Mesma situação, só 1 vez por aventura.</p>',
+              '<p>Teste com o maior atributo mental, CD 12. Sucesso: não perde nada. Mesma situação, só 1 vez por aventura.</p>',
               quadro(['Situação', 'Dano'], [
                   ['Cena macabra', '1'],
                   ['Morte de um aliado', '1d4'],
@@ -492,7 +492,7 @@ def referencia_mestre():
               regra('Pés', '÷ 5 = casas.'),
               regra('Valores', 'Old school: como estão. Sem Mana.'),
               regra('Do 5e', 'NV = ND + 2. PV = NV × 4,5 + Con. Ataque = mod. (+1 NV 4–7, +2 NV 8+). Dano sem mod. '
-                    'CD ≤10: 9, 11–15: 12, 16–20: 15, 21+: 18. Medo e horror também tiram Sanidade (1d4, 1d6 ou 2d6).'),
+                    'CD ≤10: 9, 11–15: 12, 16–20: 15, 21+: 18. Medo e horror: falhou, perde Sanidade (Terror, 1d6 ou 2d6).'),
               regra('Tendência', 'Lawful: Bem e Ordem. Chaotic: Mal e Caos. Neutral: Neutro.')),
         bloco('O Funil',
               regra('Nível 0', '4 personagens aleatórios por jogador, um em jogo por vez. Morrem a 0 PV. Perdeu todos: crie mais 1d4.'),
