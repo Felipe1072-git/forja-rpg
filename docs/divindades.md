@@ -105,7 +105,7 @@ Seguidores recebem bênçãos nos níveis 1, 5 e 9. Bênçãos não gastam avan�
 
 Crie suas bênçãos ou role nas tabelas. "Elemento divino" é o elemento da sua divindade.
 
-| d6 | Bênção menor (passiva) |
+| d20 | Bênção menor (passiva) |
 |---|---|
 | 1 | Resistência ao elemento divino |
 | 2 | Visão no escuro até perto |
@@ -113,8 +113,22 @@ Crie suas bênçãos ou role nas tabelas. "Elemento divino" é o elemento da sua
 | 4 | Não pode ser amedrontado |
 | 5 | Não pode ser surpreendido |
 | 6 | +1 em ataques com a arma sagrada da divindade |
+| 7 | Vantagem em testes contra venenos e doenças |
+| 8 | Prende o fôlego por 10 minutos |
+| 9 | Não pode ser enfeitiçado |
+| 10 | +1 PV por nível |
+| 11 | Fala com o animal sagrado da divindade |
+| 12 | Suas curas curam +1 PV por dado |
+| 13 | Vantagem em testes de Carisma com fiéis da sua divindade |
+| 14 | Terreno difícil não reduz seu movimento |
+| 15 | Aguenta 6 dias sem ração antes de ganhar exaustão |
+| 16 | Sente os inimigos da divindade (mortos-vivos, demônios, fadas…) até perto |
+| 17 | Vantagem em testes contra perda de Sanidade |
+| 18 | Sua arma sagrada brilha como uma tocha quando você quiser |
+| 19 | Sabe sempre a direção do lugar sagrado mais próximo da divindade |
+| 20 | Tirar 1 natural não custa Sanidade |
 
-| d6 | Bênção maior (ativa) | Custo |
+| d20 | Bênção maior (ativa) | Custo |
 |---|---|---|
 | 1 | **Cura Divina.** Adjacente, um alvo. Cura 2d6 PV. | 2 |
 | 2 | **Arma Sagrada.** Pessoal, 10 rodadas. Seus ataques com arma causam +1d6 de dano do elemento divino. | 2 |
@@ -122,8 +136,22 @@ Crie suas bênçãos ou role nas tabelas. "Elemento divino" é o elemento da sua
 | 4 | **Visão Verdadeira.** Pessoal, 10 rodadas. Você vê criaturas invisíveis e através de ilusões. | 3 |
 | 5 | **Pavor Sagrado.** Área pequena ao seu redor, 1 rodada, resistência (Sabedoria). Inimigos ficam amedrontados. | 4 |
 | 6 | **Asas.** Pessoal, 10 rodadas. Você voa com movimento normal. | 5 |
+| 7 | **Escudo da Fé.** Perto, um aliado, 10 rodadas. +2 de CA. | 3 |
+| 8 | **Expulsar.** Área pequena ao seu redor, 10 rodadas, resistência (Sabedoria). Os inimigos da divindade ficam amedrontados. | 5 |
+| 9 | **Silêncio.** Longe, área pequena, 10 rodadas. Nenhum som entra nem sai; magias faladas falham ali. | 4 |
+| 10 | **Purificar.** Adjacente. Remove um veneno, uma doença ou uma maldição menor. | 2 |
+| 11 | **Fogo Divino.** Longe, um alvo, resistência (Destreza). 2d6 de dano do elemento divino. | 3 |
+| 12 | **Santuário.** Adjacente, um aliado, 10 rodadas. Quem tentar atacá-lo faz um teste de Sabedoria ou escolhe outro alvo. | 3 |
+| 13 | **Andar sobre a Água.** Você e os aliados adjacentes, 1 hora. | 3 |
+| 14 | **Falar com os Mortos.** Adjacente. Um cadáver responde 3 perguntas. | 2 |
+| 15 | **Correntes Sagradas.** Perto, um alvo, resistência (Força), 10 rodadas. O alvo fica paralisado e repete o teste no fim de cada turno dele. | 4 |
+| 16 | **Bênção do Grupo.** Aliados até perto, 10 rodadas. +1 em ataques e testes de resistência. | 3 |
+| 17 | **Raio Sagrado.** Muito longe, um alvo, ataque. 2d8 de dano do elemento divino. | 5 |
+| 18 | **Passo Sagrado.** Movimento. Teleporte-se para um ponto que você vê até longe. | 4 |
+| 19 | **Alento.** Aliados numa área pequena ao seu redor curam 1d6 PV e perdem uma condição leve. | 3 |
+| 20 | **Fera Sagrada.** Pessoal, 1 hora. Você vira o animal sagrado da divindade, como na Forma Animal do Druida. | 4 |
 
-| d6 | Milagre (ativa, 1 vez por descanso longo) | Custo |
+| d20 | Milagre (ativa, 1 vez por descanso longo) | Custo |
 |---|---|---|
 | 1 | **Palavra Divina.** Longe, área média, 10 rodadas, resistência (Sabedoria) a cada rodada. Inimigos ficam paralisados. | 7 |
 | 2 | **Avatar.** Pessoal, 10 rodadas. Você voa, ganha +2 de CA e seus ataques causam +1d6 de dano do elemento divino. | 8 |
@@ -131,6 +159,20 @@ Crie suas bênçãos ou role nas tabelas. "Elemento divino" é o elemento da sua
 | 4 | **Chuva Sagrada.** Muito longe, área grande, resistência (Destreza). 6d6 de dano do elemento divino. | 11 |
 | 5 | **Peregrinação.** Você e até cinco aliados se teleportam para um lugar sagrado da divindade. | 11 |
 | 6 | **Ressurreição.** Adjacente. Uma criatura morta há até 1 dia volta à vida com 1 PV. | Todo o Limite |
+| 7 | **Terremoto.** Longe, área grande, resistência (Destreza). 4d6 de dano de terra, e quem falha fica caído. | 9 |
+| 8 | **Muralha Sagrada.** Longe, 10 rodadas. Uma muralha de 9 casas que inimigos não atravessam. | 8 |
+| 9 | **Dia Santo.** Você e até cinco aliados, 1 dia. Vantagem em testes de resistência e +1 em ataques. | 9 |
+| 10 | **Praga.** Muito longe, área grande, resistência (Constituição). 4d6 de dano de veneno, e quem falha fica doente por 1 dia. | 11 |
+| 11 | **Exílio.** Perto, até três criaturas de outro plano, resistência (Carisma). Elas voltam para o plano de origem. | 9 |
+| 12 | **Visão do Além.** Faça 3 perguntas à divindade. As respostas são verdadeiras. | 7 |
+| 13 | **Tempestade Divina.** Muito longe, área grande, 10 rodadas. A cada rodada, um raio cai em cada inimigo que você escolher: 2d6 de dano de tempestade. | 12 |
+| 14 | **Servo Divino.** Um anjo, demônio ou espírito da divindade luta por você por 10 rodadas. Ficha: CA 16, 40 PV, voo, ataque d20 + seu atributo principal, dano 2d8. | 8 |
+| 15 | **Juízo.** Perto, um alvo, resistência (Carisma). Com metade dos PV ou menos, ele morre; se não, sofre 6d6 de dano do elemento divino. | 10 |
+| 16 | **Proteção Total.** Aliados numa área média ao seu redor, 10 rodadas. Resistência a todo dano. | 9 |
+| 17 | **Parar o Tempo.** Você faz dois turnos extras seguidos, e ninguém mais age. | 10 |
+| 18 | **Clima Divino.** Por 1 dia, você controla o tempo num raio de quilômetros: chuva, seca, neblina, neve. | 8 |
+| 19 | **Abrir Caminho.** Por 1 hora, uma passagem de até 20 casas se abre através de água, rocha ou fogo. | 8 |
+| 20 | **Intervenção.** Peça algo à divindade. O Mestre decide como ela atende, e pode ser quase qualquer coisa. | Todo o Limite |
 
 ## Habilidades Divinas
 

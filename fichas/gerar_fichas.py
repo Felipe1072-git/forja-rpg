@@ -580,8 +580,8 @@ def guia_criacao():
         bloco('8. Divindade (opcional)',
               '<p>Você cria a sua: <b>nome</b>, <b>entidade</b> (deus, demônio, fada, ser antigo...), <b>domínio</b> (vantagem em testes ligados a ele), '
               '<b>vínculo</b> (devoção ou pacto) e <b>2 responsabilidades</b>. Quebrou uma: perde as bênçãos e -2 de Sanidade máx.</p>',
-              regra('Bênção menor (nível 1)', 'd6: <b>1</b> resistência ao elemento divino · <b>2</b> visão no escuro · <b>3</b> +1 de CA · '
-                    '<b>4</b> imune a medo · <b>5</b> não é surpreendido · <b>6</b> +1 com a arma sagrada. Maior no 5, milagre no 9.')),
+              regra('Bênção menor (nível 1)', 'role d20 na tabela de Divindades (ex.: resistência ao elemento divino, visão no escuro, +1 de CA, '
+                    'imune a medo, +1 PV por nível). Maior no 5, milagre no 9.')),
         bloco('9. Idiomas',
               '<p>Não há língua comum. Você fala a do seu povo e mais idiomas = mod. de Int (se positivo).</p>'),
         bloco('10. Equipamento',
