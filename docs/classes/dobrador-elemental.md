@@ -3,6 +3,8 @@
 Monges que aprenderam a mover o fogo, a água, o vento e a pedra com o corpo. Cada golpe é um passo de dança, e cada passo arranca o elemento do mundo. Alguns dominam um só; os raros que dominam os quatro guardam o equilíbrio de tudo.
 { .epigrafe }
 
+![Monge em posição de luta, com fogo no punho, uma onda de água, um redemoinho de vento e pedras voando ao redor](../assets/images/classes/dobrador-elemental.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Classe exótica.** Fica fora do Personagem Aleatório. Combine com o Mestre antes de escolher (veja Classes exóticas).
 
 **Base.** d8: 3 habilidades iniciais, 3 de Mana por nível, 2 avanços nos níveis 3, 6 e 9 (1 nos outros).
