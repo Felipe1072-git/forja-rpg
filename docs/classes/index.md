@@ -44,6 +44,7 @@ Classes estranhas, raras ou poderosas demais para todo mundo. Ficam fora do Pers
 | Ferreiro de Guerra | d8 | Inteligência | Simples, maça, martelo de guerra, bestas | Leves, médias e escudo |
 | Sangue de Dragão | d10 | Constituição ou Carisma | Todas | Leves, médias e escudo |
 | Caçador de Prata | d8 | Destreza ou Inteligência | Adaga, bestas, chicote, espada curta, espada longa, machadinha | Leves, médias e escudo |
+| Dobrador Elemental | d8 | Destreza ou Sabedoria | Simples | Nenhuma |
 
 **Vocação.** Toda classe tem uma vocação: um talento simples, sem Mana, que mostra para o que o personagem nasceu. Ela vale desde o nível 0 e nunca se perde.
 

@@ -252,6 +252,15 @@ Títulos são só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Cao
 | 5 | Mestre da Ordem | Terror dos Monstros | Flagelo da Noite |
 | 6 | Herdeiro da Linhagem | Lenda da Caçada | Monstro Entre Monstros |
 
+| d6 | Dobrador Elemental: Ordem | Dobrador Elemental: Neutro | Dobrador Elemental: Caos |
+|---|---|---|---|
+| 1 | Noviço do Templo | Aprendiz dos Ventos | Faísca Rebelde |
+| 2 | Guarda do Mosteiro | Andarilho das Marés | Punho de Brasa |
+| 3 | Mestre da Forma | Dançarino da Pedra | Filho da Tempestade |
+| 4 | Guardião do Templo | Mestre dos Quatro | Senhor das Cinzas |
+| 5 | Sábio dos Elementos | Guardião do Equilíbrio | Fúria da Natureza |
+| 6 | Grão-Mestre do Templo | Avatar | Cataclismo |
+
 ## Divindade
 
 Seguir uma divindade é opcional. Os jogadores criam as divindades, com domínio, bênçãos e responsabilidades. Veja Divindades.

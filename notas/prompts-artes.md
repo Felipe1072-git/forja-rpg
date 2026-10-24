@@ -48,6 +48,7 @@ Character: [CLASSE]
 | Ferreiro de Guerra | ferreiro-de-guerra | A burly blacksmith-artificer in a leather apron over patched armor, a heavy hammer in one hand and a smoking hand cannon in the other, a small brass spider-construct climbing on the shoulder, gears and tools hanging from the belt. |
 | Sangue de Dragão | sangue-de-dragao | A warrior in fur and scale armor with a horned helm, shouting a blast of fire and wind from the mouth, a sword in hand, the faint shape of a dragon skull in the smoke behind them. |
 | Caçador de Prata | cacador-de-prata | A grim monster hunter in a long coat and wide-brimmed hat, a silver longsword in one hand and a chain whip in the other, vials and stakes on a bandolier, a crossbow on the back, standing over a slain werewolf. |
+| Dobrador Elemental | dobrador-elemental | A barefoot monk in simple wraps and a sash, in a dynamic martial arts stance, fire swirling around one fist, water whipping from the other hand, wind and small stones circling around the body. |
 | Malvidente | malvidente | A hunched seer-witch with milky white eyes, casting bones from one hand, a raven on the shoulder and a bubbling cauldron behind. |
 
 ## Dicas
