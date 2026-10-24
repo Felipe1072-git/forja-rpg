@@ -126,6 +126,16 @@ Magias causam dano elemental e pertencem a uma escola.
 
 **Dissipar, antimagia e contramágica.** Magias podem ser dissipadas, anuladas por antimagia e contraditas por contramágicas. Esses efeitos aparecem em armadilhas, ambientes e criaturas. Para usá-los, um personagem cria uma habilidade.
 
+### PERGAMINHOS
+
+Um pergaminho guarda uma magia, com o custo, os dados e as melhorias com que foi escrito.
+
+**Ler.** Qualquer criatura pode usar um pergaminho: faça um teste com o seu maior atributo mental (Inteligência, Sabedoria ou Carisma), CD 10 + custo da magia. Se passar, a magia acontece sem gastar Mana. Passando ou não, o pergaminho vira pó.
+
+**Aptidão mágica.** Mago, Feiticeiro e Bardo usam pergaminhos sem teste.
+
+**Grimório.** Um Mago pode copiar o pergaminho em vez de usá-lo (veja Mago).
+
 ### MARCIAL
 
 Habilidades marciais causam dano de contusão, cortante ou perfurante. Elas não são afetadas por dissipar magia, antimagia ou contramágicas.
