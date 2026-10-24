@@ -990,3 +990,21 @@ body {
 .fh-vir-rodape .fh-campo {
   flex: 1;
 }
+
+/* movimento: campo para escrever, com a dica clarinha */
+.fh-mov {
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.fh-mov-linha {
+  display: flex;
+  align-items: flex-end;
+  width: 44mm;
+  height: 6mm;
+  border-bottom: 1px solid var(--fh-tinta);
+}
+
+.fh-mov-linha .fh-dica {
+  margin: 0 0 0.6mm auto;
+}

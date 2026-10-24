@@ -142,7 +142,8 @@ def ficha_personagem():
         caixa('Mana extra máx.', formula='igual ao seu nível') + '</div>'
         '<div class="fh-marcas">'
         f'<div><span class="fh-rotulo">Inspiração</span>{bolinhas(6)}</div>'
-        '<div><span class="fh-rotulo">Movimento</span><span class="fh-dica-fixa">6 casas</span></div>'
+        '<div class="fh-mov"><span class="fh-rotulo">Movimento</span>'
+        '<span class="fh-mov-linha"><span class="fh-dica">6 casas · anão, gnomo, halfling: 5</span></span></div>'
         '</div>' + virtude() +
         '</div></div>' +
         titulo('Ataques') +
@@ -296,7 +297,7 @@ def referencia_jogador():
               quadro(['Adjacente', 'Perto', 'Longe', 'Muito longe'], [['1 casa', '2–6', '7–12', '13+']], 'rf-centro'),
               quadro(['Área pequena', 'Média', 'Grande'], [['3 × 3', '5 × 5', '9 × 9']], 'rf-centro')),
         bloco('Seu turno',
-              regra('Turno', '1 ação + 1 movimento de até 6 casas. Troque a ação por um segundo movimento.'),
+              regra('Turno', '1 ação + 1 movimento de até 6 casas (anão, gnomo, halfling: 5). Troque a ação por um segundo movimento.'),
               regra('Ação livre', '1 por rodada: sacar arma, abrir porta, beber poção.'),
               regra('Reação', '1 por rodada, fora do seu turno.'),
               regra('Ataque de oportunidade', 'Inimigo sai do seu alcance com o próprio movimento: reação para um ataque corpo a corpo. Empurrão e teleporte não provocam. Habilidade que move provoca, salvo se disser o contrário.'),
@@ -583,7 +584,7 @@ def guia_criacao():
               regra('CD de habilidade', '10 + mod. do atributo principal.'),
               regra('Mana extra máxima', 'igual ao nível (1).'),
               regra('Espaços de carga', 'mod. de For + Con (mín. 1). Mochila +5.'),
-              regra('Movimento', '6 casas. <b>Inspiração:</b> 1 por sessão.')),
+              regra('Movimento', '6 casas (anão, gnomo, halfling: 5). <b>Inspiração:</b> 1 por sessão.')),
         bloco('5. Habilidades',
               '<p>Escolha na lista da sua classe quantas a base manda, ou role d20 na lista. Anote na ficha o custo, a ação, o efeito e o escalonamento. As três melhorias de cada uma ficam para os avanços. Toda habilidade ativa gasta Mana.</p>'),
         bloco('6. Antecedente',

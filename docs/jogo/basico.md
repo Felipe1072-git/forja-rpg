@@ -51,7 +51,7 @@ O Mestre escolhe o modo de iniciativa de cada encontro.
 
 ## TURNOS E RODADAS
 
-No seu turno, você tem **1 ação** e **1 movimento** de até 6 casas. Você pode dividir o movimento como quiser. Você pode trocar a ação por um segundo movimento.
+No seu turno, você tem **1 ação** e **1 movimento** de até 6 casas (5 para anões, gnomos e halflings; veja Ancestralidades). Você pode dividir o movimento como quiser. Você pode trocar a ação por um segundo movimento.
 
 **Turno compartilhado.** Quando o grupo age junto, os personagens resolvem seus turnos na ordem que quiserem, ao mesmo tempo. Combinem ações e habilidades. Isso vale na iniciativa rápida e, na tática, para personagens com resultados seguidos, sem inimigos entre eles.
 

@@ -48,6 +48,8 @@ Teimosos e duros como a pedra das montanhas onde vivem.
 
 **Tamanho.** Médio.
 
+**Movimento.** 5 casas.
+
 **Visão no escuro.** Enxerga no escuro até perto.
 
 **Robusto.** +1 PV por nível (inclusive no nível 1). Role seus dados de vida com vantagem.
@@ -130,6 +132,8 @@ Pequenos, discretos, corajosos e abençoados pela sorte.
 
 **Tamanho.** Pequeno.
 
+**Movimento.** 5 casas.
+
 **Sortudo.** Quando tirar 1 natural, role de novo e use o novo resultado.
 
 **Corajoso.** Vantagem em testes de resistência contra ficar amedrontado.
@@ -167,6 +171,8 @@ Curiosos, inventivos, ilusionistas natos.
 ![Gnomo e gnoma](../assets/images/ancestralidades/gnomo.webp){ .fj-arte-ancestral loading=lazy }
 
 **Tamanho.** Pequeno.
+
+**Movimento.** 5 casas.
 
 **Visão no escuro.** Enxerga no escuro até perto.
 
@@ -244,6 +250,8 @@ Pequenos, nervosos, meio desastrados e ótimos em emboscadas.
 
 **Tamanho.** Pequeno.
 
+**Movimento.** 6 casas. Pequeno, mas ligeiro.
+
 **Visão no escuro.** Enxerga no escuro até perto.
 
 **Emboscador.** Vantagem em testes para se esconder. Seus ataques contra criaturas surpreendidas causam +1d6 de dano.
@@ -284,7 +292,7 @@ Uma ancestralidade tem:
 
 **Descrição.** Uma ou duas frases sobre o povo.
 
-**Tamanho.** Pequeno, Médio ou Grande.
+**Tamanho.** Pequeno, Médio ou Grande. Ancestralidades pequenas andam 5 casas; as outras, 6.
 
 **Idioma.** A língua do seu povo (veja Idiomas).
 
