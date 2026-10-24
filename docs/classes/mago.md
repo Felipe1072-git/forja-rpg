@@ -17,24 +17,24 @@ Estudiosos, feiticeiros e bruxos que dobram a realidade com fórmulas, palavras 
 
 **Grimório.** Suas magias ficam escritas num grimório. Quando achar um texto mágico (um pergaminho, o grimório de outro mago, uma inscrição), copie a magia no tempo livre: 1 dia e 10 po por ponto de custo dela. A magia pode ser de qualquer lista de classe. Ela fica no grimório, com as melhorias com que foi escrita.
 
-**Preparar.** Você tem preparadas tantas magias quanto habilidades: as iniciais mais uma por avanço Nova habilidade. Só as preparadas podem ser usadas. Num descanso longo, troque uma preparada por outra do grimório; as melhorias da que saiu ficam anotadas e voltam com ela.
+**Preparar.** Só as magias preparadas podem ser usadas. O número de preparadas está na coluna Preparadas da tabela de progressão. Ao subir de nível, escreva de graça no grimório uma magia da lista do Mago. Num descanso longo, troque uma preparada por outra do grimório; as melhorias da que saiu ficam anotadas e voltam com ela.
 
 **Habilidades iniciais.** Escolha 4 na lista ou role 1d20 quatro vezes. Para começar rápido: Erudição Arcana, Míssil Arcano, Escudo Arcano e Sono.
 
 ## PROGRESSÃO DO MAGO
 
-| Nível | XP para subir | PV | Mana máxima | Mana extra máx. | Avanços | Especial |
-|---|---|---|---|---|---|---|
-| 1 | 10 | 1d4 + mod. de Con | 5 + mod. de Int | 1 | — | 4 habilidades iniciais · proficiências · bênção menor* |
-| 2 | 20 | +1d4 | 10 + mod. de Int | 2 | **2** | — |
-| 3 | 30 | +1d4 | 15 + mod. de Int | 3 | **2** | — |
-| 4 | 40 | +1d4 | 20 + mod. de Int | 4 | **2** | — |
-| 5 | 50 | +1d4 | 25 + mod. de Int | 5 | **2** | Bênção maior* |
-| 6 | 60 | +1d4 | 30 + mod. de Int | 6 | **2** | — |
-| 7 | 70 | +1d4 | 35 + mod. de Int | 7 | **2** | — |
-| 8 | 80 | +1d4 | 40 + mod. de Int | 8 | **2** | — |
-| 9 | 90 | +1d4 | 45 + mod. de Int | 9 | **2** | Milagre* |
-| 10 | — | +1d4 | 50 + mod. de Int | 10 | **2** | Nível máximo |
+| Nível | XP para subir | PV | Mana máxima | Mana extra máx. | Avanços | Preparadas | Especial |
+|---|---|---|---|---|---|---|---|
+| 1 | 10 | 1d4 + mod. de Con | 5 + mod. de Int | 1 | — | 4 | 4 habilidades iniciais · proficiências · bênção menor* |
+| 2 | 20 | +1d4 | 10 + mod. de Int | 2 | **2** | 5 | — |
+| 3 | 30 | +1d4 | 15 + mod. de Int | 3 | **2** | 6 | — |
+| 4 | 40 | +1d4 | 20 + mod. de Int | 4 | **2** | 7 | — |
+| 5 | 50 | +1d4 | 25 + mod. de Int | 5 | **2** | 8 | Bênção maior* |
+| 6 | 60 | +1d4 | 30 + mod. de Int | 6 | **2** | 9 | — |
+| 7 | 70 | +1d4 | 35 + mod. de Int | 7 | **2** | 10 | — |
+| 8 | 80 | +1d4 | 40 + mod. de Int | 8 | **2** | 11 | — |
+| 9 | 90 | +1d4 | 45 + mod. de Int | 9 | **2** | 12 | Milagre* |
+| 10 | — | +1d4 | 50 + mod. de Int | 10 | **2** | 13 | Nível máximo |
 
 **Mana máxima** soma o modificador do seu atributo principal: Inteligência.
 
@@ -50,7 +50,7 @@ Ao subir de nível:
 
 | Avanço | Efeito |
 |---|---|
-| Nova habilidade | Escolha uma habilidade da lista do Mago. |
+| Nova habilidade | Escreva no grimório mais uma magia da lista do Mago. Ela não aumenta as preparadas. |
 | Melhoria | Escolha uma das três melhorias de uma habilidade sua. O custo dela aumenta em 1. |
 | +1 dado | Uma habilidade com dados de dano ou cura ganha +1 dado, sem aumentar o custo. |
 | Atributos | +2 em atributos (distribua; máximo 20). |
