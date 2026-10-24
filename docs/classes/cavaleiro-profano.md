@@ -17,7 +17,7 @@ Cavaleiros que deixaram um demônio entrar e nunca mais o deixaram sair. Vestem 
 
 **O demônio cobra.** Quando você tira 1 natural num ataque ou teste, além de perder 1 de Sanidade, o demônio assume o seu próximo turno: o Mestre controla você, que ataca a criatura mais próxima, amiga ou inimiga. Se você sofrer um colapso, não morre: o demônio toma o seu corpo para sempre, e o personagem passa para o Mestre.
 
-**Idioma.** Você fala a língua dos demônios, além dos seus outros idiomas.
+**Vocação: Marca do Demônio.** Você fala a língua dos demônios, além dos seus outros idiomas, e tem vantagem em testes para intimidar. Animais ficam inquietos perto de você.
 
 **Habilidades iniciais.** Escolha 2 na lista ou role 1d20 duas vezes. Para começar rápido: Golpe Profano e Erguer os Mortos.
 

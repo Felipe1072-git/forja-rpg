@@ -13,6 +13,8 @@ Espadachins de chapéu de pluma, mosqueteiros e fanfarrões de língua afiada. L
 
 **Armaduras.** Leves.
 
+**Vocação: Bravata.** Vantagem em testes de Carisma para provocar, desafiar e impressionar.
+
 **Habilidades iniciais.** Escolha 3 na lista ou role 1d20 três vezes. Para começar rápido: Provocação, Estocada e Floreio.
 
 ## PROGRESSÃO DO DUELISTA

@@ -13,6 +13,8 @@ Clérigos, profetas, cultistas e pactuários que recebem poder de uma divindade,
 
 **Armaduras.** Todas e escudo.
 
+**Vocação: Mãos de Fé.** Você estabiliza um aliado morrendo sem precisar de teste.
+
 **Divindade.** Obrigatória. Escolha o vínculo (devoção ou pacto) e receba as bênçãos normalmente (veja Divindades). Todas as habilidades do sacerdote são divinas: só funcionam enquanto você tiver o favor da divindade.
 
 **Abordagem.** Benigna ou maligna. Em habilidades com duas versões, use a da sua abordagem.

@@ -13,6 +13,8 @@ Ladrões, batedores, assassinos e trapaceiros que vencem pela astúcia, pela agi
 
 **Armaduras.** Leves.
 
+**Vocação: Gíria de Ladrão.** Você conhece a gíria e os sinais secretos dos ladrões, e acha as marcas que eles deixam em muros e portas.
+
 **Habilidades iniciais.** Escolha 3 na lista ou role 1d20 três vezes. Para começar rápido: Ladinagem, Ataque Furtivo e Fuga.
 
 ## PROGRESSÃO DO LADINO

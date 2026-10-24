@@ -13,6 +13,8 @@ Guerreiros das terras selvagens que trocam técnica por fúria. Aguentam o que m
 
 **Armaduras.** Leves, médias e escudo.
 
+**Vocação: Couro Curtido.** Vantagem em testes de Constituição contra frio, calor e o cansaço da marcha.
+
 **Habilidades iniciais.** Escolha 2 na lista ou role 1d20 duas vezes. Para começar rápido: Fúria e Pele Grossa.
 
 ## PROGRESSÃO DO BÁRBARO

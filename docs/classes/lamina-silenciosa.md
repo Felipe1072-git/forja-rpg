@@ -13,7 +13,7 @@ Assassinos de máscara negra treinados num templo escondido, onde cresce a flor 
 
 **Armaduras.** Leves.
 
-**Furtivo.** Vantagem em testes para se esconder e se mover em silêncio.
+**Vocação: Furtivo.** Vantagem em testes para se esconder e se mover em silêncio.
 
 **Idioma.** Você fala a língua dos demônios, além dos seus outros idiomas.
 

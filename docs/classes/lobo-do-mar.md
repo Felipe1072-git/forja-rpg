@@ -13,7 +13,7 @@ Saqueadores de barcos longos que chegam com a maré e partem com o saque. Lutam 
 
 **Armaduras.** Leves, médias e escudo.
 
-**Marujo.** Vantagem em testes para navegar, pilotar e manobrar barcos, e para nadar.
+**Vocação: Marujo.** Vantagem em testes para navegar, pilotar e manobrar barcos, e para nadar.
 
 **Deuses Antigos.** Ao terminar um descanso, escolha o favor de um dos três deuses antigos. Ele vale até o seu próximo descanso. Isso não conta como divindade: você ainda pode seguir uma.
 

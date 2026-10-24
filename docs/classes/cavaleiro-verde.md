@@ -15,7 +15,7 @@ Cavaleiros de armadura coberta de musgo e elmo de galhada, juramentados ao bosqu
 
 **Divindade.** Obrigatória: uma divindade da natureza ou um senhor das fadas. Escolha o vínculo (devoção ou pacto) e receba as bênçãos normalmente (veja Divindades). As magias do Cavaleiro Verde são divinas: só funcionam enquanto você tiver o favor da divindade.
 
-**Idioma.** Você fala a língua das fadas, além dos seus outros idiomas.
+**Vocação: Juramentado.** Você fala a língua das fadas, além dos seus outros idiomas, e as criaturas do bosque reconhecem você como um dos seus.
 
 **Habilidades iniciais.** Escolha 3 na lista ou role 1d20 três vezes. Para começar rápido: Enraizar, O Jogo do Golpe e Golpe das Estações.
 

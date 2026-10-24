@@ -50,7 +50,7 @@ Um personagem de nível 0 começa com:
 
 - Atributos
 - Ancestralidade
-- Classe (apenas o dado de vida)
+- Classe (o dado de vida e a vocação)
 - PV = 1 dado de vida da classe + modificador de Constituição (mínimo 1)
 - Antecedente
 - Tendência
@@ -58,7 +58,7 @@ Um personagem de nível 0 começa com:
 
 **Sorte de principiante.** Personagens de nível 0 podem usar qualquer arma e armadura.
 
-Personagens de nível 0 não têm Mana nem habilidades.
+Personagens de nível 0 não têm Mana nem habilidades, mas já têm a vocação da classe (veja Classes).
 
 Um personagem de nível 0 chega ao nível 1 ao sobreviver à sua primeira aventura. Nesse momento, ele recebe o que falta do nível 1: o resto da classe (proficiências, atributo principal, Mana e habilidades iniciais) e, se quiser, uma divindade.
 
@@ -88,7 +88,7 @@ Use para criar personagens de nível 0 em segundos, como no Funil (veja Mestre).
 
 1. **Atributos.** Role 4d6 e descarte o menor, seis vezes, em ordem: Força, Destreza, Constituição, Inteligência, Sabedoria, Carisma.
 2. **Ancestralidade.** Role 1d20 (veja Ancestralidade).
-3. **Classe.** Role 1d20: 1 Guerreiro, 2 Sacerdote, 3 Ladino, 4 Mago, 5 Bárbaro, 6 Patrulheiro, 7 Bardo, 8 Druida, 9 Paladino, 10 Feiticeiro, 11 Monge, 12 Alquimista, 13 Guerreiro Basilisco, 14 Duelista, 15 Cavaleiro Verde, 16 Cavaleiro Profano, 17 Necromante, 18 Lâmina Silenciosa, 19 Lobo do Mar, 20 Malvidente. No nível 0, ela só dá o dado de vida.
+3. **Classe.** Role 1d20: 1 Guerreiro, 2 Sacerdote, 3 Ladino, 4 Mago, 5 Bárbaro, 6 Patrulheiro, 7 Bardo, 8 Druida, 9 Paladino, 10 Feiticeiro, 11 Monge, 12 Alquimista, 13 Guerreiro Basilisco, 14 Duelista, 15 Cavaleiro Verde, 16 Cavaleiro Profano, 17 Necromante, 18 Lâmina Silenciosa, 19 Lobo do Mar, 20 Malvidente. No nível 0, ela dá o dado de vida e a vocação.
 4. **PV.** 1 dado de vida da classe + modificador de Constituição (mínimo 1).
 5. **Sanidade.** 10 + modificadores de Inteligência, Sabedoria e Carisma.
 6. **Antecedente.** Role 1d20 (veja Antecedente).

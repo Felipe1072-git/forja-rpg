@@ -13,6 +13,8 @@ Estudiosos, feiticeiros e bruxos que dobram a realidade com fórmulas, palavras 
 
 **Armaduras.** Nenhuma.
 
+**Vocação: Sentir Magia.** Você sabe se algo adjacente é mágico e consegue ler escritos mágicos.
+
 **Habilidades iniciais.** Escolha 4 na lista ou role 1d20 quatro vezes. Para começar rápido: Erudição Arcana, Míssil Arcano, Escudo Arcano e Sono.
 
 ## PROGRESSÃO DO MAGO

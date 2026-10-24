@@ -19,11 +19,13 @@ Mortais que nasceram com a alma de um dragão. Gritam palavras na língua antiga
 
 **Faz de tudo.** Com o avanço Nova habilidade, você pode pegar uma habilidade da lista do Guerreiro, do Ladino ou do Mago, quantas vezes quiser. Elas usam o seu atributo principal.
 
-**Devorar Almas.** Quando uma criatura poderosa morre até perto de você (um dragão, uma criatura lendária ou um chefe, a critério do Mestre), você absorve a alma dela.
+**Vocação: Devorar Almas.** Quando uma criatura poderosa morre até perto de você (um dragão, uma criatura lendária ou um chefe, a critério do Mestre), você absorve a alma dela.
 
 **Alma de dragão.** Ganhe uma palavra: uma melhoria de grito, sem gastar avanço.
 
 **Eco da fera.** Uma alma de outra criatura dá um traço dela até o próximo descanso longo, à escolha do Mestre (regeneração, visão no escuro, uma resistência, voo, veneno na mordida). Você só tem um eco por vez.
+
+**Nível 0.** Antes do nível 1 você ainda não grita: a alma de dragão fica guardada, e a palavra chega quando você subir de nível.
 
 **Habilidades iniciais.** Escolha 2 na lista ou role 1d20 duas vezes. Para começar rápido: Força da Voz e Pele de Dragão.
 

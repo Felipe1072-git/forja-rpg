@@ -13,6 +13,8 @@ Guerreiros de olhos em brasa que cobrem a pele de lama e pedra. Lutam imitando o
 
 **Armaduras.** Nenhuma.
 
+**Vocação: Língua das Escamas.** Você entende lagartos, cobras e outros répteis comuns, e eles nunca atacam você primeiro.
+
 **Habilidades iniciais.** Escolha 3 na lista ou role 1d20 três vezes. Para começar rápido: Olhar Petrificante, Pele de Pedra e Sangue de Basilisco.
 
 ## PROGRESSÃO DO GUERREIRO BASILISCO

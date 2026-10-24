@@ -13,6 +13,8 @@ Boticários, cirurgiões e médicos da peste de máscara de bico. Atravessam cid
 
 **Armaduras.** Leves.
 
+**Vocação: Nariz de Boticário.** Você identifica venenos, doenças e poções pelo cheiro.
+
 **Alquimia.** Suas habilidades são alquimia e medicina, não magia: não podem ser dissipadas nem anuladas por antimagia. A Mana representa reagentes e preparo. Ataques com frascos usam Inteligência, e testes de resistência contra eles usam a sua CD de Inteligência.
 
 **Habilidades iniciais.** Escolha 3 na lista ou role 1d20 três vezes. Para começar rápido: Bomba Alquímica, Máscara de Bico e Poção Improvisada.

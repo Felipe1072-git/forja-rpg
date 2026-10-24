@@ -171,7 +171,7 @@ def ficha_funil():
         pjs += (
             '<div class="fh-pj">'
             f'<div class="fh-pj-topo"><span class="fh-num">{n}</span>' + campo('Nome', 'fh-larga') + '</div>'
-            '<div class="fh-pj-campos">' + campo('Ancestralidade') + campo('Classe (dado de vida)') +
+            '<div class="fh-pj-campos">' + campo('Ancestralidade') + campo('Classe (dado de vida, vocação)') +
             campo('Antecedente') + campo('Tendência') + '</div>'
             '<div class="fh-minis">' + mini + '</div>'
             '<div class="fh-trio">' + caixa('PV', formula='dado + Con (mín. 1)') + caixa('CA', formula='10 + Des, ou armadura') + caixa('Sanidade', formula='10 + Int + Sab + Car') + '</div>'
@@ -185,7 +185,7 @@ def ficha_funil():
         '<header class="fh-topo fh-topo-curto">' + LOGO +
         '<div class="fh-titulo-folha">Ficha de Funil</div>' + campo('Jogador') + '</header>'
         '<div class="fh-pjs">' + pjs + '</div>'
-        '<p class="fh-rodape">Nível 0: sem Mana nem habilidades. Com 0 PV, o personagem morre. '
+        '<p class="fh-rodape">Nível 0: sem Mana nem habilidades, só a vocação da classe. Com 0 PV, o personagem morre. '
         'Quem sobreviver ao Funil sobe para o nível 1 e soma o dado de vida aos PV que já tinha.</p>'
         '</div>'
     )
@@ -615,7 +615,7 @@ def guia_criacao():
                   ['Besta pesada', '15', '1d10', 'muito longe, duas mãos, munição, recarga, pesada'],
               ], 'rf-armas')),
         bloco('Nível 0 e o Funil',
-              '<p>Atributos em ordem (For, Des, Con, Int, Sab, Car). Ancestralidade, classe (só o dado de vida), antecedente e tendência rolados. '
+              '<p>Atributos em ordem (For, Des, Con, Int, Sab, Car). Ancestralidade, classe (dado de vida e vocação), antecedente e tendência rolados. '
               'Sem Mana, sem habilidades; usa qualquer arma e armadura. Equipamento: 1d4 itens em d12: '
               '<b>1</b> tocha · <b>2</b> adaga · <b>3</b> vara de 3 m · <b>4</b> arco curto e 5 flechas · <b>5</b> corda · <b>6</b> óleo · '
               '<b>7</b> pé de cabra · <b>8</b> 10 cravos · <b>9</b> pederneira · <b>10</b> gancho · <b>11</b> clava · <b>12</b> estrepes.</p>',

@@ -13,6 +13,8 @@ Cavaleiros sagrados, cruzados e vingadores juramentados que levam o poder de uma
 
 **Armaduras.** Todas e escudo.
 
+**Vocação: Palavra de Honra.** Quando você jura que algo é verdade, e é, tem vantagem em testes de Carisma para convencer.
+
 **Divindade.** Obrigatória. Escolha o vínculo (devoção ou pacto) e receba as bênçãos normalmente (veja Divindades). Todas as habilidades do paladino são divinas: só funcionam enquanto você tiver o favor da divindade.
 
 **Abordagem.** Benigna ou maligna, como a do Sacerdote. Um paladino maligno é um cavaleiro sombrio: onde uma habilidade fala em criaturas do Mal, mortos-vivos e demônios, ele usa criaturas do Bem.

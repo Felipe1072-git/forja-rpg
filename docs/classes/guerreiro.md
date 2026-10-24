@@ -13,6 +13,8 @@ Soldados veteranos, duelistas, mercenários e arqueiros que confiam no aço e no
 
 **Armaduras.** Todas e escudo.
 
+**Vocação: Veterano.** Ao ver alguém lutar por 1 rodada, você sabe se ele é mais fraco, igual ou mais forte que você. Você dorme de armadura sem perder o descanso.
+
 **Habilidades iniciais.** Escolha 2 na lista ou role 1d20 duas vezes. Para começar rápido: Maestria com Arma e Golpe Poderoso.
 
 ## PROGRESSÃO DO GUERREIRO

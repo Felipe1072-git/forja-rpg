@@ -13,6 +13,8 @@ Caçadores, batedores e guardiões das fronteiras que conhecem os ermos como a p
 
 **Armaduras.** Leves, médias e escudo.
 
+**Vocação: Olhos de Batedor.** Vantagem em testes para perceber emboscadas e notar detalhes ao longe.
+
 **Magia da natureza.** Algumas habilidades do Patrulheiro são magias. Elas sempre usam Sabedoria, qualquer que seja o seu atributo principal.
 
 **Habilidades iniciais.** Escolha 3 na lista ou role 1d20 três vezes. Para começar rápido: Marca do Caçador, Companheiro Animal e Rastrear.

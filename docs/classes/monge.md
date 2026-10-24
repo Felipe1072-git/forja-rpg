@@ -13,6 +13,8 @@ Mestres das artes marciais que transformam o corpo em arma. Sem armadura e sem l
 
 **Armaduras.** Nenhuma.
 
+**Vocação: Corpo Leve.** Vantagem em testes para se equilibrar, saltar e escalar. O dano de queda cai pela metade.
+
 **Habilidades iniciais.** Escolha 3 na lista ou role 1d20 três vezes. Para começar rápido: Artes Marciais, Defesa sem Armadura e Rajada de Golpes.
 
 ## PROGRESSÃO DO MONGE

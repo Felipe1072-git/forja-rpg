@@ -13,11 +13,13 @@ A magia não foi estudada: ela nasceu no sangue. Herdeiros de dragões, de fadas
 
 **Armaduras.** Nenhuma.
 
+**Vocação: Faísca.** Seu elemento inato aparece desde o nível 0: mãos quentes, cabelo arrepiado, hálito gelado. Vantagem em testes contra efeitos desse elemento.
+
 **Habilidades iniciais.** Escolha 3 na lista ou role 1d20 três vezes. Para começar rápido: Rajada Elemental, Linhagem e Magia Gêmea.
 
 ## ELEMENTO INATO
 
-No nível 1, escolha um elemento ou role 1d10. Habilidades que falam em "elemento inato" usam esse elemento.
+No nível 0 (ou no 1, se começar nele), escolha um elemento ou role 1d10. Habilidades que falam em "elemento inato" usam esse elemento.
 
 | d10 | Elemento | d10 | Elemento |
 |---|---|---|---|

@@ -15,7 +15,7 @@ Videntes de olhos leitosos que leem a sina nos ossos e bruxas que rogam pragas s
 
 **Idiomas.** Você fala a língua dos demônios e a das fadas, além dos seus outros idiomas.
 
-**Familiar.** Um animal pequeno (corvo, gato, rato, sapo) serve você e fala os seus idiomas. Ficha: CA 12, 2 PV por nível seu, movimento de 6 casas (ou voo, se tiver asas), sem ataque útil. Suas habilidades podem sair dele: conte o alcance a partir do familiar. Se ele morrer, traga-o de volta com 1 semana de ritual em tempo livre, ou na hora, perdendo 1 de PV máximo para sempre.
+**Vocação: Familiar.** Um animal pequeno (corvo, gato, rato, sapo) serve você e fala os seus idiomas. Ficha: CA 12, 2 PV por nível seu, movimento de 6 casas (ou voo, se tiver asas), sem ataque útil. Suas habilidades podem sair dele: conte o alcance a partir do familiar. Se ele morrer, traga-o de volta com 1 semana de ritual em tempo livre, ou na hora, perdendo 1 de PV máximo para sempre.
 
 **Fichas de sorte.** Você pode ter 1 ficha de sorte por vez. Gaste a ficha para somar 1d6 a um ataque ou teste seu ou de um aliado até longe, depois de rolar.
 

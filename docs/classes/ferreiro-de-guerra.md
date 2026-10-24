@@ -15,7 +15,7 @@ Ferreiros de mãos queimadas que sabem que tudo pode ser consertado, melhorado o
 
 **Armaduras.** Leves, médias e escudo.
 
-**Oficina.** Com ferramentas de ferreiro, você conserta qualquer item mundano danificado em 1 turno de exploração. No tempo livre, a atividade Fabricar vale para qualquer item mundano, não só os do seu antecedente.
+**Vocação: Oficina.** Com ferramentas de ferreiro, você conserta qualquer item mundano danificado em 1 turno de exploração. No tempo livre, a atividade Fabricar vale para qualquer item mundano, não só os do seu antecedente.
 
 **Engenhocas.** Suas habilidades são engenharia, não magia: não podem ser dissipadas nem anuladas por antimagia, exceto as marcadas como *(runa)*. A Mana representa material, peças e pólvora. Ataques com suas engenhocas usam Inteligência.
 

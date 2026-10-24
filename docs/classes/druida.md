@@ -13,6 +13,8 @@ Guardiões dos bosques, xamãs e eremitas que falam pela natureza. Chamam o raio
 
 **Armaduras.** Leves, médias e escudo. Por tradição, druidas não usam metal.
 
+**Vocação: Filho da Mata.** Você sempre acha água e comida na natureza e sabe quais plantas curam, alimentam ou envenenam.
+
 **Habilidades iniciais.** Escolha 3 na lista ou role 1d20 três vezes. Para começar rápido: Forma Animal, Cura da Terra e Chamar Relâmpago.
 
 ## PROGRESSÃO DO DRUIDA

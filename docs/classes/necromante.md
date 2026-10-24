@@ -13,7 +13,7 @@ Estudiosos da morte que olharam para além do véu e voltaram. Vestem cota de ma
 
 **Armaduras.** Leves e médias.
 
-**Sentir a Morte.** Você sente mortos-vivos e criaturas morrendo até perto: sabe onde estão e o que são, mesmo através de paredes.
+**Vocação: Sentir a Morte.** Você sente mortos-vivos e criaturas morrendo até perto: sabe onde estão e o que são, mesmo através de paredes.
 
 **Rio da Morte.** Você já pisou na margem do outro lado. Quando estiver morrendo, você tem 2 rodadas a mais antes de morrer.
 
