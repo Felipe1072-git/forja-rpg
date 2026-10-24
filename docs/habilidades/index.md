@@ -120,6 +120,8 @@ Magias causam dano elemental e pertencem a uma escola.
 
 **Exemplo.** Um elemental de fogo é resistente a fogo e vulnerável a gelo. Um elemental de gelo é resistente a gelo e vulnerável a fogo.
 
+**Terra não é contusão.** Dano de terra é a pedra, a areia e o tremor movidos por magia. Ele é mágico: vence a resistência a armas comuns e não é reduzido por quem resiste a contusão.
+
 **Corpo.** Veneno e ácido não têm oposto. Eles atacam a carne: mortos-vivos, constructos e elementais costumam ser imunes a veneno.
 
 **Escolas.** Abjuração, adivinhação, conjuração, encantamento, evocação, ilusão, necromancia, transmutação. Escolas são só uma classificação. Elas não têm efeito mecânico próprio.

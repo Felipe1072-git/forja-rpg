@@ -69,6 +69,19 @@ Aventuras e monstros do D&D 5e são mais resistentes e contam com o bônus de pr
 
 **Medo e horror.** Todo efeito que amedronta, aterroriza ou mostra horrores também causa dano à Sanidade. O alvo faz o teste de Sanidade (veja Sanidade) contra a CD convertida: com falha, sofre o efeito e perde Sanidade; com sucesso, não sofre nada. Dano: medo comum, o do Terror (1, ou 1d4 se a fonte for sobrenatural); tortura, pesadelo ou magia mental, 1d6; horror cósmico ou visão de outro plano, 2d6. Efeitos que derrubam a 0 PV pela mente causam 2d6 de Sanidade no lugar.
 
+**Tipos de dano.** Troque os tipos do 5e pelos do Forja RPG. Criaturas de pedra ou de ar ganham o elemento delas, com a resistência e a vulnerabilidade do par (veja Elementos em Habilidades).
+
+| No 5e | No Forja RPG |
+|---|---|
+| Fogo, frio | Fogo, gelo |
+| Raio, trovão | Tempestade |
+| Força | Arcano |
+| Ácido, necrótico, psíquico, radiante, veneno | Iguais |
+| Contusão, corte, perfuração | Iguais (marciais) |
+| Resistência a dano não mágico | Resistência a armas comuns (veja Combate) |
+| Criatura de pedra ou terra (elemental da terra, gárgula, golem de pedra) | Resistente a terra, vulnerável a tempestade |
+| Criatura de ar ou tempestade (elemental do ar, espírito do vento) | Resistente a tempestade, vulnerável a terra |
+
 **Recarga.** "Recarga 5–6": role 1d6 no começo do turno do monstro; com 5 ou 6, a habilidade volta.
 
 **Ações lendárias.** Troque por 1 ataque extra por rodada.
