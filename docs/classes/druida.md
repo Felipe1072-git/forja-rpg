@@ -15,6 +15,8 @@ Guardiões dos bosques, xamãs e eremitas que falam pela natureza. Chamam o raio
 
 **Vocação: Filho da Mata.** Você sempre acha água e comida na natureza e sabe quais plantas curam, alimentam ou envenenam.
 
+**Aptidão mágica.** Você usa pergaminhos sem teste (veja Pergaminhos).
+
 **Habilidades iniciais.** Escolha 3 na lista ou role 1d20 três vezes. Para começar rápido: Forma Animal, Cura da Terra e Chamar Relâmpago.
 
 ## PROGRESSÃO DO DRUIDA

@@ -15,6 +15,8 @@ Estudiosos da morte que olharam para além do véu e voltaram. Vestem cota de ma
 
 **Vocação: Sentir a Morte.** Você sente mortos-vivos e criaturas morrendo até perto: sabe onde estão e o que são, mesmo através de paredes.
 
+**Aptidão mágica.** Você usa pergaminhos sem teste (veja Pergaminhos).
+
 **Rio da Morte.** Você já pisou na margem do outro lado. Quando estiver morrendo, você tem 2 rodadas a mais antes de morrer.
 
 **Habilidades iniciais.** Escolha 3 na lista ou role 1d20 três vezes. Para começar rápido: Animar Mortos, Toque Gélido e Armadura de Ossos.

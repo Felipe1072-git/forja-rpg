@@ -42,6 +42,8 @@ Capítulos próprios do Forja RPG, sem equivalente no Shadowdark: **Criando Habi
 
 De `docs/jogo/`: **turno de exploração** (10 min), **Inspiração**, **crítico**, **ação livre**, **reação**, **ataque de oportunidade** (habilidades que movem provocam, salvo se disserem "sem provocar ataques de oportunidade"), **cobertura**, **Moral**, **morrendo**, **estabilizar**, **exaustão**, condições (**amedrontado, atordoado, caído, cego, enfeitiçado, lento, paralisado, surdo**), **tempo livre**, **farra**. Moeda única: **peça de ouro (po)** — não há prata nem cobre; itens baratos em lotes.
 
+De `docs/classes/` e `docs/habilidades/` (regras recentes): **vocação** (talento de classe desde o nível 0), **aptidão mágica** (usa pergaminhos sem teste), **pergaminho**, **grimório** e magias **preparadas** (Mago).
+
 De `docs/equipamento.md`: **espaço** de carga, **sobrecarga**, armas **simples / marciais**, propriedades **acuidade, alcance, arremesso, duas mãos, munição, pesada, recarga, versátil**, armaduras **leve / média / pesada**, **escudo**, **kit de exploração**, **pacote inicial**.
 
 De `docs/divindades.md`: **divindade** (qualquer entidade que concede poder), **domínio**, **vínculo** (**devoção / pacto**), **responsabilidades**, **bênçãos** (**menor / maior / milagre**), habilidade **divina**, **penitência**.

@@ -17,6 +17,8 @@ Videntes de olhos leitosos que leem a sina nos ossos e bruxas que rogam pragas s
 
 **Vocação: Familiar.** Um animal pequeno (corvo, gato, rato, sapo) serve você e fala os seus idiomas. Ficha: CA 12, 2 PV por nível seu, movimento de 6 casas (ou voo, se tiver asas), sem ataque útil. Suas habilidades podem sair dele: conte o alcance a partir do familiar. Se ele morrer, traga-o de volta com 1 semana de ritual em tempo livre, ou na hora, perdendo 1 de PV máximo para sempre.
 
+**Aptidão mágica.** Você usa pergaminhos sem teste (veja Pergaminhos).
+
 **Fichas de sorte.** Você pode ter 1 ficha de sorte por vez. Gaste a ficha para somar 1d6 a um ataque ou teste seu ou de um aliado até longe, depois de rolar.
 
 **Quebra do fio.** Se você tirar 1 natural numa habilidade, além de perder 1 de Sanidade, essa habilidade fica bloqueada até você pagar um Preço 1.

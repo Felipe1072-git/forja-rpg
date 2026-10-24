@@ -15,6 +15,8 @@ Estudiosos, feiticeiros e bruxos que dobram a realidade com fórmulas, palavras 
 
 **Vocação: Sentir Magia.** Você sabe se algo adjacente é mágico e consegue ler escritos mágicos.
 
+**Aptidão mágica.** Você usa pergaminhos sem teste (veja Pergaminhos).
+
 **Grimório.** Suas magias ficam escritas num grimório. Quando achar um texto mágico (um pergaminho, o grimório de outro mago, uma inscrição), copie a magia no tempo livre: 1 dia e 10 po por ponto de custo dela. A magia pode ser de qualquer lista de classe. Ela fica no grimório, com as melhorias com que foi escrita.
 
 **Preparar.** Só as magias preparadas podem ser usadas. O número de preparadas está na coluna Preparadas da tabela de progressão. Ao subir de nível, escreva de graça no grimório uma magia da lista do Mago. Num descanso longo, troque uma preparada por outra do grimório; as melhorias da que saiu ficam anotadas e voltam com ela.

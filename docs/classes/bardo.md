@@ -15,6 +15,8 @@ Menestréis, poetas, trapaceiros e cronistas que tecem magia com música e palav
 
 **Vocação: Artista de Estrada.** Tocando por 1 hora numa taverna ou praça, você ganha comida, um quarto e um boato do lugar.
 
+**Aptidão mágica.** Você usa pergaminhos sem teste (veja Pergaminhos).
+
 **Habilidades iniciais.** Escolha 3 na lista ou role 1d20 três vezes. Para começar rápido: Inspiração Bárdica, Zombaria Viciosa e Melodia Curativa.
 
 ## PROGRESSÃO DO BARDO

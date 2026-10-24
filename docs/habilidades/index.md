@@ -132,7 +132,7 @@ Um pergaminho guarda uma magia, com o custo, os dados e as melhorias com que foi
 
 **Ler.** Qualquer criatura pode usar um pergaminho: faça um teste com o seu maior atributo mental (Inteligência, Sabedoria ou Carisma), CD 10 + custo da magia. Se passar, a magia acontece sem gastar Mana. Passando ou não, o pergaminho vira pó.
 
-**Aptidão mágica.** Mago, Feiticeiro e Bardo usam pergaminhos sem teste.
+**Aptidão mágica.** Quem tem aptidão mágica usa pergaminhos sem teste. A página de cada classe diz se ela tem.
 
 **Grimório.** Um Mago pode copiar o pergaminho em vez de usá-lo (veja Mago).
 
