@@ -3,6 +3,8 @@
 Matadores de monstros com espada de prata, chicote e um cinto de frascos. Estudam a presa, acham a fraqueza e entram no castelo quando o sol se põe. Alguns nasceram numa linhagem de caçadores; outros tiveram o sangue alterado para isso.
 { .epigrafe }
 
+![Caçador de chapéu de aba larga e armadura de couro, com espada e chicote, frascos e estacas no cinto](../assets/images/classes/cacador-de-prata.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Classe exótica.** Fica fora do Personagem Aleatório. Combine com o Mestre antes de escolher (veja Classes exóticas).
 
 **Base.** d8: 3 habilidades iniciais, 3 de Mana por nível, 2 avanços nos níveis 3, 6 e 9 (1 nos outros).
