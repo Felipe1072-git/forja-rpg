@@ -108,4 +108,5 @@ Dúvidas de regra em aberto. Remova o item quando for resolvido e aplicado no te
 - **Modos de jogo:** Mortal, Brutal, Escassez, Heroico, Impulso, Caçador, Caos, Sem loucura.
 - **Conversão de monstros:** distâncias, tendência, Moral = 10 + mod. Sab, sem Mana, elementos, Sanidade.
 - **Convertendo do 5e** (o autor pediu monstros, armadilhas e CDs na escala do Shadowdark, sem proficiência; os números são sugestão): NV = ND + 2 (ND 1/8–1/4 → 1, 1/2 → 2); PV = NV × 4,5 + mod. Con; CA igual; ataque = mod. do atributo (+1 NV 4–7, +2 NV 8+); dano sem modificador; magias 1d6 (truque) ou (círculo + 1)d6; CDs 5e ≤10 → 9, 11–15 → 12, 16–20 → 15, 21+ → 18; tabela de condições; armadilhas pelas faixas de Dano Improvisado, uma faixa acima no nível 6+.
+- **Medo e horror do 5e viram dano de Sanidade** (o autor pediu; os valores são sugestão): teste de Sanidade contra a CD convertida, falha = efeito + dano inteiro, sucesso = metade do dano; medo comum 1d4, tortura/pesadelo/magia mental 1d6, horror cósmico 2d6; efeitos mentais que derrubam a 0 PV viram 2d6 de Sanidade.
 - **Todas as tabelas de 08-geradores.md.**

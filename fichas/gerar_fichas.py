@@ -475,7 +475,7 @@ def referencia_mestre():
               regra('Pés', '÷ 5 = casas.'),
               regra('Valores', 'Old school: como estão. Sem Mana.'),
               regra('Do 5e', 'NV = ND + 2. PV = NV × 4,5 + Con. Ataque = mod. (+1 NV 4–7, +2 NV 8+). Dano sem mod. '
-                    'CD ≤10: 9, 11–15: 12, 16–20: 15, 21+: 18.'),
+                    'CD ≤10: 9, 11–15: 12, 16–20: 15, 21+: 18. Medo e horror também tiram Sanidade (1d4, 1d6 ou 2d6).'),
               regra('Tendência', 'Lawful: Bem e Ordem. Chaotic: Mal e Caos. Neutral: Neutro.')),
         bloco('O Funil',
               regra('Nível 0', '4 personagens aleatórios por jogador, um em jogo por vez. Morrem a 0 PV. Perdeu todos: crie mais 1d4.'),
