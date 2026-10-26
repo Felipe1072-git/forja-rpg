@@ -3,6 +3,8 @@
 Gente que nasceu sem uma gota de magia num mundo cheio dela. A magia escorrega neles e se desfaz. Cresceram treinando o corpo, aprenderam a se virar sem truques e descobriram que podem fazer o que nenhum mago faz: cortar um feitiço ao meio.
 { .epigrafe }
 
+![Guerreira de armadura leve golpeando com uma espada, estilhaçando uma magia em pedaços no ar](../assets/images/classes/quebra-feitico.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Classe exótica.** Fica fora do Personagem Aleatório. Combine com o Mestre antes de escolher (veja Classes exóticas).
 
 **Base.** d10: 2 habilidades iniciais, 2 de Mana por nível, 2 avanços nos níveis 5 e 10 (1 nos outros).
