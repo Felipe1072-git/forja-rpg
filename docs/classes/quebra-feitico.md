@@ -32,6 +32,20 @@ Gente que nasceu sem uma gota de magia num mundo cheio dela. A magia escorrega n
 | 5 | Você é fruto de um pacto quebrado. |
 | 6 | Ninguém sabe, nem você. |
 
+## ANCESTRALIDADE E MAGIA
+
+**Traços mágicos.** Sua essência apaga os traços mágicos da sua ancestralidade: Sangue arcano (Elfo e Meio-elfo), Magia drow (Drow), Ilusionista nato (Gnomo), Legado sombrio (Tiefling) e Sopro (Draconato). No lugar de cada um, escolha um traço substituto.
+
+**Troca.** Mesmo sem traço mágico, você pode trocar um traço da sua ancestralidade por um substituto.
+
+**Autômato.** A magia que move você está se apagando aos poucos. Você perde a Blindagem integrada, sem substituto, e passa a usar armaduras normalmente.
+
+| Traço substituto | Efeito |
+|---|---|
+| Rejeição | Vantagem em testes de resistência contra magia. |
+| Mente fechada | Você não pode ficar enfeitiçado por magia. |
+| Pele nula | Resistência a um elemento à sua escolha. |
+
 **Habilidades iniciais.** Escolha 2 na lista ou role 1d20 duas vezes. Para começar rápido: Lâmina Nula e Investida do Touro.
 
 ## PROGRESSÃO DO QUEBRA-FEITIÇO
