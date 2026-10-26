@@ -38,7 +38,7 @@ Gente que nasceu sem uma gota de magia num mundo cheio dela. A magia escorrega n
 
 **Troca.** Mesmo sem traço mágico, você pode trocar um traço da sua ancestralidade por um substituto.
 
-**Autômato.** A magia que move você está se apagando aos poucos. Você perde a Blindagem integrada, sem substituto, e passa a usar armaduras normalmente.
+**Autômato.** A magia que move você está se apagando aos poucos. Você perde a Blindagem integrada, ganha um traço substituto no lugar e passa a usar armaduras normalmente.
 
 | Traço substituto | Efeito |
 |---|---|
