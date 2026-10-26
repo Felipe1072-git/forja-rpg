@@ -261,6 +261,15 @@ Títulos são só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Cao
 | 5 | Sábio dos Elementos | Guardião do Equilíbrio | Fúria da Natureza |
 | 6 | Grão-Mestre do Templo | Avatar | Cataclismo |
 
+| d6 | Quebra-Feitiço: Ordem | Quebra-Feitiço: Neutro | Quebra-Feitiço: Caos |
+|---|---|---|---|
+| 1 | Escudeiro sem Magia | Sem-Magia | Rejeitado |
+| 2 | Guarda Nulo | Andarilho Vazio | Caçador de Magos |
+| 3 | Cavaleiro Nulo | Lâmina Vazia | Rompe-Selos |
+| 4 | Capitão Antimagia | Quebra-Feitiço | Fim dos Feitiços |
+| 5 | Campeão dos Sem-Magia | Coração Vazio | Terror dos Magos |
+| 6 | Rei dos Sem-Magia | Lenda do Vazio | Vazio Absoluto |
+
 ## Divindade
 
 Seguir uma divindade é opcional. Os jogadores criam as divindades, com domínio, bênçãos e responsabilidades. Veja Divindades.
