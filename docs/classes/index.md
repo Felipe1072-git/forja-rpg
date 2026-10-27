@@ -46,6 +46,7 @@ Classes estranhas, raras ou poderosas demais para todo mundo. Ficam fora do Pers
 | Caçador de Prata | d8 | Destreza ou Inteligência | Adaga, bestas, chicote, espada curta, espada longa, machadinha | Leves, médias e escudo |
 | Dobrador Elemental | d8 | Destreza ou Sabedoria | Simples | Nenhuma |
 | Quebra-Feitiço | d10 | Força ou Constituição | Todas | Leves e médias |
+| Carcereiro do Abismo | d6 | Inteligência ou Carisma | Adaga, bordão, bestas | Leves |
 
 **Vocação.** Toda classe tem uma vocação: um talento simples, sem Mana, que mostra para o que o personagem nasceu. Ela vale desde o nível 0 e nunca se perde.
 

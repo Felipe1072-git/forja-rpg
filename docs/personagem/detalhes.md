@@ -270,6 +270,15 @@ Títulos são só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Cao
 | 5 | Campeão dos Sem-Magia | Coração Vazio | Terror dos Magos |
 | 6 | Rei dos Sem-Magia | Lenda do Vazio | Vazio Absoluto |
 
+| d6 | Carcereiro do Abismo: Ordem | Carcereiro do Abismo: Neutro | Carcereiro do Abismo: Caos |
+|---|---|---|---|
+| 1 | Escriba de Nomes | Ocultista | Profanador |
+| 2 | Selador | Leitor de Pactos | Chamador |
+| 3 | Guardião do Círculo | Demonólogo | Acorrentador |
+| 4 | Juiz dos Pactos | Senhor dos Nomes | Mestre da Legião |
+| 5 | Carcereiro | Voz do Abismo | Flagelo dos Inocentes |
+| 6 | Senhor das Correntes | Portador do Livro | Senhor do Abismo |
+
 ## Divindade
 
 Seguir uma divindade é opcional. Os jogadores criam as divindades, com domínio, bênçãos e responsabilidades. Veja Divindades.
