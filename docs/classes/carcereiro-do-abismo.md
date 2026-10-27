@@ -3,6 +3,8 @@
 Conjuradores que leram os nomes proibidos e responderam ao chamado. Fazem pactos com demônios e os põem para trabalhar à força. Os demônios odeiam seu mestre e esperam a primeira chance de se soltar. Cada pacto cobra um preço: o sangue dos outros ou a própria mente.
 { .epigrafe }
 
+![Conjuradora drow com um livro em chamas e um chicote de correntes, prendendo demônios acorrentados](../assets/images/classes/carcereiro-do-abismo.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Classe exótica.** Fica fora do Personagem Aleatório. Combine com o Mestre antes de escolher (veja Classes exóticas).
 
 **Base.** d6: 3 habilidades iniciais, 4 de Mana por nível, 2 avanços nos níveis 3, 5, 7, 9 e 10 (1 nos outros).
