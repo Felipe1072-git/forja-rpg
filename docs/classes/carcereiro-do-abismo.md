@@ -21,15 +21,17 @@ Conjuradores que leram os nomes proibidos e responderam ao chamado. Fazem pactos
 
 **Os demônios sempre voltam.** Um demônio derrotado ou banido não morre: volta para o Abismo e pode ser chamado de novo.
 
-**Pactos.** Para invocar um demônio, você precisa de um pacto com ele. Para firmar o pacto, precisa conhecer o demônio: por uma lenda, um livro, uma inscrição, um sussurro num pesadelo, ou por tê-lo enfrentado. O ritual leva 1 turno de exploração. No nível 1, você já tem 2 pactos com demônios da tabela abaixo (escolha ou role 1d8).
+**Pactos.** Para invocar um demônio, você precisa de um pacto com ele. Para firmar o pacto, precisa conhecer o demônio: por uma lenda, um livro, uma inscrição, um sussurro num pesadelo, ou por tê-lo enfrentado. O ritual leva 1 turno de exploração. No nível 1, você já tem 2 pactos com demônios da tabela abaixo (escolha ou role 1d8). O pacto dura até você rompê-lo.
 
-**O preço.** Cada pacto tem um tributo: role 1d12 na tabela de tributos ao firmá-lo. Para cada pacto, escolha como paga. Sacrificando os outros, cumpra o tributo no prazo. Sacrificando a si mesmo, perca a Sanidade máxima indicada enquanto mantiver o pacto; ela volta quando você cumprir o tributo ou romper o pacto.
+**O preço.** Cada pacto tem um tributo: role 1d12 na tabela de tributos ao firmá-lo. Para cada pacto, escolha como paga. Sacrificando os outros, cumpra o tributo no prazo. Sacrificando a si mesmo, perca a Sanidade máxima indicada enquanto mantiver o pacto; ela volta quando você cumprir o tributo ou romper o pacto. Essa perda é uma só e não se acumula: role o 1d4 uma vez, ao escolher. O prazo do tributo só vale para quem paga com o ato.
+
+**Invocar.** Com uma ação, pague 2 de Mana e invoque, adjacente a você, um demônio com quem você tem pacto. Ele fica até ser derrotado ou dispensado (ação livre). Derrotado, volta para o Abismo e pode ser invocado de novo.
 
 **Rebelde.** Se o prazo de um tributo vencer sem pagamento, o demônio fica rebelde: não atende, ou atende e ataca você. Ele volta a obedecer quando você pagar o tributo ou passar a pagar com Sanidade máxima.
 
 **Coleira.** Você mantém invocados ao mesmo tempo um número de demônios igual ao mod. do seu atributo principal (mínimo 1). Quando você tirar 1 natural, cair a 0 PV ou invocar acima do limite, faça um teste do seu atributo principal, CD 12, para cada demônio invocado. Em cada falha, aquele demônio se solta: ataca você no próximo turno dele e volta para o Abismo.
 
-**Habilidades iniciais.** Escolha 3 na lista ou role 1d20 três vezes. Para começar rápido: Invocar Demônio, Castigo e Fogo do Abismo.
+**Habilidades iniciais.** Escolha 3 na lista ou role 1d20 três vezes. Para começar rápido: Castigo, Fogo do Abismo e Escudo de Servo.
 
 ## DEMÔNIOS
 
@@ -107,7 +109,7 @@ As marcadas com *(magia)* são magia e usam o seu atributo principal; as outras 
 
 | d20 | Habilidade | Custo | Efeito | Melhoria 1 | Melhoria 2 | Melhoria 3 |
 |---|---|---|---|---|---|---|
-| 1 | **Invocar Demônio** *(magia)* | 3 | Ação. Invoque um demônio com quem você tem pacto, adjacente a você, por 10 rodadas (veja Demônios). | **Duradouro:** dura 1 hora. | **Dois chamados:** invoque dois demônios de pactos diferentes; os dois contam na Coleira. | **Sangue no círculo:** o demônio invocado ganha +2 de CA e +1 dado no dano. |
+| 1 | **Invocar Flagelo** *(magia)* | 5 | Ação. Um flagelo do Abismo surge adjacente a você por 10 rodadas. Ele conta na Coleira, mas não pede pacto nem tributo. Ficha: Grande, CA 16, 6 PV por nível seu, movimento de 8 casas; chicote de fogo que alcança 3 casas, d20 + seu atributo principal, 2d6 de dano de fogo; se acertar, puxa o alvo até ficar adjacente ao flagelo. | **Duradouro:** fica 1 hora. | **Correntes:** o alvo puxado fica preso e não se move por 1 rodada. | **Asas:** o flagelo voa com movimento de 8 casas. |
 | 2 | **Diabrete Espião** | Passiva | Um diabrete pactuado segue você sempre, sem contar na Coleira (ficha do Diabrete). Ele tem tributo próprio: role na tabela. Com uma ação, veja e ouça através dele até muito longe. | **Ladrão:** ele furta um objeto pequeno de uma criatura distraída. | **Mensageiro:** ele leva uma mensagem curta a qualquer distância. | **Ferrão negro:** o ferrão causa 1d6 e deixa o alvo lento por 1 rodada. |
 | 3 | **Castigo** *(magia)* | 1 | Movimento. Queime a carne de um demônio seu até perto: ele sofre 1d6 de dano e faz um ataque extra agora. Um demônio rebelde castigado obedece até o fim do combate. | **Chicote longo:** alcance até longe. | **Fúria:** o ataque extra causa +1d6 de dano. Escalonamento: +1d6 por +1 de Mana. | **Todos:** castigue todos os seus demônios até perto de uma vez. |
 | 4 | **Troca de Carne** *(magia)* | 2 | Reação. Quando for atacado, troque de lugar com um demônio seu até longe: o ataque vai para ele. | **Livre:** também pode usar no seu turno, como ação livre. | **Muito longe:** troca com um demônio até muito longe. | **Golpe de troca:** depois, o demônio faz um ataque contra o atacante. |
