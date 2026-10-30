@@ -164,10 +164,48 @@
       registrarAvancos(pj, L, BASES[classe.base].dois.includes(L) ? 2 : 1, op.sortear);
     }
 
+    // tabelas da classe que se rolam na criação
+    pj.extras = nivel >= 1 ? rolarExtras(pj) : [];
+
     // equipamento
     equipar(pj, op.equipamento || 'pacote');
     calcular(pj);
     return pj;
+  }
+
+  function habilidadePorNome(pj, nome) {
+    return pj.habilidades.find((h) => limpo(pj.classe.habilidades[h.i].nome).startsWith(nome));
+  }
+
+  function rolarExtras(pj) {
+    const t = pj.classe.tabelas || {};
+    const extras = [];
+    // Lótus Negro: 1d12; com 1, role duas vezes (de novo nos outros 1); sem repetir.
+    if (t['Dom do lótus']) {
+      const tab = t['Dom do lótus'];
+      const dons = [];
+      let rolagens = 1;
+      while (rolagens > 0 && dons.length < tab.length - 1) {
+        const r = d(tab.length);
+        if (r === 1) { rolagens += 2; } else if (!dons.includes(r)) { dons.push(r); }
+        rolagens -= 1;
+      }
+      extras.push({ titulo: 'Lótus Negro', itens: dons.map((r) => md(tab[r - 1][0])) });
+    }
+    // Pactos: 2 demônios no nível 1, mais os do Livro de Pactos; cada um com seu tributo.
+    if (t['Demônio'] && t['Tributo']) {
+      let n = 2;
+      const livro = habilidadePorNome(pj, 'Livro de Pactos');
+      if (livro) n += 2 + (livro.melhorias.includes(0) ? 2 : 0);
+      const demonios = embaralhar(t['Demônio'].map((l) => l[0])).slice(0, n);
+      const pactos = demonios.map((dem) => ({ nome: limpo(dem), tributo: um(t['Tributo']) }));
+      if (habilidadePorNome(pj, 'Diabrete Espião')) pactos.push({ nome: 'Diabrete Espião', tributo: um(t['Tributo']) });
+      extras.push({
+        titulo: 'Pactos',
+        itens: pactos.map((p) => `<b>${esc(p.nome)}.</b> Tributo: ${md(p.tributo[0])} Ou: ${esc(p.tributo[1])} de Sanidade máxima.`),
+      });
+    }
+    return extras;
   }
 
   function tendencia(bem, ordem) {
@@ -482,6 +520,7 @@
         <p><b>PV</b> ${pj.pv} · <b>CA</b> ${pj.ca} · <b>Sanidade</b> ${pj.sanidade}${pj.nivel >= 1 ? ` · <b>Mana</b> ${pj.mana} · <b>CD</b> ${pj.cd} · <b>Mana extra máx.</b> ${pj.nivel}` : ''} · <b>Movimento</b> ${pj.movimento} casas · <b>Dado de vida</b> d${c.base}</p>
         ${voc ? `<p><b>Vocação, ${esc(voc[0])}.</b> ${md(voc[1])}</p>` : ''}
         ${pj.nivel >= 1 && regras ? `<details><summary>Regras da classe</summary>${regras}</details>` : ''}
+        ${pj.extras.map((e) => `<p><b>${esc(e.titulo)}:</b></p><ul>${e.itens.map((i) => '<li>' + i + '</li>').join('')}</ul>`).join('')}
         <details><summary>Traços de ${esc(pj.anc.nome)}</summary>${tracos}</details>
         ${pj.divindade ? `<p><b>Divindade:</b> ${esc(pj.divindade.nome)} (${esc(pj.divindade.entidade)}, ${esc(pj.divindade.dominio)}, ${esc(pj.divindade.vinculo)}). <i>Responsabilidades:</i> ${esc(pj.divindade.responsabilidades)}${ben.length ? ' <i>Bênçãos:</i> ' + ben.map(esc).join(' ') : ''}</p>` : ''}
         ${habs ? `<table class="fj-g-tabela"><thead><tr><th>Habilidade</th><th>Custo</th><th>Efeito</th></tr></thead><tbody>${habs}</tbody></table>` : ''}
@@ -556,6 +595,7 @@
       <div class="linha">${nums}</div>
       ${voc ? `<p><b>Vocação, ${esc(voc[0])}.</b> ${md(voc[1])}</p>` : ''}
       ${pj.nivel >= 1 && regras ? `<h2>Regras da classe</h2>${regras}` : ''}
+      ${pj.extras.map((e) => `<h2>${esc(e.titulo)}</h2>${e.itens.map((i) => '<p>' + i + '</p>').join('')}`).join('')}
       <h2>Traços de ${esc(pj.anc.nome)}</h2>${tracos}
       ${pj.divindade ? `<h2>Divindade</h2><p><b>${esc(pj.divindade.nome)}</b> (${esc(pj.divindade.entidade)}, ${esc(pj.divindade.dominio)}, ${esc(pj.divindade.vinculo)}). <b>Responsabilidades:</b> ${esc(pj.divindade.responsabilidades)}</p>${ben.length ? `<p><b>Bênçãos:</b> ${ben.map(esc).join(' ')}</p>` : ''}` : ''}
       ${habs ? `<h2>Habilidades</h2><table><thead><tr><th>Habilidade</th><th>Custo</th><th>Efeito</th></tr></thead><tbody>${habs}</tbody></table>` : ''}

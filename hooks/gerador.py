@@ -85,22 +85,23 @@ def _classe(docs, rel, exoticas):
         m = _TRACO.match(linha)
         if m and m.group(1) not in _FORA:
             regras.append([m.group(1), m.group(2)])
-    habilidades, colunas = [], []
+    habilidades, colunas, tabelas = [], [], {}
     for tab in _tabelas(texto):
         cab = tab[0]
+        if re.match(r'^d\d+$', cab[0]) and cab[1] not in ('Habilidade', 'Magia'):
+            tabelas[cab[1]] = [l[1:] for l in tab[1:]]
         if cab[0] == 'd20' and len(cab) >= 7 and cab[1] in ('Habilidade', 'Magia'):
             colunas = cab[3:]
             for linha in tab[1:]:
                 if len(linha) < 7:
                     continue
                 habilidades.append({'nome': linha[1], 'custo': linha[2], 'partes': linha[3:7]})
-            break
     return {
         'nome': nome, 'arquivo': rel, 'exotica': nome in exoticas,
         'epigrafe': epigrafe.group(1).strip() if epigrafe else '',
         'base': base, 'atributos': [a.strip() for a in attr.split(' ou ')],
         'armas': armas, 'armaduras': armaduras, 'regras': regras,
-        'colunas': colunas, 'habilidades': habilidades,
+        'colunas': colunas, 'habilidades': habilidades, 'tabelas': tabelas,
     }
 
 
