@@ -165,7 +165,7 @@
     }
 
     // tabelas da classe que se rolam na criação
-    pj.extras = nivel >= 1 ? rolarExtras(pj) : [];
+    pj.extras = rolarExtras(pj);
 
     // equipamento
     equipar(pj, op.equipamento || 'pacote');
@@ -180,6 +180,14 @@
   function rolarExtras(pj) {
     const t = pj.classe.tabelas || {};
     const extras = [];
+    // Elemento inato (Feiticeiro): 1d10, desde o nível 0, porque a vocação depende dele.
+    if (t['Elemento']) {
+      const lista = [];
+      t['Elemento'].forEach((l) => { lista[parseInt(l[1], 10) - 6 + 5] = l[2]; });
+      t['Elemento'].forEach((l, k) => { lista[k] = l[0]; });
+      extras.push({ titulo: 'Elemento inato', itens: [esc(lista[d(10) - 1])] });
+    }
+    if (pj.nivel < 1) return extras;
     // Lótus Negro: 1d12; com 1, role duas vezes (de novo nos outros 1); sem repetir.
     if (t['Dom do lótus']) {
       const tab = t['Dom do lótus'];
@@ -534,7 +542,7 @@
     return `<div class="fj-g-cartao fj-g-pequeno">
       <p><b>${esc(pj.nome)}</b>, ${esc(pj.anc.nome)} ${esc(pj.classe.nome)} (${esc(pj.antecedente[0])}, ${esc(pj.tendencia)})</p>
       <p>${linhaAtributos(pj)} · <b>PV</b> ${pj.pv} · <b>CA</b> ${pj.ca} · <b>Sanidade</b> ${pj.sanidade}</p>
-      <p>${voc ? `<b>Vocação, ${esc(voc[0])}:</b> ${md(voc[1])} ` : ''}<b>Equipamento:</b> ${pj.equipamento.map(esc).join(', ')}</p>
+      <p>${voc ? `<b>Vocação, ${esc(voc[0])}:</b> ${md(voc[1])} ` : ''}${pj.extras.map((e) => `<b>${esc(e.titulo)}:</b> ${e.itens.join(', ')}. `).join('')}<b>Equipamento:</b> ${pj.equipamento.map(esc).join(', ')}</p>
     </div>`;
   }
 
@@ -614,6 +622,7 @@
           <div class="linha">${ATR.map((a, i) => `<div class="caixa"><b>${ABR[i]}</b><span>${pj.atr[i]}</span><small>${sinal(mod(pj.atr[i]))}</small></div>`).join('')}</div>
           <div class="linha"><div class="caixa"><b>PV</b><span>${pj.pv}</span></div><div class="caixa"><b>CA</b><span>${pj.ca}</span></div><div class="caixa"><b>Sanidade</b><span>${pj.sanidade}</span></div></div>
           ${voc ? `<p><b>Vocação, ${esc(voc[0])}.</b> ${md(voc[1])}</p>` : ''}
+          ${pj.extras.map((e) => `<p><b>${esc(e.titulo)}:</b> ${e.itens.join(', ')}.</p>`).join('')}
           <p><b>Equipamento:</b> ${pj.equipamento.map(esc).join(', ')}</p>
           <p>☐ Morreu &nbsp; ☐ Sobreviveu</p>
         </div>`;

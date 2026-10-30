@@ -77,7 +77,7 @@ def _classe(docs, rel, exoticas):
     epigrafe = re.search(r'\n\n(.+)\n\{ \.epigrafe \}', texto)
     intro = texto.split('\n## ')[0]
     base = int(re.search(r'\*\*Base\.\*\* d(\d+)', texto).group(1))
-    attr = re.search(r'\*\*Atributo principal\.\*\* (.+?)\.\n', texto).group(1)
+    attr = re.search(r'\*\*Atributo principal\.\*\* ([^.\n]+)', texto).group(1)
     armas = re.search(r'\*\*Armas\.\*\* (.+?)\n', texto).group(1).rstrip('.')
     armaduras = re.search(r'\*\*Armaduras\.\*\* (.+?)\n', texto).group(1).rstrip('.')
     regras = []
