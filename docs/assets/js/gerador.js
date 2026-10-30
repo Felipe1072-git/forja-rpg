@@ -94,97 +94,43 @@
 
   // ---------------------------------------------------------------- geração
 
-  function novoPersonagem(op) {
+  // O Aleatório sorteia um estado e usa o mesmo construtor do Montar; assim o personagem
+  // gerado pode ser editado no Montar ou baixado em JSON.
+  function estadoAleatorio(op) {
     const classes = D.classes.filter((c) => op.exoticas || !c.exotica);
     const classe = op.classe != null ? D.classes[op.classe] : um(classes);
     const anc = op.ancestralidade != null ? D.ancestralidades[op.ancestralidade] : sortearAncestralidade();
-    const nivel = op.nivel;
-    const pj = { nivel, classe, anc, avancos: [], treinos: 0 };
-
-    // atributos e atributo principal
-    pj.principal = op.principal || um(classe.atributos);
-    if (op.atributos) {
-      pj.atr = op.atributos.slice();
-      if (!op.principal) {
-        pj.principal = classe.atributos.slice().sort((a, b) => pj.atr[ATR.indexOf(b)] - pj.atr[ATR.indexOf(a)])[0];
-      }
-    } else if (nivel === 0) {
-      pj.atr = ATR.map(rolar4d6);
+    const m = estadoNovo();
+    m.nivel = op.nivel;
+    m.classe = classe.nome;
+    m.anc = anc.nome;
+    m.principal = um(classe.atributos);
+    if (op.nivel === 0) {
+      m.atr = ATR.map(rolar4d6);
     } else {
       const valores = ATR.map(rolar4d6).sort((a, b) => b - a);
-      pj.atr = new Array(6);
-      const ip = ATR.indexOf(pj.principal);
-      pj.atr[ip] = valores.shift();
-      if (ip !== 2) pj.atr[2] = valores.shift();
-      embaralhar(valores).forEach((v) => { const i = pj.atr.findIndex((x) => x === undefined); pj.atr[i] = v; });
+      const atr = new Array(6);
+      const ip = ATR.indexOf(m.principal);
+      atr[ip] = valores.shift();
+      if (ip !== 2) atr[2] = valores.shift();
+      embaralhar(valores).forEach((v) => { atr[atr.findIndex((x) => x === undefined)] = v; });
+      m.atr = atr;
     }
+    m.nome = um(D.nomes[anc.nome] || D.nomes.Humano);
+    const div = op.divindade || 'auto';
+    if (div === 'sortear') m.divindade = um(D.divindades).nome;
+    else if (div === 'auto' || div === 'nenhuma') m.divindade = div;
+    else m.divindade = D.divindades[parseInt(div, 10)].nome;
+    m.equipModo = op.equipamento === 'ouro' ? 'ouro' : 'pacote';
+    return m;
+  }
 
-    pj.nome = op.nome || um(D.nomes[anc.nome] || D.nomes.Humano);
-    pj.antecedente = op.antecedente != null ? D.antecedentes[op.antecedente] : um(D.antecedentes);
-    const eixoBem = op.bem != null ? op.bem : Math.floor((d(6) - 1) / 2);
-    const eixoOrdem = op.ordem != null ? op.ordem : Math.floor((d(6) - 1) / 2);
-    pj.tendencia = tendencia(eixoBem, eixoOrdem);
-    const tit = D.titulos[classe.nome];
-    pj.titulo = op.titulo || (tit ? um(tit)[eixoOrdem] : '');
-
-    // movimento
-    const mov = traco(anc, 'Movimento');
-    pj.movimento = mov ? parseInt(mov[1], 10) : 6;
-
-    // divindade
-    pj.divindade = null;
-    if (nivel >= 1) {
-      let escolha = op.divindade || 'auto';
-      if (escolha === 'auto') escolha = exigeDivindade(classe) ? 'sortear' : 'nenhuma';
-      if (escolha === 'sortear') {
-        const demoniacas = D.divindades.filter((x) => /Demônio|Diabo/.test(x.entidade));
-        pj.divindade = classe.nome === 'Cavaleiro Profano' && demoniacas.length ? um(demoniacas) : um(D.divindades);
-      } else if (escolha !== 'nenhuma') {
-        pj.divindade = D.divindades[parseInt(escolha, 10)];
-      }
-    }
-
-    // habilidades iniciais
-    pj.habilidades = [];
-    pj.elemento = temColunas(classe) ? d(4) - 1 : 0;
-    if (nivel >= 1) {
-      const n = BASES[classe.base].iniciais;
-      const escolhidas = (op.habilidades || []).slice(0, n);
-      const resto = embaralhar(classe.habilidades.map((_, i) => ({ i, col: pj.elemento })))
-        .filter((h) => !escolhidas.some((e) => e.i === h.i));
-      escolhidas.concat(resto).slice(0, n).forEach((h) => adicionarHabilidade(pj, h.i, h.col != null ? h.col : pj.elemento));
-    }
-
-    // PV
-    const robusto = !!traco(anc, 'Robusto');
-    const dadoVida = () => { let r = d(classe.base); if (robusto) r = Math.max(r, d(classe.base)); return r; };
-    pj.pv = Math.max(1, dadoVida() + mod(pj.atr[2])) + (robusto ? 1 : 0);
-    for (let L = 2; L <= nivel; L++) {
-      let r = dadoVida();
-      if (r === 1) r = dadoVida();
-      pj.pv += r + (robusto ? 1 : 0);
-    }
-
-    // avanços
-    const vagas = vagasDeAvanco(classe, anc, nivel);
-    if (op.avancosManuais) {
-      let k = 0;
-      vagas.forEach((v) => {
-        const itens = [];
-        const usados = [];
-        for (let q = 0; q < v.qtd; q++) itens.push(aplicarEscolha(pj, op.avancosManuais[k++] || { tipo: 'sortear' }, usados));
-        pj.avancos.push({ nivel: v.nivel, motivo: v.motivo, itens });
-      });
-    } else {
-      vagas.forEach((v) => registrarAvancos(pj, v.nivel, v.qtd, op.sortear, v.motivo));
-    }
-
-    // tabelas da classe que se rolam na criação
-    pj.extras = rolarExtras(pj);
-
-    // equipamento
-    equipar(pj, op.equipamento || 'pacote');
-    calcular(pj);
+  function novoPersonagem(op) {
+    const m = estadoAleatorio(op);
+    const classe = D.classes.find((c) => c.nome === m.classe);
+    if (m.nivel >= 1) { m.elemento = temColunas(classe) ? d(4) - 1 : 0; preencherHabilidades(m, classe); }
+    const pj = personagemDoEstado(m, op.sortear !== false);
+    pj.estado = m;
     return pj;
   }
 
@@ -321,22 +267,6 @@
       return 'Atributos: ' + (e.a1 === e.a2 ? '+2 em ' + ATR[e.a1] : '+1 em ' + ATR[e.a1] + ', +1 em ' + ATR[e.a2]);
     }
     return aplicarAvanco(pj, e.tipo);
-  }
-
-  function registrarAvancos(pj, nivel, qtd, sortear, motivo) {
-    const itens = [];
-    const usados = [];
-    for (let k = 0; k < qtd; k++) {
-      if (!sortear) { itens.push('a escolher'); continue; }
-      const op = opcoesDeAvanco(pj, usados);
-      let total = op.reduce((s, [, p]) => s + p, 0);
-      let r = Math.random() * total;
-      let tipo = op[op.length - 1][0];
-      for (const [t, p] of op) { if ((r -= p) < 0) { tipo = t; break; } }
-      usados.push(tipo);
-      itens.push(aplicarAvanco(pj, tipo));
-    }
-    pj.avancos.push({ nivel, motivo, itens });
   }
 
   function aplicarAvanco(pj, tipo) {
@@ -1001,15 +931,7 @@
       });
     }
 
-    function baixarJSON() {
-      const blob = new Blob([JSON.stringify(M, null, 2)], { type: 'application/json' });
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = (M.nome || 'personagem').replace(/[^\wÀ-ÿ -]/g, '') + '.forja.json';
-      document.body.appendChild(a);
-      a.click();
-      setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500);
-    }
+    function baixarJSON() { baixarEstado(M); }
 
     function carregar(arquivo) {
       if (!arquivo) return;
@@ -1028,6 +950,17 @@
     }
 
     render();
+    return { carregarEstado(m) { M = Object.assign(estadoNovo(), JSON.parse(JSON.stringify(m))); render(); } };
+  }
+
+  function baixarEstado(m) {
+    const blob = new Blob([JSON.stringify(m, null, 2)], { type: 'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = (m.nome || 'personagem').replace(/[^\wÀ-ÿ -]/g, '') + '.forja.json';
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500);
   }
 
   // ---------------------------------------------------------------- tela
@@ -1056,6 +989,8 @@
         <div class="fj-g-acoes">
           <button type="button" id="g-gerar" class="fj-g-primario">Gerar personagem</button>
           <button type="button" id="g-imprimir" disabled>Imprimir ficha</button>
+          <button type="button" id="g-editar" disabled>Editar no Montar</button>
+          <button type="button" id="g-baixar" disabled>Baixar JSON</button>
         </div>
         <div id="g-saida"></div>
       </div>
@@ -1077,7 +1012,8 @@
       raiz.querySelectorAll('.fj-g-abas button').forEach((x) => x.classList.toggle('ativa', x === b));
       raiz.querySelectorAll('.fj-g-painel').forEach((p) => { p.hidden = p.dataset.painel !== b.dataset.aba; });
     }));
-    iniciarMontar($('g-montar'));
+    const montar = iniciarMontar($('g-montar'));
+    const irPara = (aba) => raiz.querySelector(`.fj-g-abas button[data-aba="${aba}"]`).click();
 
     function opcoes() {
       const v = (id) => $(id).value;
@@ -1093,15 +1029,18 @@
     $('g-gerar').addEventListener('click', () => {
       atual = novoPersonagem(opcoes());
       $('g-saida').innerHTML = cartao(atual);
-      $('g-imprimir').disabled = false;
+      ['g-imprimir', 'g-editar', 'g-baixar'].forEach((id) => { $(id).disabled = false; });
       const nome = $('g-saida').querySelector('.fj-g-nome');
-      nome.addEventListener('input', () => { atual.nome = nome.value; });
+      nome.addEventListener('input', () => { atual.nome = nome.value; atual.estado.nome = nome.value; });
       $('g-saida').querySelector('.fj-g-novonome').addEventListener('click', () => {
         atual.nome = um(D.nomes[atual.anc.nome] || D.nomes.Humano);
+        atual.estado.nome = atual.nome;
         nome.value = atual.nome;
       });
     });
     $('g-imprimir').addEventListener('click', () => imprimir(folhaPersonagem(atual), 'Ficha de ' + atual.nome));
+    $('g-editar').addEventListener('click', () => { montar.carregarEstado(atual.estado); irPara('montar'); });
+    $('g-baixar').addEventListener('click', () => baixarEstado(atual.estado));
 
     $('g-funil').addEventListener('click', () => {
       const exo = $('g-exoticas').checked;
