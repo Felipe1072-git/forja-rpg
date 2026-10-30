@@ -94,7 +94,7 @@ Use para criar personagens de nível 0 em segundos, como no Funil (veja Mestre).
 6. **Antecedente.** Role 1d20 (veja Antecedente).
 7. **Tendência.** Role 1d6 para cada eixo: 1–2 Bem (ou Ordem), 3–4 Neutro, 5–6 Mal (ou Caos).
 8. **Equipamento.** Role 1d4 vezes na tabela de nível 0 (veja Equipamento).
-9. **Nome.** Escolha um.
+9. **Nome.** Role na tabela de Nomes da sua ancestralidade, e uma alcunha se quiser (veja Ancestralidades), ou escolha.
 
 ## Atributos
 

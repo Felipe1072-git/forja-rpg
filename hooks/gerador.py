@@ -3,7 +3,8 @@
 No fim do build, lê as páginas do livro (classes, ancestralidades,
 antecedentes, títulos, equipamento e divindades) e grava um JSON que a
 página Gerador usa no navegador. Assim o gerador acompanha o livro sem
-precisar copiar nenhuma regra.
+precisar copiar nenhuma regra (nem os nomes, que saem das tabelas de
+Ancestralidades).
 """
 import json
 import os
@@ -11,24 +12,6 @@ import re
 
 _TRACO = re.compile(r'^\*\*(.+?)\.\*\*\s*(.+)$')
 _FORA = {'Base', 'Atributo principal', 'Armas', 'Armaduras', 'Habilidades iniciais', 'Classe exótica'}
-
-# Nomes para sortear (só sabor; o jogador pode trocar).
-NOMES = {
-    'Humano': ['Aldo', 'Brena', 'Cassio', 'Dalia', 'Edric', 'Fiona', 'Gael', 'Helena', 'Ivo', 'Joana',
-               'Lucan', 'Mirela', 'Otto', 'Petra', 'Rui', 'Sabina', 'Tomas', 'Vera'],
-    'Anão': ['Borin', 'Dagna', 'Durgan', 'Helga', 'Korgan', 'Mardra', 'Thrain', 'Brunna', 'Gimrik', 'Ostra'],
-    'Elfo': ['Aelar', 'Caelynn', 'Erevan', 'Lia', 'Naivara', 'Sylvar', 'Thalia', 'Vaelis', 'Ilyrana', 'Fenmir'],
-    'Drow': ['Drizell', 'Ilvra', 'Malaggar', 'Nathrae', 'Quenthel', 'Ryld', 'Sabrae', 'Vhaeraun', 'Zesstra', 'Jarlax'],
-    'Meio-elfo': ['Arannis', 'Cora', 'Davin', 'Elara', 'Kael', 'Liora', 'Merric', 'Sorin', 'Tamsin', 'Vesna'],
-    'Halfling': ['Bilbo', 'Cora', 'Dimble', 'Eldon', 'Lavinia', 'Merry', 'Pip', 'Rosie', 'Tobin', 'Wilma'],
-    'Draconato': ['Arjhan', 'Balasar', 'Kriv', 'Medrash', 'Nala', 'Rhogar', 'Sora', 'Thava', 'Vyth', 'Zorgrax'],
-    'Gnomo': ['Alston', 'Bimpnottin', 'Fonkin', 'Nissa', 'Orryn', 'Roywyn', 'Tana', 'Wrenn', 'Zook', 'Ellywick'],
-    'Orc': ['Dench', 'Grosh', 'Holg', 'Kansif', 'Murga', 'Ovak', 'Shautha', 'Thokk', 'Volen', 'Yevelda'],
-    'Meio-orc': ['Arha', 'Baggi', 'Feng', 'Gell', 'Imsh', 'Keth', 'Ront', 'Sutha', 'Vola', 'Krusk'],
-    'Tiefling': ['Akmenos', 'Bryseis', 'Damakos', 'Kallista', 'Lerissa', 'Mordai', 'Nemeia', 'Orianna', 'Skamos', 'Zariel'],
-    'Goblin': ['Bix', 'Drub', 'Fizzle', 'Grik', 'Nub', 'Rizzik', 'Skab', 'Snik', 'Twigg', 'Zib'],
-    'Autômato': ['Ferro', 'Bronze', 'Cobre', 'Engrenagem', 'Pistão', 'Rebite', 'Mola', 'Válvula', 'Latão', 'Vigia'],
-}
 
 
 def _ler(docs, rel):
@@ -120,6 +103,21 @@ def _ancestralidades(docs):
     return rolagem, lista
 
 
+def _nomes(docs):
+    """Nomes e alcunhas das tabelas do fim de Ancestralidades."""
+    nomes, alcunhas = {}, []
+    for tab in _tabelas(_ler(docs, 'personagem/ancestralidades.md')):
+        cab = tab[0]
+        if cab[0] == 'd20' and len(cab) > 1 and ': ' in cab[1]:
+            for col, titulo in enumerate(cab[1:], 1):
+                povo = titulo.split(':')[0]
+                nomes.setdefault(povo, []).extend(l[col] for l in tab[1:] if len(l) > col)
+        elif cab[:2] == ['d20', 'Alcunha']:
+            for l in tab[1:]:
+                alcunhas.extend(l[k] for k in range(1, len(l), 2))
+    return nomes, alcunhas
+
+
 def _detalhes(docs):
     texto = _ler(docs, 'personagem/detalhes.md')
     antecedentes, titulos = [], {}
@@ -173,10 +171,11 @@ def on_post_build(config, **kwargs):
     rolagem, ancestralidades = _ancestralidades(docs)
     antecedentes, titulos = _detalhes(docs)
     nivel0, armas, armaduras = _equipamento(docs)
+    nomes, alcunhas = _nomes(docs)
     dados = {
         'classes': classes, 'ancestralidades': ancestralidades, 'rolagemAncestralidade': rolagem,
         'antecedentes': antecedentes, 'titulos': titulos, 'equipamentoNivel0': nivel0,
-        'armas': armas, 'armaduras': armaduras, 'divindades': _divindades(docs), 'nomes': NOMES,
+        'armas': armas, 'armaduras': armaduras, 'divindades': _divindades(docs), 'nomes': nomes, 'alcunhas': alcunhas,
     }
     destino = os.path.join(config['site_dir'], 'assets', 'data')
     os.makedirs(destino, exist_ok=True)

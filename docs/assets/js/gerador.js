@@ -1045,6 +1045,8 @@
     $('g-funil').addEventListener('click', () => {
       const exo = $('g-exoticas').checked;
       funil = [0, 1, 2, 3].map(() => novoPersonagem({ nivel: 0, exoticas: exo, sortear: true }));
+      // nível 0 ganha uma alcunha, da tabela de Ancestralidades
+      if (D.alcunhas && D.alcunhas.length) funil.forEach((pj) => { pj.nome += ' ' + um(D.alcunhas); });
       $('g-funil-saida').innerHTML = funil.map(linhaFunil).join('');
       $('g-funil-imprimir').disabled = false;
     });
