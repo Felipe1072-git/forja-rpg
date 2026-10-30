@@ -556,8 +556,44 @@
         <span class="g-av-alvo"></span></div>`).join('');
       caixa.querySelectorAll('.fj-g-av').forEach((linha) => {
         const tipo = linha.querySelector('.g-av-tipo');
-        tipo.addEventListener('change', () => { linha.querySelector('.g-av-alvo').innerHTML = alvoDoAvanco(c, tipo.value); });
+        tipo.addEventListener('change', () => {
+          linha.querySelector('.g-av-alvo').innerHTML = alvoDoAvanco(c, tipo.value);
+          if (linha.dataset.vinculo) {
+            const marcada = $('g-habs').querySelector(`.g-mel[data-v="${linha.dataset.vinculo}"]`);
+            if (marcada) marcada.checked = false;
+            delete linha.dataset.vinculo;
+          }
+        });
       });
+      $('g-habs').querySelectorAll('.g-mel:checked').forEach((x) => { x.checked = false; });
+    }
+
+    // Marcar uma melhoria nas habilidades ocupa a primeira vaga de avanço livre ("Sortear").
+    function ligarMelhoria(marca) {
+      const v = marca.dataset.v;
+      const linhas = Array.from($('g-avs').querySelectorAll('.fj-g-av'));
+      if (marca.checked) {
+        const livre = linhas.find((l) => l.querySelector('.g-av-tipo').value === 'sortear' && !l.dataset.vinculo);
+        if (!livre) {
+          marca.checked = false;
+          $('g-av-info').textContent = '(sem vaga de avanço livre: suba o nível ou mude uma vaga para Sortear)';
+          return;
+        }
+        const tipo = livre.querySelector('.g-av-tipo');
+        tipo.value = 'melhoria';
+        livre.querySelector('.g-av-alvo').innerHTML = alvoDoAvanco(D.classes[parseInt($('g-classe').value, 10)], 'melhoria');
+        livre.querySelector('.g-av-mel').value = v;
+        livre.dataset.vinculo = v;
+        const hab = $('g-habs').querySelector(`input[type=checkbox][value="${v.split(':')[0]}"]:not(.g-mel)`);
+        if (hab && !hab.checked) { hab.checked = true; hab.dispatchEvent(new Event('change')); }
+      } else {
+        const ligada = linhas.find((l) => l.dataset.vinculo === v);
+        if (ligada) {
+          ligada.querySelector('.g-av-tipo').value = 'sortear';
+          ligada.querySelector('.g-av-alvo').innerHTML = '';
+          delete ligada.dataset.vinculo;
+        }
+      }
     }
 
     function alvoDoAvanco(c, tipo) {
@@ -585,12 +621,21 @@
       const c = D.classes[parseInt(ic, 10)];
       const n = BASES[c.base].iniciais;
       $('g-hab-limite').textContent = '(escolha ' + n + '; em branco, sorteia)';
-      caixa.innerHTML = c.habilidades.map((h, i) => `<label class="fj-g-hab"><input type="checkbox" value="${i}"> ${md(h.nome)} <small>(${esc(h.custo)})</small>`
-        + (temColunas(c) ? ` <select data-col="${i}">${c.colunas.map((x, k) => `<option value="${k}">${x}</option>`).join('')}</select>` : '') + '</label>').join('');
-      caixa.querySelectorAll('input').forEach((inp) => inp.addEventListener('change', () => {
-        const marcadas = caixa.querySelectorAll('input:checked');
+      caixa.innerHTML = c.habilidades.map((h, i) => {
+        const mels = temColunas(c) ? '' : h.partes.slice(1).map((m, k) => {
+          if (!m) return '';
+          const nm = (m.match(/\*\*(.+?):?\*\*/) || [, 'melhoria ' + (k + 1)])[1].replace(/:$/, '');
+          return `<label title="${esc(limpo(m))}"><input type="checkbox" class="g-mel" data-v="${i}:${k}"> ${esc(limpo(nm))}</label>`;
+        }).join('');
+        return `<div class="fj-g-hab"><label><input type="checkbox" value="${i}"> ${md(h.nome)} <small>(${esc(h.custo)})</small></label>`
+          + (temColunas(c) ? ` <select data-col="${i}">${c.colunas.map((x, k) => `<option value="${k}">${x}</option>`).join('')}</select>` : '')
+          + (mels ? `<div class="fj-g-mels">${mels}</div>` : '') + '</div>';
+      }).join('');
+      caixa.querySelectorAll('input:not(.g-mel)').forEach((inp) => inp.addEventListener('change', () => {
+        const marcadas = caixa.querySelectorAll('input:checked:not(.g-mel)');
         if (marcadas.length > n) inp.checked = false;
       }));
+      caixa.querySelectorAll('.g-mel').forEach((m) => m.addEventListener('change', () => ligarMelhoria(m)));
     }
 
     function opcoes() {
@@ -618,7 +663,7 @@
           if (pega('.g-av-a1') != null) { e.a1 = parseInt(pega('.g-av-a1'), 10); e.a2 = parseInt(pega('.g-av-a2'), 10); }
           return e;
         });
-        op.habilidades = Array.from($('g-habs').querySelectorAll('input:checked')).map((inp) => {
+        op.habilidades = Array.from($('g-habs').querySelectorAll('input:checked:not(.g-mel)')).map((inp) => {
           const sel = $('g-habs').querySelector(`select[data-col="${inp.value}"]`);
           return { i: parseInt(inp.value, 10), col: sel ? parseInt(sel.value, 10) : 0 };
         });
