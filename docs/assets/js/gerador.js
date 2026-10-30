@@ -521,8 +521,9 @@
     if (m.ordem == null) m.ordem = Math.floor((d(6) - 1) / 2);
     pj.tendencia = tendencia(m.bem, m.ordem);
     const tit = D.titulos[classe.nome];
-    if (!m.titulo && tit) m.titulo = um(tit)[m.ordem];
-    pj.titulo = m.titulo;
+    // título só a partir do nível 1
+    if (m.nivel >= 1 && !m.titulo && tit) m.titulo = um(tit)[m.ordem];
+    pj.titulo = m.nivel >= 1 ? m.titulo : '';
     const mov = traco(anc, 'Movimento');
     pj.movimento = mov ? parseInt(mov[1], 10) : 6;
 
@@ -654,7 +655,7 @@
             <label>Antecedente <select data-m="antecedente">${opcoesDe(D.antecedentes.map((x) => [x[0], x[0]]), M.antecedente, 'Sortear')}</select></label>
             <label>Bem x Mal <select data-m="bem">${opcoesDe([[0, 'Bem'], [1, 'Neutro'], [2, 'Mal']], M.bem, 'Sortear')}</select></label>
             <label>Ordem x Caos <select data-m="ordem">${opcoesDe([[0, 'Ordem'], [1, 'Neutro'], [2, 'Caos']], M.ordem, 'Sortear')}</select></label>
-            <label>Título <select data-m="titulo">${opcoesDe(titulos, M.titulo, 'Sortear')}</select></label>
+            ${M.nivel >= 1 ? `<label>Título <select data-m="titulo">${opcoesDe(titulos, M.titulo, 'Sortear')}</select></label>` : ''}
             <label>Divindade <select data-m="divindade">${opcoesDe([['auto', 'Só se a classe exigir'], ['nenhuma', 'Nenhuma']].concat(D.divindades.map((x) => [x.nome, x.nome])), M.divindade)}</select></label>
           </div>
         </div>

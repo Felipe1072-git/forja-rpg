@@ -60,7 +60,7 @@ Um personagem de nível 0 começa com:
 
 Personagens de nível 0 não têm Mana nem habilidades, mas já têm a vocação da classe (veja Classes).
 
-Um personagem de nível 0 chega ao nível 1 ao sobreviver à sua primeira aventura. Nesse momento, ele recebe o que falta do nível 1: o resto da classe (proficiências, atributo principal, Mana e habilidades iniciais) e, se quiser, uma divindade.
+Um personagem de nível 0 chega ao nível 1 ao sobreviver à sua primeira aventura. Nesse momento, ele recebe o que falta do nível 1: o resto da classe (proficiências, atributo principal, Mana e habilidades iniciais), um título e, se quiser, uma divindade.
 
 **Sobrevivente.** Role o dado de vida da classe e some aos PV que você já tinha no nível 0. Quem sobreviveu ao Funil merece esse vigor extra.
 

@@ -43,7 +43,7 @@ A tendência guia a interpretação e classifica criaturas. Habilidades e efeito
 
 ## Títulos
 
-Títulos são só sabor. Role 1d6 na tabela de títulos da sua classe (no fim da página dela), na coluna da sua posição no eixo Ordem x Caos, ou escolha. Troque de título quando a história pedir.
+Títulos são só sabor e chegam no nível 1. Role 1d6 na tabela de títulos da sua classe (no fim da página dela), na coluna da sua posição no eixo Ordem x Caos, ou escolha. Troque de título quando a história pedir.
 
 ## Divindade
 
