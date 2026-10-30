@@ -827,6 +827,7 @@
       nome.addEventListener('input', () => { M.nome = nome.value; atual.nome = nome.value; const campo = $('[data-m="nome"]'); if (campo) campo.value = nome.value; });
       $('.fj-g-previa .fj-g-novonome').addEventListener('click', () => { M.nome = um(D.nomes[M.anc] || D.nomes.Humano); render(); });
       ['antecedente', 'bem', 'ordem', 'titulo', 'divindade'].forEach((k) => { const el = $(`[data-m="${k}"]`); if (el && M[k] != null) el.value = M[k]; });
+      ['arma', 'armadura'].forEach((k) => { const el = $(`[data-pacote="${k}"]`); if (el && M[k] != null) el.value = M[k]; });
       painel.querySelectorAll('[data-pv]').forEach((el) => { const k = parseInt(el.dataset.pv, 10); if (M.pv[k] != null) el.value = M.pv[k]; });
       const eq = $('[data-m="equipamento"]');
       if (eq && document.activeElement !== eq) eq.value = (M.equipamento || []).join('\n');
