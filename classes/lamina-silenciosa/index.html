@@ -1,0 +1,3367 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Regras da mesa — fantasia simples, perigosa e criada pelos jogadores">
+      
+      
+        <meta name="author" content="Paulo Souza">
+      
+      
+        <link rel="canonical" href="https://felipe1072-git.github.io/forja-rpg/classes/lamina-silenciosa/">
+      
+      
+        <link rel="prev" href="../necromante/">
+      
+      
+        <link rel="next" href="../lobo-do-mar/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Lâmina Silenciosa - Forja RPG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"EB Garamond";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/css/forja.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lamina-silenciosa" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Forja RPG" class="md-header__button md-logo" aria-label="Forja RPG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 5v5c4.03 2.47-.56 4.97-3 6v3h15v-3c-6.41-2.73-3.53-7 1-8V5zM2 6c.81 2.13 2.42 3.5 5 4V6z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Forja RPG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lâmina Silenciosa
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="red"  aria-label="Papel (modo claro)"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Papel (modo claro)" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="red"  aria-label="Tinta (modo escuro)"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Tinta (modo escuro)" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Felipe1072-git/forja-rpg" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Felipe1072-git/forja-rpg
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Início
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../jogo/basico/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Regras
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../personagem/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Personagem
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Classes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../habilidades/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Habilidades
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../divindades/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Divindades
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../equipamento/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Equipamento
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../mestre/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Mestre
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../fichas/personagem/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Fichas
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../gerador/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Gerador
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../campanhas/cidadela-escarlate/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Campanhas
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Forja RPG" class="md-nav__button md-logo" aria-label="Forja RPG" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 5v5c4.03 2.47-.56 4.97-3 6v3h15v-3c-6.41-2.73-3.53-7 1-8V5zM2 6c.81 2.13 2.42 3.5 5 4V6z"/></svg>
+
+    </a>
+    Forja RPG
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Felipe1072-git/forja-rpg" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Felipe1072-git/forja-rpg
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Início
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regras
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Regras
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jogo/basico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    O Básico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jogo/testes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testes e Rolagens
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jogo/exploracao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exploração
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jogo/combate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Combate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jogo/viagem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Viagem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jogo/tempo-livre/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tempo Livre
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../personagem/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Personagem
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Personagem
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../personagem/ancestralidades/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ancestralidades
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../personagem/detalhes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Antecedente, Tendência e Títulos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../personagem/avanco/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Avanço de Nível
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../personagem/forjado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Personagem Forjado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classes
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Classes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guerreiro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guerreiro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sacerdote/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sacerdote
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ladino/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ladino
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mago/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mago
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../barbaro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bárbaro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patrulheiro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Patrulheiro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bardo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bardo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../druida/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Druida
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../paladino/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paladino
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feiticeiro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feiticeiro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../monge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monge
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alquimista/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alquimista
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guerreiro-basilisco/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guerreiro Basilisco
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../duelista/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Duelista
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cavaleiro-verde/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cavaleiro Verde
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cavaleiro-profano/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cavaleiro Profano
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../necromante/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Necromante
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lâmina Silenciosa
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lâmina Silenciosa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#progressao-do-lamina-silenciosa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PROGRESSÃO DO LÂMINA SILENCIOSA
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avancos-do-lamina-silenciosa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AVANÇOS DO LÂMINA SILENCIOSA
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#habilidades-da-lamina-silenciosa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HABILIDADES DA LÂMINA SILENCIOSA
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#titulos-da-lamina-silenciosa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TÍTULOS DA LÂMINA SILENCIOSA
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lobo-do-mar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lobo do Mar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../malvidente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Malvidente
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_22" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_22" id="__nav_4_22_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exóticas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_22_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_22">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Exóticas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ferreiro-de-guerra/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ferreiro de Guerra
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sangue-de-dragao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sangue de Dragão
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cacador-de-prata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caçador de Prata
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dobrador-elemental/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dobrador Elemental
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quebra-feitico/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quebra-Feitiço
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../carcereiro-do-abismo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Carcereiro do Abismo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../habilidades/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Habilidades
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Habilidades
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../habilidades/criando/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Criando Habilidades
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divindades/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Divindades
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../equipamento/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Equipamento
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../mestre/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mestre
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Mestre
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mestre/encontros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encontros e Perigos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mestre/modos-e-monstros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modos de Jogo e Monstros
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mestre/geradores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Geradores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fichas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fichas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fichas/personagem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ficha de Personagem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fichas/funil/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ficha de Funil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fichas/criacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Criação de Personagem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fichas/jogador/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referência do Jogador
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fichas/mestre/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referência do Mestre
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fichas/exploracao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ficha de Exploração
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gerador/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gerador
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Campanhas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Campanhas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../campanhas/cidadela-escarlate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A Cidadela Escarlate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#progressao-do-lamina-silenciosa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PROGRESSÃO DO LÂMINA SILENCIOSA
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avancos-do-lamina-silenciosa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AVANÇOS DO LÂMINA SILENCIOSA
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#habilidades-da-lamina-silenciosa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HABILIDADES DA LÂMINA SILENCIOSA
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#titulos-da-lamina-silenciosa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TÍTULOS DA LÂMINA SILENCIOSA
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navegação" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Início
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Classes
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="lamina-silenciosa">Lâmina Silenciosa<a class="headerlink" href="#lamina-silenciosa" title="Permanent link">&para;</a></h1>
+<p class="epigrafe">Assassinos de máscara negra treinados num templo escondido, onde cresce a flor do lótus negro, guardada por um demônio. Quem come uma pétala e sobrevive ganha dons que nenhum mestre ensina. Chegam em silêncio, matam em silêncio e somem na fumaça.</p>
+<p><img alt="Assassina mascarada saltando com uma lâmina curva no meio da fumaça" class="fj-arte fj-arte-classe" loading="lazy" src="../../assets/images/classes/lamina-silenciosa.webp" /></p>
+<div class="fj-lista"><div class="fj-item"><div class="fj-termo">Base</div><div class="fj-texto">d8: 3 habilidades iniciais, 3 de Mana por nível, 2 avanços nos níveis 3, 6 e 9 (1 nos outros).</div></div><div class="fj-item"><div class="fj-termo">Atributo principal</div><div class="fj-texto">Destreza.</div></div><div class="fj-item"><div class="fj-termo">Armas</div><div class="fj-texto">Adaga, boleadeira, cimitarra, corrente de lâminas, lança, shuriken, zarabatana.</div></div><div class="fj-item"><div class="fj-termo">Armaduras</div><div class="fj-texto">Leves.</div></div><div class="fj-item"><div class="fj-termo">Vocação: Furtivo</div><div class="fj-texto">Vantagem em testes para se esconder e se mover em silêncio.</div></div><div class="fj-item"><div class="fj-termo">Idioma</div><div class="fj-texto">Você fala a língua dos demônios, além dos seus outros idiomas.</div></div><div class="fj-item"><div class="fj-termo">Lótus Negro</div><div class="fj-texto">No nível 1, você comeu uma pétala do lótus negro e sobreviveu. Role 1d12 na tabela abaixo. Se repetir um resultado, role de novo.</div></div></div>
+<table>
+<thead>
+<tr>
+<th>d12</th>
+<th>Dom do lótus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Role duas vezes (role de novo outros 1).</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Sangue de lótus.</strong> Imunidade a venenos.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Reflexo.</strong> Vantagem em testes de Destreza para evitar armadilhas e para não ser agarrado ou preso.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Duas lâminas.</strong> +1 de CA lutando com uma arma corpo a corpo em cada mão.</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Vigor.</strong> Role mais um dado de vida (d8) e some ao seu PV máximo.</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Morte certa.</strong> Crítico com 19 ou 20 natural contra quem não sabe da sua presença.</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Presença terrível.</strong> Inimigos que veem você fazem testes de Moral com desvantagem.</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>Pés de pétala.</strong> Durante o seu movimento, você anda sobre a água.</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>Sono leve.</strong> Um descanso longo leva só 4 horas para você.</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>Andar nas paredes.</strong> Durante o seu movimento, você anda por paredes. Se terminar fora de chão firme, cai.</td>
+</tr>
+<tr>
+<td>11</td>
+<td><strong>Fio cruel.</strong> +1 de dano com armas corpo a corpo.</td>
+</tr>
+<tr>
+<td>12</td>
+<td><strong>Rosto esquecido.</strong> Quem vê você por menos de 1 rodada não consegue descrever seu rosto.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Habilidades iniciais.</strong> Escolha 3 na lista ou role 1d20 três vezes. Para começar rápido: Passo de Fumaça, Assassinar e Lâmina Envenenada.</p>
+<h2 id="progressao-do-lamina-silenciosa">PROGRESSÃO DO LÂMINA SILENCIOSA<a class="headerlink" href="#progressao-do-lamina-silenciosa" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Nível</th>
+<th>XP para subir</th>
+<th>PV</th>
+<th>Mana máxima</th>
+<th>Mana extra máx.</th>
+<th>Avanços</th>
+<th>Especial</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>10</td>
+<td>1d8 + mod. de Con</td>
+<td>3 + mod. de Des</td>
+<td>1</td>
+<td>—</td>
+<td>3 habilidades iniciais · proficiências · bênção menor*</td>
+</tr>
+<tr>
+<td>2</td>
+<td>20</td>
+<td>+1d8</td>
+<td>6 + mod. de Des</td>
+<td>2</td>
+<td>1</td>
+<td>—</td>
+</tr>
+<tr>
+<td>3</td>
+<td>30</td>
+<td>+1d8</td>
+<td>9 + mod. de Des</td>
+<td>3</td>
+<td><strong>2</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>4</td>
+<td>40</td>
+<td>+1d8</td>
+<td>12 + mod. de Des</td>
+<td>4</td>
+<td>1</td>
+<td>—</td>
+</tr>
+<tr>
+<td>5</td>
+<td>50</td>
+<td>+1d8</td>
+<td>15 + mod. de Des</td>
+<td>5</td>
+<td>1</td>
+<td>Bênção maior*</td>
+</tr>
+<tr>
+<td>6</td>
+<td>60</td>
+<td>+1d8</td>
+<td>18 + mod. de Des</td>
+<td>6</td>
+<td><strong>2</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>7</td>
+<td>70</td>
+<td>+1d8</td>
+<td>21 + mod. de Des</td>
+<td>7</td>
+<td>1</td>
+<td>—</td>
+</tr>
+<tr>
+<td>8</td>
+<td>80</td>
+<td>+1d8</td>
+<td>24 + mod. de Des</td>
+<td>8</td>
+<td>1</td>
+<td>—</td>
+</tr>
+<tr>
+<td>9</td>
+<td>90</td>
+<td>+1d8</td>
+<td>27 + mod. de Des</td>
+<td>9</td>
+<td><strong>2</strong></td>
+<td>Milagre*</td>
+</tr>
+<tr>
+<td>10</td>
+<td>—</td>
+<td>+1d8</td>
+<td>30 + mod. de Des</td>
+<td>10</td>
+<td>1</td>
+<td>Nível máximo</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Mana máxima</strong> soma o modificador do seu atributo principal: Destreza.</p>
+<p>* Só se você seguir uma divindade (veja Divindades).</p>
+<h2 id="avancos-do-lamina-silenciosa">AVANÇOS DO LÂMINA SILENCIOSA<a class="headerlink" href="#avancos-do-lamina-silenciosa" title="Permanent link">&para;</a></h2>
+<p>Ao subir de nível:</p>
+<ol>
+<li>Role 1d8 e some ao seu PV máximo. Se tirar 1, role de novo (uma vez por nível).</li>
+<li>Ganhe 1 avanço (2 nos níveis 3, 6 e 9).</li>
+<li>Escolha cada avanço abaixo. Dois avanços no mesmo nível devem ser escolhas diferentes (veja Avanço de Nível).</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Avanço</th>
+<th>Efeito</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nova habilidade</td>
+<td>Escolha uma habilidade da lista da Lâmina Silenciosa.</td>
+</tr>
+<tr>
+<td>Melhoria</td>
+<td>Escolha uma das três melhorias de uma habilidade sua. O custo dela aumenta em 1.</td>
+</tr>
+<tr>
+<td>+1 dado</td>
+<td>Uma habilidade com dados de dano ou cura ganha +1 dado, sem aumentar o custo.</td>
+</tr>
+<tr>
+<td>Atributos</td>
+<td>+2 em atributos (distribua; máximo 20).</td>
+</tr>
+<tr>
+<td>Vigor</td>
+<td>+1d8 (role e some ao PV máximo).</td>
+</tr>
+<tr>
+<td>Treino</td>
+<td>Proficiência em uma arma, armadura ou escudo, ou um idioma novo.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Constituição.</strong> Se o seu modificador de Constituição aumentar, some a diferença ao seu PV máximo, uma vez.</p>
+<h2 id="habilidades-da-lamina-silenciosa">HABILIDADES DA LÂMINA SILENCIOSA<a class="headerlink" href="#habilidades-da-lamina-silenciosa" title="Permanent link">&para;</a></h2>
+<p>Todas são marciais, exceto as marcadas como <em>(magia)</em>, que vêm do lótus negro e usam Destreza. "Ataque com arma" usa o atributo e o dano normais da arma (veja Combate). Testes de resistência contra suas habilidades usam a sua CD de Destreza. <strong>Desprevenido</strong> é quem não sabe da sua presença. No escalonamento, cada dado ou alvo extra custa 1 de Mana a mais, até Mana extra igual ao seu nível. Cada melhoria aumenta o custo em 1.</p>
+<table>
+<thead>
+<tr>
+<th>d20</th>
+<th>Habilidade</th>
+<th>Custo</th>
+<th>Efeito</th>
+<th>Melhoria 1</th>
+<th>Melhoria 2</th>
+<th>Melhoria 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Passo de Fumaça</strong> <em>(magia)</em></td>
+<td>2</td>
+<td>Movimento. Suma numa nuvem de fumaça e reapareça num ponto que você vê até perto, sem provocar ataques de oportunidade.</td>
+<td><strong>Longo alcance:</strong> até longe.</td>
+<td><strong>Cortina:</strong> a fumaça fica onde você estava: área pequena por 1 rodada, e quem está dentro fica cego.</td>
+<td><strong>Livre:</strong> vira ação livre.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Assassinar</strong></td>
+<td>Passiva</td>
+<td>Seus ataques contra alvos desprevenidos causam dano dobrado.</td>
+<td><strong>Morte certa:</strong> dano triplo em vez de dobrado.</td>
+<td><strong>Sem grito:</strong> o alvo atingido não consegue falar nem gritar por 1 rodada.</td>
+<td><strong>Primeiro sangue:</strong> na primeira rodada de um combate, quem ainda não agiu conta como desprevenido.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Chuva de Shuriken</strong></td>
+<td>2</td>
+<td>Ação. Faça um ataque à distância com shuriken ou adaga contra até dois alvos até perto.</td>
+<td><strong>Três alvos:</strong> mais um alvo. Escalonamento: +1 alvo por +1 de Mana.</td>
+<td><strong>Envenenadas:</strong> cada acerto causa +1d4 de dano de veneno. Escalonamento: +1d4 por +1 de Mana.</td>
+<td><strong>Longo alcance:</strong> alcance até longe.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Dardo Envenenado</strong></td>
+<td>2</td>
+<td>Ação. Ataque à distância com zarabatana. Se acertar, o alvo faz um teste de resistência (Constituição): 1d6 de dano de veneno e fica lento por 1 rodada; metade do dano e sem lentidão se passar. Escalonamento: +1d6 por +1 de Mana.</td>
+<td><strong>Silencioso:</strong> o disparo não revela onde você está.</td>
+<td><strong>Paralisante:</strong> quem falhar por 5 ou mais fica paralisado por 1 rodada.</td>
+<td><strong>Lento:</strong> o veneno age por 10 rodadas: 1d4 de dano no início de cada turno do alvo.</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Corrente de Lâminas</strong></td>
+<td>2</td>
+<td>Ação. Ataque com a corrente contra um alvo até 2 casas. Se acertar, puxe-o até ficar adjacente ou derrube-o (ele fica caído).</td>
+<td><strong>Girar:</strong> ataque cada inimigo até 2 casas.</td>
+<td><strong>Enrolar:</strong> o alvo também fica lento por 1 rodada.</td>
+<td><strong>Fio:</strong> o ataque causa +1d6 de dano. Escalonamento: +1d6 por +1 de Mana.</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Boleadeira</strong></td>
+<td>2</td>
+<td>Ação. Ataque à distância com boleadeira. Se acertar, o alvo fica caído e lento por 1 rodada.</td>
+<td><strong>Longo alcance:</strong> alcance até longe.</td>
+<td><strong>Duas:</strong> mais um alvo. Escalonamento: +1 alvo por +1 de Mana.</td>
+<td><strong>Amarrado:</strong> fica lento por 10 rodadas; repete um teste de resistência (Força) no fim de cada turno dele.</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Desaparecer</strong></td>
+<td>2</td>
+<td>Movimento. Esconda-se, mesmo que estejam vendo você, desde que haja penumbra, fumaça ou cobertura por perto.</td>
+<td><strong>Livre:</strong> vira ação livre.</td>
+<td><strong>Depois do golpe:</strong> use como reação logo depois de atacar.</td>
+<td><strong>Sombra amiga:</strong> um aliado adjacente também se esconde.</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>Golpe Paralisante</strong></td>
+<td>4</td>
+<td>Ação. Ataque com arma num ponto vital. Se acertar, o alvo faz um teste de resistência (Constituição) ou fica paralisado por 1 rodada.</td>
+<td><strong>Prolongar:</strong> fica paralisado até passar no teste; repete no fim de cada turno dele, até 10 rodadas.</td>
+<td><strong>Força:</strong> o ataque causa +1d6 de dano. Escalonamento: +1d6 por +1 de Mana.</td>
+<td><strong>Silêncio:</strong> paralisado, ele também não consegue falar.</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>Lâmina Envenenada</strong></td>
+<td>2</td>
+<td>Movimento. Unte uma arma. Por 10 rodadas, cada acerto causa +1d6 de dano de veneno. Escalonamento: +1d6 por +1 de Mana.</td>
+<td><strong>Torpor:</strong> quem é atingido faz um teste de resistência (Constituição) ou fica lento.</td>
+<td><strong>Duradoura:</strong> dura 1 hora.</td>
+<td><strong>Livre:</strong> vira ação livre.</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>Mil Rostos</strong></td>
+<td>2</td>
+<td>Ação. Com 1 turno de exploração e alguns trapos, disfarce-se de outra pessoa por 1 hora. Quem desconfiar faz um teste de Sabedoria contra a sua CD.</td>
+<td><strong>Voz:</strong> imite a voz de quem você ouviu falar.</td>
+<td><strong>Duradouro:</strong> dura 1 dia.</td>
+<td><strong>Rápido:</strong> o disfarce leva só 1 rodada.</td>
+</tr>
+<tr>
+<td>11</td>
+<td><strong>Duas Lâminas</strong></td>
+<td>Passiva</td>
+<td>Lutando com uma arma corpo a corpo em cada mão, faça um ataque com a segunda arma com a ação livre, sem somar o modificador ao dano.</td>
+<td><strong>Golpe completo:</strong> some o modificador ao dano da segunda arma.</td>
+<td><strong>Guarda dupla:</strong> +1 de CA lutando com duas armas.</td>
+<td><strong>Cortes fatais:</strong> crítico com 19 ou 20 natural com duas armas.</td>
+</tr>
+<tr>
+<td>12</td>
+<td><strong>Saque Relâmpago</strong></td>
+<td>3</td>
+<td>Reação. Quando um inimigo entrar numa casa adjacente a você, faça um ataque com arma contra ele que causa +1d8 de dano. Escalonamento: +1d8 por +1 de Mana.</td>
+<td><strong>Primeiro a agir:</strong> vantagem na iniciativa tática.</td>
+<td><strong>Corte limpo:</strong> se ele cair, você pode usar esta reação de novo nesta rodada.</td>
+<td><strong>Bainha:</strong> depois do ataque, mova-se 1 casa sem provocar ataques de oportunidade.</td>
+</tr>
+<tr>
+<td>13</td>
+<td><strong>Marca da Morte</strong></td>
+<td>4</td>
+<td>Ação. Marque um alvo que você vê. Por 1 dia, você sabe a direção dele e seus ataques contra ele causam +1d6 de dano. Escalonamento: +1d6 por +1 de Mana.</td>
+<td><strong>Emboscada:</strong> seu primeiro ataque contra ele em cada combate tem vantagem.</td>
+<td><strong>Caçada:</strong> você sabe a direção dele a qualquer distância.</td>
+<td><strong>Contrato cumprido:</strong> quando ele morrer, recupere metade da sua Mana máxima.</td>
+</tr>
+<tr>
+<td>14</td>
+<td><strong>Garganta Cortada</strong></td>
+<td>5</td>
+<td>Ação. Ataque com arma contra um alvo desprevenido. Se acertar e ele ficar com 10 PV ou menos, cai a 0 PV.</td>
+<td><strong>Mais fundo:</strong> 15 PV ou menos.</td>
+<td><strong>À distância:</strong> vale para ataques à distância.</td>
+<td><strong>Sem rastro:</strong> ninguém além do alvo percebe o ataque nesta rodada.</td>
+</tr>
+<tr>
+<td>15</td>
+<td><strong>Véu do Lótus</strong> <em>(magia)</em></td>
+<td>3</td>
+<td>Ação. Uma criatura até perto faz um teste de resistência (Sabedoria). Se falhar, não vê nem ouve você por 10 rodadas. Atacar ela encerra o efeito.</td>
+<td><strong>Área:</strong> afeta criaturas numa área pequena até perto.</td>
+<td><strong>Duradouro:</strong> dura 1 hora.</td>
+<td><strong>Golpe invisível:</strong> o primeiro ataque não encerra o efeito, e ela é desprevenida contra ele.</td>
+</tr>
+<tr>
+<td>16</td>
+<td><strong>Pétala do Sono</strong> <em>(magia)</em></td>
+<td>4</td>
+<td>Ação. Sopre pólen de lótus numa criatura até perto, que faz um teste de resistência (Constituição). Se falhar, fica atordoada (dormindo) por 10 rodadas. Dano ou ser sacudida acorda.</td>
+<td><strong>Nuvem:</strong> afeta uma área pequena.</td>
+<td><strong>Sono profundo:</strong> dano não acorda; só ser sacudida.</td>
+<td><strong>Rápido:</strong> vira movimento.</td>
+</tr>
+<tr>
+<td>17</td>
+<td><strong>Esquiva Acrobática</strong></td>
+<td>2</td>
+<td>Reação. +2 de CA contra um ataque. Se ele errar, mova-se 1 casa sem provocar ataques de oportunidade.</td>
+<td><strong>Rolar:</strong> mova-se até 3 casas.</td>
+<td><strong>Contra-ataque:</strong> se ele errar, faça um ataque com arma contra o atacante.</td>
+<td><strong>Proteger:</strong> use quando um aliado adjacente for atacado.</td>
+</tr>
+<tr>
+<td>18</td>
+<td><strong>Salto Felino</strong></td>
+<td>2</td>
+<td>Movimento. Salte até perto, por cima de obstáculos e criaturas, sem provocar ataques de oportunidade. Você cai em pé, sem dano de queda até 6 casas.</td>
+<td><strong>Longo alcance:</strong> salte até longe.</td>
+<td><strong>Bote:</strong> seu próximo ataque neste turno causa +1d6 de dano. Escalonamento: +1d6 por +1 de Mana.</td>
+<td><strong>Silencioso:</strong> se estava escondido, continua escondido depois do salto.</td>
+</tr>
+<tr>
+<td>19</td>
+<td><strong>Dança das Lâminas</strong></td>
+<td>4</td>
+<td>Ação. Mova-se até perto sem provocar ataques de oportunidade e faça um ataque com arma contra cada inimigo que ficou adjacente a você no caminho.</td>
+<td><strong>Cortes fundos:</strong> cada acerto causa +1d6 de dano. Escalonamento: +1d6 por +1 de Mana.</td>
+<td><strong>Sumir:</strong> no fim, você se esconde se houver penumbra ou cobertura.</td>
+<td><strong>Sangria:</strong> cada inimigo atingido sofre 1d4 de dano no início do próximo turno dele.</td>
+</tr>
+<tr>
+<td>20</td>
+<td><strong>Florescer Negro</strong> <em>(magia)</em></td>
+<td>5</td>
+<td>Movimento. Pétalas negras giram ao seu redor por 10 rodadas. Seus ataques causam +1d6 de dano de veneno, e você usa Passo de Fumaça sem gastar Mana. Escalonamento: +1d6 por +1 de Mana.</td>
+<td><strong>Perfume da morte:</strong> inimigos que começarem o turno adjacentes a você fazem um teste de resistência (Constituição) ou ficam lentos.</td>
+<td><strong>Sombra viva:</strong> enquanto durar, você conta como escondido na penumbra, mesmo depois de atacar.</td>
+<td><strong>Duradouro:</strong> dura 1 hora.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="titulos-da-lamina-silenciosa">TÍTULOS DA LÂMINA SILENCIOSA<a class="headerlink" href="#titulos-da-lamina-silenciosa" title="Permanent link">&para;</a></h2>
+<p>Só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Caos, ou escolha (veja Títulos).</p>
+<table>
+<thead>
+<tr>
+<th>d6</th>
+<th>Ordem</th>
+<th>Neutro</th>
+<th>Caos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Iniciado do Templo</td>
+<td>Sombra</td>
+<td>Faca de Aluguel</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Guarda Oculto</td>
+<td>Pétala Negra</td>
+<td>Lâmina Sangrenta</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Executor do Templo</td>
+<td>Fumaça</td>
+<td>Víbora</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Mão do Mestre</td>
+<td>Lâmina Silenciosa</td>
+<td>Flor da Morte</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Guardião do Lótus</td>
+<td>Vento Noturno</td>
+<td>Demônio Mascarado</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Grão-Mestre</td>
+<td>Lenda Sem Rosto</td>
+<td>Senhor do Lótus Negro</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../necromante/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Necromante">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Necromante
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../lobo-do-mar/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Lobo do Mar">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                Lobo do Mar
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.path", "navigation.top", "navigation.footer", "search.highlight", "search.suggest", "content.tables", "toc.follow"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+        <script src="../../assets/js/gerador.js"></script>
+      
+    
+  </body>
+</html>
