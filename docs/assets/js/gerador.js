@@ -316,15 +316,15 @@
     return 'Treino: uma proficiência ou um idioma (anote)';
   }
 
+  function itensDeNivel0() {
+    return Array.from({ length: d(4) }, () => um(D.equipamentoNivel0));
+  }
+
   function equipar(pj, modo) {
     pj.equipamento = [];
     pj.armadura = null;
     pj.ouro = 0;
-    if (pj.nivel === 0) {
-      const n = d(4);
-      for (let k = 0; k < n; k++) pj.equipamento.push(um(D.equipamentoNivel0));
-      return;
-    }
+    if (pj.nivel === 0) { pj.equipamento = itensDeNivel0(); return; }
     if (modo === 'ouro') { pj.ouro = (d(6) + d(6)) * 5; return; }
     pj.equipamento.push(KIT);
     const arma = escolherArma(pj.classe, pj.principal);
@@ -600,7 +600,7 @@
     pj.extras = m.extras;
 
     if (m.nivel === 0) {
-      if (!m.equip0) { equipar(pj, 'pacote'); m.equip0 = pj.equipamento.slice(); }
+      if (!m.equip0) m.equip0 = itensDeNivel0();
       m.equipamento = m.equip0;
     } else if (m.equipModo === 'ouro') {
       if (m.ouroInicial == null) m.ouroInicial = (d(6) + d(6)) * 5;
@@ -734,7 +734,7 @@
           <div class="fj-g-grade">
             <label>Arma <select data-pacote="arma">${opcoesDe(armasDoPacote(c).map((a) => [a.nome, a.nome + ' (' + a.dano + ', ' + a.custo + ' po)']), M.arma, 'Nenhuma')}</select></label>
             ${armadurasDoPacote(c, anc).length ? `<label>Armadura <select data-pacote="armadura">${opcoesDe(armadurasDoPacote(c, anc).map((a) => [a.nome, a.nome + ' (CA ' + a.ca + ', ' + a.custo + ' po)']), M.armadura, 'Nenhuma')}</select></label>` : ''}
-          </div>`}` : '<p><small>Nível 0: 1d4 itens da tabela de nível 0 (veja Equipamento).</small></p>'}
+          </div>`}` : nivel0HTML()}
           <label class="fj-g-equip">Outros itens (um por linha)<textarea data-m="equipExtra" rows="3">${esc(M.equipExtra || '')}</textarea></label>
           ${M.equipModo === 'ouro' && M.nivel >= 1 ? '' : `<label class="fj-g-equip">Peças de ouro <input type="number" min="0" data-m="ouro" value="${M.ouro || 0}"></label>`}
         </div>
@@ -746,6 +746,16 @@
           </div>
           <div class="fj-g-previa"></div>
         </div>`;
+    }
+
+    // Nível 0: os itens saem da tabela de nível 0, sorteados (1d4) ou escolhidos um a um.
+    function nivel0HTML() {
+      if (!M.equip0) M.equip0 = itensDeNivel0();
+      const tabela = D.equipamentoNivel0.map((x) => [x, x]);
+      const itens = M.equip0.map((x, k) => `<div class="fj-g-av"><select data-e0="${k}">${opcoesDe(tabela, x)}</select> <button type="button" data-acao="tirar-e0" data-k="${k}" title="Tirar">✕</button></div>`).join('');
+      return `<p><small>Nível 0: role 1d4 vezes na tabela de nível 0 (veja Equipamento). Sorteie ou escolha os itens.</small></p>
+          <div class="fj-g-outros">${itens || '<em>Nenhum item.</em>'}</div>
+          <div class="fj-g-acoes"><button type="button" data-acao="sortear-e0">🎲 Sortear 1d4 itens</button><button type="button" data-acao="add-e0"${M.equip0.length >= 4 ? ' disabled' : ''}>+ Item</button></div>`;
     }
 
     // Loja do modo Ouro: compra armas, armaduras e itens com o ouro inicial (2d6 × 5 po,
@@ -891,6 +901,10 @@
         }
         render();
       }));
+      painel.querySelectorAll('[data-e0]').forEach((el) => el.addEventListener('change', () => {
+        M.equip0[parseInt(el.dataset.e0, 10)] = el.value;
+        previa();
+      }));
       painel.querySelectorAll('[data-pacote]').forEach((el) => el.addEventListener('change', () => {
         M[el.dataset.pacote] = el.value;
         previa();
@@ -938,6 +952,9 @@
           if (acao === 'rolar-ouro') { M.ouroInicial = (d(6) + d(6)) * 5; M.compras = []; render(); }
           if (acao === 'mais-ouro') { M.ouroInicial = (M.ouroInicial || 0) + parseInt(el.dataset.v, 10); render(); }
           if (acao === 'comprar') comprar(el.dataset.de);
+          if (acao === 'sortear-e0') { M.equip0 = itensDeNivel0(); render(); }
+          if (acao === 'add-e0' && M.equip0.length < 4) { M.equip0.push(D.equipamentoNivel0[0]); render(); }
+          if (acao === 'tirar-e0') { M.equip0.splice(parseInt(el.dataset.k, 10), 1); render(); }
           if (acao === 'devolver') { M.compras.splice(parseInt(el.dataset.k, 10), 1); render(); }
           if (acao === 'imprimir') imprimir(folhaPersonagem(personagemDoEstado(M, false)), 'Ficha de ' + (M.nome || 'personagem'));
           if (acao === 'json') baixarJSON();
