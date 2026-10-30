@@ -118,7 +118,7 @@
     const eixoOrdem = op.ordem != null ? op.ordem : Math.floor((d(6) - 1) / 2);
     pj.tendencia = tendencia(eixoBem, eixoOrdem);
     const tit = D.titulos[classe.nome];
-    pj.titulo = tit ? um(tit)[eixoOrdem] : '';
+    pj.titulo = op.titulo || (tit ? um(tit)[eixoOrdem] : '');
 
     // movimento
     const mov = traco(anc, 'Movimento');
@@ -159,9 +159,17 @@
     }
 
     // avanços
-    if (nivel >= 1 && traco(anc, 'Ambicioso')) registrarAvancos(pj, 1, 1, op.sortear, 'Ambicioso');
-    for (let L = 2; L <= nivel; L++) {
-      registrarAvancos(pj, L, BASES[classe.base].dois.includes(L) ? 2 : 1, op.sortear);
+    const vagas = vagasDeAvanco(classe, anc, nivel);
+    if (op.avancosManuais) {
+      let k = 0;
+      vagas.forEach((v) => {
+        const itens = [];
+        const usados = [];
+        for (let q = 0; q < v.qtd; q++) itens.push(aplicarEscolha(pj, op.avancosManuais[k++] || { tipo: 'sortear' }, usados));
+        pj.avancos.push({ nivel: v.nivel, motivo: v.motivo, itens });
+      });
+    } else {
+      vagas.forEach((v) => registrarAvancos(pj, v.nivel, v.qtd, op.sortear, v.motivo));
     }
 
     // tabelas da classe que se rolam na criação
@@ -252,6 +260,60 @@
     if (pj.atr.some((v) => v < 20)) op.push(['atributos', 15]);
     op.push(['vigor', 8], ['treino', 5]);
     return op.filter(([t]) => !usados.includes(t));
+  }
+
+  function vagasDeAvanco(classe, anc, nivel) {
+    const vagas = [];
+    if (nivel >= 1 && anc && traco(anc, 'Ambicioso')) vagas.push({ nivel: 1, qtd: 1, motivo: 'Ambicioso' });
+    for (let L = 2; L <= nivel; L++) vagas.push({ nivel: L, qtd: BASES[classe.base].dois.includes(L) ? 2 : 1 });
+    return vagas;
+  }
+
+  function sortearTipo(pj, usados) {
+    const op = opcoesDeAvanco(pj, usados);
+    let r = Math.random() * op.reduce((s, [, p]) => s + p, 0);
+    for (const [t, p] of op) { if ((r -= p) < 0) return t; }
+    return op[op.length - 1][0];
+  }
+
+  // Avanço escolhido pelo jogador no Montar.
+  function aplicarEscolha(pj, e, usados) {
+    const c = pj.classe;
+    const nomeHab = (i) => limpo(c.habilidades[i].nome);
+    const dono = (i) => pj.habilidades.find((h) => h.i === i);
+    if (e.tipo === 'branco') return 'a escolher';
+    if (e.tipo === 'sortear') { const t = sortearTipo(pj, usados); usados.push(t); return aplicarAvanco(pj, t); }
+    usados.push(e.tipo);
+    if (e.tipo === 'nova') {
+      if (dono(e.i) && !temColunas(c)) return 'Nova habilidade: ' + nomeHab(e.i) + ' (já tinha)';
+      adicionarHabilidade(pj, e.i, e.col || 0);
+      return 'Nova habilidade: ' + nomeHab(e.i) + (temColunas(c) ? ' (' + c.colunas[e.col || 0] + ')' : '');
+    }
+    if (e.tipo === 'melhoria') {
+      const h = dono(e.i);
+      if (!h) return 'Melhoria: ' + nomeHab(e.i) + ' (você não tem essa habilidade)';
+      if (temColunas(c)) {
+        if (!h.colunas.includes(e.col)) h.colunas.push(e.col);
+        return 'Outro elemento: ' + nomeHab(e.i) + ' (' + c.colunas[e.col] + ')';
+      }
+      if (!h.melhorias.includes(e.k)) h.melhorias.push(e.k);
+      const nm = (c.habilidades[e.i].partes[e.k + 1].match(/\*\*(.+?):?\*\*/) || [, 'melhoria'])[1].replace(/:$/, '');
+      return 'Melhoria: ' + nomeHab(e.i) + ', ' + limpo(nm);
+    }
+    if (e.tipo === 'dado') {
+      const h = dono(e.i);
+      if (!h) return '+1 dado: ' + nomeHab(e.i) + ' (você não tem essa habilidade)';
+      h.dados += 1;
+      return '+1 dado: ' + nomeHab(e.i);
+    }
+    if (e.tipo === 'atributos') {
+      const conAntes = mod(pj.atr[2]);
+      [e.a1, e.a2].forEach((a) => { pj.atr[a] = Math.min(20, pj.atr[a] + 1); });
+      const dif = mod(pj.atr[2]) - conAntes;
+      if (dif > 0) pj.pv += dif;
+      return 'Atributos: ' + (e.a1 === e.a2 ? '+2 em ' + ATR[e.a1] : '+1 em ' + ATR[e.a1] + ', +1 em ' + ATR[e.a2]);
+    }
+    return aplicarAvanco(pj, e.tipo);
   }
 
   function registrarAvancos(pj, nivel, qtd, sortear, motivo) {
@@ -416,7 +478,8 @@
           <label class="so-montar">Ordem x Caos <select id="g-ordem"><option value="">Aleatório</option><option value="0">Ordem</option><option value="1">Neutro</option><option value="2">Caos</option></select></label>
           <label>Divindade <select id="g-div"><option value="auto">Só se a classe exigir</option><option value="sortear">Sortear</option><option value="nenhuma">Nenhuma</option>${opDiv}</select></label>
           <label>Equipamento <select id="g-equip"><option value="pacote">Pacote inicial</option><option value="ouro">Ouro (2d6 × 5 po)</option></select></label>
-          <label>Avanços <select id="g-avancos"><option value="sortear">Sortear</option><option value="escolher">Deixar para escolher</option></select></label>
+          <label class="so-montar">Título <select id="g-titulo"><option value="">Aleatório</option></select></label>
+          <label class="so-aleatorio">Avanços <select id="g-avancos"><option value="sortear">Sortear</option><option value="escolher">Deixar para escolher</option></select></label>
           <label class="so-montar">Nome <input id="g-nome" type="text" placeholder="Aleatório"></label>
           <label class="fj-g-check"><input id="g-exoticas" type="checkbox"> Incluir classes exóticas no sorteio</label>
         </div>
@@ -425,6 +488,8 @@
           <div class="fj-g-atr">${ATR.map((a, i) => `<label>${a}<input type="number" min="3" max="20" id="g-atr-${i}" value="10"></label>`).join('')}</div>
           <div class="fj-g-titulo">Habilidades iniciais <span id="g-hab-limite"></span></div>
           <div id="g-habs" class="fj-g-habs"><em>Escolha uma classe.</em></div>
+          <div class="fj-g-titulo">Avanços <span id="g-av-info"></span></div>
+          <div id="g-avs" class="fj-g-avs"><em>Escolha uma classe.</em></div>
         </div>
         <div class="fj-g-acoes">
           <button type="button" id="g-gerar" class="fj-g-primario">Gerar personagem</button>
@@ -452,8 +517,66 @@
     }));
 
     $('g-rolar').addEventListener('click', () => ATR.forEach((_, i) => { $('g-atr-' + i).value = rolar4d6(); }));
-    $('g-classe').addEventListener('change', listarHabilidades);
-    $('g-nivel').addEventListener('change', listarHabilidades);
+    const atualizarMontar = () => { listarHabilidades(); listarTitulos(); listarAvancos(); };
+    $('g-classe').addEventListener('change', atualizarMontar);
+    $('g-nivel').addEventListener('change', listarAvancos);
+    $('g-anc').addEventListener('change', listarAvancos);
+    $('g-ordem').addEventListener('change', listarTitulos);
+
+    function listarTitulos() {
+      const ic = $('g-classe').value;
+      const sel = $('g-titulo');
+      let html = '<option value="">Aleatório</option>';
+      if (ic !== '') {
+        const tab = D.titulos[D.classes[parseInt(ic, 10)].nome] || [];
+        const ordem = $('g-ordem').value;
+        const cols = ordem === '' ? [0, 1, 2] : [parseInt(ordem, 10)];
+        const eixos = ['Ordem', 'Neutro', 'Caos'];
+        cols.forEach((col) => tab.forEach((linha) => { html += `<option>${esc(linha[col])}</option>`; }));
+        if (ordem === '') html = '<option value="">Aleatório</option>' + cols.map((col) => `<optgroup label="${eixos[col]}">` + tab.map((l) => `<option>${esc(l[col])}</option>`).join('') + '</optgroup>').join('');
+      }
+      sel.innerHTML = html;
+    }
+
+    function listarAvancos() {
+      const ic = $('g-classe').value;
+      const caixa = $('g-avs');
+      if (ic === '') { caixa.innerHTML = '<em>Escolha uma classe.</em>'; $('g-av-info').textContent = ''; return; }
+      const c = D.classes[parseInt(ic, 10)];
+      const ia = $('g-anc').value;
+      const vagas = vagasDeAvanco(c, ia === '' ? null : D.ancestralidades[parseInt(ia, 10)], parseInt($('g-nivel').value, 10));
+      const linhas = [];
+      vagas.forEach((v) => { for (let q = 0; q < v.qtd; q++) linhas.push(v); });
+      $('g-av-info').textContent = linhas.length ? '(em ordem; "Sortear" escolhe por você)' : '';
+      if (!linhas.length) { caixa.innerHTML = '<em>Sem avanços neste nível.</em>'; return; }
+      const melhoria = temColunas(c) ? 'Outro elemento' : 'Melhoria';
+      caixa.innerHTML = linhas.map((v) => `<div class="fj-g-av"><span class="fj-g-av-nivel">Nível ${v.nivel}${v.motivo ? ' (' + v.motivo + ')' : ''}</span>
+        <select class="g-av-tipo"><option value="sortear">Sortear</option><option value="nova">Nova habilidade</option><option value="melhoria">${melhoria}</option>
+        <option value="dado">+1 dado</option><option value="atributos">Atributos</option><option value="vigor">Vigor</option><option value="treino">Treino</option><option value="branco">Deixar em branco</option></select>
+        <span class="g-av-alvo"></span></div>`).join('');
+      caixa.querySelectorAll('.fj-g-av').forEach((linha) => {
+        const tipo = linha.querySelector('.g-av-tipo');
+        tipo.addEventListener('change', () => { linha.querySelector('.g-av-alvo').innerHTML = alvoDoAvanco(c, tipo.value); });
+      });
+    }
+
+    function alvoDoAvanco(c, tipo) {
+      const habs = c.habilidades.map((h, i) => `<option value="${i}">${esc(limpo(h.nome))}</option>`).join('');
+      const cols = temColunas(c) ? `<select class="g-av-col">${c.colunas.map((x, k) => `<option value="${k}">${x}</option>`).join('')}</select>` : '';
+      const atrs = ATR.map((a, i) => `<option value="${i}">${a}</option>`).join('');
+      if (tipo === 'nova') return `<select class="g-av-hab">${habs}</select>${cols}`;
+      if (tipo === 'dado') return `<select class="g-av-hab">${habs}</select>`;
+      if (tipo === 'melhoria' && temColunas(c)) return `<select class="g-av-hab">${habs}</select>${cols}`;
+      if (tipo === 'melhoria') {
+        const ops = c.habilidades.map((h, i) => h.partes.slice(1).map((m, k) => {
+          const nm = (m.match(/\*\*(.+?):?\*\*/) || [, 'melhoria ' + (k + 1)])[1].replace(/:$/, '');
+          return `<option value="${i}:${k}">${esc(limpo(h.nome))}: ${esc(limpo(nm))}</option>`;
+        }).join('')).join('');
+        return `<select class="g-av-mel">${ops}</select>`;
+      }
+      if (tipo === 'atributos') return `+1 <select class="g-av-a1">${atrs}</select> +1 <select class="g-av-a2">${atrs}</select>`;
+      return '';
+    }
 
     function listarHabilidades() {
       const ic = $('g-classe').value;
@@ -485,6 +608,16 @@
         if (v('g-ordem') !== '') op.ordem = parseInt(v('g-ordem'), 10);
         if (v('g-nome').trim()) op.nome = v('g-nome').trim();
         op.atributos = ATR.map((_, i) => Math.max(3, Math.min(20, parseInt($('g-atr-' + i).value, 10) || 10)));
+        if (v('g-titulo')) op.titulo = v('g-titulo');
+        op.avancosManuais = Array.from($('g-avs').querySelectorAll('.fj-g-av')).map((linha) => {
+          const pega = (cls) => { const el = linha.querySelector(cls); return el ? el.value : null; };
+          const e = { tipo: pega('.g-av-tipo') };
+          if (pega('.g-av-hab') != null) e.i = parseInt(pega('.g-av-hab'), 10);
+          if (pega('.g-av-col') != null) e.col = parseInt(pega('.g-av-col'), 10);
+          if (pega('.g-av-mel') != null) { const [i, k] = pega('.g-av-mel').split(':'); e.i = parseInt(i, 10); e.k = parseInt(k, 10); }
+          if (pega('.g-av-a1') != null) { e.a1 = parseInt(pega('.g-av-a1'), 10); e.a2 = parseInt(pega('.g-av-a2'), 10); }
+          return e;
+        });
         op.habilidades = Array.from($('g-habs').querySelectorAll('input:checked')).map((inp) => {
           const sel = $('g-habs').querySelector(`select[data-col="${inp.value}"]`);
           return { i: parseInt(inp.value, 10), col: sel ? parseInt(sel.value, 10) : 0 };
@@ -573,7 +706,7 @@
     .caixa span { font-size: 15pt; }
     .caixa small { display: block; }
     table { width: 100%; border-collapse: collapse; margin-top: 1mm; }
-    th { background: #000; color: #fff; text-align: left; font-family: "IM Fell English SC", Georgia, serif; font-weight: normal; padding: 0.8mm 1.5mm; font-size: 8.5pt; }
+    th { border-bottom: 2px solid #000; color: #000; text-align: left; font-family: "IM Fell English SC", Georgia, serif; font-weight: normal; padding: 0.8mm 1.5mm; font-size: 8.5pt; }
     td { border-bottom: 1px solid #000; padding: 1mm 1.5mm; vertical-align: top; font-size: 9pt; }
     td:first-child { width: 22%; } td:nth-child(2) { width: 7%; text-align: center; }
     .notas { border: 1.5px solid #000; height: 35mm; }

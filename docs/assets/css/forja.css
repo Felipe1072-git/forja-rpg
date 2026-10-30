@@ -499,3 +499,25 @@
 .md-typeset .fj-g-tabela { font-size: 0.75rem; }
 .fj-g-pequeno { padding: 0.3em 1em; }
 @media (max-width: 40em) { .fj-g-atr { grid-template-columns: repeat(3, 1fr); } }
+#fj-gerador.montando .so-aleatorio { display: none; }
+.fj-g-avs { display: flex; flex-direction: column; gap: 0.3em; font-size: 0.8rem; }
+.fj-g-av { display: flex; gap: 0.5em; align-items: center; flex-wrap: wrap; }
+.fj-g-av-nivel { font-family: var(--fj-titulo); min-width: 7.5em; }
+.fj-g-av select { font-family: inherit; font-size: 0.8rem; background: transparent; color: var(--md-default-fg-color); border: 1px solid var(--fj-linha); padding: 0.15em 0.3em; max-width: 100%; }
+.fj-g-av select option, .fj-g-av select optgroup { background: var(--md-default-bg-color); }
+.md-typeset .fj-g-cartao details {
+  border: 1px solid var(--fj-linha);
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  font-size: inherit;
+  margin: 0.6em 0;
+}
+.md-typeset .fj-g-cartao details > summary {
+  background: transparent;
+  font-family: var(--fj-titulo);
+  font-weight: normal;
+  padding-left: 0.6rem;
+}
+.md-typeset .fj-g-cartao details > summary::before { display: none; }
+.md-typeset .fj-g-cartao details > summary::after { background-color: var(--md-default-fg-color); }
