@@ -80,6 +80,13 @@
     return D.armaduras.filter((a) => cats.includes(a.categoria));
   }
 
+  function textoArma(a) { return a.nome + ' (' + a.dano + ', ' + a.tipo.toLowerCase() + ')'; }
+  function textoArmadura(a) {
+    if (a.categoria === 'Escudo') return a.nome + ' (+2 de CA)';
+    const p = a.propriedades && a.propriedades !== '—' ? '; ' + a.propriedades.charAt(0).toLowerCase() + a.propriedades.slice(1) : '';
+    return a.nome + ' (CA ' + a.ca + p + ')';
+  }
+
   function caDaArmadura(a, des) {
     const m = a.ca.match(/(\d+)(\s*\+\s*Des)?/);
     return parseInt(m[1], 10) + (m[2] ? des : 0);
@@ -393,13 +400,13 @@
     const arma = escolherArma(pj.classe, pj.principal);
     if (arma) {
       pj.arma = arma;
-      pj.equipamento.push(arma.nome + ' (' + arma.dano + ', ' + arma.tipo.toLowerCase() + ')');
+      pj.equipamento.push(textoArma(arma));
       if (/munição/.test(arma.propriedades)) pj.equipamento.push(/besta/i.test(arma.nome) ? 'Virotes (20)' : 'Flechas (20)');
     }
     const armaduras = armadurasPermitidas(pj.classe).filter((a) => a.custo <= 15 && a.categoria !== 'Escudo');
     if (armaduras.length && !traco(pj.anc, 'Blindagem integrada')) {
       pj.armadura = armaduras.sort((a, b) => caDaArmadura(b, 0) - caDaArmadura(a, 0))[0];
-      pj.equipamento.push(pj.armadura.nome);
+      pj.equipamento.push(textoArmadura(pj.armadura));
     }
   }
 
@@ -410,6 +417,7 @@
     let ca = 10 + des;
     if (pj.armadura) ca = Math.max(ca, caDaArmadura(pj.armadura, des));
     if (traco(pj.anc, 'Blindagem integrada')) ca = Math.max(ca, 13 + des);
+    if ((pj.equipamento || []).some((x) => /^escudo\b/i.test(x))) ca += 2;
     const textos = pj.classe.regras.map(([, t]) => t)
       .concat(pj.habilidades.map((h) => pj.classe.habilidades[h.i].partes[0]));
     textos.forEach((t) => {
@@ -478,7 +486,7 @@
       versao: 2, nome: '', nivel: 1, classe: null, anc: null, antecedente: null, bem: null, ordem: null,
       titulo: '', divindade: 'auto', atr: [10, 10, 10, 10, 10, 10], principal: null, pv: [],
       habilidades: [], melhorias: [], outros: [], elemento: null,
-      equipModo: 'pacote', equipamento: null, ouro: 0, extras: null, extrasChave: '',
+      equipModo: 'pacote', equipamento: null, equipExtra: '', compras: [], ouroInicial: null, ouro: 0, extras: null, extrasChave: '',
     };
   }
 
@@ -494,6 +502,15 @@
       });
       delete dados.avancos;
       dados.versao = 2;
+    }
+    return dados;
+  }
+
+  // Fichas antigas guardavam a lista de itens editada à mão.
+  function migrarEquipamento(dados) {
+    if (dados.equipExtra == null && Array.isArray(dados.equipamento)) {
+      if (dados.equipModo === 'ouro') { dados.equipExtra = dados.equipamento.join('\n'); dados.ouroInicial = dados.ouro || 0; dados.compras = []; }
+      dados.equipamento = null;
     }
     return dados;
   }
@@ -545,10 +562,11 @@
     const itens = [KIT];
     const arma = D.armas.find((a) => a.nome === m.arma);
     if (arma) {
-      itens.push(arma.nome + ' (' + arma.dano + ', ' + arma.tipo.toLowerCase() + ')');
+      itens.push(textoArma(arma));
       if (/munição/.test(arma.propriedades)) itens.push(/besta/i.test(arma.nome) ? 'Virotes (20)' : 'Flechas (20)');
     }
-    if (m.armadura) itens.push(m.armadura);
+    const armadura = D.armaduras.find((a) => a.nome === m.armadura);
+    if (armadura) itens.push(textoArmadura(armadura));
     return itens;
   }
 
@@ -645,22 +663,23 @@
     if (!m.extras || m.extrasChave !== chave) { m.extras = rolarExtras(pj); m.extrasChave = chave; }
     pj.extras = m.extras;
 
-    if (m.equipamento == null) {
-      if (m.equipModo === 'pacote' && m.nivel >= 1) {
-        if (m.arma === undefined) { const a = escolherArma(classe, pj.principal); m.arma = a ? a.nome : ''; }
-        if (m.armadura === undefined) {
-          const op = armadurasDoPacote(classe, anc);
-          m.armadura = op.length ? op.sort((a, b) => caDaArmadura(b, 0) - caDaArmadura(a, 0))[0].nome : '';
-        }
-        m.equipamento = itensDoPacote(m);
-        m.ouro = 0;
-      } else {
-        equipar(pj, m.equipModo);
-        m.equipamento = pj.equipamento.slice();
-        m.ouro = pj.ouro;
+    if (m.nivel === 0) {
+      if (!m.equip0) { equipar(pj, 'pacote'); m.equip0 = pj.equipamento.slice(); }
+      m.equipamento = m.equip0;
+    } else if (m.equipModo === 'ouro') {
+      if (m.ouroInicial == null) m.ouroInicial = (d(6) + d(6)) * 5;
+      m.compras = m.compras || [];
+      m.equipamento = m.compras.map((x) => x.texto);
+      m.ouro = m.ouroInicial - m.compras.reduce((t, x) => t + x.custo, 0);
+    } else {
+      if (m.arma === undefined) { const a = escolherArma(classe, pj.principal); m.arma = a ? a.nome : ''; }
+      if (m.armadura === undefined) {
+        const op = armadurasDoPacote(classe, anc);
+        m.armadura = op.length ? op.sort((a, b) => caDaArmadura(b, 0) - caDaArmadura(a, 0))[0].nome : '';
       }
+      m.equipamento = itensDoPacote(m);
     }
-    pj.equipamento = m.equipamento.filter((x) => x.trim());
+    pj.equipamento = m.equipamento.concat((m.equipExtra || '').split('\n')).filter((x) => x.trim());
     pj.ouro = m.ouro;
     pj.armadura = D.armaduras.find((a) => a.categoria !== 'Escudo' && pj.equipamento.some((x) => x.toLowerCase().startsWith(a.nome.toLowerCase()))) || null;
     calcular(pj);
@@ -774,14 +793,14 @@
           </div>
         </div>` : ''}
         <div class="fj-g-passo"><h3>6. Equipamento</h3>
-          <div class="fj-g-acoes"><button type="button" data-acao="pacote">Pacote inicial</button><button type="button" data-acao="ouro">Ouro (2d6 × 5 po)</button></div>
-          ${M.equipModo === 'pacote' && M.nivel >= 1 ? `<p><small>Pacote inicial: kit de exploração, uma arma de até 10 po e uma armadura de até 15 po.</small></p>
+          ${M.nivel >= 1 ? `<div class="fj-g-acoes"><button type="button" data-acao="pacote"${M.equipModo === 'pacote' ? ' class="fj-g-primario"' : ''}>Pacote inicial</button><button type="button" data-acao="ouro"${M.equipModo === 'ouro' ? ' class="fj-g-primario"' : ''}>Ouro (2d6 × 5 po)</button></div>
+          ${M.equipModo === 'ouro' ? lojaHTML(c) : `<p><small>Pacote inicial: kit de exploração, uma arma de até 10 po e uma armadura de até 15 po.</small></p>
           <div class="fj-g-grade">
             <label>Arma <select data-pacote="arma">${opcoesDe(armasDoPacote(c).map((a) => [a.nome, a.nome + ' (' + a.dano + ', ' + a.custo + ' po)']), M.arma, 'Nenhuma')}</select></label>
             ${armadurasDoPacote(c, anc).length ? `<label>Armadura <select data-pacote="armadura">${opcoesDe(armadurasDoPacote(c, anc).map((a) => [a.nome, a.nome + ' (CA ' + a.ca + ', ' + a.custo + ' po)']), M.armadura, 'Nenhuma')}</select></label>` : ''}
-          </div>` : ''}
-          <label class="fj-g-equip">Um item por linha<textarea data-m="equipamento" rows="5">${esc(equip)}</textarea></label>
-          <label class="fj-g-equip">Peças de ouro <input type="number" min="0" data-m="ouro" value="${M.ouro || 0}"></label>
+          </div>`}` : '<p><small>Nível 0: 1d4 itens da tabela de nível 0 (veja Equipamento).</small></p>'}
+          <label class="fj-g-equip">Outros itens (um por linha)<textarea data-m="equipExtra" rows="3">${esc(M.equipExtra || '')}</textarea></label>
+          ${M.equipModo === 'ouro' && M.nivel >= 1 ? '' : `<label class="fj-g-equip">Peças de ouro <input type="number" min="0" data-m="ouro" value="${M.ouro || 0}"></label>`}
         </div>
         <div class="fj-g-passo"><h3>Ficha</h3>
           <div class="fj-g-acoes">
@@ -791,6 +810,41 @@
           </div>
           <div class="fj-g-previa"></div>
         </div>`;
+    }
+
+    // Loja do modo Ouro: compra armas, armaduras e itens com o ouro rolado.
+    function lojaHTML(c) {
+      const gasto = (M.compras || []).reduce((t, x) => t + x.custo, 0);
+      const resta = (M.ouroInicial || 0) - gasto;
+      const opc = (lista) => lista.map((x) => `<option value="${esc(x.v)}"${x.custo > resta ? ' disabled' : ''}>${esc(x.t)}</option>`).join('');
+      const armas = D.armas.map((a) => ({ v: a.nome, custo: a.custo, t: a.nome + ' (' + a.dano + ', ' + a.custo + ' po)' + (armaPermitida(c, a) ? '' : ' · sem proficiência') }));
+      const permitidas = armadurasPermitidas(c).map((a) => a.nome);
+      const escudo = /escudo/i.test(c.armaduras);
+      const armaduras = D.armaduras.map((a) => ({ v: a.nome, custo: a.custo, t: a.nome + (a.categoria === 'Escudo' ? ' (+2)' : ' (CA ' + a.ca + ')') + ', ' + a.custo + ' po'
+        + ((a.categoria === 'Escudo' ? escudo : permitidas.includes(a.nome)) ? '' : ' · sem proficiência') }));
+      const itens = [{ v: 'KIT', custo: 7, t: 'Kit de exploração, 7 po' }].concat(D.equipamentoBasico.map((x) => ({ v: x.nome, custo: x.custo, t: x.nome + ', ' + x.custo + ' po' })));
+      const compras = (M.compras || []).map((x, k) => `<div class="fj-g-av">${esc(x.texto)} <small>(${x.custo} po)</small> <button type="button" data-acao="devolver" data-k="${k}" title="Devolver">✕</button></div>`).join('');
+      return `<div class="fj-g-conta">Ouro rolado: <b>${M.ouroInicial || 0} po</b> <button type="button" data-acao="rolar-ouro" title="Rolar 2d6 × 5 de novo">🎲</button> · Gasto: <b>${gasto} po</b> · Sobra: <b>${resta} po</b></div>
+        <div class="fj-g-grade fj-g-loja">
+          <label>Armas <span class="fj-g-linha"><select data-loja="arma">${opc(armas)}</select><button type="button" data-acao="comprar" data-de="arma">Comprar</button></span></label>
+          <label>Armaduras e escudo <span class="fj-g-linha"><select data-loja="armadura">${opc(armaduras)}</select><button type="button" data-acao="comprar" data-de="armadura">Comprar</button></span></label>
+          <label>Itens <span class="fj-g-linha"><select data-loja="item">${opc(itens)}</select><button type="button" data-acao="comprar" data-de="item">Comprar</button></span></label>
+        </div>
+        <div class="fj-g-outros">${compras || '<em>Nada comprado ainda.</em>'}</div>`;
+    }
+
+    function comprar(de) {
+      const sel = painel.querySelector(`[data-loja="${de}"]`);
+      if (!sel || !sel.value) return;
+      let item;
+      if (de === 'arma') { const a = D.armas.find((x) => x.nome === sel.value); item = { texto: textoArma(a), custo: a.custo }; }
+      else if (de === 'armadura') { const a = D.armaduras.find((x) => x.nome === sel.value); item = { texto: textoArmadura(a), custo: a.custo }; }
+      else if (sel.value === 'KIT') item = { texto: KIT, custo: 7 };
+      else { const b = D.equipamentoBasico.find((x) => x.nome === sel.value); item = { texto: b.nome, custo: b.custo }; }
+      const resta = M.ouroInicial - M.compras.reduce((t, x) => t + x.custo, 0);
+      if (item.custo > resta) { alert('Ouro insuficiente.'); return; }
+      M.compras.push(item);
+      render();
     }
 
     function outroHTML(c, e, j) {
@@ -829,8 +883,8 @@
       ['antecedente', 'bem', 'ordem', 'titulo', 'divindade'].forEach((k) => { const el = $(`[data-m="${k}"]`); if (el && M[k] != null) el.value = M[k]; });
       ['arma', 'armadura'].forEach((k) => { const el = $(`[data-pacote="${k}"]`); if (el && M[k] != null) el.value = M[k]; });
       painel.querySelectorAll('[data-pv]').forEach((el) => { const k = parseInt(el.dataset.pv, 10); if (M.pv[k] != null) el.value = M.pv[k]; });
-      const eq = $('[data-m="equipamento"]');
-      if (eq && document.activeElement !== eq) eq.value = (M.equipamento || []).join('\n');
+      const eq = $('[data-m="equipExtra"]');
+      if (eq && document.activeElement !== eq) eq.value = M.equipExtra || '';
       const ouro = $('[data-m="ouro"]');
       if (ouro) ouro.value = M.ouro || 0;
     }
@@ -840,11 +894,11 @@
         const k = el.dataset.m;
         let v = el.value;
         if (['nivel', 'bem', 'ordem', 'ouro'].includes(k)) v = v === '' ? null : parseInt(v, 10);
-        if (k === 'equipamento') { M.equipamento = el.value.split('\n'); previa(); return; }
+        if (k === 'equipExtra') { M.equipExtra = el.value; previa(); return; }
         if (k === 'ouro') { M.ouro = v || 0; previa(); return; }
         if (v === '' && ['antecedente', 'titulo', 'classe', 'anc', 'principal'].includes(k)) v = k === 'titulo' ? '' : null;
         if (k === 'classe' && v !== M.classe) {
-          Object.assign(M, { habilidades: [], melhorias: [], outros: [], titulo: '', elemento: null, extras: null, principal: null, equipamento: null, divindade: 'auto', arma: undefined, armadura: undefined });
+          Object.assign(M, { habilidades: [], melhorias: [], outros: [], titulo: '', elemento: null, extras: null, principal: null, equipamento: null, divindade: 'auto', arma: undefined, armadura: undefined, compras: [] });
         }
         if (k === 'ordem') M.titulo = '';
         M[k] = v;
@@ -895,7 +949,6 @@
       }));
       painel.querySelectorAll('[data-pacote]').forEach((el) => el.addEventListener('change', () => {
         M[el.dataset.pacote] = el.value;
-        M.equipamento = itensDoPacote(M);
         previa();
       }));
       painel.querySelectorAll('[data-out]').forEach((el) => el.addEventListener('change', () => {
@@ -933,7 +986,14 @@
           if (acao === 'tirar') { M.outros.splice(parseInt(el.dataset.j, 10), 1); render(); }
           if (acao === 'sortear-avancos') { personagemDoEstado(M, true); M.extras = null; render(); }
           if (acao === 'sortear-habs') { preencherHabilidades(M, c); M.extras = null; render(); }
-          if (acao === 'pacote' || acao === 'ouro') { M.equipModo = acao; M.equipamento = null; if (acao === 'pacote') { M.arma = undefined; M.armadura = undefined; } render(); }
+          if (acao === 'pacote' || acao === 'ouro') {
+            M.equipModo = acao;
+            if (acao === 'ouro' && M.ouroInicial == null) { M.ouroInicial = (d(6) + d(6)) * 5; M.compras = []; }
+            render();
+          }
+          if (acao === 'rolar-ouro') { M.ouroInicial = (d(6) + d(6)) * 5; M.compras = []; render(); }
+          if (acao === 'comprar') comprar(el.dataset.de);
+          if (acao === 'devolver') { M.compras.splice(parseInt(el.dataset.k, 10), 1); render(); }
           if (acao === 'imprimir') imprimir(folhaPersonagem(personagemDoEstado(M, false)), 'Ficha de ' + (M.nome || 'personagem'));
           if (acao === 'json') baixarJSON();
           if (acao === 'nova' && (!M.classe || confirm('Apagar o personagem atual e começar do zero?'))) { M = estadoNovo(); render(); }
@@ -956,7 +1016,7 @@
       const leitor = new FileReader();
       leitor.onload = () => {
         try {
-          const dados = migrar(JSON.parse(leitor.result));
+          const dados = migrarEquipamento(migrar(JSON.parse(leitor.result)));
           if (!D.classes.some((c) => c.nome === dados.classe)) throw new Error('classe');
           M = Object.assign(estadoNovo(), dados);
           render();
@@ -1083,7 +1143,7 @@
         ${pj.divindade ? `<p><b>Divindade:</b> ${esc(pj.divindade.nome)} (${esc(pj.divindade.entidade)}, ${esc(pj.divindade.dominio)}, ${esc(pj.divindade.vinculo)}). <i>Responsabilidades:</i> ${esc(pj.divindade.responsabilidades)}${ben.length ? ' <i>Bênçãos:</i> ' + ben.map(esc).join(' ') : ''}</p>` : ''}
         ${habs ? `<table class="fj-g-tabela"><thead><tr><th>Habilidade</th><th>Custo</th><th>Efeito</th></tr></thead><tbody>${habs}</tbody></table>` : ''}
         ${av ? `<p><b>Avanços</b></p><ul>${av}</ul>` : ''}
-        <p><b>Equipamento:</b> ${pj.equipamento.length ? pj.equipamento.map(esc).join(' · ') : ''}${pj.ouro ? pj.ouro + ' po para comprar o que quiser' : ''}</p>
+        <p><b>Equipamento:</b> ${pj.equipamento.length ? pj.equipamento.map(esc).join(' · ') : ''}${pj.ouro ? (pj.equipamento.length ? ' · ' : '') + pj.ouro + ' po' : ''}</p>
       </div>`;
   }
 
@@ -1158,7 +1218,7 @@
       ${pj.divindade ? `<h2>Divindade</h2><p><b>${esc(pj.divindade.nome)}</b> (${esc(pj.divindade.entidade)}, ${esc(pj.divindade.dominio)}, ${esc(pj.divindade.vinculo)}). <b>Responsabilidades:</b> ${esc(pj.divindade.responsabilidades)}</p>${ben.length ? `<p><b>Bênçãos:</b> ${ben.map(esc).join(' ')}</p>` : ''}` : ''}
       ${habs ? `<h2>Habilidades</h2><table><thead><tr><th>Habilidade</th><th>Custo</th><th>Efeito</th></tr></thead><tbody>${habs}</tbody></table>` : ''}
       ${av ? `<h2>Avanços</h2>${av}` : ''}
-      <h2>Equipamento</h2><p>${pj.equipamento.map(esc).join(' · ')}${pj.ouro ? pj.ouro + ' po para comprar o que quiser' : ''}</p>
+      <h2>Equipamento</h2><p>${pj.equipamento.map(esc).join(' · ')}${pj.ouro ? (pj.equipamento.length ? ' · ' : '') + pj.ouro + ' po' : ''}</p>
       <h2>Notas</h2><div class="notas"></div>`;
   }
 

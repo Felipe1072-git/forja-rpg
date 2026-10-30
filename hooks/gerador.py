@@ -132,7 +132,7 @@ def _detalhes(docs):
 
 def _equipamento(docs):
     texto = _ler(docs, 'equipamento.md')
-    nivel0, armas, armaduras = [], [], []
+    nivel0, armas, armaduras, basico = [], [], [], []
     for tab in _tabelas(texto):
         cab = tab[0]
         if cab[:2] == ['d12', 'Item']:
@@ -144,8 +144,11 @@ def _equipamento(docs):
         elif cab[0] == 'Armadura':
             for l in tab[1:]:
                 armaduras.append({'nome': l[0], 'categoria': l[1], 'custo': int(re.sub(r'\D', '', l[2]) or 0),
-                                  'ca': l[3], 'forca': l[4]})
-    return nivel0, armas, armaduras
+                                  'ca': l[3], 'forca': l[4], 'propriedades': l[5]})
+        elif cab == ['Item', 'Custo', 'Por espaço', 'Efeito']:
+            for l in tab[1:]:
+                basico.append({'nome': l[0], 'custo': int(re.sub(r'\D', '', l[1]) or 0), 'efeito': l[3]})
+    return nivel0, armas, armaduras, basico
 
 
 def _divindades(docs):
@@ -170,11 +173,11 @@ def on_post_build(config, **kwargs):
     rolagem, ancestralidades = _ancestralidades(docs)
     antecedentes = _detalhes(docs)
     titulos = {c['nome']: c['titulos'] for c in classes}
-    nivel0, armas, armaduras = _equipamento(docs)
+    nivel0, armas, armaduras, basico = _equipamento(docs)
     nomes, alcunhas = _nomes(docs)
     dados = {
         'classes': classes, 'ancestralidades': ancestralidades, 'rolagemAncestralidade': rolagem,
-        'antecedentes': antecedentes, 'titulos': titulos, 'equipamentoNivel0': nivel0,
+        'antecedentes': antecedentes, 'titulos': titulos, 'equipamentoNivel0': nivel0, 'equipamentoBasico': basico,
         'armas': armas, 'armaduras': armaduras, 'divindades': _divindades(docs), 'nomes': nomes, 'alcunhas': alcunhas,
     }
     destino = os.path.join(config['site_dir'], 'assets', 'data')
