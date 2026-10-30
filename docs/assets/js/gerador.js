@@ -562,7 +562,13 @@
       const usados = [];
       const escolhidas = [];
       for (let q = 0; q < v.qtd; q++) {
-        let idx = fila.findIndex((e) => !escolhidas.includes(chaveDe(e)));
+        // escolhe o avanço que pode entrar agora (sem repetir no nível e com a habilidade já obtida),
+        // dando preferência aos que se repetem mais, para espalhá-los pelos níveis
+        const pode = (e) => !escolhidas.includes(chaveDe(e))
+          && (e.tipo === 'nova' || !['melhoria', 'dado'].includes(e.tipo) || pj.habilidades.some((h) => h.i === e.i));
+        const repete = (e) => fila.filter((x) => chaveDe(x) === chaveDe(e)).length;
+        let idx = -1;
+        fila.forEach((e, k) => { if (pode(e) && (idx < 0 || repete(e) > repete(fila[idx]))) idx = k; });
         let e = idx >= 0 ? fila.splice(idx, 1)[0] : null;
         if (e) escolhidas.push(chaveDe(e));
         if (!e && sortearBrancos) {
