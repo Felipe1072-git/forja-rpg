@@ -200,6 +200,13 @@
       }
       extras.push({ titulo: 'Lótus Negro', itens: dons.map((r) => md(tab[r - 1][0])) });
     }
+    // Elixires (Caçador de Prata): 3 receitas com Elixir de Caçador, +3 com Livro de receitas.
+    const elixir = habilidadePorNome(pj, 'Elixir de Caçador');
+    if (t['Elixir'] && elixir) {
+      const n = 3 + (elixir.melhorias.includes(0) ? 3 : 0);
+      const receitas = embaralhar(t['Elixir']).slice(0, n);
+      extras.push({ titulo: 'Receitas de elixir', itens: receitas.map((l) => `${md(l[0])}. ${md(l[1])}`) });
+    }
     // Pactos: 2 demônios no nível 1, mais os do Livro de Pactos; cada um com seu tributo.
     if (t['Demônio'] && t['Tributo']) {
       let n = 2;
