@@ -438,6 +438,17 @@
 
   // ---------------------------------------------------------------- textos das habilidades
 
+  // +1 dado: soma os dados ao primeiro dado do efeito (fora do escalonamento) e destaca.
+  function comDados(texto, extra) {
+    if (!extra) return texto;
+    const corte = texto.indexOf('Escalonamento:');
+    const antes = corte >= 0 ? texto.slice(0, corte) : texto;
+    const depois = corte >= 0 ? texto.slice(corte) : '';
+    let feito = false;
+    const novo = antes.replace(/(\d+)d(\d+)/, (_, n, x) => { feito = true; return '**' + (parseInt(n, 10) + extra) + 'd' + x + '**'; });
+    return feito ? novo + depois : texto;
+  }
+
   function textoHabilidade(pj, h) {
     const c = pj.classe;
     const hab = c.habilidades[h.i];
@@ -445,9 +456,9 @@
     if (/^\d+$/.test(custo)) custo = String(parseInt(custo, 10) + h.melhorias.length);
     let efeito;
     if (temColunas(c)) {
-      efeito = h.colunas.map((col) => '<b>' + c.colunas[col] + ':</b> ' + md(hab.partes[col])).join('<br>');
+      efeito = h.colunas.map((col) => '<b>' + c.colunas[col] + ':</b> ' + md(comDados(hab.partes[col], h.dados))).join('<br>');
     } else {
-      efeito = md(hab.partes[0]);
+      efeito = md(comDados(hab.partes[0], h.dados));
       h.melhorias.slice().sort().forEach((k) => { efeito += '<br>' + md(hab.partes[k + 1]); });
     }
     if (h.dados) efeito += '<br><b>+' + h.dados + ' dado' + (h.dados > 1 ? 's' : '') + '</b> (avanço).';
