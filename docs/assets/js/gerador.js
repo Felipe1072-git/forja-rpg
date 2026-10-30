@@ -635,6 +635,7 @@
       }
       pj.avancos.push({ nivel: v.nivel, motivo: v.motivo, itens });
     });
+    pj.sobras = fila;
 
     const chave = classe.nome + '|' + m.nivel + '|' + pj.habilidades.map((h) => h.i + '.' + h.melhorias.join('')).join(',');
     if (!m.extras || m.extrasChave !== chave) { m.extras = rolarExtras(pj); m.extrasChave = chave; }
@@ -755,13 +756,13 @@
         </div>
         ${M.nivel >= 1 ? `<div class="fj-g-passo"><h3>4. Habilidades <small>(passe o mouse para ler o efeito)</small></h3>
           <p><small>As ${n} primeiras são as iniciais. Cada habilidade a mais${temColunas(c) ? ' e cada elemento a mais' : ' e cada melhoria'} gasta um avanço.</small></p>
-          ${resumo}
+          ${resumo}<div class="fj-g-aviso" hidden></div>
           <div class="fj-g-habs">${habs}</div>
           <div class="fj-g-acoes"><button type="button" data-acao="sortear-habs">Sortear as iniciais que faltam</button></div>
         </div>` : ''}
         ${conta.total ? `<div class="fj-g-passo"><h3>5. Outros avanços</h3>
           <p><small>Avanços que não são habilidade nem melhoria. O gerador distribui todos os avanços pelos níveis.</small></p>
-          ${resumo}
+          ${resumo}<div class="fj-g-aviso" hidden></div>
           <div class="fj-g-outros">${outros || '<em>Nenhum.</em>'}</div>
           <div class="fj-g-acoes">
             <select data-acao="add-outro"${conta.livres > 0 ? '' : ' disabled'}><option value="">+ Adicionar avanço</option><option value="dado">+1 dado</option><option value="atributos">Atributos</option><option value="vigor">Vigor</option><option value="treino">Treino</option></select>
@@ -804,6 +805,20 @@
       try { pj = personagemDoEstado(M, false); } catch (err) { $('.fj-g-previa').innerHTML = '<p>Não deu para montar a ficha.</p>'; return; }
       atual = pj;
       $('.fj-g-previa').innerHTML = cartao(pj);
+      // avanços que a regra não deixa encaixar (dois iguais no mesmo nível)
+      const c = pj.classe;
+      const descreve = (e) => {
+        const nh = e.i != null && c.habilidades[e.i] ? limpo(c.habilidades[e.i].nome) : '';
+        if (e.tipo === 'nova') return 'Nova habilidade: ' + nh;
+        if (e.tipo === 'melhoria') return (temColunas(c) ? 'Outro elemento: ' : 'Melhoria: ') + nh;
+        if (e.tipo === 'dado') return '+1 dado: ' + nh;
+        return { atributos: 'Atributos', vigor: 'Vigor', treino: 'Treino' }[e.tipo] || e.tipo;
+      };
+      painel.querySelectorAll('.fj-g-aviso').forEach((el) => {
+        el.hidden = !pj.sobras.length;
+        el.innerHTML = pj.sobras.length ? '<b>Não coube:</b> ' + pj.sobras.map((e) => esc(descreve(e))).join(' · ')
+          + '. Dois avanços no mesmo nível precisam ser diferentes, e não há outro nível para eles. Troque um deles ou suba de nível.' : '';
+      });
       const nome = $('.fj-g-previa .fj-g-nome');
       nome.addEventListener('input', () => { M.nome = nome.value; atual.nome = nome.value; const campo = $('[data-m="nome"]'); if (campo) campo.value = nome.value; });
       $('.fj-g-previa .fj-g-novonome').addEventListener('click', () => { M.nome = um(D.nomes[M.anc] || D.nomes.Humano); render(); });
