@@ -525,6 +525,22 @@
     return { tipo: t };
   }
 
+  function armasDoPacote(classe) { return D.armas.filter((a) => a.custo <= 10 && armaPermitida(classe, a)); }
+  function armadurasDoPacote(classe, anc) {
+    if (traco(anc, 'Blindagem integrada')) return [];
+    return armadurasPermitidas(classe).filter((a) => a.custo <= 15 && a.categoria !== 'Escudo');
+  }
+  function itensDoPacote(m) {
+    const itens = [KIT];
+    const arma = D.armas.find((a) => a.nome === m.arma);
+    if (arma) {
+      itens.push(arma.nome + ' (' + arma.dano + ', ' + arma.tipo.toLowerCase() + ')');
+      if (/munição/.test(arma.propriedades)) itens.push(/besta/i.test(arma.nome) ? 'Virotes (20)' : 'Flechas (20)');
+    }
+    if (m.armadura) itens.push(m.armadura);
+    return itens;
+  }
+
   function preencherHabilidades(m, classe) {
     const n = BASES[classe.base].iniciais;
     const resto = embaralhar(classe.habilidades.map((_, i) => i)).filter((i) => !m.habilidades.some((h) => h.i === i));
@@ -614,9 +630,19 @@
     pj.extras = m.extras;
 
     if (m.equipamento == null) {
-      equipar(pj, m.equipModo);
-      m.equipamento = pj.equipamento.slice();
-      m.ouro = pj.ouro;
+      if (m.equipModo === 'pacote' && m.nivel >= 1) {
+        if (m.arma === undefined) { const a = escolherArma(classe, pj.principal); m.arma = a ? a.nome : ''; }
+        if (m.armadura === undefined) {
+          const op = armadurasDoPacote(classe, anc);
+          m.armadura = op.length ? op.sort((a, b) => caDaArmadura(b, 0) - caDaArmadura(a, 0))[0].nome : '';
+        }
+        m.equipamento = itensDoPacote(m);
+        m.ouro = 0;
+      } else {
+        equipar(pj, m.equipModo);
+        m.equipamento = pj.equipamento.slice();
+        m.ouro = pj.ouro;
+      }
     }
     pj.equipamento = m.equipamento.filter((x) => x.trim());
     pj.ouro = m.ouro;
@@ -733,6 +759,11 @@
         </div>` : ''}
         <div class="fj-g-passo"><h3>6. Equipamento</h3>
           <div class="fj-g-acoes"><button type="button" data-acao="pacote">Pacote inicial</button><button type="button" data-acao="ouro">Ouro (2d6 × 5 po)</button></div>
+          ${M.equipModo === 'pacote' && M.nivel >= 1 ? `<p><small>Pacote inicial: kit de exploração, uma arma de até 10 po e uma armadura de até 15 po.</small></p>
+          <div class="fj-g-grade">
+            <label>Arma <select data-pacote="arma">${opcoesDe(armasDoPacote(c).map((a) => [a.nome, a.nome + ' (' + a.dano + ', ' + a.custo + ' po)']), M.arma, 'Nenhuma')}</select></label>
+            ${armadurasDoPacote(c, anc).length ? `<label>Armadura <select data-pacote="armadura">${opcoesDe(armadurasDoPacote(c, anc).map((a) => [a.nome, a.nome + ' (CA ' + a.ca + ', ' + a.custo + ' po)']), M.armadura, 'Nenhuma')}</select></label>` : ''}
+          </div>` : ''}
           <label class="fj-g-equip">Um item por linha<textarea data-m="equipamento" rows="5">${esc(equip)}</textarea></label>
           <label class="fj-g-equip">Peças de ouro <input type="number" min="0" data-m="ouro" value="${M.ouro || 0}"></label>
         </div>
@@ -782,7 +813,7 @@
         if (k === 'ouro') { M.ouro = v || 0; previa(); return; }
         if (v === '' && ['antecedente', 'titulo', 'classe', 'anc', 'principal'].includes(k)) v = k === 'titulo' ? '' : null;
         if (k === 'classe' && v !== M.classe) {
-          Object.assign(M, { habilidades: [], melhorias: [], outros: [], titulo: '', elemento: null, extras: null, principal: null, equipamento: null, divindade: 'auto' });
+          Object.assign(M, { habilidades: [], melhorias: [], outros: [], titulo: '', elemento: null, extras: null, principal: null, equipamento: null, divindade: 'auto', arma: undefined, armadura: undefined });
         }
         if (k === 'ordem') M.titulo = '';
         M[k] = v;
@@ -831,6 +862,11 @@
         }
         render();
       }));
+      painel.querySelectorAll('[data-pacote]').forEach((el) => el.addEventListener('change', () => {
+        M[el.dataset.pacote] = el.value;
+        M.equipamento = itensDoPacote(M);
+        previa();
+      }));
       painel.querySelectorAll('[data-out]').forEach((el) => el.addEventListener('change', () => {
         const e = M.outros[parseInt(el.dataset.out, 10)];
         const campo = el.dataset.campo;
@@ -866,7 +902,7 @@
           if (acao === 'tirar') { M.outros.splice(parseInt(el.dataset.j, 10), 1); render(); }
           if (acao === 'sortear-avancos') { personagemDoEstado(M, true); M.extras = null; render(); }
           if (acao === 'sortear-habs') { preencherHabilidades(M, c); M.extras = null; render(); }
-          if (acao === 'pacote' || acao === 'ouro') { M.equipModo = acao; M.equipamento = null; render(); }
+          if (acao === 'pacote' || acao === 'ouro') { M.equipModo = acao; M.equipamento = null; if (acao === 'pacote') { M.arma = undefined; M.armadura = undefined; } render(); }
           if (acao === 'imprimir') imprimir(folhaPersonagem(personagemDoEstado(M, false)), 'Ficha de ' + (M.nome || 'personagem'));
           if (acao === 'json') baixarJSON();
           if (acao === 'nova' && (!M.classe || confirm('Apagar o personagem atual e começar do zero?'))) { M = estadoNovo(); render(); }
