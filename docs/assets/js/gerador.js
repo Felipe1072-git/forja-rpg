@@ -416,7 +416,7 @@
       versao: 2, nome: '', nivel: 1, classe: null, anc: null, antecedente: null, bem: null, ordem: null,
       titulo: '', divindade: 'auto', atr: [10, 10, 10, 10, 10, 10], principal: null, pv: [],
       habilidades: [], melhorias: [], outros: [], elemento: null,
-      equipModo: 'pacote', equipamento: null, equipExtra: '', compras: [], ouroInicial: null, ouro: 0, extras: null, extrasChave: '',
+      equipModo: 'pacote', equipamento: null, equipExtra: '', compras: [], ouroInicial: null, compraLivre: false, ouro: 0, extras: null, extrasChave: '',
     };
   }
 
@@ -606,7 +606,7 @@
       if (m.ouroInicial == null) m.ouroInicial = (d(6) + d(6)) * 5;
       m.compras = m.compras || [];
       m.equipamento = m.compras.map((x) => x.texto);
-      m.ouro = m.ouroInicial - m.compras.reduce((t, x) => t + x.custo, 0);
+      m.ouro = m.ouroInicial - (m.compraLivre ? 0 : m.compras.reduce((t, x) => t + x.custo, 0));
     } else {
       if (m.arma === undefined) { const a = escolherArma(classe, pj.principal); m.arma = a ? a.nome : ''; }
       if (m.armadura === undefined) {
@@ -729,7 +729,7 @@
           </div>
         </div>` : ''}
         <div class="fj-g-passo"><h3>6. Equipamento</h3>
-          ${M.nivel >= 1 ? `<div class="fj-g-acoes"><button type="button" data-acao="pacote"${M.equipModo === 'pacote' ? ' class="fj-g-primario"' : ''}>Pacote inicial</button><button type="button" data-acao="ouro"${M.equipModo === 'ouro' ? ' class="fj-g-primario"' : ''}>Ouro (2d6 × 5 po)</button></div>
+          ${M.nivel >= 1 ? `<div class="fj-g-acoes"><button type="button" data-acao="pacote"${M.equipModo === 'pacote' ? ' class="fj-g-primario"' : ''}>Pacote inicial</button><button type="button" data-acao="ouro"${M.equipModo === 'ouro' ? ' class="fj-g-primario"' : ''}>Ouro e loja</button></div>
           ${M.equipModo === 'ouro' ? lojaHTML(c) : `<p><small>Pacote inicial: kit de exploração, uma arma de até 10 po e uma armadura de até 15 po.</small></p>
           <div class="fj-g-grade">
             <label>Arma <select data-pacote="arma">${opcoesDe(armasDoPacote(c).map((a) => [a.nome, a.nome + ' (' + a.dano + ', ' + a.custo + ' po)']), M.arma, 'Nenhuma')}</select></label>
@@ -748,11 +748,12 @@
         </div>`;
     }
 
-    // Loja do modo Ouro: compra armas, armaduras e itens com o ouro rolado.
+    // Loja do modo Ouro: compra armas, armaduras e itens com o ouro inicial (2d6 × 5 po,
+    // ou o valor que o grupo combinar para personagens de nível alto), ou de graça na compra livre.
     function lojaHTML(c) {
-      const gasto = (M.compras || []).reduce((t, x) => t + x.custo, 0);
+      const gasto = M.compraLivre ? 0 : (M.compras || []).reduce((t, x) => t + x.custo, 0);
       const resta = (M.ouroInicial || 0) - gasto;
-      const opc = (lista) => lista.map((x) => `<option value="${esc(x.v)}"${x.custo > resta ? ' disabled' : ''}>${esc(x.t)}</option>`).join('');
+      const opc = (lista) => lista.map((x) => `<option value="${esc(x.v)}"${!M.compraLivre && x.custo > resta ? ' disabled' : ''}>${esc(x.t)}</option>`).join('');
       const armas = D.armas.map((a) => ({ v: a.nome, custo: a.custo, t: a.nome + ' (' + a.dano + ', ' + a.custo + ' po)' + (armaPermitida(c, a) ? '' : ' · sem proficiência') }));
       const permitidas = armadurasPermitidas(c).map((a) => a.nome);
       const escudo = /escudo/i.test(c.armaduras);
@@ -760,7 +761,12 @@
         + ((a.categoria === 'Escudo' ? escudo : permitidas.includes(a.nome)) ? '' : ' · sem proficiência') }));
       const itens = [{ v: 'KIT', custo: 7, t: 'Kit de exploração, 7 po' }].concat(D.equipamentoBasico.map((x) => ({ v: x.nome, custo: x.custo, t: x.nome + ', ' + x.custo + ' po' })));
       const compras = (M.compras || []).map((x, k) => `<div class="fj-g-av">${esc(x.texto)} <small>(${x.custo} po)</small> <button type="button" data-acao="devolver" data-k="${k}" title="Devolver">✕</button></div>`).join('');
-      return `<div class="fj-g-conta">Ouro rolado: <b>${M.ouroInicial || 0} po</b> <button type="button" data-acao="rolar-ouro" title="Rolar 2d6 × 5 de novo">🎲</button> · Gasto: <b>${gasto} po</b> · Sobra: <b>${resta} po</b></div>
+      return `<div class="fj-g-conta">Ouro inicial: <input type="number" min="0" step="5" class="fj-g-num" data-m="ouroInicial" value="${M.ouroInicial || 0}"> po
+          <button type="button" data-acao="rolar-ouro" title="Rolar 2d6 × 5">🎲 2d6 × 5</button>
+          ${[100, 500].map((v) => `<button type="button" data-acao="mais-ouro" data-v="${v}">+${v}</button>`).join('')}
+          · Gasto: <b>${gasto} po</b> · Sobra: <b>${resta} po</b>
+          <label class="fj-g-livre"><input type="checkbox" data-m="compraLivre"${M.compraLivre ? ' checked' : ''}> Compra livre (não gasta ouro)</label></div>
+        <p><small>Personagem de nível alto? Digite o ouro que o grupo combinou, some com os botões ou use a compra livre.</small></p>
         <div class="fj-g-grade fj-g-loja">
           <label>Armas <span class="fj-g-linha"><select data-loja="arma">${opc(armas)}</select><button type="button" data-acao="comprar" data-de="arma">Comprar</button></span></label>
           <label>Armaduras e escudo <span class="fj-g-linha"><select data-loja="armadura">${opc(armaduras)}</select><button type="button" data-acao="comprar" data-de="armadura">Comprar</button></span></label>
@@ -778,7 +784,7 @@
       else if (sel.value === 'KIT') item = { texto: KIT, custo: 7 };
       else { const b = D.equipamentoBasico.find((x) => x.nome === sel.value); item = { texto: b.nome, custo: b.custo }; }
       const resta = M.ouroInicial - M.compras.reduce((t, x) => t + x.custo, 0);
-      if (item.custo > resta) { alert('Ouro insuficiente.'); return; }
+      if (!M.compraLivre && item.custo > resta) { alert('Ouro insuficiente.'); return; }
       M.compras.push(item);
       render();
     }
@@ -832,6 +838,8 @@
         if (['nivel', 'bem', 'ordem', 'ouro'].includes(k)) v = v === '' ? null : parseInt(v, 10);
         if (k === 'equipExtra') { M.equipExtra = el.value; previa(); return; }
         if (k === 'ouro') { M.ouro = v || 0; previa(); return; }
+        if (k === 'ouroInicial') { M.ouroInicial = Math.max(0, parseInt(v, 10) || 0); render(); return; }
+        if (k === 'compraLivre') { M.compraLivre = el.checked; render(); return; }
         if (v === '' && ['antecedente', 'titulo', 'classe', 'anc', 'principal'].includes(k)) v = k === 'titulo' ? '' : null;
         if (k === 'classe' && v !== M.classe) {
           Object.assign(M, { habilidades: [], melhorias: [], outros: [], titulo: '', elemento: null, extras: null, principal: null, equipamento: null, divindade: 'auto', arma: undefined, armadura: undefined, compras: [] });
@@ -928,6 +936,7 @@
             render();
           }
           if (acao === 'rolar-ouro') { M.ouroInicial = (d(6) + d(6)) * 5; M.compras = []; render(); }
+          if (acao === 'mais-ouro') { M.ouroInicial = (M.ouroInicial || 0) + parseInt(el.dataset.v, 10); render(); }
           if (acao === 'comprar') comprar(el.dataset.de);
           if (acao === 'devolver') { M.compras.splice(parseInt(el.dataset.k, 10), 1); render(); }
           if (acao === 'imprimir') imprimir(folhaPersonagem(personagemDoEstado(M, false)), 'Ficha de ' + (M.nome || 'personagem'));

@@ -577,6 +577,9 @@
 .fj-g-equip input { width: 8em; }
 .fj-g-habs .fj-g-hab > label[title] { cursor: help; }
 .fj-g-conta { font-size: 0.8rem; margin: 0.4em 0 0.6em; padding: 0.3em 0.6em; border-left: 3px solid var(--fj-linha); background: var(--fj-zebra); }
+.fj-g-conta .fj-g-num { width: 6em; font: inherit; background: transparent; color: var(--md-default-fg-color); border: 1px solid var(--fj-linha); padding: 0.1em 0.3em; }
+.fj-g-conta button { font-family: var(--fj-titulo); font-size: 0.75rem; background: transparent; color: var(--md-default-fg-color); border: 1px solid var(--fj-linha); padding: 0 0.4em; cursor: pointer; }
+.fj-g-livre { display: block; margin-top: 0.3em; }
 .fj-g-tag { font-family: var(--fj-titulo); font-size: 0.62rem; border: 1px solid var(--fj-linha); padding: 0 0.3em; margin-left: 0.3em; }
 .fj-g-mels input:disabled + *, .fj-g-mels label:has(input:disabled), .fj-g-hab label:has(input:disabled) { opacity: 0.45; }
 .fj-g-outros { display: flex; flex-direction: column; gap: 0.3em; font-size: 0.8rem; margin-bottom: 0.4em; }
