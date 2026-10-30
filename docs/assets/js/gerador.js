@@ -643,6 +643,10 @@
       const tit = c ? (D.titulos[c.nome] || []) : [];
       const titulos = M.ordem == null ? [0, 1, 2].flatMap((col) => tit.map((l) => [l[col], eixos[col] + ': ' + l[col]])) : tit.map((l) => [l[M.ordem], l[M.ordem]]);
       painel.innerHTML = `
+        <div class="fj-g-acoes fj-g-topo">
+          <label class="fj-g-arquivo">Carregar ficha (JSON) <input type="file" accept=".json,application/json" data-acao="carregar"></label>
+          <button type="button" data-acao="nova">Começar do zero</button>
+        </div>
         <div class="fj-g-passo"><h3>1. Personagem</h3>
           <div class="fj-g-grade">
             <label>Nome <span class="fj-g-linha"><input data-m="nome" type="text" value="${esc(M.nome)}" placeholder="Nome"><button type="button" data-acao="nome" title="Sortear nome">🎲</button></span></label>
@@ -865,6 +869,7 @@
           if (acao === 'pacote' || acao === 'ouro') { M.equipModo = acao; M.equipamento = null; render(); }
           if (acao === 'imprimir') imprimir(folhaPersonagem(personagemDoEstado(M, false)), 'Ficha de ' + (M.nome || 'personagem'));
           if (acao === 'json') baixarJSON();
+          if (acao === 'nova' && (!M.classe || confirm('Apagar o personagem atual e começar do zero?'))) { M = estadoNovo(); render(); }
         });
       });
     }
