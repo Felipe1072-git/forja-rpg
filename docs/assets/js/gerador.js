@@ -607,7 +607,8 @@
       .concat(m.melhorias.map((x) => ({ tipo: 'melhoria', i: x.i, k: x.k, col: x.col })))
       .concat(m.outros);
     // dois avanços no mesmo nível devem ser escolhas diferentes: mesmo tipo em alvos diferentes vale
-    const chaveDe = (e) => (['nova', 'melhoria', 'dado'].includes(e.tipo) ? [e.tipo, e.i, e.k, e.col].join(':') : e.tipo);
+    // (a mesma habilidade não recebe duas melhorias, nem dois elementos, no mesmo nível)
+    const chaveDe = (e) => (['nova', 'melhoria', 'dado'].includes(e.tipo) ? e.tipo + ':' + e.i : e.tipo);
     vagasDeAvanco(classe, anc, m.nivel).forEach((v) => {
       const itens = [];
       const usados = [];
@@ -820,7 +821,7 @@
       painel.querySelectorAll('.fj-g-aviso').forEach((el) => {
         el.hidden = !pj.sobras.length;
         el.innerHTML = pj.sobras.length ? '<b>Não coube:</b> ' + pj.sobras.map((e) => esc(descreve(e))).join(' · ')
-          + '. Dois avanços no mesmo nível precisam ser escolhas diferentes (o mesmo avanço no mesmo alvo, ou Atributos, Vigor e Treino repetidos), e não há outro nível para eles. Troque um deles ou suba de nível.' : '';
+          + '. Dois avanços no mesmo nível precisam ser escolhas diferentes (o mesmo tipo de avanço na mesma habilidade, ou Atributos, Vigor e Treino repetidos), e não há outro nível para eles. Troque um deles ou suba de nível.' : '';
       });
       const nome = $('.fj-g-previa .fj-g-nome');
       nome.addEventListener('input', () => { M.nome = nome.value; atual.nome = nome.value; const campo = $('[data-m="nome"]'); if (campo) campo.value = nome.value; });

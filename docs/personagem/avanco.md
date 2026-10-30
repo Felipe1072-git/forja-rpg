@@ -8,7 +8,7 @@ O nível máximo é 10.
 
 1. Role o dado de vida da sua classe e some ao seu PV máximo.
 2. Ganhe 1 avanço, ou 2 nos níveis indicados pela sua base (veja Classes).
-3. Escolha cada avanço na tabela. Se ganhar 2 avanços no mesmo nível, eles devem ser escolhas diferentes: o mesmo tipo vale em alvos diferentes (duas melhorias, +1 dado em duas habilidades), mas não o mesmo avanço duas vezes. Atributos, Vigor e Treino não se repetem no mesmo nível.
+3. Escolha cada avanço na tabela. Se ganhar 2 avanços no mesmo nível, eles devem ser escolhas diferentes: o mesmo tipo vale em habilidades diferentes (melhorias em duas habilidades, +1 dado em duas habilidades), mas não na mesma habilidade: duas melhorias da mesma habilidade ficam para níveis diferentes. Atributos, Vigor e Treino não se repetem no mesmo nível.
 
 | Avanço | Efeito |
 |---|---|
