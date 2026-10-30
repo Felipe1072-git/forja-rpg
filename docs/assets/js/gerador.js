@@ -187,6 +187,10 @@
       t['Elemento'].forEach((l, k) => { lista[k] = l[0]; });
       extras.push({ titulo: 'Elemento inato', itens: [esc(lista[d(10) - 1])] });
     }
+    // Origem do vazio (Quebra-Feitiço): só história, vale desde o nível 0.
+    if (t['Origem do vazio']) {
+      extras.push({ titulo: 'Origem do vazio', itens: [md(um(t['Origem do vazio'])[0])] });
+    }
     if (pj.nivel < 1) return extras;
     // Lótus Negro: 1d12; com 1, role duas vezes (de novo nos outros 1); sem repetir.
     if (t['Dom do lótus']) {
