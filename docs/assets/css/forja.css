@@ -547,3 +547,32 @@
 .fj-g-habs .fj-g-hab { flex-direction: column; align-items: flex-start; }
 .fj-g-mels { display: flex; flex-wrap: wrap; gap: 0 0.8em; margin: 0 0 0.3em 1.4em; font-size: 0.72rem; opacity: 0.85; }
 .fj-g-mels label { display: flex; gap: 0.2em; align-items: center; cursor: help; }
+.fj-g-passo { border-top: 2px solid var(--fj-linha); margin-top: 1.2em; padding-top: 0.4em; }
+.md-typeset .fj-g-passo h3 { margin: 0.2em 0 0.6em; font-size: 1.05rem; }
+.md-typeset .fj-g-passo h3 small { font-family: var(--md-text-font-family); font-size: 0.7rem; text-transform: none; }
+.fj-g-linha { display: flex; gap: 0.3em; }
+.fj-g-linha input, .fj-g-linha select { flex: 1; min-width: 0; }
+#fj-gerador button[data-acao], .fj-g-arquivo {
+  font-family: var(--fj-titulo); font-size: 0.8rem;
+  border: 1px solid var(--fj-linha); background: transparent; color: var(--md-default-fg-color);
+  padding: 0.15em 0.6em; cursor: pointer;
+}
+#fj-gerador .fj-g-primario[data-acao] { background: var(--fj-cabecalho-tabela); color: var(--fj-texto-cabecalho); }
+.fj-g-arquivo input { display: none; }
+.fj-g-pvs { display: grid; grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr)); gap: 0.3em 1em; }
+.fj-g-pv { display: flex; align-items: center; gap: 0.4em; font-size: 0.8rem; }
+.fj-g-pv span { font-family: var(--fj-titulo); min-width: 4.5em; }
+.fj-g-pv input { width: 4em; }
+.fj-g-pv input, .fj-g-av input, .fj-g-equip textarea, .fj-g-equip input {
+  font-family: inherit; font-size: 0.8rem; background: transparent; color: var(--md-default-fg-color);
+  border: 1px solid var(--fj-linha); padding: 0.15em 0.3em;
+}
+.fj-g-avnivel { border: 1px solid var(--fj-linha-fraca); padding: 0.4em 0.6em; margin: 0.4em 0; }
+.fj-g-avcab { font-family: var(--fj-titulo); font-size: 0.85rem; margin-bottom: 0.3em; }
+.fj-g-avcab small { font-family: var(--md-text-font-family); font-size: 0.7rem; opacity: 0.8; margin-left: 0.6em; }
+.fj-g-av { margin: 0.2em 0; }
+.fj-g-av input[type=number] { width: 4em; }
+.fj-g-av input[type=text] { min-width: 16em; }
+.fj-g-equip { display: flex; flex-direction: column; font-family: var(--fj-titulo); font-size: 0.8rem; margin: 0.4em 0; }
+.fj-g-equip input { width: 8em; }
+.fj-g-habs .fj-g-hab > label[title] { cursor: help; }
