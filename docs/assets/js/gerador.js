@@ -455,25 +455,48 @@
   }
 
   // ---------------------------------------------------------------- montar (charactermancer)
-  // Tudo que o jogador escolhe fica no estado M. Os sorteios também são guardados em M,
-  // para a ficha não mudar a cada clique. M é o que vai para o JSON.
+  // Tudo que o jogador escolhe fica no estado M; os sorteios também, para a ficha não mudar
+  // a cada clique. Habilidades e melhorias se marcam na lista de habilidades: as primeiras
+  // são as iniciais e as outras gastam avanços. Os outros avanços (+1 dado, atributos, vigor,
+  // treino) ficam em M.outros. O gerador distribui tudo pelos níveis. M é o que vai para o JSON.
 
   let M = null;
 
   function estadoNovo() {
     return {
-      versao: 1, nome: '', nivel: 1, classe: null, anc: null, antecedente: null, bem: null, ordem: null,
+      versao: 2, nome: '', nivel: 1, classe: null, anc: null, antecedente: null, bem: null, ordem: null,
       titulo: '', divindade: 'auto', atr: [10, 10, 10, 10, 10, 10], principal: null, pv: [],
-      habilidades: [], elemento: null, avancos: {}, equipModo: 'pacote', equipamento: null, ouro: 0,
-      extras: null, extrasChave: '',
+      habilidades: [], melhorias: [], outros: [], elemento: null,
+      equipModo: 'pacote', equipamento: null, ouro: 0, extras: null, extrasChave: '',
     };
   }
 
-  function chaveVaga(v, q) { return v.nivel + (v.motivo ? 'a' : '') + ':' + q; }
+  // Fichas antigas (versão 1) guardavam os avanços por vaga.
+  function migrar(dados) {
+    if (dados.versao === 1 && dados.avancos) {
+      dados.melhorias = dados.melhorias || [];
+      dados.outros = dados.outros || [];
+      Object.values(dados.avancos).forEach((e) => {
+        if (e.tipo === 'nova') dados.habilidades.push({ i: e.i, col: e.col || 0 });
+        else if (e.tipo === 'melhoria') dados.melhorias.push({ i: e.i, k: e.k, col: e.col });
+        else if (e.tipo !== 'branco' && e.tipo !== 'sortear') dados.outros.push(e);
+      });
+      delete dados.avancos;
+      dados.versao = 2;
+    }
+    return dados;
+  }
 
   function nomeMelhoria(c, i, k) {
     const m = c.habilidades[i].partes[k + 1] || '';
     return limpo((m.match(/\*\*(.+?):?\*\*/) || [, 'melhoria ' + (k + 1)])[1].replace(/:$/, ''));
+  }
+
+  function contaAvancos(m, classe, anc) {
+    const total = vagasDeAvanco(classe, anc, m.nivel).reduce((s, v) => s + v.qtd, 0);
+    const n = m.nivel >= 1 ? BASES[classe.base].iniciais : 0;
+    const usados = Math.max(0, m.habilidades.length - n) + m.melhorias.length + m.outros.length;
+    return { total, usados, livres: total - usados, iniciais: n };
   }
 
   function escolhaAleatoria(pj, usados) {
@@ -491,16 +514,14 @@
       const h = um(pj.habilidades.filter((x) => c.habilidades[x.i].partes.slice(1).some((p, k) => p && !x.melhorias.includes(k))));
       return { tipo: 'melhoria', i: h.i, k: um([0, 1, 2].filter((k) => c.habilidades[h.i].partes[k + 1] && !h.melhorias.includes(k))) };
     }
-    if (t === 'dado') {
-      const h = um(pj.habilidades.filter((x) => temDados(c.habilidades[x.i].partes.join(' '))));
-      return { tipo: 'dado', i: h.i };
-    }
+    if (t === 'dado') return { tipo: 'dado', i: um(pj.habilidades.filter((x) => temDados(c.habilidades[x.i].partes.join(' ')))).i };
     if (t === 'atributos') {
       const ip = ATR.indexOf(pj.principal);
       if (pj.atr[ip] <= 18) return { tipo: 'atributos', a1: ip, a2: ip };
       const outros = embaralhar([0, 1, 2, 3, 4, 5].filter((i) => pj.atr[i] < 20));
       return { tipo: 'atributos', a1: outros[0], a2: outros[1] != null ? outros[1] : outros[0] };
     }
+    if (t === 'vigor') return { tipo: 'vigor', pv: d(c.base) };
     return { tipo: t };
   }
 
@@ -510,7 +531,7 @@
     while (m.habilidades.length < n) m.habilidades.push({ i: resto.shift(), col: m.elemento || 0 });
   }
 
-  // Constrói o personagem a partir do estado. Com sortearBrancos, preenche as vagas vazias.
+  // Constrói o personagem a partir do estado. Com sortearBrancos, preenche os avanços livres.
   function personagemDoEstado(m, sortearBrancos) {
     const classe = D.classes.find((c) => c.nome === m.classe);
     const anc = D.ancestralidades.find((a) => a.nome === m.anc);
@@ -543,11 +564,9 @@
     if (m.elemento == null) m.elemento = temColunas(classe) ? d(4) - 1 : 0;
     pj.elemento = m.elemento;
     pj.habilidades = [];
-    if (m.nivel >= 1) {
-      const n = BASES[classe.base].iniciais;
-      if (sortearBrancos) preencherHabilidades(m, classe);
-      m.habilidades.slice(0, n).forEach((h) => adicionarHabilidade(pj, h.i, h.col || 0));
-    }
+    const n = m.nivel >= 1 ? BASES[classe.base].iniciais : 0;
+    if (sortearBrancos && m.nivel >= 1) preencherHabilidades(m, classe);
+    m.habilidades.slice(0, n).forEach((h) => adicionarHabilidade(pj, h.i, h.col || 0));
 
     const robusto = !!traco(anc, 'Robusto');
     const dv = () => { let r = d(classe.base); if (robusto) r = Math.max(r, d(classe.base)); return r; };
@@ -556,14 +575,24 @@
     pj.pv = Math.max(1, m.pv[0] + mod(pj.atr[2])) + (robusto ? 1 : 0);
     for (let L = 2; L <= m.nivel; L++) pj.pv += m.pv[L - 1] + (robusto ? 1 : 0);
 
+    // fila de avanços: habilidades além das iniciais, melhorias, depois o resto
+    const fila = m.habilidades.slice(n).map((h) => ({ tipo: 'nova', i: h.i, col: h.col || 0 }))
+      .concat(m.melhorias.map((x) => ({ tipo: 'melhoria', i: x.i, k: x.k, col: x.col })))
+      .concat(m.outros);
     vagasDeAvanco(classe, anc, m.nivel).forEach((v) => {
       const itens = [];
       const usados = [];
       for (let q = 0; q < v.qtd; q++) {
-        const ch = chaveVaga(v, q);
-        let e = m.avancos[ch];
-        if ((!e || e.tipo === 'branco') && sortearBrancos) { e = escolhaAleatoria(pj, usados); m.avancos[ch] = e; }
-        if (!e) e = { tipo: 'branco' };
+        // dois avanços no mesmo nível devem ser diferentes
+        let idx = fila.findIndex((e) => !usados.includes(e.tipo));
+        let e = idx >= 0 ? fila.splice(idx, 1)[0] : null;
+        if (!e && sortearBrancos) {
+          e = escolhaAleatoria(pj, usados);
+          if (e.tipo === 'nova') m.habilidades.push({ i: e.i, col: e.col || 0 });
+          else if (e.tipo === 'melhoria') m.melhorias.push({ i: e.i, k: e.k, col: e.col });
+          else m.outros.push(e);
+        }
+        if (!e) { itens.push('a escolher'); continue; }
         if (e.tipo === 'vigor') {
           if (e.pv == null) e.pv = d(classe.base);
           pj.pv += e.pv;
@@ -579,7 +608,6 @@
       }
       pj.avancos.push({ nivel: v.nivel, motivo: v.motivo, itens });
     });
-    Object.keys(m.avancos).forEach((ch) => { if (parseInt(ch, 10) > m.nivel) delete m.avancos[ch]; });
 
     const chave = classe.nome + '|' + m.nivel + '|' + pj.habilidades.map((h) => h.i + '.' + h.melhorias.join('')).join(',');
     if (!m.extras || m.extrasChave !== chave) { m.extras = rolarExtras(pj); m.extrasChave = chave; }
@@ -600,6 +628,8 @@
   function iniciarMontar(painel) {
     M = estadoNovo();
     const $ = (sel) => painel.querySelector(sel);
+    const classeAtual = () => D.classes.find((x) => x.nome === M.classe);
+    const ancAtual = () => D.ancestralidades.find((x) => x.nome === M.anc);
 
     function opcoesDe(lista, sel, vazio) {
       return (vazio != null ? `<option value="">${vazio}</option>` : '')
@@ -607,8 +637,8 @@
     }
 
     function render() {
-      const c = M.classe ? D.classes.find((x) => x.nome === M.classe) : null;
-      const anc = M.anc ? D.ancestralidades.find((x) => x.nome === M.anc) : null;
+      const c = M.classe ? classeAtual() : null;
+      const anc = M.anc ? ancAtual() : null;
       const eixos = ['Ordem', 'Neutro', 'Caos'];
       const tit = c ? (D.titulos[c.nome] || []) : [];
       const titulos = M.ordem == null ? [0, 1, 2].flatMap((col) => tit.map((l) => [l[col], eixos[col] + ': ' + l[col]])) : tit.map((l) => [l[M.ordem], l[M.ordem]]);
@@ -632,7 +662,8 @@
     }
 
     function passos(c, anc) {
-      const n = BASES[c.base].iniciais;
+      const conta = contaAvancos(M, c, anc);
+      const n = conta.iniciais;
       const principal = c.atributos.length > 1
         ? `<label>Atributo principal <select data-m="principal">${opcoesDe(c.atributos.map((a) => [a, a]), M.principal, 'O maior')}</select></label>` : '';
       const robusto = traco(anc, 'Robusto') ? ' +1 (Robusto)' : '';
@@ -640,18 +671,36 @@
         <input type="number" min="1" max="${c.base}" data-pv="${k}" value="${M.pv[k] != null ? M.pv[k] : ''}" placeholder="d${c.base}">
         <button type="button" data-acao="pv" data-k="${k}" title="Rolar d${c.base}">🎲</button>
         <small>${k === 0 ? 'd' + c.base + ' + mod. de Con' : 'd' + c.base}${robusto}</small></div>`).join('');
+      const cheio = conta.livres <= 0;
       const habs = c.habilidades.map((h, i) => {
-        const marcada = M.habilidades.some((x) => x.i === i);
+        const pos = M.habilidades.findIndex((x) => x.i === i);
+        const marcada = pos >= 0;
+        const podeMarcar = marcada || M.habilidades.length < n || !cheio;
         const efeito = esc(limpo(h.partes[0]));
-        const col = temColunas(c) ? ` <select data-col="${i}">${c.colunas.map((x, k) => `<option value="${k}"${(M.habilidades.find((y) => y.i === i) || {}).col === k ? ' selected' : ''}>${x}</option>`).join('')}</select>` : '';
-        const mels = temColunas(c) ? '' : h.partes.slice(1).map((m, k) => !m ? '' : `<label title="${esc(limpo(m))}"><input type="checkbox" data-mel="${i}:${k}"${Object.values(M.avancos).some((e) => e.tipo === 'melhoria' && e.i === i && e.k === k) ? ' checked' : ''}> ${esc(nomeMelhoria(c, i, k))}</label>`).join('');
-        return `<div class="fj-g-hab"><label title="${efeito}"><input type="checkbox" data-hab="${i}"${marcada ? ' checked' : ''}> ${md(h.nome)} <small>(${esc(h.custo)})</small></label>${col}${mels ? `<div class="fj-g-mels">${mels}</div>` : ''}</div>`;
+        let extra = '';
+        if (temColunas(c)) {
+          const base = marcada ? M.habilidades[pos].col : null;
+          extra = `<div class="fj-g-mels">${c.colunas.map((x, k) => {
+            const tem = base === k || M.melhorias.some((y) => y.i === i && y.col === k);
+            const pode = tem || (base == null ? podeMarcar : !cheio);
+            return `<label title="${esc(limpo(h.partes[k]))}"><input type="checkbox" data-el="${i}:${k}"${tem ? ' checked' : ''}${pode ? '' : ' disabled'}> ${x}</label>`;
+          }).join('')}</div>`;
+        } else {
+          extra = `<div class="fj-g-mels">${h.partes.slice(1).map((mm, k) => {
+            if (!mm) return '';
+            const tem = M.melhorias.some((y) => y.i === i && y.k === k);
+            const pode = tem || (marcada && !cheio);
+            return `<label title="${esc(limpo(mm))}"><input type="checkbox" data-mel="${i}:${k}"${tem ? ' checked' : ''}${pode ? '' : ' disabled'}> ${esc(nomeMelhoria(c, i, k))}</label>`;
+          }).join('')}</div>`;
+        }
+        const etiqueta = marcada ? (pos < n ? '<small class="fj-g-tag">inicial</small>' : '<small class="fj-g-tag">avanço</small>') : '';
+        const caixa = temColunas(c) ? '' : `<input type="checkbox" data-hab="${i}"${marcada ? ' checked' : ''}${podeMarcar ? '' : ' disabled'}> `;
+        return `<div class="fj-g-hab"><label title="${efeito}">${caixa}${md(h.nome)} <small>(${esc(h.custo)})</small> ${etiqueta}</label>${extra}</div>`;
       }).join('');
-      const vagas = vagasDeAvanco(c, anc, M.nivel);
-      const avs = vagas.map((v) => `<div class="fj-g-avnivel"><div class="fj-g-avcab">Nível ${v.nivel}${v.motivo ? ' (' + v.motivo + ')' : ''}
-          <small>${v.qtd === 2 ? '2 avanços: a base d' + c.base + ' dá dois neste nível' : '1 avanço'}</small></div>
-          ${Array.from({ length: v.qtd }, (_, q) => vagaHTML(c, chaveVaga(v, q))).join('')}</div>`).join('');
+      const outros = M.outros.map((e, j) => outroHTML(c, e, j)).join('');
       const equip = (M.equipamento || []).join('\n');
+      const resumo = `<div class="fj-g-conta">Habilidades: <b>${M.habilidades.length}</b> (${Math.min(M.habilidades.length, n)} de ${n} iniciais)
+        · Avanços: <b>${conta.usados}</b> de ${conta.total} usados${conta.livres > 0 ? ` · <b>${conta.livres}</b> livre${conta.livres > 1 ? 's' : ''}` : ''}${conta.livres < 0 ? ' · <b>avanços demais: desmarque algo</b>' : ''}</div>`;
       return `
         <div class="fj-g-passo"><h3>2. Atributos</h3>
           <div class="fj-g-acoes"><button type="button" data-acao="rolar-atr">Rolar 4d6 seis vezes</button></div>
@@ -663,13 +712,20 @@
           <div class="fj-g-pvs">${pvLinhas}</div>
           <div class="fj-g-acoes"><button type="button" data-acao="pv-todos">Rolar os que faltam</button></div>
         </div>
-        ${M.nivel >= 1 ? `<div class="fj-g-passo"><h3>4. Habilidades iniciais <small>(${M.habilidades.length} de ${n} escolhidas; passe o mouse para ler o efeito)</small></h3>
+        ${M.nivel >= 1 ? `<div class="fj-g-passo"><h3>4. Habilidades <small>(passe o mouse para ler o efeito)</small></h3>
+          <p><small>As ${n} primeiras são as iniciais. Cada habilidade a mais${temColunas(c) ? ' e cada elemento a mais' : ' e cada melhoria'} gasta um avanço.</small></p>
+          ${resumo}
           <div class="fj-g-habs">${habs}</div>
-          <div class="fj-g-acoes"><button type="button" data-acao="sortear-habs">Sortear as que faltam</button></div>
-          <p><small>Marcar uma melhoria usa a primeira vaga de avanço em branco.</small></p>
+          <div class="fj-g-acoes"><button type="button" data-acao="sortear-habs">Sortear as iniciais que faltam</button></div>
         </div>` : ''}
-        ${vagas.length ? `<div class="fj-g-passo"><h3>5. Avanços</h3>${avs}
-          <div class="fj-g-acoes"><button type="button" data-acao="sortear-avancos">Sortear as vagas em branco</button></div>
+        ${conta.total ? `<div class="fj-g-passo"><h3>5. Outros avanços</h3>
+          <p><small>Avanços que não são habilidade nem melhoria. O gerador distribui todos os avanços pelos níveis.</small></p>
+          ${resumo}
+          <div class="fj-g-outros">${outros || '<em>Nenhum.</em>'}</div>
+          <div class="fj-g-acoes">
+            <select data-acao="add-outro"${conta.livres > 0 ? '' : ' disabled'}><option value="">+ Adicionar avanço</option><option value="dado">+1 dado</option><option value="atributos">Atributos</option><option value="vigor">Vigor</option><option value="treino">Treino</option></select>
+            <button type="button" data-acao="sortear-avancos"${conta.livres > 0 ? '' : ' disabled'}>Sortear os livres</button>
+          </div>
         </div>` : ''}
         <div class="fj-g-passo"><h3>6. Equipamento</h3>
           <div class="fj-g-acoes"><button type="button" data-acao="pacote">Pacote inicial</button><button type="button" data-acao="ouro">Ouro (2d6 × 5 po)</button></div>
@@ -686,28 +742,15 @@
         </div>`;
     }
 
-    function vagaHTML(c, ch) {
-      const e = M.avancos[ch] || { tipo: 'branco' };
-      const melhoria = temColunas(c) ? 'Outro elemento' : 'Melhoria';
-      const tipos = [['branco', 'A escolher'], ['nova', 'Nova habilidade'], ['melhoria', melhoria], ['dado', '+1 dado'], ['atributos', 'Atributos'], ['vigor', 'Vigor'], ['treino', 'Treino']];
-      const habs = c.habilidades.map((h, i) => [i, limpo(h.nome)]);
-      const cols = c.colunas.map((x, k) => [k, x]);
-      let alvo = '';
-      if (e.tipo === 'nova' || e.tipo === 'dado' || (e.tipo === 'melhoria' && temColunas(c))) {
-        alvo = `<select data-av="${ch}" data-campo="i">${opcoesDe(habs, e.i)}</select>`;
-        if (temColunas(c) && e.tipo !== 'dado') alvo += `<select data-av="${ch}" data-campo="col">${opcoesDe(cols, e.col)}</select>`;
-      } else if (e.tipo === 'melhoria') {
-        const ops = c.habilidades.flatMap((h, i) => h.partes.slice(1).map((m, k) => m ? [i + ':' + k, limpo(h.nome) + ': ' + nomeMelhoria(c, i, k)] : null).filter(Boolean));
-        alvo = `<select data-av="${ch}" data-campo="ik">${opcoesDe(ops, e.i + ':' + e.k)}</select>`;
-      } else if (e.tipo === 'atributos') {
-        const atrs = ATR.map((a, i) => [i, a]);
-        alvo = `+1 <select data-av="${ch}" data-campo="a1">${opcoesDe(atrs, e.a1)}</select> +1 <select data-av="${ch}" data-campo="a2">${opcoesDe(atrs, e.a2)}</select>`;
-      } else if (e.tipo === 'vigor') {
-        alvo = `<input type="number" min="1" max="${c.base}" data-av="${ch}" data-campo="pv" value="${e.pv != null ? e.pv : ''}" placeholder="d${c.base}"><button type="button" data-acao="vigor" data-ch="${ch}" title="Rolar d${c.base}">🎲</button>`;
-      } else if (e.tipo === 'treino') {
-        alvo = `<input type="text" data-av="${ch}" data-campo="texto" value="${esc(e.texto || '')}" placeholder="Arma, armadura, escudo ou idioma">`;
-      }
-      return `<div class="fj-g-av"><select data-av="${ch}" data-campo="tipo">${opcoesDe(tipos, e.tipo)}</select>${alvo}</div>`;
+    function outroHTML(c, e, j) {
+      const minhas = M.habilidades.map((h) => [h.i, limpo(c.habilidades[h.i].nome)]);
+      const atrs = ATR.map((a, i) => [i, a]);
+      let corpo = '';
+      if (e.tipo === 'dado') corpo = `+1 dado em <select data-out="${j}" data-campo="i">${opcoesDe(minhas, e.i, 'Escolha')}</select>`;
+      if (e.tipo === 'atributos') corpo = `Atributos: +1 <select data-out="${j}" data-campo="a1">${opcoesDe(atrs, e.a1)}</select> +1 <select data-out="${j}" data-campo="a2">${opcoesDe(atrs, e.a2)}</select>`;
+      if (e.tipo === 'vigor') corpo = `Vigor: <input type="number" min="1" max="${c.base}" data-out="${j}" data-campo="pv" value="${e.pv != null ? e.pv : ''}" placeholder="d${c.base}"> <button type="button" data-acao="vigor" data-j="${j}" title="Rolar d${c.base}">🎲</button> PV`;
+      if (e.tipo === 'treino') corpo = `Treino: <input type="text" data-out="${j}" data-campo="texto" value="${esc(e.texto || '')}" placeholder="Arma, armadura, escudo ou idioma">`;
+      return `<div class="fj-g-av">${corpo} <button type="button" data-acao="tirar" data-j="${j}" title="Remover">✕</button></div>`;
     }
 
     function previa() {
@@ -718,7 +761,6 @@
       const nome = $('.fj-g-previa .fj-g-nome');
       nome.addEventListener('input', () => { M.nome = nome.value; atual.nome = nome.value; const campo = $('[data-m="nome"]'); if (campo) campo.value = nome.value; });
       $('.fj-g-previa .fj-g-novonome').addEventListener('click', () => { M.nome = um(D.nomes[M.anc] || D.nomes.Humano); render(); });
-      // os valores sorteados agora aparecem nos campos
       ['antecedente', 'bem', 'ordem', 'titulo', 'divindade'].forEach((k) => { const el = $(`[data-m="${k}"]`); if (el && M[k] != null) el.value = M[k]; });
       painel.querySelectorAll('[data-pv]').forEach((el) => { const k = parseInt(el.dataset.pv, 10); if (M.pv[k] != null) el.value = M.pv[k]; });
       const eq = $('[data-m="equipamento"]');
@@ -735,13 +777,12 @@
         if (k === 'equipamento') { M.equipamento = el.value.split('\n'); previa(); return; }
         if (k === 'ouro') { M.ouro = v || 0; previa(); return; }
         if (v === '' && ['antecedente', 'titulo', 'classe', 'anc', 'principal'].includes(k)) v = k === 'titulo' ? '' : null;
-        const estrutural = ['nivel', 'classe', 'anc', 'ordem'].includes(k);
         if (k === 'classe' && v !== M.classe) {
-          Object.assign(M, { habilidades: [], avancos: {}, titulo: '', elemento: null, extras: null, principal: null, equipamento: null, divindade: 'auto' });
+          Object.assign(M, { habilidades: [], melhorias: [], outros: [], titulo: '', elemento: null, extras: null, principal: null, equipamento: null, divindade: 'auto' });
         }
         if (k === 'ordem') M.titulo = '';
         M[k] = v;
-        if (estrutural) render(); else previa();
+        if (['nivel', 'classe', 'anc', 'ordem'].includes(k)) render(); else previa();
       }));
       painel.querySelectorAll('[data-atr]').forEach((el) => el.addEventListener('change', () => {
         M.atr[parseInt(el.dataset.atr, 10)] = Math.max(3, Math.min(20, parseInt(el.value, 10) || 10));
@@ -753,69 +794,73 @@
         previa();
       }));
       painel.querySelectorAll('[data-hab]').forEach((el) => el.addEventListener('change', () => {
-        const c = D.classes.find((x) => x.nome === M.classe);
         const i = parseInt(el.dataset.hab, 10);
-        if (el.checked) {
-          if (M.habilidades.length >= BASES[c.base].iniciais) { el.checked = false; return; }
-          const sel = painel.querySelector(`[data-col="${i}"]`);
-          M.habilidades.push({ i, col: sel ? parseInt(sel.value, 10) : 0 });
-        } else {
+        if (el.checked) M.habilidades.push({ i, col: 0 });
+        else {
           M.habilidades = M.habilidades.filter((h) => h.i !== i);
+          M.melhorias = M.melhorias.filter((x) => x.i !== i);
+          M.outros = M.outros.filter((x) => !(x.tipo === 'dado' && x.i === i));
         }
         M.extras = null;
         render();
       }));
-      painel.querySelectorAll('[data-col]').forEach((el) => el.addEventListener('change', () => {
-        const h = M.habilidades.find((x) => x.i === parseInt(el.dataset.col, 10));
-        if (h) { h.col = parseInt(el.value, 10); previa(); }
-      }));
       painel.querySelectorAll('[data-mel]').forEach((el) => el.addEventListener('change', () => {
         const [i, k] = el.dataset.mel.split(':').map((x) => parseInt(x, 10));
-        const c = D.classes.find((x) => x.nome === M.classe);
-        const anc = D.ancestralidades.find((x) => x.nome === M.anc);
-        const chaves = [];
-        vagasDeAvanco(c, anc, M.nivel).forEach((v) => { for (let q = 0; q < v.qtd; q++) chaves.push(chaveVaga(v, q)); });
+        if (el.checked) M.melhorias.push({ i, k });
+        else M.melhorias = M.melhorias.filter((x) => !(x.i === i && x.k === k));
+        M.extras = null;
+        render();
+      }));
+      // Dobrador Elemental: o primeiro elemento marcado é a habilidade; os outros gastam avanços.
+      painel.querySelectorAll('[data-el]').forEach((el) => el.addEventListener('change', () => {
+        const [i, k] = el.dataset.el.split(':').map((x) => parseInt(x, 10));
+        const h = M.habilidades.find((x) => x.i === i);
         if (el.checked) {
-          const livre = chaves.find((ch) => !M.avancos[ch] || M.avancos[ch].tipo === 'branco');
-          if (!livre) { el.checked = false; alert('Sem vaga de avanço em branco. Suba o nível ou libere uma vaga.'); return; }
-          M.avancos[livre] = { tipo: 'melhoria', i, k };
-          if (!M.habilidades.some((h) => h.i === i) && M.habilidades.length < BASES[c.base].iniciais) M.habilidades.push({ i, col: 0 });
+          if (!h) M.habilidades.push({ i, col: k });
+          else M.melhorias.push({ i, col: k });
+        } else if (h && h.col === k) {
+          const extra = M.melhorias.find((x) => x.i === i);
+          if (extra) { h.col = extra.col; M.melhorias = M.melhorias.filter((x) => x !== extra); }
+          else { M.habilidades = M.habilidades.filter((x) => x !== h); M.outros = M.outros.filter((x) => !(x.tipo === 'dado' && x.i === i)); }
         } else {
-          const ch = chaves.find((x) => M.avancos[x] && M.avancos[x].tipo === 'melhoria' && M.avancos[x].i === i && M.avancos[x].k === k);
-          if (ch) M.avancos[ch] = { tipo: 'branco' };
+          M.melhorias = M.melhorias.filter((x) => !(x.i === i && x.col === k));
         }
         render();
       }));
-      painel.querySelectorAll('[data-av]').forEach((el) => el.addEventListener('change', () => {
-        const ch = el.dataset.av;
+      painel.querySelectorAll('[data-out]').forEach((el) => el.addEventListener('change', () => {
+        const e = M.outros[parseInt(el.dataset.out, 10)];
         const campo = el.dataset.campo;
-        const e = M.avancos[ch] || { tipo: 'branco' };
-        if (campo === 'tipo') {
-          const novo = { tipo: el.value };
-          if (['nova', 'dado', 'melhoria'].includes(el.value)) { novo.i = 0; novo.k = 0; novo.col = 0; }
-          if (el.value === 'atributos') { const ip = ATR.indexOf(personagemDoEstado(JSON.parse(JSON.stringify(M)), false).principal); novo.a1 = ip; novo.a2 = ip; }
-          M.avancos[ch] = novo;
-          render();
-          return;
-        }
-        if (campo === 'ik') { const [i, k] = el.value.split(':').map((x) => parseInt(x, 10)); e.i = i; e.k = k; }
-        else if (campo === 'texto') e.texto = el.value;
+        if (campo === 'texto') e.texto = el.value;
         else e[campo] = el.value === '' ? null : parseInt(el.value, 10);
-        M.avancos[ch] = e;
-        if (campo === 'i' || campo === 'ik') render(); else previa();
+        previa();
       }));
       painel.querySelectorAll('[data-acao]').forEach((el) => {
         const acao = el.dataset.acao;
         if (acao === 'carregar') { el.addEventListener('change', () => carregar(el.files[0])); return; }
+        if (acao === 'add-outro') {
+          el.addEventListener('change', () => {
+            const t = el.value;
+            if (!t) return;
+            const c = classeAtual();
+            const e = { tipo: t };
+            if (t === 'dado') e.i = M.habilidades.length ? M.habilidades[0].i : null;
+            if (t === 'atributos') { const ip = ATR.indexOf(personagemDoEstado(JSON.parse(JSON.stringify(M)), false).principal); e.a1 = ip; e.a2 = ip; }
+            if (t === 'vigor') e.pv = d(c.base);
+            M.outros.push(e);
+            render();
+          });
+          return;
+        }
         el.addEventListener('click', () => {
-          const c = M.classe ? D.classes.find((x) => x.nome === M.classe) : null;
+          const c = M.classe ? classeAtual() : null;
           if (acao === 'nome') { M.nome = um(D.nomes[M.anc] || D.nomes.Humano); render(); }
           if (acao === 'subir' && M.nivel < 10) { M.nivel += 1; render(); }
           if (acao === 'rolar-atr') { M.atr = ATR.map(rolar4d6); render(); }
           if (acao === 'pv') { M.pv[parseInt(el.dataset.k, 10)] = d(c.base); render(); }
           if (acao === 'pv-todos') { for (let k = 0; k < Math.max(1, M.nivel); k++) if (M.pv[k] == null) M.pv[k] = d(c.base); render(); }
-          if (acao === 'vigor') { M.avancos[el.dataset.ch].pv = d(c.base); render(); }
-          if (acao === 'sortear-avancos') { personagemDoEstado(M, true); render(); }
+          if (acao === 'vigor') { M.outros[parseInt(el.dataset.j, 10)].pv = d(c.base); render(); }
+          if (acao === 'tirar') { M.outros.splice(parseInt(el.dataset.j, 10), 1); render(); }
+          if (acao === 'sortear-avancos') { personagemDoEstado(M, true); M.extras = null; render(); }
           if (acao === 'sortear-habs') { preencherHabilidades(M, c); M.extras = null; render(); }
           if (acao === 'pacote' || acao === 'ouro') { M.equipModo = acao; M.equipamento = null; render(); }
           if (acao === 'imprimir') imprimir(folhaPersonagem(personagemDoEstado(M, false)), 'Ficha de ' + (M.nome || 'personagem'));
@@ -839,7 +884,7 @@
       const leitor = new FileReader();
       leitor.onload = () => {
         try {
-          const dados = JSON.parse(leitor.result);
+          const dados = migrar(JSON.parse(leitor.result));
           if (!D.classes.some((c) => c.nome === dados.classe)) throw new Error('classe');
           M = Object.assign(estadoNovo(), dados);
           render();
