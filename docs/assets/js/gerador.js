@@ -122,6 +122,7 @@
     else if (div === 'auto' || div === 'nenhuma') m.divindade = div;
     else m.divindade = D.divindades[parseInt(div, 10)].nome;
     m.equipModo = op.equipamento === 'ouro' ? 'ouro' : 'pacote';
+    if (op.antecedente) m.antecedente = op.antecedente;
     return m;
   }
 
@@ -1000,6 +1001,7 @@
   function montarTela() {
     const opClasses = D.classes.map((c, i) => `<option value="${i}">${esc(c.nome)}${c.exotica ? ' (exótica)' : ''}</option>`).join('');
     const opAnc = D.ancestralidades.map((a, i) => `<option value="${i}">${esc(a.nome)}</option>`).join('');
+    const opAnt = D.antecedentes.map((x) => `<option value="${esc(x[0])}">${esc(x[0])}</option>`).join('');
     const opDiv = D.divindades.map((x, i) => `<option value="${i}">${esc(x.nome)}</option>`).join('');
     const opNivel = Array.from({ length: 11 }, (_, i) => `<option value="${i}"${i === 1 ? ' selected' : ''}>${i}</option>`).join('');
     raiz.innerHTML = `
@@ -1031,9 +1033,17 @@
         <div id="g-montar"></div>
       </div>
       <div class="fj-g-painel" data-painel="funil" hidden>
-        <p>Quatro personagens de nível 0, prontos para o Funil (veja Mestre).</p>
+        <p>Quatro personagens de nível 0, prontos para o Funil (veja Mestre). Deixe tudo aleatório ou escolha a classe, a ancestralidade e o antecedente de cada um.</p>
+        <div class="fj-g-funil">${[0, 1, 2, 3].map((k) => `
+          <div class="fj-g-grade">
+            <label>Personagem ${k + 1}: classe <select data-f="classe" data-k="${k}"><option value="">Aleatória</option>${opClasses}</select></label>
+            <label>Ancestralidade <select data-f="anc" data-k="${k}"><option value="">Aleatória</option>${opAnc}</select></label>
+            <label>Antecedente <select data-f="antecedente" data-k="${k}"><option value="">Aleatório</option>${opAnt}</select></label>
+          </div>`).join('')}
+        </div>
+        <label class="fj-g-check"><input id="g-funil-exoticas" type="checkbox" checked> Incluir classes exóticas no sorteio</label>
         <div class="fj-g-acoes">
-          <button type="button" id="g-funil" class="fj-g-primario">Gerar 4 de nível 0</button>
+          <button type="button" id="g-funil" class="fj-g-primario">Gerar os 4 de nível 0</button>
           <button type="button" id="g-funil-imprimir" disabled>Imprimir ficha de Funil</button>
         </div>
         <div id="g-funil-saida"></div>
@@ -1074,13 +1084,31 @@
     $('g-editar').addEventListener('click', () => { montar.carregarEstado(atual.estado); irPara('montar'); });
     $('g-baixar').addEventListener('click', () => baixarEstado(atual.estado));
 
-    $('g-funil').addEventListener('click', () => {
-      const exo = $('g-exoticas').checked;
-      funil = [0, 1, 2, 3].map(() => novoPersonagem({ nivel: 0, exoticas: exo, sortear: true }));
+    // Cada vaga do Funil usa a classe, a ancestralidade e o antecedente escolhidos, ou sorteia.
+    function gerarVaga(k) {
+      const v = (f) => raiz.querySelector(`[data-f="${f}"][data-k="${k}"]`).value;
+      const pj = novoPersonagem({
+        nivel: 0, sortear: true, exoticas: $('g-funil-exoticas').checked,
+        classe: v('classe') === '' ? null : parseInt(v('classe'), 10),
+        ancestralidade: v('anc') === '' ? null : parseInt(v('anc'), 10),
+        antecedente: v('antecedente') || null,
+      });
       // nível 0 ganha uma alcunha, da tabela de Ancestralidades
-      if (D.alcunhas && D.alcunhas.length) funil.forEach((pj) => { pj.nome += ' ' + um(D.alcunhas); });
-      $('g-funil-saida').innerHTML = funil.map(linhaFunil).join('');
+      if (D.alcunhas && D.alcunhas.length) { pj.nome += ' ' + um(D.alcunhas); pj.estado.nome = pj.nome; }
+      funil[k] = pj;
+    }
+    const mostrarFunil = () => { $('g-funil-saida').innerHTML = funil.map(linhaFunil).join(''); };
+    $('g-funil').addEventListener('click', () => {
+      [0, 1, 2, 3].forEach(gerarVaga);
+      mostrarFunil();
       $('g-funil-imprimir').disabled = false;
+    });
+    $('g-funil-saida').addEventListener('click', (ev) => {
+      const b = ev.target.closest('button[data-vaga]');
+      if (!b) return;
+      const k = parseInt(b.dataset.vaga, 10);
+      if (b.dataset.acao === 'de-novo') { gerarVaga(k); mostrarFunil(); }
+      if (b.dataset.acao === 'editar') { montar.carregarEstado(funil[k].estado); irPara('montar'); }
     });
     $('g-funil-imprimir').addEventListener('click', () => imprimir(folhaFunil(funil), 'Ficha de Funil'));
   }
@@ -1118,12 +1146,13 @@
       </div>`;
   }
 
-  function linhaFunil(pj) {
+  function linhaFunil(pj, k) {
     const voc = vocacao(pj.classe);
     return `<div class="fj-g-cartao fj-g-pequeno">
       <p><b>${esc(pj.nome)}</b>, ${esc(pj.anc.nome)} ${esc(pj.classe.nome)} (${esc(pj.antecedente[0])}, ${esc(pj.tendencia)})</p>
       <p>${linhaAtributos(pj)} · <b>PV</b> ${pj.pv} · <b>CA</b> ${pj.ca} · <b>Sanidade</b> ${pj.sanidade}</p>
       <p>${voc ? `<b>Vocação, ${esc(voc[0])}:</b> ${md(voc[1])} ` : ''}${pj.extras.map((e) => `<b>${esc(e.titulo)}:</b> ${e.itens.join(', ')}. `).join('')}<b>Equipamento:</b> ${pj.equipamento.map(esc).join(', ')}</p>
+      <div class="fj-g-acoes"><button type="button" data-vaga="${k}" data-acao="de-novo">🎲 Gerar de novo</button><button type="button" data-vaga="${k}" data-acao="editar">Editar no Montar</button></div>
     </div>`;
   }
 

@@ -521,6 +521,7 @@
 .md-typeset table.fj-g-tabela td:first-child { width: 22%; }
 .md-typeset table.fj-g-tabela td:nth-child(2) { width: 4.5em; white-space: nowrap; text-align: center; }
 .fj-g-pequeno { padding: 0.3em 1em; }
+.fj-g-funil .fj-g-grade { grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); margin-bottom: 0.3em; padding-bottom: 0.3em; border-bottom: 1px solid var(--fj-linha-fraca); }
 @media (max-width: 40em) { .fj-g-atr { grid-template-columns: repeat(3, 1fr); } }
 #fj-gerador.montando .so-aleatorio { display: none; }
 .fj-g-avs { display: flex; flex-direction: column; gap: 0.3em; font-size: 0.8rem; }
