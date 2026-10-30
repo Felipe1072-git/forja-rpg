@@ -83,3 +83,16 @@ Todas são marciais (alquimia e medicina). "Arremessar um frasco" alcança até 
 | 18 | **Laboratório Portátil** | Passiva | Num descanso longo, prepare 3 frascos de uma das suas habilidades de frasco (Bomba Alquímica, Poção Improvisada, Ácido Corrosivo, Fumaça Negra ou Fogo Grego). Usá-los não gasta Mana. Eles estragam no próximo descanso longo. | **Bancada maior:** prepare 5 frascos. | **Duas receitas:** divida os frascos entre duas habilidades. | **Concentrado:** os frascos preparados têm +1 dado. |
 | 19 | **Sedativo** | 4 | Ação. Arremesse um frasco ou dardo num alvo até perto, que faz um teste de resistência (Constituição). Se falhar, fica atordoado (dormindo) por 10 rodadas. Dano ou ser sacudido acorda. | **Gás:** afeta uma área pequena. | **Profundo:** dano não acorda; só ser sacudido. | **Rápido:** vira movimento. |
 | 20 | **Elixir da Vida** | 5 | Ação. Uma criatura adjacente bebe o elixir: cura 4d8 PV e perde todos os venenos, doenças e condições leves. Escalonamento: +1d8 por +1 de Mana. | **Reanimar:** use numa criatura que morreu há até 1 rodada; faça um teste de Inteligência CD 15; se passar, ela volta com 1 PV. | **Dose dupla:** mais uma criatura adjacente. Escalonamento: +1 alvo por +1 de Mana. | **Sem cicatrizes:** também remove 1 ponto de exaustão. |
+
+## TÍTULOS DO ALQUIMISTA
+
+Só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Caos, ou escolha (veja Títulos).
+
+| d6 | Ordem | Neutro | Caos |
+|---|---|---|---|
+| 1 | Boticário | Curandeiro | Envenenador |
+| 2 | Médico da Peste | Doutor da Praga | Doutor Sombrio |
+| 3 | Cirurgião | Ervanário | Açougueiro de Bisturi |
+| 4 | Doutor da Corte | Mestre das Misturas | Senhor da Praga |
+| 5 | Alquimista Real | Homem do Bico | Médico Louco |
+| 6 | Grão-Mestre da Pedra | Mestre da Pedra Filosofal | Pai da Pestilência |

@@ -83,3 +83,16 @@ Habilidades marcadas com *(magia)* são magias da natureza e usam Sabedoria; as 
 | 18 | **Ervas Medicinais** | 2 | Ação. Um aliado adjacente cura 1d6 PV. Se ele estiver morrendo, para de morrer. Escalonamento: +1d6 por +1 de Mana. | **Antídoto:** também remove um veneno. | **Reserva:** num descanso longo, prepare 3 doses; usá-las não gasta Mana. | **Bálsamo:** também remove 1 ponto de exaustão. |
 | 19 | **Disparo Perfurante** | 3 | Ação. Ataque à distância com arma contra todas as criaturas numa linha até longe, uma por uma. | **Força:** cada acerto causa +1d8 de dano. Escalonamento: +1d8 por +1 de Mana. | **Pregar:** quem for atingido fica lento. | **Longo alcance:** a linha vai até muito longe. |
 | 20 | **Recuo Tático** | 2 | Reação. Quando um inimigo terminar o movimento adjacente a você, mova-se até 3 casas sem provocar ataques de oportunidade. | **Tiro de recuo:** depois, faça um ataque à distância com arma contra esse inimigo. | **Longe:** mova-se até perto. | **Armadilha de fuga:** o inimigo fica lento. |
+
+## TÍTULOS DO PATRULHEIRO
+
+Só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Caos, ou escolha (veja Títulos).
+
+| d6 | Ordem | Neutro | Caos |
+|---|---|---|---|
+| 1 | Batedor | Caçador | Caçador de Cabeças |
+| 2 | Guarda da Fronteira | Rastreador | Salteador |
+| 3 | Guardião da Floresta | Andarilho dos Ermos | Lobo Solitário |
+| 4 | Capitão dos Batedores | Mestre da Caça | Assombração da Mata |
+| 5 | Protetor do Reino | Sombra Verde | Fera de Duas Pernas |
+| 6 | Senhor das Marcas | Lenda dos Ermos | Terror da Estrada |

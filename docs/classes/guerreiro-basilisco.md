@@ -81,3 +81,16 @@ Todas são marciais. "Ataque com arma" usa o atributo e o dano normais da arma (
 | 18 | **Coração de Pedra** | Passiva | Uma pedra não sente. Vantagem em testes de resistência contra ficar amedrontado e contra perda de Sanidade. Vale também contra o terror (veja Terror). | **Exemplo:** aliados adjacentes têm vantagem contra ficar amedrontados. | **Sem dor:** a exaustão de nível 1 não afeta você. | **Inabalável:** uma vez por descanso longo, ao cair a 0 PV, você fica com 1 PV. |
 | 19 | **Olhar da Górgona** | 5 | Ação. Inimigos numa área média ao seu redor que vejam seus olhos fazem um teste de resistência (Constituição). Quem falha fica lento por 10 rodadas; quem falhar por 5 ou mais fica petrificado por 1 rodada. | **Área grande:** área grande em vez de média. | **Escolher:** você escolhe quem é afetado. | **Pedra lenta:** quem fica lento repete o teste no fim de cada turno; se falhar de novo, fica petrificado por 1 rodada. |
 | 20 | **Forma de Pedra** | 5 | Movimento. Por 10 rodadas, você vira uma estátua viva: resistência a dano de contusão, cortante e perfurante, +2 de CA e imunidade a veneno. Seu movimento cai à metade. | **Duradoura:** dura 1 hora. | **Peso:** enquanto durar, você não pode ser derrubado, empurrado nem agarrado. | **Golpe de rocha:** seus ataques corpo a corpo causam +1d6 de dano. Escalonamento: +1d6 por +1 de Mana. |
+
+## TÍTULOS DO GUERREIRO BASILISCO
+
+Só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Caos, ou escolha (veja Títulos).
+
+| d6 | Ordem | Neutro | Caos |
+|---|---|---|---|
+| 1 | Guardião de Pedra | Andarilho da Lama | Petrificador |
+| 2 | Sentinela Imóvel | Caçador de Pedra | Serpente do Pântano |
+| 3 | Olho do Clã | Olho Ardente | Devorador |
+| 4 | Escama de Ferro | Sangue Frio | Olhar da Morte |
+| 5 | Mestre do Bote | Estátua Viva | Flagelo de Pedra |
+| 6 | Rei Basilisco | Lenda de Pedra | Senhor das Estátuas |

@@ -101,3 +101,16 @@ As marcadas com *(grito)* são magia na língua dos dragões e usam o seu atribu
 | 18 | **Fome de Almas** | Passiva | Ao absorver uma alma, recupere toda a Mana. | **Almas menores:** quando uma criatura de nível igual ou maior que o seu morre até perto, recupere 1d4 de Mana. | **Guardar:** você pode guardar até 3 almas de fera e usar o eco quando quiser. | **Dois ecos:** você pode ter dois ecos da fera ao mesmo tempo. |
 | 19 | **Língua de Dragão** | Passiva | Dragões conversam antes de atacar você, e você tem vantagem em testes de Carisma com eles. Você lê inscrições antigas. Achar uma inscrição de grito (o Mestre as põe nas aventuras) ensina uma palavra, como uma alma de dragão. | **Faro de dragão:** você sente dragões até muito longe. | **Nome verdadeiro:** sabendo o nome de um dragão, ele faz os testes contra seus gritos com desvantagem. | **Trato:** uma vez por dragão, convença-o a negociar em vez de lutar. |
 | 20 | **Aspecto do Dragão** | 5 | Movimento. Por 10 rodadas, escamas cobrem seu corpo: +2 de CA, seus ataques corpo a corpo causam +1d8 de dano de fogo ou gelo, e você ignora a Garganta cansada. Escalonamento: +1d8 por +1 de Mana. | **Asas:** você voa com movimento normal enquanto durar. | **Sopro natural:** com seu movimento, sopre fogo ou gelo à sua frente: teste de resistência (Destreza), 1d8 de dano. | **Duradouro:** dura 1 hora. |
+
+## TÍTULOS DO SANGUE DE DRAGÃO
+
+Só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Caos, ou escolha (veja Títulos).
+
+| d6 | Ordem | Neutro | Caos |
+|---|---|---|---|
+| 1 | Ouvinte da Montanha | Andarilho do Norte | Voz Selvagem |
+| 2 | Aprendiz da Voz | Caçador de Dragões | Devorador de Almas |
+| 3 | Guardião das Palavras | Voz da Tempestade | Garganta de Fogo |
+| 4 | Mestre da Voz | Matador de Dragões | Flagelo dos Céus |
+| 5 | Campeão dos Céus | Alma Antiga | Senhor das Almas |
+| 6 | Sangue de Dragão | Lenda Viva | Dragão Mortal |

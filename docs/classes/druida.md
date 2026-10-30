@@ -83,3 +83,16 @@ Todas são magias da natureza e usam Sabedoria. "Ataque mágico" é d20 + modifi
 | 18 | **Raio Lunar** | 4 | Ação. Uma coluna de luz pálida desce numa área pequena até longe. Quem estiver nela faz um teste de resistência (Constituição): 1d8 de dano radiante. Escalonamento: +1d8 por +1 de Mana. | **Persistente:** dura 10 rodadas; com um movimento, você move a coluna até perto. | **Revelar:** metamorfos atingidos voltam à forma verdadeira. | **Área média:** área média em vez de pequena. |
 | 19 | **Bastão Sagrado** | 2 | Ação livre. Por 10 rodadas, seu bordão ou sua clava usa Sabedoria no ataque e no dano e causa 1d8 de dano. | **Espinhoso:** a arma causa +1d4 de dano perfurante. Escalonamento: +1d4 por +1 de Mana. | **Raízes:** se acertar, o alvo fica lento. | **Retorno:** você pode arremessar a arma até perto, e ela volta para a sua mão. |
 | 20 | **Coração Selvagem** | Passiva | Vantagem em testes de resistência contra magias de fadas e efeitos da natureza. Vegetação não reduz seu movimento. | **Imune à peçonha:** imunidade a venenos naturais (plantas e animais). | **Raízes firmes:** em terreno natural, você não pode ser derrubado. | **Abrigo:** um descanso longo em terreno natural remove 2 pontos de exaustão. |
+
+## TÍTULOS DO DRUIDA
+
+Só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Caos, ou escolha (veja Títulos).
+
+| d6 | Ordem | Neutro | Caos |
+|---|---|---|---|
+| 1 | Guardião do Bosque | Eremita | Bruxo do Pântano |
+| 2 | Sentinela Verde | Andarilho Verde | Vingador Verde |
+| 3 | Druida do Círculo | Voz da Floresta | Senhor das Pragas |
+| 4 | Pastor das Estações | Mestre das Feras | Fera Antiga |
+| 5 | Ancião do Círculo | Pastor de Tempestades | Tempestade Viva |
+| 6 | Arquidruida | Coração Selvagem | Devorador de Mundos |

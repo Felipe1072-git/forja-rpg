@@ -81,3 +81,16 @@ Todas são marciais. "Ataque com arma" usa o atributo e o dano normais da arma (
 | 18 | **Mãos Rápidas** | Passiva | Você pode fazer duas ações livres por rodada. | **Saque rápido:** sacar armas de arremesso não gasta ação livre. | **Batedor:** pode bater carteiras em combate com uma ação livre. | **Enfermeiro:** pode dar uma poção a um aliado adjacente com uma ação livre. |
 | 19 | **Submundo** | Passiva | Em qualquer cidade, você encontra um contato do submundo que vende informação e compra itens sem perguntas. | **Receptador:** vende itens roubados pelo preço cheio. | **Rede:** acha contatos também em vilas e aldeias. | **Favor:** uma vez por aventura, um contato faz um favor arriscado para você. |
 | 20 | **Golpe de Misericórdia** | 3 | Ação. Ataque com arma contra uma criatura com metade dos PV ou menos: +4d8 de dano. Escalonamento: +1d8 por +1 de Mana. | **Precisão:** crítico com 19 ou 20 natural nesse ataque. | **Silencioso:** se o alvo morrer, ninguém percebe e você continua escondido. | **Encadear:** se o alvo morrer, mova-se até perto sem provocar ataques de oportunidade. |
+
+## TÍTULOS DO LADINO
+
+Só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Caos, ou escolha (veja Títulos).
+
+| d6 | Ordem | Neutro | Caos |
+|---|---|---|---|
+| 1 | Agente | Trapaceiro | Bandido |
+| 2 | Espião | Andarilho | Degolador |
+| 3 | Batedor da Coroa | Gatuno | Assassino |
+| 4 | Caçador de Recompensas | Contrabandista | Mão Negra |
+| 5 | Mestre-Espião | Mestre das Chaves | Fantasma |
+| 6 | Sombra do Rei | Príncipe dos Becos | Rei dos Ladrões |

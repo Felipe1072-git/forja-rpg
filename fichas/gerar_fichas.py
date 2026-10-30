@@ -595,7 +595,7 @@ def guia_criacao():
               '<b>16</b> Aprendiz de mago · <b>17</b> Guarda · <b>18</b> Andarilho · <b>19</b> Contrabandista · <b>20</b> Cultista.</p>'),
         bloco('7. Tendência e título',
               regra('Tendência', 'Um lado em cada eixo: Bem, Neutro ou Mal; Ordem, Neutro ou Caos. Escreva "Bem e Ordem", "Mal e Neutro"... Neutro nos dois é só "Neutro". Aleatório: 1d6 por eixo (1–2 Bem/Ordem, 3–4 Neutro, 5–6 Mal/Caos).'),
-              regra('Título', 'Só sabor. 1d6 na tabela da sua classe, na coluna do eixo Ordem x Caos (veja Títulos).')),
+              regra('Título', 'Só sabor. 1d6 na tabela de títulos da sua classe, na coluna do eixo Ordem x Caos.')),
         bloco('8. Divindade (opcional)',
               '<p>Você cria a sua: <b>nome</b>, <b>entidade</b> (deus, demônio, fada, ser antigo...), <b>domínio</b> (vantagem em testes ligados a ele), '
               '<b>vínculo</b> (devoção ou pacto) e <b>2 responsabilidades</b>. Quebrou uma: perde as bênçãos e -2 de Sanidade máx.</p>',

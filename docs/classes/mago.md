@@ -87,3 +87,16 @@ Todas são magias. "Ataque mágico" é d20 + modificador de Inteligência contra
 | 18 | **Levitar** | 3 | Ação. Você ou uma criatura ou objeto até perto flutua por 10 rodadas, subindo ou descendo até 4 casas por rodada. Uma criatura que não quer pode fazer um teste de resistência (Força). | **Queda suave:** use como reação para você e aliados até perto caírem devagar, sem dano. | **Duradoura:** dura 1 hora. | **Dupla:** mais um alvo. Escalonamento: +1 alvo por +1 de Mana. |
 | 19 | **Mão Mágica** | 2 | Ação. Uma mão espectral aparece até perto por 10 rodadas. Com um movimento, ela se desloca até perto e move ou manipula um objeto de até 5 kg (abrir portas, puxar alavancas, pegar itens). | **Mão Grande:** a mão fica do tamanho de uma pessoa. Move objetos de até 100 kg e, com um movimento, empurra uma criatura adjacente a ela 2 casas (resistência de Força evita). | **Punho:** com um movimento, a mão faz um ataque mágico contra um inimigo adjacente a ela: 1d6 de dano arcano. Escalonamento: +1d6 por +1 de Mana. | **Agarrar:** com um movimento, a mão agarra uma criatura adjacente a ela, que faz um teste de resistência (Força) ou não pode se mover enquanto estiver presa. Ela repete o teste no fim de cada turno. |
 | 20 | **Ilusão** | 3 | Ação. Crie uma imagem ou som falso numa área pequena até perto, por 10 rodadas. Quem examinar de perto faz um teste de Inteligência contra a sua CD de habilidade para perceber. | **Longo alcance:** alcance até longe. | **Convincente:** inclui som, cheiro e calor; desvantagem no teste para perceber. | **Móvel:** com um movimento, você move a ilusão. |
+
+## TÍTULOS DO MAGO
+
+Só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Caos, ou escolha (veja Títulos).
+
+| d6 | Ordem | Neutro | Caos |
+|---|---|---|---|
+| 1 | Aprendiz | Feiticeiro | Bruxo |
+| 2 | Erudito | Alquimista | Renegado |
+| 3 | Arcanista | Ilusionista | Necromante |
+| 4 | Magistrado Arcano | Sábio | Invocador de Demônios |
+| 5 | Conselheiro Real | Guardião do Saber | Tirano Arcano |
+| 6 | Arquimago | Mestre dos Elementos | Senhor das Sombras |

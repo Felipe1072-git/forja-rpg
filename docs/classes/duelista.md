@@ -81,3 +81,16 @@ Todas são marciais. "Ataque com arma" usa o atributo e o dano normais da arma (
 | 18 | **Panache** | Passiva | Vantagem na iniciativa tática e em testes de resistência contra ficar amedrontado. Vale também contra o terror (veja Terror). | **Entrada triunfal:** se você descrever uma entrada estilosa no começo de um combate, ganhe 1 Inspiração. | **Bravata:** quando você derrubar o primeiro inimigo de um combate, os aliados dele fazem um teste de Moral. | **Sorriso:** aliados adjacentes têm vantagem contra ficar amedrontados. |
 | 19 | **Fama** | Passiva | Seu nome corre pelas tavernas. Em povoados, vantagem em testes de Carisma com quem já ouviu falar de você. | **Fãs:** você consegue comida e quarto de graça em qualquer cidade. | **Salvo-conduto:** guardas comuns deixam você passar com uma boa conversa. | **Rival:** um rival famoso persegue você; derrotá-lo em duelo vale como marco maior. |
 | 20 | **Duelo até a Morte** | 5 | Ação. Desafie um inimigo até perto. Por 10 rodadas, ninguém além de vocês dois pode atacar um ao outro, e você tem +2 em ataques e +2 de CA contra ele. O duelo acaba se um dos dois cair ou sair de perto. | **Plateia:** sempre que você acertar o desafiado, um aliado até perto cura 1d6 PV. | **Último golpe:** contra ele, crítico com 18, 19 ou 20 natural. | **Vitória:** se você vencer o duelo, recupere metade da sua Mana máxima. |
+
+## TÍTULOS DO DUELISTA
+
+Só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Caos, ou escolha (veja Títulos).
+
+| d6 | Ordem | Neutro | Caos |
+|---|---|---|---|
+| 1 | Espadachim da Guarda | Aventureiro | Fanfarrão |
+| 2 | Mosqueteiro | Espadachim Errante | Bandoleiro |
+| 3 | Campeão da Corte | Galante | Pirata |
+| 4 | Mestre de Esgrima | Mestre de Armas | Duelista Sangrento |
+| 5 | Lâmina do Rei | Bravo | Sedutor de Lâmina |
+| 6 | Lenda dos Duelos | Herói das Tavernas | Terror dos Salões |

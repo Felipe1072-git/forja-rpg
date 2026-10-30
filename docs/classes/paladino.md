@@ -85,3 +85,16 @@ Todas são divinas. As marcadas com *(magia)* são magias e usam Carisma; as out
 | 18 | **Último Suspiro** *(magia)* | 4 | Reação. Quando um aliado até perto cair a 0 PV, ele fica com 1 PV. | **Vigor:** ele fica com 1d8 PV. Escalonamento: +1d8 por +1 de Mana. | **Longo alcance:** alcance até longe. | **Sem marcas:** ele não ganha exaustão por ter caído. |
 | 19 | **Luz Purificadora** *(magia)* | 3 | Ação. Uma explosão de luz numa área pequena até perto. Inimigos nela fazem um teste de resistência (Constituição): 1d8 de dano do elemento divino. Escalonamento: +1d8 por +1 de Mana. | **Área média:** área média em vez de pequena. | **Cegante:** quem falha também fica cego por 1 rodada. | **Purificar:** aliados na área perdem uma condição leve. |
 | 20 | **Avatar do Juramento** *(magia)* | 5 | Movimento. Por 10 rodadas, você brilha com o poder da divindade: +1 de CA, seus ataques com arma causam +1d6 de dano do elemento divino e você tem resistência ao elemento oposto ao da divindade. Escalonamento: +1d6 por +1 de Mana. | **Asas:** você voa com movimento normal. | **Aura:** aliados adjacentes ganham +1 de CA. | **Duradouro:** dura 1 hora. |
+
+## TÍTULOS DO PALADINO
+
+Só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Caos, ou escolha (veja Títulos).
+
+| d6 | Ordem | Neutro | Caos |
+|---|---|---|---|
+| 1 | Escudeiro Sagrado | Guardião | Cavaleiro Caído |
+| 2 | Cavaleiro da Ordem | Cavaleiro Errante | Vingador |
+| 3 | Defensor da Fé | Juramentado | Cavaleiro Sombrio |
+| 4 | Cruzado | Protetor dos Caminhos | Carrasco Sagrado |
+| 5 | Paladino da Coroa | Vigia do Equilíbrio | Arauto da Ruína |
+| 6 | Campeão Celestial | Lâmina da Balança | Cavaleiro da Morte |

@@ -87,3 +87,16 @@ Todas são magias (necromancia) e usam Inteligência. "Ataque com arma" usa o at
 | 18 | **Colheita de Almas** | Passiva | Quando uma criatura morre até perto de você, recupere 1 de Mana, no máximo uma vez por rodada. | **Fôlego roubado:** também cure 1d4 PV. | **Longe:** vale até longe. | **Espírito servo:** o espírito fica por 1 rodada e faz um ataque de toque contra um inimigo à sua escolha (d20 + seu mod. de Inteligência, 1d8 necrótico). |
 | 19 | **Dança Macabra** | 5 | Ação. Até quatro cadáveres numa área média até perto se erguem como esqueletos ou zumbis (fichas de Animar Mortos) e lutam por 10 rodadas. | **Mais corpos:** mais um cadáver. Escalonamento: +1 cadáver por +1 de Mana. | **Duradoura:** dura 1 hora (ainda não conta no limite). | **Fúria dos mortos:** no primeiro turno, eles atacam com vantagem. |
 | 20 | **Caminho do Lich** | Passiva | Você guardou um pedaço da alma num filactério (um objeto pequeno; prepará-lo leva 1 semana de tempo livre). Se você morrer com o filactério inteiro, volta em 1d4 dias ao lado dele, com 1 PV. Cada volta custa 1 de Sanidade máxima para sempre. | **Corpo de lich:** você vira morto-vivo: não come, não bebe, não respira nem dorme (o descanso longo vira 8 horas de meditação); imunidade a veneno, doenças e dano necrótico; vulnerável a radiante. | **Aura gélida:** inimigos que começam o turno adjacentes a você sofrem 1d6 de dano necrótico. | **Senhor dos mortos:** seu limite de servos dobra, e mortos-vivos sem dono até perto fazem um teste de resistência (Sabedoria) ou passam a obedecer você. |
+
+## TÍTULOS DO NECROMANTE
+
+Só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Caos, ou escolha (veja Títulos).
+
+| d6 | Ordem | Neutro | Caos |
+|---|---|---|---|
+| 1 | Coveiro | Aprendiz do Véu | Ladrão de Túmulos |
+| 2 | Guardião das Criptas | Ossário | Profanador |
+| 3 | Embalsamador | Vidente da Cova | Mestre dos Ossos |
+| 4 | Juiz dos Mortos | Barqueiro | Senhor da Praga |
+| 5 | Senhor da Necrópole | Guardião do Rio | Rei Cadáver |
+| 6 | Arquilich | Senhor do Véu | Lich |

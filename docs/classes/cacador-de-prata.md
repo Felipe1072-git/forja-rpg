@@ -102,3 +102,16 @@ As marcadas com *(alquimia)* são alquimia, não magia: usam Inteligência e nã
 | 18 | **Sinal do Círculo** *(sinal)* | 3 | Ação. Desenhe um círculo numa área pequena até perto, que dura 10 rodadas. Criaturas sobrenaturais fazem um teste de resistência (Carisma) para entrar ou sair dele e ficam lentas enquanto estiverem dentro. | **Área média:** área média em vez de pequena. | **Queimar:** criaturas sobrenaturais dentro do círculo sofrem 1d6 de dano arcano no início de cada turno delas. Escalonamento: +1d6 por +1 de Mana. | **Duradouro:** dura 1 hora. |
 | 19 | **Sinal do Fascínio** *(sinal)* | 4 | Ação. Uma criatura até perto faz um teste de resistência (Sabedoria). Se falhar, fica enfeitiçada por você por 10 rodadas. | **Esquecer:** quando acabar, ela não lembra que foi enfeitiçada. | **Duplo:** mais um alvo até perto. Escalonamento: +1 alvo por +1 de Mana. | **Duradouro:** dura 1 hora. |
 | 20 | **Caçada Final** | 5 | Movimento. Você entra em transe de caçador por 10 rodadas: +2 em ataques, +1d8 de dano contra a presa marcada, imune a ficar amedrontado e ao Terror, e seu movimento aumenta em 2 casas. Escalonamento: +1d8 por +1 de Mana. | **Duradoura:** dura 1 hora. | **Sem dor:** enquanto durar, a exaustão não afeta você. | **Golpe final:** ao derrubar a presa, recupere metade da sua Mana máxima. |
+
+## TÍTULOS DO CAÇADOR DE PRATA
+
+Só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Caos, ou escolha (veja Títulos).
+
+| d6 | Ordem | Neutro | Caos |
+|---|---|---|---|
+| 1 | Aprendiz da Ordem | Rastreador | Caçador de Recompensas |
+| 2 | Vigia da Noite | Andarilho Cinzento | Mutante |
+| 3 | Caçador Juramentado | Mestre do Bestiário | Matador de Aluguel |
+| 4 | Inquisidor | Lâmina de Prata | Lobo Solitário |
+| 5 | Mestre da Ordem | Terror dos Monstros | Flagelo da Noite |
+| 6 | Herdeiro da Linhagem | Lenda da Caçada | Monstro Entre Monstros |

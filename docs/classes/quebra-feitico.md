@@ -114,3 +114,16 @@ As marcadas com *(antimagia)* seguem a regra Antimagia; as outras são marciais.
 | 20 | **Forma Nula** *(antimagia)* | 5 | Movimento. Por 10 rodadas, a antimagia cobre seu corpo. Você ignora todo efeito de magia, bom ou ruim: dano mágico, condições, curas e bênçãos. Seus ataques causam +1d8 de dano e desfazem as magias de duração no alvo. Escalonamento: +1d8 por +1 de Mana. | **Fase 1, Asas Nulas:** a antimagia forma asas negras; você voa com movimento normal enquanto durar. | **Fase 2, Corpo Nulo:** +2 de CA, +2 casas de movimento, e suas habilidades de Lâmina não custam Mana enquanto durar. | **Fase 3, Vazio Absoluto:** seus ataques ignoram resistência e imunidade, e criaturas mágicas que você acertar fazem um teste de resistência (Constituição) ou se desfazem. |
 
 **Fases.** As melhorias da Forma Nula são fases: pegue a Fase 1, depois a 2, depois a 3.
+
+## TÍTULOS DO QUEBRA-FEITIÇO
+
+Só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Caos, ou escolha (veja Títulos).
+
+| d6 | Ordem | Neutro | Caos |
+|---|---|---|---|
+| 1 | Escudeiro sem Magia | Sem-Magia | Rejeitado |
+| 2 | Guarda Nulo | Andarilho Vazio | Caçador de Magos |
+| 3 | Cavaleiro Nulo | Lâmina Vazia | Rompe-Selos |
+| 4 | Capitão Antimagia | Quebra-Feitiço | Fim dos Feitiços |
+| 5 | Campeão dos Sem-Magia | Coração Vazio | Terror dos Magos |
+| 6 | Rei dos Sem-Magia | Lenda do Vazio | Vazio Absoluto |

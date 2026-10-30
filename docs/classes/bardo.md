@@ -83,3 +83,16 @@ Todas são magias (canções, versos e palavras de poder) e usam Carisma, exceto
 | 18 | **Fascinar** | 4 | Ação, fora de combate. Criaturas numa área média até perto fazem um teste de resistência (Sabedoria). Quem falha fica enfeitiçado por você enquanto você se apresenta, até 10 minutos. O efeito acaba se alguém do seu grupo atacar. | **Distração perfeita:** enquanto durar, seus aliados têm vantagem para furtar e se esconder. | **Duradouro:** até 1 hora. | **Memória turva:** depois, elas não lembram de detalhes do que aconteceu. |
 | 19 | **Passo de Dança** *(marcial)* | 2 | Movimento. Mova-se até perto sem provocar ataques de oportunidade. | **Rápido:** vira ação livre. | **Graça:** +1 de CA até o seu próximo turno. | **Parceiro:** um aliado adjacente se move junto com você. |
 | 20 | **Canção dos Heróis** | 5 | Ação. Aliados numa área média ao seu redor causam +1d6 de dano e ganham +1 de CA por 10 rodadas. Escalonamento: +1d6 por +1 de Mana. | **Área grande:** área grande em vez de média. | **Destemidos:** enquanto durar, não podem ficar amedrontados. | **Rápida:** vira movimento. |
+
+## TÍTULOS DO BARDO
+
+Só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Caos, ou escolha (veja Títulos).
+
+| d6 | Ordem | Neutro | Caos |
+|---|---|---|---|
+| 1 | Arauto | Menestrel | Charlatão |
+| 2 | Cronista | Trovador | Agitador |
+| 3 | Menestrel da Corte | Contador de Histórias | Sedutor |
+| 4 | Mestre de Cerimônias | Saltimbanco | Trapaceiro de Palco |
+| 5 | Bardo Real | Poeta Errante | Bufão Sombrio |
+| 6 | Voz do Reino | Lenda das Tavernas | Voz do Caos |

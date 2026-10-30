@@ -85,3 +85,16 @@ As marcadas com *(magia)* são magias profanas e usam Carisma; as outras são ma
 | 18 | **Maldição** *(magia)* | 4 | Ação. Um alvo até perto faz um teste de resistência (Carisma). Se falhar, fica amaldiçoado por 1 dia: escolha um atributo; ele tem desvantagem em testes desse atributo. | **Pesadelos:** enquanto durar, ele perde 1d4 de Sanidade a cada descanso. | **Permanente:** dura até ser quebrada por magia. | **Fraqueza:** ele também sofre o dobro de dano necrótico. |
 | 19 | **Exército dos Mortos** *(magia)* | 5 | Ação. Quatro esqueletos saem do chão numa área pequena até perto e lutam por 10 rodadas. Cada um tem CA 12, 6 PV, ataque d20 + seu mod. de Carisma e dano 1d6. | **Legião:** mais um esqueleto. Escalonamento: +1 esqueleto por +1 de Mana. | **Armados:** CA 14 e dano 1d8. | **Duradouro:** dura 1 hora. |
 | 20 | **Forma Demoníaca** *(magia)* | 5 | Movimento. Por 10 rodadas, o demônio toma a sua forma: chifres, garras e pele em brasa. Você ganha +2 de CA, resistência a fogo e necrótico, e seus ataques corpo a corpo causam +1d8 de dano de fogo. Escalonamento: +1d8 por +1 de Mana. | **Asas:** você voa com movimento normal enquanto durar. | **Aura de chamas:** inimigos que começarem o turno adjacentes a você sofrem 1d6 de dano de fogo. | **Duradoura:** dura 1 hora, mas você perde 1d4 de Sanidade ao voltar. |
+
+## TÍTULOS DO CAVALEIRO PROFANO
+
+Só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Caos, ou escolha (veja Títulos).
+
+| d6 | Ordem | Neutro | Caos |
+|---|---|---|---|
+| 1 | Carrasco | Andarilho do Túmulo | Possuído |
+| 2 | Cavaleiro de Ferro Negro | Cavaleiro Cinzento | Cavaleiro do Abismo |
+| 3 | Executor | Portador da Mortalha | Flagelo |
+| 4 | Senhor da Forca | Ceifador | Arauto da Ruína |
+| 5 | Tirano Sombrio | Senhor dos Ossos | Senhor dos Demônios |
+| 6 | Lorde Infernal | Lorde da Morte | Príncipe do Abismo |

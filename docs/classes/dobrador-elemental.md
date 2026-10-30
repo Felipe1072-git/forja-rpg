@@ -100,3 +100,16 @@ Todas são magia e usam o seu atributo principal; o dano é do elemento da colun
 | 18 | **Caminho Elemental** (ação) | 3 | Por 10 rodadas, você e um aliado adjacente não sofrem dano de queda e saltam o dobro da distância. | Congele uma ponte ou um caminho de até 12 casas sobre a água, que dura 1 hora. | Por 10 rodadas, você flutua e se move pelo ar com metade do seu movimento. | Abra um túnel de até 12 casas em terra ou pedra, que dura 1 hora. |
 | 19 | **Rajada de Golpes** (ação) | 3 | Faça dois golpes desarmados. Cada acerto causa +1d4 de dano. | Faça dois golpes desarmados. Se os dois acertarem o mesmo alvo, ele fica lento por 10 rodadas. | Faça dois golpes desarmados; o segundo pode ser contra outro inimigo até 2 casas. | Faça dois golpes desarmados. Se os dois acertarem o mesmo alvo, ele fica caído. |
 | 20 | **Estado Elemental** (movimento) | 6 | Por 10 rodadas, seus olhos ardem: imunidade a fogo, você voa com movimento normal e suas habilidades de fogo causam +1 dado. | Por 10 rodadas, seu corpo vira água: resistência a dano de contusão, cortante e perfurante, e você cura 1d6 PV no início de cada turno. | Por 10 rodadas, seu movimento dobra, você não provoca ataques de oportunidade e seus ataques têm vantagem. | Por 10 rodadas, você vira um colosso de pedra: +3 de CA, não pode ser derrubado nem empurrado, e seus golpes desarmados causam +1d8 de dano. |
+
+## TÍTULOS DO DOBRADOR ELEMENTAL
+
+Só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Caos, ou escolha (veja Títulos).
+
+| d6 | Ordem | Neutro | Caos |
+|---|---|---|---|
+| 1 | Noviço do Templo | Aprendiz dos Ventos | Faísca Rebelde |
+| 2 | Guarda do Mosteiro | Andarilho das Marés | Punho de Brasa |
+| 3 | Mestre da Forma | Dançarino da Pedra | Filho da Tempestade |
+| 4 | Guardião do Templo | Mestre dos Quatro | Senhor das Cinzas |
+| 5 | Sábio dos Elementos | Guardião do Equilíbrio | Fúria da Natureza |
+| 6 | Grão-Mestre do Templo | Avatar | Cataclismo |

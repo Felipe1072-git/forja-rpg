@@ -100,3 +100,16 @@ Todas são marciais, exceto as marcadas como *(magia)*, que vêm do lótus negro
 | 18 | **Salto Felino** | 2 | Movimento. Salte até perto, por cima de obstáculos e criaturas, sem provocar ataques de oportunidade. Você cai em pé, sem dano de queda até 6 casas. | **Longo alcance:** salte até longe. | **Bote:** seu próximo ataque neste turno causa +1d6 de dano. Escalonamento: +1d6 por +1 de Mana. | **Silencioso:** se estava escondido, continua escondido depois do salto. |
 | 19 | **Dança das Lâminas** | 4 | Ação. Mova-se até perto sem provocar ataques de oportunidade e faça um ataque com arma contra cada inimigo que ficou adjacente a você no caminho. | **Cortes fundos:** cada acerto causa +1d6 de dano. Escalonamento: +1d6 por +1 de Mana. | **Sumir:** no fim, você se esconde se houver penumbra ou cobertura. | **Sangria:** cada inimigo atingido sofre 1d4 de dano no início do próximo turno dele. |
 | 20 | **Florescer Negro** *(magia)* | 5 | Movimento. Pétalas negras giram ao seu redor por 10 rodadas. Seus ataques causam +1d6 de dano de veneno, e você usa Passo de Fumaça sem gastar Mana. Escalonamento: +1d6 por +1 de Mana. | **Perfume da morte:** inimigos que começarem o turno adjacentes a você fazem um teste de resistência (Constituição) ou ficam lentos. | **Sombra viva:** enquanto durar, você conta como escondido na penumbra, mesmo depois de atacar. | **Duradouro:** dura 1 hora. |
+
+## TÍTULOS DA LÂMINA SILENCIOSA
+
+Só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Caos, ou escolha (veja Títulos).
+
+| d6 | Ordem | Neutro | Caos |
+|---|---|---|---|
+| 1 | Iniciado do Templo | Sombra | Faca de Aluguel |
+| 2 | Guarda Oculto | Pétala Negra | Lâmina Sangrenta |
+| 3 | Executor do Templo | Fumaça | Víbora |
+| 4 | Mão do Mestre | Lâmina Silenciosa | Flor da Morte |
+| 5 | Guardião do Lótus | Vento Noturno | Demônio Mascarado |
+| 6 | Grão-Mestre | Lenda Sem Rosto | Senhor do Lótus Negro |

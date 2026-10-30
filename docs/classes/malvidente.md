@@ -103,3 +103,16 @@ Todas são magias e usam o seu atributo principal. Testes de resistência contra
 | 18 | **Profecia** | 3 | Um turno de exploração, Preço 1. Faça uma pergunta ao destino. O Mestre responde com a verdade numa frase, que pode ser enigmática. | **Três perguntas:** faça 3 perguntas. | **Passado:** a pergunta também pode ser sobre o passado. | **Sem preço:** a profecia não cobra Preço. |
 | 19 | **Amuleto** | 3 | Ação. Entregue um amuleto a um aliado adjacente. Por 1 hora, ele ganha +1 em testes de resistência. | **Proteção:** também +1 de CA. | **Grupo:** mais um aliado adjacente. Escalonamento: +1 alvo por +1 de Mana. | **Duradouro:** dura 1 dia. |
 | 20 | **Mudar o Destino** | 5 | Reação, Preço 2. Quando uma criatura até longe rolar um d20, escolha o resultado, de 1 a 20. | **Muito longe:** até muito longe. | **Fio da vida** (Preço 3)**:** use quando um aliado morrer: ele volta com 1 PV. | **Preço menor:** custa Preço 1 em vez de Preço 2. |
+
+## TÍTULOS DO MALVIDENTE
+
+Só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Caos, ou escolha (veja Títulos).
+
+| d6 | Ordem | Neutro | Caos |
+|---|---|---|---|
+| 1 | Leitor de Ossos | Benzedeiro | Rogador de Pragas |
+| 2 | Guardião do Fio | Olho Leitoso | Mau-Olhado |
+| 3 | Oráculo | Vidente da Encruzilhada | Tece-Praga |
+| 4 | Voz do Destino | Velho do Caldeirão | Bruxa da Charneca |
+| 5 | Juiz das Sinas | Guardião dos Segredos | Mãe das Pragas |
+| 6 | Senhor do Destino | Tecelão da Sina | Ruína dos Reinos |

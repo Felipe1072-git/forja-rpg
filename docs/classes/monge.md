@@ -81,3 +81,16 @@ Todas são marciais, exceto as marcadas como *(magia)*. "Golpe desarmado" é um 
 | 18 | **Andar nas Paredes** | Passiva | Durante o seu movimento, você anda por paredes e sobre a água. Se terminar o movimento fora de chão firme, cai. | **Teto:** você também anda pelo teto. | **Parar:** você pode terminar o movimento numa parede ou sobre a água. | **Salto do vento:** você salta o dobro da distância normal. |
 | 19 | **Contra-ataque** | 2 | Reação. Quando um inimigo adjacente errar um ataque contra você, faça um golpe desarmado contra ele. | **Projetar:** se acertar, o inimigo é empurrado 2 casas. | **Força:** o golpe causa +1d6 de dano. Escalonamento: +1d6 por +1 de Mana. | **Derrubar:** se acertar, o inimigo fica caído. |
 | 20 | **Corpo de Diamante** | 5 | Movimento. Por 10 rodadas, você tem resistência a todo dano e imunidade a venenos e doenças. | **Duradouro:** dura 1 hora. | **Reflexo:** quem acertar você corpo a corpo sofre 1d6 de dano de contusão. | **Imóvel:** você não pode ser derrubado, empurrado nem agarrado. |
+
+## TÍTULOS DO MONGE
+
+Só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Caos, ou escolha (veja Títulos).
+
+| d6 | Ordem | Neutro | Caos |
+|---|---|---|---|
+| 1 | Noviço | Andarilho | Punho Sombrio |
+| 2 | Discípulo | Asceta | Lutador de Rua |
+| 3 | Irmão do Templo | Punho Errante | Mãos Vazias |
+| 4 | Mestre do Punho | Mestre do Vento | Morte Silenciosa |
+| 5 | Grão-Mestre | Sábio Silencioso | Dragão Rebelde |
+| 6 | Mão Sagrada | Iluminado | Punho do Caos |

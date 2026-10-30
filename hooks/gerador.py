@@ -68,10 +68,12 @@ def _classe(docs, rel, exoticas):
         m = _TRACO.match(linha)
         if m and m.group(1) not in _FORA:
             regras.append([m.group(1), m.group(2)])
-    habilidades, colunas, tabelas = [], [], {}
+    habilidades, colunas, tabelas, titulos = [], [], {}, []
     for tab in _tabelas(texto):
         cab = tab[0]
-        if re.match(r'^d\d+$', cab[0]) and cab[1] not in ('Habilidade', 'Magia'):
+        if cab == ['d6', 'Ordem', 'Neutro', 'Caos']:
+            titulos = [l[1:4] for l in tab[1:]]
+        elif re.match(r'^d\d+$', cab[0]) and cab[1] not in ('Habilidade', 'Magia'):
             tabelas[cab[1]] = [l[1:] for l in tab[1:]]
         if cab[0] == 'd20' and len(cab) >= 7 and cab[1] in ('Habilidade', 'Magia'):
             colunas = cab[3:]
@@ -84,7 +86,7 @@ def _classe(docs, rel, exoticas):
         'epigrafe': epigrafe.group(1).strip() if epigrafe else '',
         'base': base, 'atributos': [a.strip() for a in attr.split(' ou ')],
         'armas': armas, 'armaduras': armaduras, 'regras': regras,
-        'colunas': colunas, 'habilidades': habilidades, 'tabelas': tabelas,
+        'colunas': colunas, 'habilidades': habilidades, 'tabelas': tabelas, 'titulos': titulos,
     }
 
 
@@ -120,15 +122,12 @@ def _nomes(docs):
 
 def _detalhes(docs):
     texto = _ler(docs, 'personagem/detalhes.md')
-    antecedentes, titulos = [], {}
+    antecedentes = []
     for tab in _tabelas(texto):
         cab = tab[0]
         if cab[1] == 'Antecedente':
             antecedentes = [[l[1], l[2]] for l in tab[1:]]
-        elif cab[0] == 'd6' and ': Ordem' in cab[1]:
-            classe = cab[1].split(':')[0]
-            titulos[classe] = [l[1:4] for l in tab[1:]]
-    return antecedentes, titulos
+    return antecedentes
 
 
 def _equipamento(docs):
@@ -169,7 +168,8 @@ def on_post_build(config, **kwargs):
             exoticas = {l[0] for l in tab[1:]}
     classes = [_classe(docs, rel, exoticas) for rel in _paginas_de_classe(config['nav'])]
     rolagem, ancestralidades = _ancestralidades(docs)
-    antecedentes, titulos = _detalhes(docs)
+    antecedentes = _detalhes(docs)
+    titulos = {c['nome']: c['titulos'] for c in classes}
     nivel0, armas, armaduras = _equipamento(docs)
     nomes, alcunhas = _nomes(docs)
     dados = {

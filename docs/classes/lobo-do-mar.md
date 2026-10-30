@@ -89,3 +89,16 @@ Todas são marciais, exceto as marcadas como *(magia)*, que são dádivas dos de
 | 18 | **Martelo do Trovão** *(magia)* | 4 | Ação. Arremesse sua arma envolta em raios contra um alvo até longe (ataque com arma): +1d8 de dano de tempestade. A arma volta para a sua mão. Escalonamento: +1d8 por +1 de Mana. | **Corrente:** o raio salta para outro alvo até perto do primeiro. Escalonamento: +1 alvo por +1 de Mana. | **Trovão:** o alvo fica surdo e caído. | **Tempestade:** atinge uma área pequena em volta do alvo. |
 | 19 | **Investida dos Lobos** | 5 | Ação. Você e os aliados adjacentes avançam juntos até 3 casas, sem provocar ataques de oportunidade, e cada um faz um ataque com arma. | **Fúria da matilha:** cada acerto causa +1d6 de dano. Escalonamento: +1d6 por +1 de Mana. | **Atropelar:** inimigos atingidos ficam caídos. | **Matilha maior:** vale para aliados até perto. |
 | 20 | **Asas da Valquíria** *(magia)* | 5 | Movimento. Por 10 rodadas, asas de luz brotam das suas costas: você voa com movimento normal e seus ataques causam +1d8 de dano radiante. Escalonamento: +1d8 por +1 de Mana. | **Escolher os mortos:** enquanto durar, o primeiro aliado até perto que cair a 0 PV fica com 1 PV. | **Lança de luz:** seus ataques corpo a corpo alcançam até 2 casas. | **Duradoura:** dura 1 hora. |
+
+## TÍTULOS DO LOBO DO MAR
+
+Só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Caos, ou escolha (veja Títulos).
+
+| d6 | Ordem | Neutro | Caos |
+|---|---|---|---|
+| 1 | Remador | Marujo | Saqueador |
+| 2 | Guarda do Escudo | Caçador de Baleias | Lobo |
+| 3 | Timoneiro | Navegador | Incendiário |
+| 4 | Capitão | Andarilho das Ondas | Terror das Costas |
+| 5 | Senhor das Ilhas | Escolhido da Valquíria | Senhor dos Saqueadores |
+| 6 | Rei do Mar | Lenda das Sagas | Fera do Norte |

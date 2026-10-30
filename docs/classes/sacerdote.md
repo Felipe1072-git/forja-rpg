@@ -87,3 +87,16 @@ Todas são divinas e de magia. "Ataque divino" é d20 + modificador de Sabedoria
 | 18 | **Zona da Verdade** | 3 | Ação. Uma área pequena até perto, por 10 rodadas. Quem estiver nela faz um teste de resistência (Sabedoria). Quem falha não consegue mentir. | **Área média:** área média em vez de pequena. | **Duradoura:** dura 1 hora. | **Sentir mentiras:** você sabe quando alguém mente na área, mesmo quem passou no teste. |
 | 19 | **Augúrio** | 2 | Um turno de exploração. Faça uma pergunta de sim ou não à sua divindade sobre algo que vai acontecer nas próximas horas. O Mestre responde com sinceridade. | **Três perguntas:** faça até três perguntas. | **Visão:** a resposta vem com uma imagem ou pista curta. | **Rápido:** leva 1 ação em vez de 1 turno de exploração. |
 | 20 | **Aura Divina** | Passiva | Aliados adjacentes a você ganham +1 em testes de resistência. | **Ampla:** vale para aliados a até 2 casas. | **Escudo elemental:** você e esses aliados ganham resistência ao elemento oposto ao da sua divindade. | **Coragem:** você e esses aliados não podem ficar amedrontados. |
+
+## TÍTULOS DO SACERDOTE
+
+Só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Caos, ou escolha (veja Títulos).
+
+| d6 | Ordem | Neutro | Caos |
+|---|---|---|---|
+| 1 | Acólito | Peregrino | Cultista |
+| 2 | Clérigo | Eremita | Herege |
+| 3 | Templário | Vidente | Pactuário |
+| 4 | Inquisidor | Guardião dos Ritos | Profeta Louco |
+| 5 | Bispo | Oráculo | Arauto do Fim |
+| 6 | Arauto da Fé | Ancião | Sumo Sacerdote Sombrio |

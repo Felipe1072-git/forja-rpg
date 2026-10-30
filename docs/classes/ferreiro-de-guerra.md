@@ -100,3 +100,16 @@ Todas são marciais (engenharia), exceto as marcadas como *(runa)*, que são mag
 | 18 | **Estilhaçar** | 3 | Ação. Ataque com arma contra a arma, o escudo ou a armadura de um inimigo adjacente. Se acertar, o item não mágico se parte; uma armadura cai 2 de CA até ser consertada. | **Golpe duplo:** se acertar, também causa o dano normal da arma ao inimigo. | **Mágico:** funciona também em itens mágicos, que perdem a magia por 1 dia. | **Fragmentos:** inimigos adjacentes ao alvo sofrem 1d6 de dano perfurante. |
 | 19 | **Engenhoca** | 2 | Um turno de exploração. Monte uma ferramenta simples para o problema da vez: um gancho com corda, um pé de cabra, uma ponte dobrável de 3 casas, uma roldana, uma escada. Ela dura até o próximo descanso longo. | **Rápida:** leva 1 rodada. | **Grande:** pode fazer uma ponte de 6 casas, uma balsa ou uma carroça simples. | **Precisa:** quem usa a engenhoca tem vantagem no teste. |
 | 20 | **Forja de Lendas** | Passiva | Suas obras-primas podem ter dois traços de material de fera, ou um traço e +1 em ataques e dano ou +1 de CA. | **Ferreiro famoso:** forjar uma obra-prima leva só 3 dias, e nobres pagam bem pelo seu trabalho. | **Arma lendária:** uma das suas obras-primas pode ter +2 em vez de +1. | **Força plena:** um traço de uma das suas obras-primas funciona com a força total da criatura. |
+
+## TÍTULOS DO FERREIRO DE GUERRA
+
+Só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Caos, ou escolha (veja Títulos).
+
+| d6 | Ordem | Neutro | Caos |
+|---|---|---|---|
+| 1 | Aprendiz de Ferreiro | Funileiro | Fazedor de Bombas |
+| 2 | Ferreiro da Guilda | Remendão | Artilheiro |
+| 3 | Armeiro Real | Mecânico | Mão de Pólvora |
+| 4 | Mestre da Bigorna | Engenhoqueiro | Senhor dos Canhões |
+| 5 | Mestre Forjador | Pai dos Golens | Rei da Sucata |
+| 6 | Forjador de Lendas | Coração de Ferro | Senhor da Fornalha |

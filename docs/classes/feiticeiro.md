@@ -117,3 +117,16 @@ Role 1d12 quando a habilidade Magia Selvagem mandar. O surto acontece depois da 
 | 10 | A magia acontece de novo, num segundo alvo à sua escolha. |
 | 11 | Um animal pequeno aparece e segue você por 1 dia, depois some. |
 | 12 | Você perde 1d4 de Sanidade, mas sua próxima magia não custa Mana. |
+
+## TÍTULOS DO FEITICEIRO
+
+Só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Caos, ou escolha (veja Títulos).
+
+| d6 | Ordem | Neutro | Caos |
+|---|---|---|---|
+| 1 | Herdeiro do Sangue | Andarilho Arcano | Renegado |
+| 2 | Portador da Chama | Filho da Tempestade | Herdeiro do Caos |
+| 3 | Guardião Arcano | Sangue Antigo | Sangue Maldito |
+| 4 | Magus da Corte | Senhor dos Elementos | Tormenta Viva |
+| 5 | Sangue Real | Voz do Dragão | Bruxo Selvagem |
+| 6 | Avatar da Ordem | Avatar Elemental | Senhor do Caos |

@@ -81,3 +81,16 @@ As marcadas com *(magia)* são magias divinas e usam Sabedoria; as outras são m
 | 18 | **Caçada Selvagem** | 4 | Ação. Você e os aliados numa área média ao seu redor se movem até perto, sem provocar ataques de oportunidade. | **Trompa:** inimigos que ouvirem fazem um teste de resistência (Sabedoria) ou ficam amedrontados por 1 rodada. | **Matilha:** cada um que se mover causa +1d6 de dano no próximo ataque neste turno. | **Longo alcance:** movam-se até longe. |
 | 19 | **Inverno Eterno** *(magia)* | 5 | Ação. Por 10 rodadas, um frio cortante cobre uma área média ao seu redor, que vira terreno difícil. Inimigos que começarem o turno nela sofrem 1d6 de dano de gelo e ficam lentos. Escalonamento: +1d6 por +1 de Mana. | **Área grande:** área grande em vez de média. | **Congelar:** quem começar o turno na área faz um teste de resistência (Constituição); se falhar por 5 ou mais, fica paralisado por 1 rodada. | **Abraço do inverno:** você e seus aliados não são afetados pelo frio nem pelo terreno. |
 | 20 | **Avatar do Bosque** *(magia)* | 5 | Movimento. Por 10 rodadas, você cresce até ficar Grande, coberto de galhos e folhas: +1 de CA, seus ataques com arma causam +1d8 de dano e alcançam até 2 casas, e você cura 1d4 PV no início de cada turno. Escalonamento: +1d8 por +1 de Mana. | **Duradouro:** dura 1 hora. | **Pisotear:** você pode se mover através de inimigos; cada um faz um teste de resistência (Força) ou fica caído. | **Floresta viva:** a área ao seu redor vira terreno difícil para inimigos. |
+
+## TÍTULOS DO CAVALEIRO VERDE
+
+Só sabor. Role 1d6 na coluna da sua posição no eixo Ordem x Caos, ou escolha (veja Títulos).
+
+| d6 | Ordem | Neutro | Caos |
+|---|---|---|---|
+| 1 | Guardião do Bosque | Andarilho da Galhada | Cavaleiro dos Espinhos |
+| 2 | Cavaleiro do Azevinho | Guardião do Ciclo | Fera Coroada |
+| 3 | Sentinela da Capela Verde | Cavaleiro do Inverno | Cavaleiro Podre |
+| 4 | Campeão das Estações | Caçador Selvagem | Arauto do Inverno |
+| 5 | Senhor do Verão | Cavaleiro Verde | Senhor da Caçada Selvagem |
+| 6 | Rei do Bosque | Lenda Verde | Rei dos Cervos Negros |
