@@ -46,9 +46,13 @@ plugins:
 
 hooks:
   - hooks/forja.py
+  - hooks/gerador.py
 
 extra_css:
   - assets/css/forja.css
+
+extra_javascript:
+  - assets/js/gerador.js
 
 markdown_extensions:
   - tables
@@ -123,5 +127,6 @@ nav:
     - Referência do Jogador: fichas/jogador.md
     - Referência do Mestre: fichas/mestre.md
     - Ficha de Exploração: fichas/exploracao.md
+  - Gerador: gerador.md
   - Campanhas:
     - A Cidadela Escarlate: campanhas/cidadela-escarlate.md
