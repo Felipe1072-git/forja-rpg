@@ -496,7 +496,30 @@
 .fj-g-cab { display: flex; gap: 0.6em; align-items: center; }
 .fj-g-nome { font-family: var(--fj-titulo); font-size: 1.4rem; flex: 1; }
 .fj-g-sub { font-style: italic; }
-.md-typeset .fj-g-tabela { font-size: 0.75rem; }
+.md-typeset table.fj-g-tabela {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+  border: 2px solid var(--fj-linha);
+  margin: 0.8em 0;
+}
+.md-typeset table.fj-g-tabela th {
+  background: var(--fj-cabecalho-tabela);
+  color: var(--fj-texto-cabecalho);
+  font-family: var(--fj-titulo);
+  font-weight: normal;
+  text-align: left;
+  padding: 0.35em 0.7em;
+}
+.md-typeset table.fj-g-tabela td {
+  border-top: 1px solid var(--fj-linha-fraca);
+  padding: 0.45em 0.7em;
+  vertical-align: top;
+}
+.md-typeset table.fj-g-tabela tr:nth-child(even) td { background: var(--fj-zebra); }
+.md-typeset table.fj-g-tabela td:first-child { width: 22%; }
+.md-typeset table.fj-g-tabela td:nth-child(2) { width: 4.5em; white-space: nowrap; text-align: center; }
 .fj-g-pequeno { padding: 0.3em 1em; }
 @media (max-width: 40em) { .fj-g-atr { grid-template-columns: repeat(3, 1fr); } }
 #fj-gerador.montando .so-aleatorio { display: none; }
