@@ -48,7 +48,7 @@ Ao subir de nível:
 
 1. Role 1d4 e some ao seu PV máximo. Se tirar 1, role de novo (uma vez por nível).
 2. Ganhe 2 avanços.
-3. Escolha cada avanço abaixo. Dois avanços no mesmo nível devem ser diferentes.
+3. Escolha cada avanço abaixo. Dois avanços no mesmo nível devem ser escolhas diferentes (veja Avanço de Nível).
 
 | Avanço | Efeito |
 |---|---|
