@@ -741,6 +741,74 @@ def ficha_exploracao():
     return documento('Ficha de Exploração', folha)
 
 
+# ------------------------------------------------------------ ficha de mundo (sessão 1)
+
+ANCESTRAIS = ['Humano', 'Anão', 'Elfo', 'Drow', 'Meio-elfo', 'Halfling', 'Draconato',
+              'Gnomo', 'Orc', 'Meio-orc', 'Tiefling', 'Goblin', 'Autômato']
+AVENTURAS = ['Masmorra profunda', 'Explorar terras selvagens', 'Intriga na cidade',
+             'Caçar um vilão', 'Guerra ou invasão', 'Horror e mistério']
+TONS = ['Sombrio', 'Heroico', 'Cômico', 'Sério']
+
+
+def mw_campos(*rotulos):
+    return '<div class="mw-campos">' + ''.join(campo(r) for r in rotulos) + '</div>'
+
+
+def mw_marcas(itens):
+    return '<div class="mw-marcas">' + ''.join(
+        f'<span><span class="fh-check"></span> {i}</span>' for i in itens) + '</div>'
+
+
+def mw_votos(itens):
+    return '<div class="mw-votos">' + ''.join(
+        f'<div>{fx_bolas(5, 0, "fx-miudas")} {i}</div>' for i in itens) + '</div>'
+
+
+def ficha_mundo():
+    folha = (
+        '<div class="fh-folha fx-folha mw-folha">'
+        '<header class="fh-topo fx-topo">' + LOGO +
+        '<div class="fh-titulo-folha">Ficha de Mundo</div>'
+        '<div class="mw-topo-campos">' + campo('Mesa') + campo('Data') + '</div>'
+        '</header>'
+        '<p class="fx-nota"><b>Como preencher.</b> Na primeira sessão, antes de criar os personagens. O grupo preenche junto, '
+        'de cima para baixo, e todo mundo responde alguma coisa. Quem criou é a autoridade sobre aquilo; o Mestre pode vetar. '
+        'Empacou? Fique com a primeira ideia e siga: o resto aparece jogando.</p>'
+        '<div class="fx-duas mw-duas">'
+        '<div>' + titulo('O Mundo') +
+        mw_campos('Nome do mundo', 'Nome do continente', 'Idiomas mais falados',
+                  'Algo estranho que todo mundo sabe', 'O maior perigo de hoje') +
+        '</div>'
+        '<div>' + titulo('A Cidade Inicial') +
+        mw_campos('Nome da cidade', 'Vive de quê', 'Quem manda', 'O problema de agora',
+                  'Onde o grupo costuma se encontrar') +
+        '</div>'
+        '</div>'
+        + titulo('Os Deuses <span class="fx-dica">sacerdotes criam a sua divindade; quem segue uma é o especialista nela</span>') +
+        '<p class="fx-nota">Comece pelo que o mundo precisa: luz, mar, fogo, morte, natureza, guerra, segredos, tempestade '
+        '(veja a tabela de domínios em Divindades). Quem cuida da divindade conhece seus ritos, servos, inimigos e segredos, e vai inventando mais durante a campanha. '
+        'Divindade sem dono fica com o Mestre.</p>'
+        + fx_vazia(['Nome', 'Entidade', 'Domínio', 'Elemento', 'Duas responsabilidades', 'Quem cuida'], 6, 'mw-deuses') +
+        titulo('Os Povos <span class="fx-dica">marque quem existe neste mundo</span>') +
+        mw_marcas(ANCESTRAIS) +
+        titulo('A Aventura <span class="fx-dica">cada um marca até duas bolinhas; o Mestre prepara a mais votada</span>') +
+        '<div class="fx-duas mw-duas">'
+        '<div><span class="fh-rotulo">Que tipo de aventura?</span>' + mw_votos(AVENTURAS) + '</div>'
+        '<div><span class="fh-rotulo">Que tom?</span>' + mw_votos(TONS) +
+        '<span class="fh-rotulo mw-rotulo-2">Como começamos?</span>' +
+        mw_marcas(['Funil (nível 0)', 'Nível 1']) + '</div>'
+        '</div>'
+        + titulo('Cada Jogador <span class="fx-dica">adiciona algo à cidade e propõe um gancho; depois, todos votam no gancho</span>')
+        + fx_vazia(['Jogador', 'Um lugar ou uma pessoa da cidade', 'Um gancho: o que nos tira de casa?', 'Votos'], 5, 'mw-ganchos') +
+        '<div class="fx-duas mw-duas mw-fim">'
+        '<div>' + titulo('O Grupo') + mw_campos('Por que estamos juntos') + '</div>'
+        '<div>' + titulo('Segurança') + mw_campos('Linhas (não aparecem)', 'Véus (fora de cena)') + '</div>'
+        '</div>'
+        '</div>'
+    )
+    return documento('Ficha de Mundo', folha)
+
+
 # ------------------------------------------------------------ impressão
 
 def achar_chrome():
@@ -768,6 +836,7 @@ def main():
         ('ficha-personagem', ficha_personagem), ('ficha-funil', ficha_funil),
         ('referencia-jogador', referencia_jogador), ('referencia-mestre', referencia_mestre),
         ('guia-criacao', guia_criacao), ('ficha-exploracao', ficha_exploracao),
+        ('ficha-mundo', ficha_mundo),
     ]
     for nome, gerar in fichas:
         html = BUILD / f'{nome}.html'

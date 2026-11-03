@@ -1008,3 +1008,73 @@ body {
 .fh-mov-linha .fh-dica {
   margin: 0 0 0.6mm auto;
 }
+
+/* ------------------------------------------------------------ ficha de mundo (sessão 1) */
+
+.mw-topo-campos {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 3mm;
+}
+
+.mw-campos {
+  display: grid;
+  gap: 1.4mm;
+}
+
+.mw-folha .fh-campo {
+  min-height: 7.4mm;
+}
+
+.mw-duas {
+  grid-template-columns: 1fr 1fr;
+}
+
+.mw-folha .fx-nota {
+  margin: 0.6mm 0 1mm;
+}
+
+.mw-deuses td {
+  height: 7mm;
+}
+
+.mw-deuses th:nth-child(1) { width: 21%; }
+.mw-deuses th:nth-child(2) { width: 11%; }
+.mw-deuses th:nth-child(3) { width: 12%; }
+.mw-deuses th:nth-child(4) { width: 11%; }
+.mw-deuses th:nth-child(6) { width: 13%; }
+
+.mw-ganchos td {
+  height: 7.6mm;
+}
+
+.mw-ganchos th:first-child { width: 15%; }
+.mw-ganchos th:nth-child(2) { width: 31%; }
+.mw-ganchos th:last-child { width: 8%; }
+
+.mw-marcas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2mm 2.2mm;
+  margin: 0.6mm 0 0.8mm;
+  font-size: 7.8pt;
+}
+
+.mw-votos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.9mm;
+  margin: 0.8mm 0 1.2mm;
+  font-size: 8pt;
+}
+
+.mw-votos > div {
+  display: flex;
+  align-items: center;
+  gap: 1.4mm;
+}
+
+.mw-rotulo-2 {
+  display: block;
+  margin-top: 0.6mm;
+}

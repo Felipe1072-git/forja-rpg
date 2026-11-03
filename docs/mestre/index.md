@@ -40,7 +40,7 @@ Você descreve o mundo, interpreta todos os outros personagens e decide como as 
 
 **Morte.** Personagens vão morrer. Se a morte veio das escolhas do jogador, foi justa. Se houver dúvida sobre uma regra, esclareça e deixe o destino agir.
 
-**Sessão zero.** Crie os personagens com os jogadores. Definam como eles se conhecem, as divindades do grupo e os limites de tom. Comece a primeira sessão no meio da ação.
+**Sessão zero.** Crie o mundo e os personagens com os jogadores (veja Ficha de Mundo). Definam como eles se conhecem, as divindades do grupo e os limites de tom. Comece a primeira sessão no meio da ação.
 
 ## Aprovando Criações
 
