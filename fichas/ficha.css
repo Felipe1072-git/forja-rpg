@@ -1344,3 +1344,82 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 3mm;
 }
+
+/* ------------------------------------------------------------ o plano */
+
+.pl-frente .qv-faixa {
+  margin: 2.6mm 0 1.6mm;
+}
+
+.pl-frente .qv-nivel1 .fh-campo {
+  min-height: 9mm;
+}
+
+.pl-frente .qv-pergunta {
+  min-height: 12mm;
+  font-size: 9pt;
+}
+
+.pl-sabemos {
+  table-layout: fixed;
+}
+
+.pl-sabemos td {
+  height: 9mm;
+}
+
+.pl-rascunho {
+  height: 76mm;
+  border: 2px solid var(--fh-tinta);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.16) 1px, transparent 1px);
+  background-size: 5mm 5mm;
+}
+
+.pl-passos td {
+  height: 10mm;
+}
+
+.pl-passos th:first-child {
+  width: 8mm;
+}
+
+.pl-passos th:nth-child(3) {
+  width: 26mm;
+}
+
+.pl-passos th:last-child {
+  width: 34%;
+}
+
+.pl-verso .fh-secao {
+  margin: 0 0 0.6mm;
+}
+
+.pl-lista {
+  margin: 0;
+  padding-left: 5mm;
+  font-size: 9.4pt;
+  line-height: 1.26;
+}
+
+.pl-verso .qv-pilha .fx-nota {
+  margin: 0;
+}
+
+.pl-regras {
+  column-count: 2;
+  column-gap: 4mm;
+  font-size: 9pt;
+  line-height: 1.2;
+}
+
+.pl-regras p {
+  margin: 0 0 1.2mm;
+  break-inside: avoid;
+}
+
+.pl-verso > .fh-secao {
+  margin-top: 3mm;
+}

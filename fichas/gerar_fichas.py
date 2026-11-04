@@ -994,6 +994,71 @@ def ficha_divindade():
     return documento('Ficha de Divindade', frente + verso)
 
 
+# ------------------------------------------------------------ o plano (grupo)
+
+PLANO = 'fichas/plano.md'
+
+
+def pl_passos(n):
+    tr = ''.join(f'<tr><td class="fx-hora">{i}</td><td></td><td></td><td></td></tr>' for i in range(1, n + 1))
+    return ('<table class="fx-tab pl-passos"><thead><tr><th></th><th>O que fazemos</th><th>Quem</th><th>Se der errado</th></tr></thead>'
+            f'<tbody>{tr}</tbody></table>')
+
+
+def ficha_plano():
+    regras = ''.join(f'<p>{qv_negrito(l)}</p>' for l in qv_secao('Regras a Seu Favor', PLANO) if l.startswith('**'))
+    perguntas = ''.join(f'<li>{p}</li>' for p in qv_perguntas('Antes de Agir', PLANO))
+    frente = (
+        '<div class="fh-folha fx-folha qv-folha pl-frente">'
+        '<header class="fh-topo fx-topo">' + LOGO +
+        '<div class="fh-titulo-folha">O Plano</div>'
+        '<div class="mw-topo-campos">' + campo('Missão') + campo('Data') + '</div>'
+        '</header>'
+        '<p class="fx-nota"><b>Como usar.</b> O grupo preenche junto, antes de agir. Não precisa ser perfeito: um plano que cabe nesta folha já é melhor que nenhum. '
+        'Empacou? Vire a folha.</p>'
+        '<div class="qv-faixa">O Objetivo</div>'
+        '<div class="qv-nivel1">' + campo('O que queremos, em uma frase') +
+        '<div class="qv-quatro">' + campo('Como saberemos que deu certo') + campo('Quando desistimos') + '</div></div>'
+        '<div class="qv-faixa">O Que Sabemos</div>'
+        + fx_vazia(['Vimos com os próprios olhos', 'Só ouvimos dizer', 'Como descobrir o resto'], 4, 'pl-sabemos') +
+        '<div class="qv-faixa">O Obstáculo</div>'
+        '<div class="qv-nivel1"><div class="dv-perguntas">'
+        + qv_linha('O que está no caminho?') + qv_linha('Dá para evitar, enganar, comprar ou assustar?')
+        + qv_linha('O que ele quer ou teme?') + qv_linha('O que este lugar nos oferece?') +
+        '</div></div>'
+        '<div class="qv-faixa">Passo a Passo</div>'
+        + pl_passos(6) +
+        '<div class="fx-duas qv-duas">'
+        '<div><div class="qv-faixa">O Que Levamos</div><div class="qv-nivel1">'
+        + campo('Luz') + campo('Comida e água') + campo('Comprar antes de sair') +
+        '</div></div>'
+        '<div><div class="qv-faixa">Quando Der Errado</div><div class="qv-nivel1">'
+        + campo('Sinal de retirada') + campo('Rota de fuga') + campo('Ponto de encontro') +
+        '</div></div>'
+        '</div>'
+        '</div>'
+    )
+    verso = (
+        '<div class="fh-folha fx-folha qv-folha qv-verso pl-verso">'
+        '<header class="fh-topo fx-topo">' + LOGO +
+        '<div class="fh-titulo-folha">Ideias para o Plano</div>'
+        '</header>'
+        '<p class="fx-nota"><b>Conte ao Mestre o que quer fazer, e o Mestre diz o que precisa de teste.</b> Uma boa ideia pode valer mais que uma boa rolagem.</p>'
+        '<div class="fx-duas qv-duas">'
+        '<div>' + qv_render(qv_linhas(qv_secao('Truques', PLANO)), 'qv-d') + '</div>'
+        '<div class="qv-pilha">' + titulo('Antes de Agir') + f'<ol class="pl-lista">{perguntas}</ol>'
+        + qv_render(qv_linhas(qv_secao('O Que Pode Dar Errado', PLANO)), 'qv-d') +
+        '<p class="fx-nota">Antes de sair, role uma vez e responda: o que fazemos se isso acontecer?</p></div>'
+        '</div>'
+        + titulo('Regras a Seu Favor') +
+        f'<div class="pl-regras">{regras}</div>'
+        + titulo('Rascunho do Lugar <span class="fx-dica">desenhe o que vocês viram: entradas, guardas, rota de fuga</span>') +
+        '<div class="pl-rascunho"></div>'
+        '</div>'
+    )
+    return documento('O Plano', frente + verso)
+
+
 # ------------------------------------------------------------ impressão
 
 def achar_chrome():
@@ -1022,7 +1087,7 @@ def main():
         ('referencia-jogador', referencia_jogador), ('referencia-mestre', referencia_mestre),
         ('guia-criacao', guia_criacao), ('ficha-exploracao', ficha_exploracao),
         ('ficha-mundo', ficha_mundo), ('ficha-quem-e-voce', ficha_quem_e_voce),
-        ('ficha-divindade', ficha_divindade),
+        ('ficha-divindade', ficha_divindade), ('ficha-plano', ficha_plano),
     ]
     for nome, gerar in fichas:
         html = BUILD / f'{nome}.html'
