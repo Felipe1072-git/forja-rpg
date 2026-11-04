@@ -355,6 +355,7 @@
       const r = t.match(/sua CA é (\d+) \+ mod\. de Destreza(?: \+ mod\. de (\w+))?/);
       if (r) ca = Math.max(ca, parseInt(r[1], 10) + des + (r[2] ? m[ATR.indexOf(r[2])] : 0));
     });
+    if (traco(pj.anc, 'Escamas')) ca += 1;
     pj.ca = ca;
     pj.sanidade = 10 + m[3] + m[4] + m[5];
     if (pj.nivel >= 1) {
@@ -1153,6 +1154,7 @@
       <p><b>${esc(pj.nome)}</b>, ${esc(pj.anc.nome)} ${esc(pj.classe.nome)} (${esc(pj.antecedente[0])}, ${esc(pj.tendencia)})</p>
       <p>${linhaAtributos(pj)} · <b>PV</b> ${pj.pv} · <b>CA</b> ${pj.ca} · <b>Sanidade</b> ${pj.sanidade}</p>
       <p>${voc ? `<b>Vocação, ${esc(voc[0])}:</b> ${md(voc[1])} ` : ''}${pj.extras.map((e) => `<b>${esc(e.titulo)}:</b> ${e.itens.join(', ')}. `).join('')}<b>Equipamento:</b> ${pj.equipamento.map(esc).join(', ')}</p>
+      <details><summary>Traços de ${esc(pj.anc.nome)}</summary>${pj.anc.tracos.map(([t, x]) => `<p><b>${esc(t)}.</b> ${md(x)}</p>`).join('')}</details>
       <div class="fj-g-acoes"><button type="button" data-vaga="${k}" data-acao="de-novo">🎲 Gerar de novo</button><button type="button" data-vaga="${k}" data-acao="editar">Editar no Montar</button></div>
     </div>`;
   }
@@ -1178,9 +1180,14 @@
     td:first-child { width: 22%; } td:nth-child(2) { width: 7%; text-align: center; }
     .notas { border: 1.5px solid #000; height: 35mm; }
     .funil { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }
-    .pj { border: 2px solid #000; padding: 2.5mm; break-inside: avoid; min-height: 125mm; }
+    .pj { border: 2px solid #000; padding: 2mm; break-inside: avoid; min-height: 120mm; font-size: 9pt; line-height: 1.15; }
     .pj h2 { margin-top: 0; }
-    .pj .linha { grid-template-columns: repeat(3, 1fr); }
+    .pj .linha { gap: 1mm; margin: 1mm 0; }
+    .pj .linha.tres { grid-template-columns: repeat(3, 1fr); }
+    .pj .caixa { padding: 0.5mm; }
+    .pj .caixa span { font-size: 11pt; }
+    .tracos { font-size: 8pt; line-height: 1.1; margin-bottom: 1.2mm; }
+    .tracos p { margin: 0 0 0.5mm; }
     .vazio { border-bottom: 1px solid #000; height: 6mm; }
   `;
 
@@ -1231,9 +1238,10 @@
           <h2>${esc(pj.nome)}</h2>
           <p>${esc(pj.anc.nome)} · ${esc(pj.classe.nome)} (d${pj.classe.base}) · ${esc(pj.antecedente[0])} · ${esc(pj.tendencia)}</p>
           <div class="linha">${ATR.map((a, i) => `<div class="caixa"><b>${ABR[i]}</b><span>${pj.atr[i]}</span><small>${sinal(mod(pj.atr[i]))}</small></div>`).join('')}</div>
-          <div class="linha"><div class="caixa"><b>PV</b><span>${pj.pv}</span></div><div class="caixa"><b>CA</b><span>${pj.ca}</span></div><div class="caixa"><b>Sanidade</b><span>${pj.sanidade}</span></div></div>
+          <div class="linha tres"><div class="caixa"><b>PV</b><span>${pj.pv}</span></div><div class="caixa"><b>CA</b><span>${pj.ca}</span></div><div class="caixa"><b>Sanidade</b><span>${pj.sanidade}</span></div></div>
           ${voc ? `<p><b>Vocação, ${esc(voc[0])}.</b> ${md(voc[1])}</p>` : ''}
           ${pj.extras.map((e) => `<p><b>${esc(e.titulo)}:</b> ${e.itens.join(', ')}.</p>`).join('')}
+          <div class="tracos">${pj.anc.tracos.filter(([t]) => t !== 'Tamanho').map(([t, x]) => `<p><b>${esc(t)}.</b> ${md(x)}</p>`).join('')}</div>
           <p><b>Equipamento:</b> ${pj.equipamento.map(esc).join(', ')}</p>
           <p>☐ Morreu &nbsp; ☐ Sobreviveu</p>
         </div>`;

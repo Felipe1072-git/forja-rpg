@@ -100,7 +100,13 @@ def _ancestralidades(docs):
     for bloco in texto.split('<div class="fj-card" markdown>')[1:]:
         nome = re.search(r'^## (.+)$', bloco, re.M).group(1).strip()
         epi = re.search(r'\n\n(.+)\n\{ \.epigrafe \}', bloco)
-        tracos = [[m.group(1), m.group(2)] for m in (_TRACO.match(l) for l in bloco.split('</div>')[0].split('\n')) if m]
+        cartao = bloco.split('</div>')[0]
+        tracos = [[m.group(1), m.group(2)] for m in (_TRACO.match(l) for l in cartao.split('\n')) if m]
+        # Traço que termina em ":" abre uma tabela de opções (ex.: modelos do Autômato).
+        for tab in _tabelas(cartao):
+            alvo = next((t for t in tracos if t[1].endswith(':')), None)
+            if alvo:
+                alvo[1] += ''.join(f' {l[0]}: {tab[0][1]} {l[1]}. {l[2]}.' for l in tab[1:])
         lista.append({'nome': nome, 'epigrafe': epi.group(1).strip() if epi else '', 'tracos': tracos})
     return rolagem, lista
 
