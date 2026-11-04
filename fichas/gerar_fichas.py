@@ -812,9 +812,9 @@ def ficha_mundo():
 
 # ------------------------------------------------------------ quem é você (história do personagem)
 
-def qv_secao(nome):
-    """Linhas de uma seção de docs/personagem/quem-e-voce.md, a fonte das perguntas e tabelas."""
-    texto = (RAIZ / 'docs' / 'personagem' / 'quem-e-voce.md').read_text(encoding='utf-8')
+def qv_secao(nome, arquivo='personagem/quem-e-voce.md'):
+    """Linhas de uma seção do livro, a fonte das perguntas e tabelas destas fichas."""
+    texto = (RAIZ / 'docs' / arquivo).read_text(encoding='utf-8')
     m = re.search(rf'^#+ {nome}\n(.*?)(?=^#|\Z)', texto, re.M | re.S)
     return m.group(1).splitlines()
 
@@ -823,16 +823,23 @@ def qv_negrito(texto):
     return re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', texto)
 
 
-def qv_perguntas(nome):
-    return [m.group(1) for m in (re.match(r'\d+\. (.+)', l) for l in qv_secao(nome)) if m]
+def qv_perguntas(nome, arquivo='personagem/quem-e-voce.md'):
+    return [m.group(1) for m in (re.match(r'\d+\. (.+)', l) for l in qv_secao(nome, arquivo)) if m]
 
 
-def qv_tabela(nome, cls=''):
-    linhas = [[c.strip() for c in l.strip('|').split('|')]
-              for l in qv_secao(nome) if l.startswith('|') and not l.startswith('|---')]
+def qv_linhas(linhas):
+    return [[c.strip() for c in l.strip('|').split('|')]
+            for l in linhas if l.startswith('|') and not l.startswith('|---')]
+
+
+def qv_render(linhas, cls=''):
     th = ''.join(f'<th>{c}</th>' for c in linhas[0])
     tr = ''.join('<tr>' + ''.join(f'<td>{qv_negrito(c)}</td>' for c in l) + '</tr>' for l in linhas[1:])
     return f'<table class="fx-tab qv-tab {cls}"><thead><tr>{th}</tr></thead><tbody>{tr}</tbody></table>'
+
+
+def qv_tabela(nome, cls=''):
+    return qv_render(qv_linhas(qv_secao(nome)), cls)
 
 
 def qv_linha(texto):
@@ -891,6 +898,102 @@ def ficha_quem_e_voce():
     return documento('Quem É Você?', frente + verso)
 
 
+# ------------------------------------------------------------ ficha de divindade
+
+def dv_tabelas():
+    """Tabelas de docs/divindades.md, pela segunda coluna do cabeçalho."""
+    tabelas, atual = {}, []
+    for linha in (RAIZ / 'docs' / 'divindades.md').read_text(encoding='utf-8').splitlines() + ['']:
+        if linha.startswith('|'):
+            atual.append(linha)
+        elif atual:
+            linhas = qv_linhas(atual)
+            tabelas[linhas[0][1]] = linhas
+            atual = []
+    return tabelas
+
+
+def dv_compacta(titulo_tab, linhas):
+    """Só o nome e o custo, em duas metades; o efeito fica no livro."""
+    itens = [(l[0], re.search(r'\*\*(.+?)\.\*\*', l[1]).group(1), l[2].replace('Todo o Limite', 'Limite'))
+             for l in linhas[1:]]
+    meio = len(itens) // 2
+    tr = ''.join('<tr>' + ''.join(f'<td>{c}</td>' for c in a + b) + '</tr>'
+                 for a, b in zip(itens[:meio], itens[meio:]))
+    return (f'<table class="fx-tab qv-tab dv-compacta"><thead><tr><th>d20</th><th>{titulo_tab}</th><th>Custo</th>'
+            f'<th></th><th></th><th></th></tr></thead><tbody>{tr}</tbody></table>')
+
+
+def ficha_divindade():
+    t = dv_tabelas()
+    frente = (
+        '<div class="fh-folha fx-folha qv-folha dv-frente">'
+        '<header class="fh-topo fx-topo">' + LOGO +
+        '<div class="fh-titulo-folha">Ficha de Divindade</div>'
+        '<div class="mw-topo-campos">' + campo('Personagem') + campo('Jogador') + '</div>'
+        '</header>'
+        '<p class="fx-nota"><b>Você é a autoridade.</b> Quando surgir uma pergunta sobre a sua divindade, você responde; o Mestre pode vetar. '
+        'Responda em uma linha e invente o resto durante a campanha. Empacou? Vire a folha: o verso tem ideias para rolar ou escolher.</p>'
+        '<div class="qv-faixa">A Divindade</div>'
+        '<div class="qv-nivel1">'
+        '<div class="qv-mestre">' + campo('Nome') + campo('Entidade') + campo('Tendência (opcional)') + '</div>'
+        '<div class="dv-dominio">' + campo('Domínio') + campo('Elemento') + campo('Vantagem em testes para...') + '</div>'
+        '<div class="dv-vinculos">'
+        '<div><span class="fh-check"></span> <b>Devoção.</b> Você serve por fé. As responsabilidades são regras de conduta.</div>'
+        '<div><span class="fh-check"></span> <b>Pacto.</b> Você fez um acordo. As responsabilidades são o preço.</div>'
+        '</div>'
+        '<div class="qv-quatro">' + campo('1ª responsabilidade') + campo('2ª responsabilidade') + '</div>'
+        '<div class="dv-sagrados">' + campo('Símbolo') + campo('Arma sagrada') + campo('Animal sagrado') + campo('Lugar sagrado') + '</div>'
+        '</div>'
+        '<div class="qv-faixa">As Bênçãos <span>não gastam avanços; o milagre sai uma vez por descanso longo, sem gastar Mana</span></div>'
+        '<div class="qv-nivel1">'
+        '<div class="dv-bencao"><b>Nível 1</b>' + campo('Menor (passiva)') + '</div>'
+        '<div class="dv-bencao"><b>Nível 5</b>' + campo('Maior (ativa)') + campo('Custo') + '</div>'
+        '<div class="dv-bencao"><b>Nível 9</b>' + campo('Milagre (ativa)') + campo('Custo') + '</div>'
+        '</div>'
+        '<div class="qv-faixa">O Que Só Você Sabe</div>'
+        '<div class="qv-nivel1"><div class="dv-perguntas">'
+        + ''.join(qv_linha(p) for p in qv_perguntas('Dando Vida à Divindade', 'divindades.md')) +
+        '</div></div>'
+        '<div class="qv-faixa">Se Quebrar uma Responsabilidade</div>'
+        '<div class="qv-nivel1">'
+        '<p class="fx-nota">Você perde as bênçãos e as habilidades divinas, e sua Sanidade máxima diminui em 2. Escolha um caminho: '
+        '<b>Penitência</b> (o Mestre define uma missão ou um sacrifício; ao cumprir, você recupera tudo), '
+        '<b>Nova divindade</b> (recupera a Sanidade máxima e recebe as bênçãos dela) ou '
+        '<b>Sem divindade</b> (o Mestre define a jornada; ao final, +10 de Sanidade máxima, sem bênçãos). Veja Divindades.</p>'
+        + campo('O que você quebrou e o que está fazendo a respeito') +
+        '</div>'
+        '</div>'
+    )
+    verso = (
+        '<div class="fh-folha fx-folha qv-folha dv-verso">'
+        '<header class="fh-topo fx-topo">' + LOGO +
+        '<div class="fh-titulo-folha">Ideias para a Divindade</div>'
+        '</header>'
+        '<p class="fx-nota"><b>Role ou escolha, e mude o que quiser.</b> Na tabela do seu vínculo, role duas vezes na coluna de responsabilidades.</p>'
+        '<div class="fx-duas qv-duas">'
+        '<div>' + qv_render(t['Devoção: a divindade é...'], 'dv-tres') + '</div>'
+        '<div>' + qv_render(t['Pacto: a entidade é...'], 'dv-tres') + '</div>'
+        '</div>'
+        '<div class="fx-duas qv-duas dv-bloco">'
+        '<div>' + qv_render(t['Domínio'], 'dv-tres') + '</div>'
+        '<div>' + qv_render(t['Bênção menor (passiva)'], 'qv-d') + '</div>'
+        '</div>'
+        '<div class="fx-duas qv-duas dv-bloco">'
+        '<div>' + dv_compacta('Bênção maior', t['Bênção maior (ativa)']) + '</div>'
+        '<div>' + dv_compacta('Milagre', t['Milagre (ativa, 1 vez por descanso longo)']) + '</div>'
+        '</div>'
+        '<p class="fx-nota dv-efeitos">Os efeitos das bênçãos maiores e dos milagres estão em Divindades.</p>'
+        '<div class="dv-tres-colunas dv-bloco">'
+        + qv_render(t['O que ela quer'], 'qv-d')
+        + qv_render(t['Como ela fala com você'], 'qv-d')
+        + qv_render(t['Quando ela se desagrada'], 'qv-d') +
+        '</div>'
+        '</div>'
+    )
+    return documento('Ficha de Divindade', frente + verso)
+
+
 # ------------------------------------------------------------ impressão
 
 def achar_chrome():
@@ -919,6 +1022,7 @@ def main():
         ('referencia-jogador', referencia_jogador), ('referencia-mestre', referencia_mestre),
         ('guia-criacao', guia_criacao), ('ficha-exploracao', ficha_exploracao),
         ('ficha-mundo', ficha_mundo), ('ficha-quem-e-voce', ficha_quem_e_voce),
+        ('ficha-divindade', ficha_divindade),
     ]
     for nome, gerar in fichas:
         html = BUILD / f'{nome}.html'

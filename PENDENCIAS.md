@@ -76,6 +76,7 @@ Dúvidas de regra em aberto. Remova o item quando for resolvido e aplicado no te
 - **Duas responsabilidades** por divindade.
 - **Bênçãos:** nível 1 menor (passiva de traço menor), nível 5 maior (habilidade ativa nova), nível 9 milagre (habilidade nova com custo até o Limite, 1x por descanso longo sem gastar Mana). Não gastam avanços.
 - **Tabelas:** 10 divindades de exemplo, d10 devoção, d10 pacto, d20 domínios, d6 bênçãos menor/maior/milagre.
+- **Dando Vida à Divindade** (o autor pediu a Ficha de Divindade; o conteúdo é sugestão): 8 perguntas, símbolo e sagrados, tabelas d8 de o que ela quer, como fala e como se desagrada. Só sabor, sem regra nova.
 - **Seguir no meio da campanha:** recebe todas as bênçãos até o nível atual.
 - **Quebra:** Sanidade máxima −2.
 

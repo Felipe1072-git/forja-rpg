@@ -1239,3 +1239,108 @@ body {
 .qv-verso .qv-pilha {
   gap: 3mm;
 }
+
+/* ------------------------------------------------------------ ficha de divindade */
+
+.dv-dominio {
+  display: grid;
+  grid-template-columns: 1fr 0.7fr 2fr;
+  gap: 3mm;
+}
+
+.dv-sagrados {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3mm;
+}
+
+.dv-vinculos {
+  display: grid;
+  gap: 0.8mm;
+  margin: 2mm 0 0.4mm;
+  font-size: 8.8pt;
+}
+
+.dv-bencao {
+  display: flex;
+  align-items: flex-end;
+  gap: 2.4mm;
+}
+
+.dv-bencao > b {
+  flex: none;
+  width: 12mm;
+  font-size: 8.6pt;
+  padding-bottom: 0.6mm;
+}
+
+.dv-bencao .fh-campo:first-of-type {
+  flex: 1;
+}
+
+.dv-bencao .fh-campo + .fh-campo {
+  flex: none;
+  width: 16mm;
+}
+
+.dv-perguntas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1mm 4mm;
+}
+
+.qv-nivel1 .fx-nota {
+  margin: 0 0 0.6mm;
+}
+
+.dv-frente .qv-faixa {
+  margin: 3mm 0 2mm;
+}
+
+.qv-folha.dv-frente .qv-nivel1 .fh-campo {
+  min-height: 11mm;
+}
+
+.dv-frente .qv-pergunta {
+  min-height: 16mm;
+  font-size: 9.2pt;
+}
+
+.dv-verso table.qv-tab td {
+  padding: 0.45mm 1.2mm;
+  font-size: 7.9pt;
+  line-height: 1.1;
+}
+
+.dv-tres td:first-child,
+.dv-tres th:first-child,
+.dv-compacta td:nth-child(3n + 1),
+.dv-compacta th:nth-child(3n + 1) {
+  width: 6.4mm;
+  text-align: center;
+}
+
+.dv-compacta td:nth-child(3n),
+.dv-compacta th:nth-child(3n) {
+  width: 8.6mm;
+  text-align: center;
+}
+
+.dv-compacta th:nth-child(3) {
+  font-size: 6.4pt;
+}
+
+.dv-bloco {
+  margin-top: 1.8mm;
+}
+
+.dv-efeitos {
+  margin: 0.8mm 0 0;
+  font-style: italic;
+}
+
+.dv-tres-colunas {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3mm;
+}

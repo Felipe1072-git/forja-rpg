@@ -199,6 +199,54 @@ Escolha um caminho:
 
 **Sem divindade.** Siga seu próprio caminho. O Mestre define essa jornada. Ao final dela, sua Sanidade máxima aumenta em 10 de forma permanente. Você não recupera as bênçãos. Suas habilidades divinas voltam como habilidades comuns: o poder sempre foi seu. Mantenha-as ou ajuste a forma e o elemento com o Mestre, sem mudar o custo.
 
+## Dando Vida à Divindade
+
+Opcional. Responda na [Ficha de Divindade](fichas/divindade.md), em uma linha cada. Empacou? Role ou escolha.
+
+1. O que ela quer?
+2. Como ela fala com você?
+3. Como vocês se encontraram?
+4. Que rito você faz, e quando?
+5. Quem a serve?
+6. Quem ela odeia?
+7. O que nem os fiéis sabem?
+8. Que sacrifício ela cobraria de você?
+
+**Sagrados.** Algumas bênçãos pedem uma arma, um animal ou um lugar sagrado. Defina-os agora, junto com o símbolo da divindade.
+
+| d8 | O que ela quer |
+|---|---|
+| 1 | Ser lembrada. Seu nome está sumindo. |
+| 2 | Destruir um rival. |
+| 3 | Sair de onde está presa. |
+| 4 | Mais fiéis, a qualquer custo. |
+| 5 | Recuperar algo que roubaram dela. |
+| 6 | Acabar com uma linhagem inteira. |
+| 7 | Que ninguém descubra o que ela fez. |
+| 8 | Ninguém sabe. Talvez nem ela. |
+
+| d8 | Como ela fala com você |
+|---|---|
+| 1 | Em sonhos. |
+| 2 | Pela boca de estranhos. |
+| 3 | Por presságios: aves, moedas, tempestades. |
+| 4 | Pelo seu reflexo. |
+| 5 | Uma voz, só quando você está sozinho. |
+| 6 | Pelos mortos. |
+| 7 | Animais param e olham para você. |
+| 8 | Nunca falou. Você só sabe. |
+
+| d8 | Quando ela se desagrada |
+|---|---|
+| 1 | A comida apodrece na sua mão. |
+| 2 | Os animais fogem de você. |
+| 3 | Você sonha com o mesmo lugar toda noite. |
+| 4 | Seu símbolo fica frio como gelo. |
+| 5 | Sua voz some quando você reza. |
+| 6 | As velas se apagam quando você passa. |
+| 7 | Estranhos olham para você com medo. |
+| 8 | Nada acontece. Isso é o pior. |
+
 ## Exemplos de Divindades
 
 | Nome | Entidade | Tendência | Domínio | Vínculo | Responsabilidades | Bênçãos |
