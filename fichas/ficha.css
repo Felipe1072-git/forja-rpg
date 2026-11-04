@@ -1078,3 +1078,85 @@ body {
   display: block;
   margin-top: 0.6mm;
 }
+
+/* ------------------------------------------------------------ quem é você */
+
+.qv-duas {
+  grid-template-columns: 1fr 1fr;
+}
+
+.qv-lista {
+  margin: 0.8mm 0 0.6mm;
+  padding-left: 4.5mm;
+  font-size: 8.6pt;
+  line-height: 1.25;
+}
+
+.qv-conceito {
+  display: grid;
+  gap: 1.6mm;
+  margin: 1mm 0 0.8mm;
+  font-size: 8.6pt;
+}
+
+.qv-conceito > div {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.5mm;
+}
+
+.qv-conceito i {
+  flex: 1;
+  height: 4mm;
+  border-bottom: 1px solid var(--fh-tinta);
+}
+
+.qv-perguntas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.4mm 4mm;
+}
+
+.qv-pergunta {
+  min-height: 10mm;
+  border-bottom: 1px solid var(--fh-tinta);
+  font-size: 8.6pt;
+  line-height: 1.1;
+}
+
+.qv-pergunta:last-child {
+  grid-column: 1 / -1;
+}
+
+.qv-folha table.qv-tab td {
+  height: auto;
+  padding: 0.18mm 1.5mm;
+  font-size: 7.7pt;
+  line-height: 1.12;
+}
+
+.qv-d th:first-child,
+.qv-d td:first-child {
+  width: 7mm;
+  text-align: center;
+}
+
+.qv-pilha {
+  display: grid;
+  gap: 1.6mm;
+  align-content: start;
+}
+
+.qv-baixo {
+  margin-top: 1.4mm;
+}
+
+.qv-mestre {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3mm;
+}
+
+.qv-folha .qv-mestre .fh-campo {
+  min-height: 13mm;
+}

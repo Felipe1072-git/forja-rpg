@@ -22,6 +22,8 @@ Para criar um personagem, siga as seções deste capítulo e anote na ficha:
 
 **Antecedente.** Sua vida antes da aventura. Dá vantagem em testes ligados a ele.
 
+**História.** O que você quer, o que esconde e quem vai sentir sua falta. Veja [Quem É Você?](quem-e-voce.md).
+
 **Atributos.** Força, Destreza, Constituição, Inteligência, Sabedoria e Carisma.
 
 **PV.** Pontos de Vida.

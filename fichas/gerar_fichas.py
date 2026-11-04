@@ -10,6 +10,7 @@ Uso, na raiz do projeto:
 """
 import os
 import pathlib
+import re
 import shutil
 import subprocess
 import sys
@@ -809,6 +810,73 @@ def ficha_mundo():
     return documento('Ficha de Mundo', folha)
 
 
+# ------------------------------------------------------------ quem é você (história do personagem)
+
+def qv_secao(nome):
+    """Linhas de uma seção de docs/personagem/quem-e-voce.md, a fonte das perguntas e tabelas."""
+    texto = (RAIZ / 'docs' / 'personagem' / 'quem-e-voce.md').read_text(encoding='utf-8')
+    m = re.search(rf'^#+ {nome}\n(.*?)(?=^#|\Z)', texto, re.M | re.S)
+    return m.group(1).splitlines()
+
+
+def qv_negrito(texto):
+    return re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', texto)
+
+
+def qv_perguntas(nome):
+    return [m.group(1) for m in (re.match(r'\d+\. (.+)', l) for l in qv_secao(nome)) if m]
+
+
+def qv_tabela(nome, cls=''):
+    linhas = [[c.strip() for c in l.strip('|').split('|')]
+              for l in qv_secao(nome) if l.startswith('|') and not l.startswith('|---')]
+    th = ''.join(f'<th>{c}</th>' for c in linhas[0])
+    tr = ''.join('<tr>' + ''.join(f'<td>{qv_negrito(c)}</td>' for c in l) + '</tr>' for l in linhas[1:])
+    return f'<table class="fx-tab qv-tab {cls}"><thead><tr>{th}</tr></thead><tbody>{tr}</tbody></table>'
+
+
+def ficha_quem_e_voce():
+    funil = ''.join(f'<li>{p}</li>' for p in qv_perguntas('No Funil'))
+    perguntas = ''.join(
+        f'<div class="qv-pergunta"><span>{p}</span></div>'
+        for p in qv_perguntas('As Perguntas') + ['Sobreviveu ao Funil? Quem não voltou, e o que você fez ou deixou de fazer?'])
+    folha = (
+        '<div class="fh-folha fx-folha qv-folha">'
+        '<header class="fh-topo fx-topo">' + LOGO +
+        '<div class="fh-titulo-folha">Quem É Você?</div>'
+        '<div class="mw-topo-campos">' + campo('Personagem') + campo('Jogador') + '</div>'
+        '</header>'
+        '<p class="fx-nota"><b>Como usar.</b> Seu antecedente diz o que você sabia fazer. Esta folha descobre o que você quer, '
+        'o que você esconde e quem vai sentir sua falta. Responda em uma linha e fique com a primeira ideia: o resto aparece jogando. '
+        'Empacou? Role ou escolha nas tabelas e mude o que quiser.</p>'
+        '<div class="fx-duas qv-duas">'
+        '<div>' + titulo('No Funil <span class="fx-dica">em voz alta, uma frase por personagem</span>') +
+        f'<ol class="qv-lista">{funil}</ol>'
+        '<p class="fx-nota">O resto fica para quem sobreviver.</p></div>'
+        '<div>' + titulo('O Conceito <span class="fx-dica">no nível 1, em uma frase</span>') +
+        '<div class="qv-conceito"><div><b>Sou</b><i></i></div><div><b>que quer</b><i></i></div><div><b>mas</b><i></i></div></div>'
+        '<p class="fx-nota"><em>Sou um coveiro que quer ver o mar, mas deve a vida a quem não devia.</em></p></div>'
+        '</div>'
+        + titulo('As Perguntas') +
+        f'<div class="qv-perguntas">{perguntas}</div>'
+        + titulo('Ideias <span class="fx-dica">role ou escolha · se isso complicar sua vida em cena, '
+                 'é boa interpretação: o Mestre pode dar Inspiração</span>') +
+        '<div class="fx-duas qv-duas">'
+        '<div>' + qv_tabela('Tropes', 'qv-d') + '</div>'
+        '<div class="qv-pilha">' + qv_tabela('Motivações', 'qv-d') + qv_tabela('Laços', 'qv-d') + '</div>'
+        '</div>'
+        '<div class="fx-duas qv-duas qv-baixo">'
+        '<div>' + qv_tabela('Segredos', 'qv-d') + '</div>'
+        '<div>' + qv_tabela('Manias', 'qv-d') + '</div>'
+        '</div>'
+        + titulo('Para o Mestre <span class="fx-dica">entregue estas três; escreva sabendo que serão usadas · '
+                 'conte seu segredo só ao Mestre, se quiser</span>') +
+        '<div class="qv-mestre">' + campo('Uma pessoa querida') + campo('Um inimigo') + campo('Um lugar') + '</div>'
+        '</div>'
+    )
+    return documento('Quem É Você?', folha)
+
+
 # ------------------------------------------------------------ impressão
 
 def achar_chrome():
@@ -836,7 +904,7 @@ def main():
         ('ficha-personagem', ficha_personagem), ('ficha-funil', ficha_funil),
         ('referencia-jogador', referencia_jogador), ('referencia-mestre', referencia_mestre),
         ('guia-criacao', guia_criacao), ('ficha-exploracao', ficha_exploracao),
-        ('ficha-mundo', ficha_mundo),
+        ('ficha-mundo', ficha_mundo), ('ficha-quem-e-voce', ficha_quem_e_voce),
     ]
     for nome, gerar in fichas:
         html = BUILD / f'{nome}.html'
