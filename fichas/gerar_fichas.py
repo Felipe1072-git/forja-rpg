@@ -835,46 +835,60 @@ def qv_tabela(nome, cls=''):
     return f'<table class="fx-tab qv-tab {cls}"><thead><tr>{th}</tr></thead><tbody>{tr}</tbody></table>'
 
 
+def qv_linha(texto):
+    return f'<div class="qv-pergunta"><span>{texto}</span></div>'
+
+
+def qv_cartao(n, perguntas):
+    return (
+        f'<div class="qv-cartao"><div class="qv-nome"><span class="fh-num">{n}</span>' + campo('Nome') + '</div>'
+        + ''.join(qv_linha(p) for p in perguntas) + qv_linha('Se morreu, como?') + '</div>'
+    )
+
+
 def ficha_quem_e_voce():
-    funil = ''.join(f'<li>{p}</li>' for p in qv_perguntas('No Funil'))
-    perguntas = ''.join(
-        f'<div class="qv-pergunta"><span>{p}</span></div>'
-        for p in qv_perguntas('As Perguntas') + ['Sobreviveu ao Funil? Quem não voltou, e o que você fez ou deixou de fazer?'])
-    folha = (
+    funil = qv_perguntas('No Funil')
+    frente = (
         '<div class="fh-folha fx-folha qv-folha">'
         '<header class="fh-topo fx-topo">' + LOGO +
         '<div class="fh-titulo-folha">Quem É Você?</div>'
-        '<div class="mw-topo-campos">' + campo('Personagem') + campo('Jogador') + '</div>'
+        '<div class="qv-topo-campo">' + campo('Jogador') + '</div>'
         '</header>'
-        '<p class="fx-nota"><b>Como usar.</b> Seu antecedente diz o que você sabia fazer. Esta folha descobre o que você quer, '
-        'o que você esconde e quem vai sentir sua falta. Responda em uma linha e fique com a primeira ideia: o resto aparece jogando. '
-        'Empacou? Role ou escolha nas tabelas e mude o que quiser.</p>'
-        '<div class="fx-duas qv-duas">'
-        '<div>' + titulo('No Funil <span class="fx-dica">em voz alta, uma frase por personagem</span>') +
-        f'<ol class="qv-lista">{funil}</ol>'
-        '<p class="fx-nota">O resto fica para quem sobreviver.</p></div>'
-        '<div>' + titulo('O Conceito <span class="fx-dica">no nível 1, em uma frase</span>') +
+        '<p class="fx-nota"><b>Como usar.</b> Responda em uma linha e fique com a primeira ideia: o resto aparece jogando. '
+        'Empacou? Vire a folha: as tabelas do verso dão ideias para rolar ou escolher.</p>'
+        '<div class="qv-faixa">Nível 0: os 4 do Funil <span>uma frase para cada; não pense muito, eles podem morrer em 20 minutos</span></div>'
+        '<div class="qv-cartoes">' + ''.join(qv_cartao(n, funil) for n in range(1, 5)) + '</div>'
+        '<div class="qv-faixa">Nível 1: quem avança <span>o sobrevivente que você escolher, ou seu personagem, se o jogo já começa no nível 1</span></div>'
+        '<div class="qv-nivel1">'
+        '<div class="qv-mestre">' + campo('Nome') + campo('Classe') + campo('Ancestralidade') + '</div>'
+        + titulo('O Conceito <span class="fx-dica">uma frase: sou um coveiro, que quer ver o mar, mas deve a vida a quem não devia</span>') +
         '<div class="qv-conceito"><div><b>Sou</b><i></i></div><div><b>que quer</b><i></i></div><div><b>mas</b><i></i></div></div>'
-        '<p class="fx-nota"><em>Sou um coveiro que quer ver o mar, mas deve a vida a quem não devia.</em></p></div>'
-        '</div>'
         + titulo('As Perguntas') +
-        f'<div class="qv-perguntas">{perguntas}</div>'
-        + titulo('Ideias <span class="fx-dica">role ou escolha · se isso complicar sua vida em cena, '
-                 'é boa interpretação: o Mestre pode dar Inspiração</span>') +
-        '<div class="fx-duas qv-duas">'
-        '<div>' + qv_tabela('Tropes', 'qv-d') + '</div>'
-        '<div class="qv-pilha">' + qv_tabela('Motivações', 'qv-d') + qv_tabela('Laços', 'qv-d') + '</div>'
-        '</div>'
-        '<div class="fx-duas qv-duas qv-baixo">'
-        '<div>' + qv_tabela('Segredos', 'qv-d') + '</div>'
-        '<div>' + qv_tabela('Manias', 'qv-d') + '</div>'
-        '</div>'
-        + titulo('Para o Mestre <span class="fx-dica">entregue estas três; escreva sabendo que serão usadas · '
-                 'conte seu segredo só ao Mestre, se quiser</span>') +
+        '<div class="qv-perguntas">' + ''.join(qv_linha(p) for p in qv_perguntas('As Perguntas')) +
+        qv_linha('Veio do Funil? Quem não voltou, e o que você fez ou deixou de fazer?') + '</div>'
+        + titulo('Da Tabela <span class="fx-dica">role ou escolha no verso; o segredo você conta só ao Mestre, se quiser</span>') +
+        '<div class="qv-quatro">' + campo('Trope') + campo('Motivação') + campo('Segredo') + campo('Mania') + '</div>'
+        + titulo('Laço <span class="fx-dica">com o personagem do jogador à sua esquerda</span>') +
+        '<div class="qv-laco">' + campo('Com quem') + campo('Qual') + '</div>'
+        + titulo('Para o Mestre <span class="fx-dica">escreva sabendo que serão usadas</span>') +
         '<div class="qv-mestre">' + campo('Uma pessoa querida') + campo('Um inimigo') + campo('Um lugar') + '</div>'
         '</div>'
+        '</div>'
     )
-    return documento('Quem É Você?', folha)
+    verso = (
+        '<div class="fh-folha fx-folha qv-folha qv-verso">'
+        '<header class="fh-topo fx-topo">' + LOGO +
+        '<div class="fh-titulo-folha">Ideias</div>'
+        '</header>'
+        '<p class="fx-nota"><b>Role ou escolha, e mude o que quiser.</b> Quando seu segredo, sua mania ou seu juramento complicar sua vida em cena, '
+        'isso é boa interpretação: o Mestre pode dar Inspiração.</p>'
+        '<div class="fx-duas qv-duas">'
+        '<div class="qv-pilha">' + qv_tabela('Tropes', 'qv-d') + qv_tabela('Laços', 'qv-d') + '</div>'
+        '<div class="qv-pilha">' + qv_tabela('Motivações', 'qv-d') + qv_tabela('Segredos', 'qv-d') + qv_tabela('Manias', 'qv-d') + '</div>'
+        '</div>'
+        '</div>'
+    )
+    return documento('Quem É Você?', frente + verso)
 
 
 # ------------------------------------------------------------ impressão

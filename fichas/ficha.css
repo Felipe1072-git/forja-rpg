@@ -1085,17 +1085,69 @@ body {
   grid-template-columns: 1fr 1fr;
 }
 
-.qv-lista {
-  margin: 0.8mm 0 0.6mm;
-  padding-left: 4.5mm;
-  font-size: 8.6pt;
-  line-height: 1.25;
+.qv-topo-campo {
+  min-width: 0;
+}
+
+.qv-faixa {
+  font-family: "IM Fell English SC", "EB Garamond", Georgia, serif;
+  font-size: 12pt;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  background: var(--fh-tinta);
+  color: #fff;
+  padding: 1mm 2mm 0.8mm;
+  margin: 2mm 0 1.6mm;
+}
+
+.qv-faixa span {
+  font-family: "EB Garamond", Georgia, serif;
+  font-style: italic;
+  font-size: 8pt;
+  letter-spacing: 0;
+  margin-left: 2mm;
+}
+
+.qv-cartoes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2mm 3mm;
+}
+
+.qv-cartao {
+  border: 2px solid var(--fh-tinta);
+  padding: 1mm 2mm 1.6mm;
+}
+
+.qv-nome {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.5mm;
+  margin-bottom: 0.6mm;
+}
+
+.qv-nome .fh-campo {
+  flex: 1;
+  min-height: 6.4mm;
+}
+
+.qv-cartao .qv-pergunta {
+  min-height: 7.6mm;
+}
+
+.qv-nivel1 {
+  border: 2px solid var(--fh-tinta);
+  padding: 1.4mm 2.4mm 2mm;
+}
+
+.qv-folha .qv-nivel1 .fh-secao {
+  margin: 1.8mm 0 1mm;
 }
 
 .qv-conceito {
   display: grid;
-  gap: 1.6mm;
-  margin: 1mm 0 0.8mm;
+  gap: 2mm;
+  margin: 0;
   font-size: 8.6pt;
 }
 
@@ -1124,7 +1176,7 @@ body {
   line-height: 1.1;
 }
 
-.qv-pergunta:last-child {
+.qv-perguntas .qv-pergunta:last-child {
   grid-column: 1 / -1;
 }
 
@@ -1147,16 +1199,43 @@ body {
   align-content: start;
 }
 
-.qv-baixo {
-  margin-top: 1.4mm;
-}
-
 .qv-mestre {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 3mm;
 }
 
-.qv-folha .qv-mestre .fh-campo {
-  min-height: 13mm;
+.qv-quatro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8mm 4mm;
+}
+
+.qv-laco {
+  display: grid;
+  grid-template-columns: 1fr 2.4fr;
+  gap: 3mm;
+}
+
+.qv-folha .qv-nivel1 .fh-campo {
+  min-height: 8mm;
+}
+
+.qv-verso .fx-nota {
+  font-size: 9pt;
+  margin: 1mm 0 2.4mm;
+}
+
+.qv-verso table.qv-tab td {
+  padding: 1mm 1.5mm;
+  font-size: 9.2pt;
+  line-height: 1.14;
+}
+
+.qv-verso th {
+  font-size: 8.6pt;
+}
+
+.qv-verso .qv-pilha {
+  gap: 3mm;
 }

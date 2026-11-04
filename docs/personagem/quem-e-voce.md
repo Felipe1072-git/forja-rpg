@@ -4,14 +4,11 @@ Seu antecedente diz o que você sabia fazer. Esta página descobre o que você q
 
 Responda em uma linha. Fique com a primeira ideia: o resto aparece jogando. Empacou? Role ou escolha nas tabelas.
 
-<div class="fj-pdf-acoes">
-<a class="md-button md-button--primary" href="../../assets/fichas/ficha-quem-e-voce.pdf" target="_blank" rel="noopener">Abrir para imprimir</a>
-<a class="md-button" href="../../assets/fichas/ficha-quem-e-voce.pdf" download>Baixar PDF</a>
-</div>
+[Ver a ficha para imprimir](../fichas/quem-e-voce.md){ .md-button .md-button--primary }
 
 ## No Funil
 
-Ninguém escreve biografia para quem pode morrer em 20 minutos. No nível 0, responda em voz alta, uma frase por personagem:
+Ninguém escreve biografia para quem pode morrer em 20 minutos. No nível 0, responda uma frase por personagem:
 
 1. Por que você está aqui, e não em casa?
 2. O que você carrega e não quer perder?
