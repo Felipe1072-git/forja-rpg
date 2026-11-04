@@ -1059,6 +1059,51 @@ def ficha_plano():
     return documento('O Plano', frente + verso)
 
 
+# ------------------------------------------------------------ cemitério do funil
+
+CEMITERIO = 'fichas/cemiterio.md'
+
+
+def cm_lapide():
+    return (
+        '<div class="cm-lapide"><div class="cm-aqui">Aqui Jaz</div>'
+        + campo('Nome') + campo('Como morreu') + campo('Últimas palavras') + campo('Epitáfio (outro jogador escreve)') +
+        '</div>'
+    )
+
+
+def ficha_cemiterio():
+    premios = qv_linhas(qv_secao('Prêmios', CEMITERIO))
+    premios = [premios[0] + ['Vencedor']] + [l + [''] for l in premios[1:]]
+    frente = (
+        '<div class="fh-folha fx-folha qv-folha cm-frente">'
+        '<header class="fh-topo fx-topo">' + LOGO +
+        '<div class="fh-titulo-folha">Cemitério do Funil</div>'
+        '<div class="mw-topo-campos">' + campo('Lugar') + campo('Data') + '</div>'
+        '</header>'
+        '<p class="fx-nota"><b>Quando alguém morre,</b> o jogador escreve o nome, como morreu e as últimas palavras. Outro jogador escreve o epitáfio. '
+        'Empacou? Vire a folha.</p>'
+        '<div class="cm-lapides">' + cm_lapide() * 12 + '</div>'
+        '</div>'
+    )
+    verso = (
+        '<div class="fh-folha fx-folha qv-folha qv-verso cm-verso">'
+        '<header class="fh-topo fx-topo">' + LOGO +
+        '<div class="fh-titulo-folha">Para os Mortos</div>'
+        '</header>'
+        '<p class="fx-nota"><b>Role ou escolha.</b> No fim do Funil, leiam as lápides em voz alta e votem nos prêmios. Os prêmios só valem a glória.</p>'
+        '<div class="fx-duas qv-duas">'
+        '<div>' + qv_render(qv_linhas(qv_secao('Últimas Palavras', CEMITERIO)), 'qv-d') + '</div>'
+        '<div>' + qv_render(qv_linhas(qv_secao('Epitáfios', CEMITERIO)), 'qv-d') + '</div>'
+        '</div>'
+        + titulo('Os Prêmios') + qv_render(premios, 'cm-premios')
+        + titulo('Quem Saiu Vivo <span class="fx-dica">quem avança ao nível 1 leva isso para a ficha Quem É Você?</span>')
+        + fx_vazia(['Nome', 'Jogador', 'O que viu e não esquece'], 4, 'cm-vivos') +
+        '</div>'
+    )
+    return documento('Cemitério do Funil', frente + verso)
+
+
 # ------------------------------------------------------------ impressão
 
 def achar_chrome():
@@ -1088,6 +1133,7 @@ def main():
         ('guia-criacao', guia_criacao), ('ficha-exploracao', ficha_exploracao),
         ('ficha-mundo', ficha_mundo), ('ficha-quem-e-voce', ficha_quem_e_voce),
         ('ficha-divindade', ficha_divindade), ('ficha-plano', ficha_plano),
+        ('ficha-cemiterio', ficha_cemiterio),
     ]
     for nome, gerar in fichas:
         html = BUILD / f'{nome}.html'

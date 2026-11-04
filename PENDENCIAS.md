@@ -119,4 +119,5 @@ Dúvidas de regra em aberto. Remova o item quando for resolvido e aplicado no te
 - **Medo e horror do 5e viram dano de Sanidade** (o autor pediu; os valores são sugestão): teste de Sanidade contra a CD convertida, falha = efeito + dano, sucesso = nada (decisão do autor); medo comum = Terror (1, ou 1d4 sobrenatural), tortura/pesadelo/magia mental 1d6, horror cósmico 2d6; efeitos mentais que derrubam a 0 PV viram 2d6 de Sanidade.
 - **Ficha de Mundo** (o autor pediu construção de mundo em grupo na primeira sessão; o conteúdo é sugestão): campos de mundo e cidade, 6 deuses, povos, voto em tipo e tom de aventura (até 2 marcas), gancho de cada jogador.
 - **O Plano** (o autor pediu a folha; o conteúdo é sugestão): campos do plano do grupo, 8 perguntas, d20 de truques, d12 do que pode dar errado. Só ideias, sem regra nova; o resumo de regras repete Exploração, O Básico, Combate e Equipamento.
+- **Cemitério do Funil** (o autor pediu a folha; o conteúdo é sugestão): 12 lápides, d20 de últimas palavras, d20 de epitáfios, 6 prêmios por voto que só valem a glória.
 - **Todas as tabelas de 08-geradores.md.**
