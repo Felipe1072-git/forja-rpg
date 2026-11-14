@@ -131,6 +131,8 @@ Uma entrada por sessão, com a data na mesa e a data em Aethelgard.
 
 ### Sessão 1: O Sino da Capela
 
+![A luta na cripta maior: o draconato paladino, o gnomo mago, o sacerdote humano e o anão ferreiro enfrentam soldados drows, enquanto um demônio alado leva Velistra pela fenda](../assets/images/aethelgard/sessao-1.webp){ .fj-arte .fj-arte-cena loading=lazy }
+
 **Na mesa.** 8 de novembro de 2026. Funil, nível 0.
 
 **Em Aethelgard.** 8 de November de 248.

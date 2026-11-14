@@ -120,3 +120,34 @@ Symbol: [SÍMBOLO]
 | Divindade | Arquivo | Linha para [SÍMBOLO] |
 |---|---|---|
 | Woltander (Aethelgard) | aethelgard/woltander | A straight longsword pointing down, its blade driven into a flat horizon line; a half sun rises from the horizon behind the crossguard, with straight rays fanning out. The crossguard and the horizon together suggest a cross, but it must not look like a Christian cross. |
+
+## Cenas de Sessão
+
+Uma arte por sessão para o Diário de cada campanha, feita a partir das miniaturas da mesa. Proporção **3:2** horizontal no Gemini. Mande primeiro o prompt completo; se ele embolar os personagens, peça ajustes um por vez ("Make the dwarf bald with a grey beard", "Remove the extra drow"). Salve como `docs/assets/images/<campanha>/sessao-<n>.webp`. No Diário, logo depois do título da sessão:
+
+```markdown
+![Descrição curta da cena](../assets/images/aethelgard/sessao-1.webp){ .fj-arte .fj-arte-cena loading=lazy }
+```
+
+### Aethelgard, Sessão 1: a luta na cripta maior
+
+```text
+Black and white pen-and-ink illustration for an old-school fantasy RPG rulebook, in the gritty OSR style of books like Shadowdark: bold black ink lines, heavy solid blacks, crosshatching and stippling for shadows, rough hand-drawn texture, high contrast, no gray tones, no color.
+
+Composition: one wide action scene, horizontal 3:2 format. Four heroes on the left fight a band of dark elves on the right, in an ancient underground crypt. The edges of the scene fade into pure flat white (#FFFFFF): no paper texture, no beige, no frame, no border.
+
+No text, no letters, no logo, no signature, no watermark.
+
+Setting: a large stone crypt under an abandoned chapel. Broken sarcophagi, scattered skeleton bones on the floor, a thick bell rope hanging from a hole in the vaulted ceiling. At the back, a jagged crack in the floor glows like a portal into the darkness below. Light comes only from a fireball and a glowing staff, casting hard black shadows.
+
+The heroes:
+1. A dragonborn paladin in front: a reptilian dragon head with swept-back horns and fierce eyes, heavy plate armor with a scale pattern, a long cloak, a tall kite shield raised on one arm, a broad longsword in the other hand.
+2. A tiny gnome wizard behind the paladin: a huge floppy pointed wizard hat with a bent tip, layered robes, hurling a ball of fire from both hands.
+3. An old, gaunt human priest: long grey beard, a hood, ragged robes wrapped in cloth strips, prayer beads at the belt, raising a tall metal-capped staff that shines with holy light. A holy symbol on the chest: a sword pointing down in front of a rising sun.
+4. A stocky bald dwarf smith: thick grey beard, bare muscular arms, a heavy leather blacksmith's apron, a forge hammer in one hand and a heavy tool in the other.
+
+The enemies (drow, dark elves): skin rendered in solid black ink, wild white hair, glowing eyes, spiked dark armor and tattered cloaks.
+- One drow soldier charges with two curved swords.
+- One drow soldier kneels, aiming a hand crossbow.
+- Behind them, the drow sorceress Velistra, wounded, retreats toward the glowing crack in the floor, holding a staff topped with a spiked iron ring. Above her, a demon with huge ragged feathered wings swoops down to carry her away.
+```

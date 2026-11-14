@@ -147,6 +147,18 @@
   mix-blend-mode: screen;
 }
 
+/* cena em nanquim (Diário das campanhas): como a arte de classe, mas larga */
+.md-typeset img.fj-arte-cena {
+  border: none;
+  box-shadow: none;
+  mix-blend-mode: multiply;
+}
+
+[data-md-color-scheme="slate"] .md-typeset img.fj-arte-cena {
+  filter: invert(1);
+  mix-blend-mode: screen;
+}
+
 /* "**Regra.** texto": o negrito de abertura vira cabeçalho de bloco */
 .md-typeset p > strong:first-child {
   font-variant: small-caps;
