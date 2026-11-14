@@ -1,10 +1,14 @@
 # A Cidade Perdida
 
+![D&D The Lost City](../assets/images/cidade-perdida/logo.webp){ .fj-arte .fj-arte-logo }
+
 Um destino da campanha Aethelgard (veja Para Onde Agora? em [Aethelgard](aethelgard.md)).
 
 ## A Proposta
 
 A sudoeste do lago, a terra seca e vira o Deserto de Pedra: rochedos, cânions e areia. Dizem que a areia engoliu uma cidade inteira. Só o topo de uma pirâmide de degraus aparece acima das dunas.
+
+![Uma pirâmide de degraus sob a lua, com estátuas no topo e uma figura de máscara dourada diante do fogo](../assets/images/cidade-perdida/piramide.webp){ .fj-arte .fj-arte-retrato loading=lazy }
 
 Primeiro, a viagem: atravessar a região, achar o caminho e sobreviver ao deserto. Depois, a pirâmide e o que houver embaixo dela.
 
@@ -24,3 +28,5 @@ Boatos do porto e das fazendas. Alguns são verdade.
 - Os reis da cidade foram enterrados com o seu ouro, e com armadilhas para quem viesse buscá-lo.
 - Os antigos de lá adoravam um deus que ninguém mais lembra. Talvez ele ainda se lembre deles.
 - Bichos do deserto crescem demais por lá: escorpiões, besouros, lagartos.
+
+![Figuras de máscara e túnicas estreladas ao redor de uma mesa de pedra partida](../assets/images/cidade-perdida/mascaras.webp){ .fj-arte loading=lazy }
