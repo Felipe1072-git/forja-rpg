@@ -96,3 +96,27 @@ People: [ANCESTRALIDADE]
 | Tiefling | tiefling | Tieflings: large curved horns, blank pupil-less eyes and sly smiles, tail tips curling over the shoulders. |
 | Goblin | goblin | Goblins: huge ears, sharp crooked teeth, wide nervous eyes; one holds a dagger close to the face. |
 | Autômato | automato | Automatons: faces of riveted metal plates, glowing eye slits, visible gears and cables at the neck; one with a broad, heavy build, the other with a slender, graceful build. |
+
+## Símbolos de Divindades
+
+Símbolos sagrados para os cartões de divindade das campanhas. Escolha a proporção **1:1** no Gemini. Salve como `docs/assets/images/<campanha>/<arquivo>.webp` (mesmo tratamento das classes). No cartão, ponha a arte logo depois da epígrafe; ela vai para o canto direito, ao lado do título:
+
+```markdown
+![Símbolo de Woltander](../assets/images/aethelgard/woltander.webp){ .fj-arte-ancestral loading=lazy }
+```
+
+```text
+Black and white pen-and-ink holy symbol for an old-school fantasy RPG rulebook, in the gritty OSR style of books like Shadowdark: bold black ink lines, solid blacks, rough hand-drawn texture, high contrast, no gray tones, no color.
+
+Composition: a single emblem, centered, square 1:1 format, with empty space around it. Simple, strong, symmetrical shapes that still read clearly when printed small (about 4 cm wide), like a symbol carved on a shield or stamped on a medallion.
+
+Background: pure flat white (#FFFFFF) everywhere outside the drawing. No paper texture, no beige, no gradient, no vignette, no frame, no border, no circle behind the emblem.
+
+No text, no letters, no logo, no signature, no watermark.
+
+Symbol: [SÍMBOLO]
+```
+
+| Divindade | Arquivo | Linha para [SÍMBOLO] |
+|---|---|---|
+| Woltander (Aethelgard) | aethelgard/woltander | A straight longsword pointing down, its blade driven into a flat horizon line; a half sun rises from the horizon behind the crossguard, with straight rays fanning out. The crossguard and the horizon together suggest a cross, but it must not look like a Christian cross. |
