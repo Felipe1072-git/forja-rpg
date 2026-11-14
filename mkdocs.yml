@@ -135,5 +135,7 @@ nav:
     - Cemitério do Funil: fichas/cemiterio.md
   - Gerador: gerador.md
   - Campanhas:
-    - A Cidadela Escarlate: campanhas/cidadela-escarlate.md
-    - Aethelgard: campanhas/aethelgard.md
+    - Aethelgard:
+      - Guia da Campanha: campanhas/aethelgard.md
+      - A Cidadela Escarlate: campanhas/cidadela-escarlate.md
+      - A Cidade Perdida: campanhas/cidade-perdida.md

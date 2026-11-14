@@ -98,13 +98,23 @@ A cidade inicial. Fica perto da costa e vive de exportar café.
 
 Uma região de Drayone. Java fica no leste, perto da costa, cercada pelas fazendas de café.
 
-![Mapa da região, em hexágonos, com Java marcada no leste, na costa](../assets/images/aethelgard/mapa-drayone.webp){ .fj-arte loading=lazy }
+![Mapa da região, em hexágonos: Java no leste, Torre Vermelha e a Floresta Branca ao norte do lago, o Deserto de Pedra a sudoeste](../assets/images/aethelgard/mapa-drayone.webp){ .fj-arte loading=lazy }
 
 Mapa de [Dyson Logos](https://dysonlogos.com).
 
 ## O Grupo
 
 **Como se conheceram.** Nas fazendas de Java.
+
+**Nível 1.** Um draconato paladino, um gnomo mago, um humano sacerdote e um anão ferreiro de guerra. Um lobo do mar chega na próxima sessão.
+
+## Para Onde Agora?
+
+Java está em paz, por enquanto. O grupo escolhe o próximo destino. Os dois ficam no mapa da região.
+
+**A Cidadela Escarlate.** A oeste, na borda da Floresta Branca, a vila de Torre Vermelha vive de quem desce às ruínas de um castelo vermelho. Há tesouro lá embaixo, e gente que não volta. Veja [A Cidadela Escarlate](cidadela-escarlate.md).
+
+**A Cidade Perdida.** A sudoeste, além do lago, o Deserto de Pedra esconde uma cidade engolida pela areia. Só o topo de uma pirâmide aparece. Veja [A Cidade Perdida](cidade-perdida.md).
 
 ## Linha do Tempo
 
