@@ -14,7 +14,9 @@ Primeiro, a viagem: atravessar a região, achar o caminho e sobreviver ao desert
 
 ## Como Chegar
 
-O Deserto de Pedra fica a uns 15 hexágonos a sudoeste de Java, do outro lado do lago (veja Viagem). Ninguém em Java sabe o hexágono exato da pirâmide.
+O Deserto de Pedra fica a uns 14 hexágonos a sudoeste de Java, do outro lado do lago (veja Viagem). Ninguém em Java sabe o hexágono exato da pirâmide. Os boatos apontam para os hexágonos marcados em azul.
+
+![Mapa da região com sete hexágonos do Deserto de Pedra marcados em azul, a sudoeste do lago](../assets/images/aethelgard/mapa-cidade-perdida.webp){ .fj-arte loading=lazy }
 
 **Água.** O deserto tem pouca. Leve para a ida e para a volta.
 
