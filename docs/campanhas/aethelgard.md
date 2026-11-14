@@ -52,6 +52,8 @@ Por enquanto, o grupo criou uma só divindade. Todo sacerdote e paladino da camp
 Deus da justiça, da luz e do sol nascente.
 { .epigrafe }
 
+![Símbolo de Woltander: uma espada cravada no horizonte, diante do sol nascente](../assets/images/aethelgard/woltander.svg){ .fj-arte-ancestral loading=lazy }
+
 **Entidade.** Deus da justiça.
 
 **Tendência.** Bem e Ordem.
