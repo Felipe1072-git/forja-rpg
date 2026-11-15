@@ -2,7 +2,7 @@
 
 ## Encontros
 
-**Frequência.** A cada 2 turnos de exploração, role 1d6. Com 1, acontece um encontro. Barulho alto também pede uma rolagem. Em viagem e descanso, use a tabela de Perigo (veja Descanso).
+**Frequência.** A cada 2 turnos de exploração, role 1d6. Com 1, acontece um encontro. Barulho alto também pede uma rolagem. Em viagem, veja Encontros em Viagem. Em descanso, use a tabela de Perigo (veja Descanso).
 
 **Distância e atividade.** Role para saber onde está a criatura e o que ela faz.
 
@@ -33,6 +33,18 @@
 
 **Moral.** Veja Moral em Combate.
 
+## Preparando Viagens
+
+**A pilha.** Para cada região, prepare 6 encontros ruins e 6 bons, já com terreno e miniaturas. Quando a rolagem de viagem der encontro, role 1d6 na pilha certa. Se o número já saiu, ou o encontro não combina com o lugar ou a hora, pegue o próximo. A rolagem decide qual e quando, nunca se você tem o material.
+
+**Cada encontro puxa um fio.** Termine cada um com um achado: uma pista, um rosto conhecido, um aviso sobre o destino. Um encontro que vira gancho merece uma página própria.
+
+**Um cartão por dia.** Anote os trechos do dia (manhã, tarde, noite), o perigo de cada um e o tempo que saiu. Marque cada rolagem.
+
+**Estranho com resposta.** Para cada resultado estranho do tempo, escreva em uma linha o que ele é. Na mesa, alguém vai perguntar.
+
+**Aliados.** Num encontro bom, alguém pode se juntar ao grupo: um teste de Carisma, se o grupo pedir e convencer. Dê um nome, um motivo e uma ficha curta.
+
 ## Sanidade
 
 Situações de estresse causam dano à Sanidade. A vítima faz um teste com o seu maior atributo mental (Inteligência, Sabedoria ou Carisma), CD 12. Com sucesso, não perde Sanidade.
@@ -48,6 +60,14 @@ Situações de estresse causam dano à Sanidade. A vítima faz um teste com o se
 | Ver um ser antigo ou uma divindade em sua forma real | 3d6 |
 
 **Costume.** A mesma situação só causa dano na primeira vez em cada aventura.
+
+**Horror que persiste.** Uma ameaça que não vai embora (névoa que chama, vozes, uma maldição) não vira costume. Peça um teste a cada turno de exploração, ou a cada trecho de viagem, até o grupo sair dela.
+
+**Sem sono.** Quem falha à noite contra um horror que persiste não dorme: fica sem descanso longo e não recupera Sanidade.
+
+**Falhas em sequência.** Quem falha três vezes seguidas contra o mesmo horror perde mais 1d6 e age contra a vontade: foge, ou corre para a fonte do horror.
+
+**Marca que fica.** Uma visão forte pode tirar Sanidade máxima por um tempo, como uma semana, em vez de Sanidade.
 
 ## Armadilhas
 

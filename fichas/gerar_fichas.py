@@ -423,6 +423,7 @@ def referencia_mestre():
                   ['Ser antigo ou divindade em forma real', '3d6'],
               ]),
               regra('Colapso', 'Em 0: CD 10 com o maior atributo mental, uma vez, ou morre. Passou: virtude até o descanso longo, depois trauma.'),
+              regra('Persiste', 'Horror que não vai embora: teste a cada turno ou trecho. Falhou à noite: sem descanso longo.'),
               regra('Monstros', 'Sem Sanidade: dano de Sanidade neles vira teste de Moral.')),
         bloco('Dano improvisado',
               quadro(['Gravidade', 'Dano', 'Exemplos'], [
@@ -478,7 +479,12 @@ def referencia_mestre():
         bloco('Viagem',
               '<p>Hexágono de 10 km:</p>',
               linha(['A pé', 'Montado', 'Navegando', 'Difícil', 'Árduo'], ['4 h', '2 h', '1 h', 'o dobro', '8 h']),
-              regra('Ritmo', 'Até 8 h por dia. Encontros pela tabela de Perigo.'),
+              regra('Ritmo', 'Até 8 h por dia: manhã e tarde. A pé, 2 hexágonos por dia.'),
+              '<p><b>Encontros.</b> 1d6 por hexágono e por noite:</p>',
+              quadro(['Perigo', 'Ruim', 'Bom'], [['Seguro', '—', '5–6'], ['Inseguro', '1', '5–6'],
+                                                 ['Arriscado', '1–2', '6'], ['Mortal (2 rolagens)', '1–3', '—']]),
+              regra('Tempo', '2d6 ao amanhecer. 2–3 e 11–12: estranho. 4: chuva, terreno difícil. 5: frio, sem fogo Con 10. '
+                             '6: garoa. 7–8: bom. 9: calor, armadura média+ Con 10. 10: ventania, desv. com arco.'),
               regra('Marcha forçada', 'Cada hora além de 8: Con CD 10, +2 por hora. Falhou: 1 de exaustão.'),
               regra('Navegação', 'Terreno desconhecido: Int ao sair do hexágono. Falhou: hexágono vizinho aleatório.'),
               regra('Comida', '3 dias sem ração; depois, 1 de exaustão por dia. Caçar: Int, 1 ração.')),
