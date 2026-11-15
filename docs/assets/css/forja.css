@@ -159,6 +159,21 @@
   mix-blend-mode: screen;
 }
 
+/* recorte de mapa com marcas em vermelho: o branco some no pergaminho;
+   no tema escuro inverte, e o giro de matiz mantém o vermelho vermelho */
+.md-typeset img.fj-arte-mapa {
+  display: block;
+  margin: 1.2em auto;
+  max-width: min(100%, 34rem);
+  height: auto;
+  mix-blend-mode: multiply;
+}
+
+[data-md-color-scheme="slate"] .md-typeset img.fj-arte-mapa {
+  filter: invert(1) hue-rotate(180deg);
+  mix-blend-mode: screen;
+}
+
 /* "**Regra.** texto": o negrito de abertura vira cabeçalho de bloco */
 .md-typeset p > strong:first-child {
   font-variant: small-caps;

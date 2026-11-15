@@ -33,7 +33,24 @@ O Mestre rola 1d6 ao entrar em cada hexágono e uma vez por noite de acampamento
 
 **Encontro bom.** Algo que ajuda: abrigo seguro, um mercador, notícias, um aliado, um atalho.
 
-**Exemplo.** A pé por uma região Arriscada, o Mestre rola três vezes por dia: de manhã, à tarde e à noite. Com 1–2, algo ruim; com 6, algo bom.
+### Exemplo
+
+![Recorte de um mapa de hexágonos: a rota sai de uma cidade (P), passa por dois hexágonos de planície e entra nos morros; os hexágonos 1 a 4 têm cor mais forte conforme o perigo, e uma lua marca os acampamentos](../assets/images/jogo/viagem-exemplo.webp){ .fj-arte-mapa loading=lazy }
+
+O grupo sai a pé da cidade (P): dois hexágonos por dia. Quanto mais forte a cor, maior o perigo. A lua marca onde o grupo acampa.
+
+| Quando | Hexágono | Terreno | Perigo | Rolagem |
+|---|---|---|---|---|
+| Dia 1, manhã | 1 | Planície | Seguro | ◯ |
+| Dia 1, tarde | 2 | Planície | Seguro | ◯ |
+| Noite | 2 | Planície | Seguro | ◯ |
+| Dia 2, manhã | 3 | Morros | Inseguro | ◯ |
+| Dia 2, tarde | 4 | Morros | Arriscado | ◯ |
+| Noite | 4 | Morros | Arriscado | ◯ |
+
+No hexágono 4, o Mestre tira 2: encontro ruim. Rola 1d6 na pilha de encontros ruins (veja Preparando Viagens) e sai uma matilha de lobos. À noite, tira 4: nada acontece.
+
+Mapa de [Dyson Logos](https://dysonlogos.com).
 
 ## Tempo
 
