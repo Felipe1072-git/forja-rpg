@@ -34,7 +34,7 @@ def mod(valor):
 
 
 def md(texto):
-    return markdown.markdown(texto, extensions=['tables'])
+    return markdown.markdown(texto, extensions=['tables', 'attr_list'])
 
 
 def ler_personagens():
@@ -239,6 +239,10 @@ html, body { margin: 0; padding: 0; background: #fff; }
 .en-lista li { padding-left: 6mm; text-indent: -6mm; margin-bottom: .9mm; break-inside: avoid; }
 .en-lista li::before { content: ""; display: inline-block; width: 3.4mm; height: 3.4mm; border: 1.3px solid #111;
   border-radius: .6mm; margin-right: 2.6mm; vertical-align: -.4mm; }
+.en-colunas .destaque { border: 2px solid #111; border-radius: 2mm; padding: 1.4mm 2.5mm; background: #eee;
+  break-inside: avoid; }
+.en-colunas h3 { font-family: "IM Fell English SC", serif; font-weight: normal; font-size: 11pt; letter-spacing: .04em;
+  margin: 2mm 0 .8mm; break-after: avoid; }
 .en-verso .en-colunas { column-count: 1; font-size: 12.8pt; line-height: 1.32; }
 .en-verso .en-colunas > p { break-inside: avoid; border: 1px solid #111; border-radius: 2mm; padding: 1.6mm 3mm; margin-bottom: 2.4mm; }
 .en-verso .en-colunas h2 { font-size: 14pt; }
@@ -260,15 +264,15 @@ def encontro(arquivo):
     texto = (AQUI / arquivo).read_text(encoding='utf-8')
     titulo, _, corpo = texto.partition('\n')
     titulo = titulo.lstrip('# ').strip()
-    frente, achou, verso = corpo.partition('\n## Criaturas')
-    verso = '## Criaturas' + verso
-
     def folha(conteudo, lado, cls=''):
         return (
             f'<section class="fh-folha {cls}"><header class="en-topo"><div>{gf.LOGO}<h1>{html.escape(titulo)}</h1></div>'
             f'<div class="en-lado">Material do Mestre · Evento APR<br>{lado}</div></header>'
             f'<div class="en-colunas">{md(conteudo)}</div></section>'
         )
+
+    frente, achou, verso = corpo.partition('\n## Criaturas')
+    verso = '## Criaturas' + verso
 
     if achou:
         corpo_html = folha(frente, 'Frente: a aventura') + folha(verso, 'Verso: criaturas e prisioneiros', 'en-verso')
