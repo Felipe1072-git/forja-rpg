@@ -17,3 +17,6 @@ __pycache__/
 
 # build do material do evento
 campanhas/evento-apr/build/
+
+# build do material do Mestre de Aethelgard (spoilers)
+campanhas/aethelgard/build/
