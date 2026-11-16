@@ -82,7 +82,7 @@
 
   function textoArma(a) { return a.nome + ' (' + a.dano + ', ' + a.tipo.toLowerCase() + ')'; }
   function textoArmadura(a) {
-    if (a.categoria === 'Escudo') return a.nome + ' (+2 de CA)';
+    if (a.categoria === 'Escudo') return a.nome + ' (' + a.ca + ' de CA)';
     const p = a.propriedades && a.propriedades !== '—' ? '; ' + a.propriedades.charAt(0).toLowerCase() + a.propriedades.slice(1) : '';
     return a.nome + ' (CA ' + a.ca + p + ')';
   }
@@ -90,6 +90,24 @@
   function caDaArmadura(a, des) {
     const m = a.ca.match(/(\d+)(\s*\+\s*Des)?/);
     return parseInt(m[1], 10) + (m[2] ? des : 0);
+  }
+
+  // Item da tabela de armaduras que está no equipamento. Pega o nome mais longo,
+  // para "Couro batido" não virar "Couro" nem "Escudo de torre" virar "Escudo".
+  function armaduraNoEquipamento(equip, escudo) {
+    return D.armaduras
+      .filter((a) => (a.categoria === 'Escudo') === escudo && equip.some((x) => x.toLowerCase().startsWith(a.nome.toLowerCase())))
+      .sort((a, b) => b.nome.length - a.nome.length)[0] || null;
+  }
+
+  // Melhor armadura do pacote para os atributos: a maior CA com a Força mínima cumprida;
+  // no empate, a mais barata.
+  function melhorArmadura(lista, atr) {
+    const des = atr ? mod(atr[1]) : 0;
+    const forca = atr ? atr[0] : 99;
+    const cumpre = lista.filter((a) => !(parseInt(a.forca, 10) > forca));
+    const op = cumpre.length ? cumpre : lista;
+    return op.slice().sort((a, b) => caDaArmadura(b, des) - caDaArmadura(a, des) || a.custo - b.custo)[0] || null;
   }
 
   // ---------------------------------------------------------------- geração
@@ -334,9 +352,9 @@
       pj.equipamento.push(textoArma(arma));
       if (/munição/.test(arma.propriedades)) pj.equipamento.push(/besta/i.test(arma.nome) ? 'Virotes (20)' : 'Flechas (20)');
     }
-    const armaduras = armadurasPermitidas(pj.classe).filter((a) => a.custo <= 15 && a.categoria !== 'Escudo');
+    const armaduras = armadurasPermitidas(pj.classe).filter((a) => a.custo <= 20 && a.categoria !== 'Escudo');
     if (armaduras.length && !traco(pj.anc, 'Blindagem integrada')) {
-      pj.armadura = armaduras.sort((a, b) => caDaArmadura(b, 0) - caDaArmadura(a, 0))[0];
+      pj.armadura = melhorArmadura(armaduras, pj.atr);
       pj.equipamento.push(textoArmadura(pj.armadura));
     }
   }
@@ -348,7 +366,8 @@
     let ca = 10 + des;
     if (pj.armadura) ca = Math.max(ca, caDaArmadura(pj.armadura, des));
     if (traco(pj.anc, 'Blindagem integrada')) ca = Math.max(ca, 13 + des);
-    if ((pj.equipamento || []).some((x) => /^escudo\b/i.test(x))) ca += 2;
+    const escudo = armaduraNoEquipamento(pj.equipamento || [], true);
+    if (escudo) ca += parseInt(escudo.ca, 10);
     const textos = pj.classe.regras.map(([, t]) => t)
       .concat(pj.habilidades.map((h) => pj.classe.habilidades[h.i].partes[0]));
     textos.forEach((t) => {
@@ -488,7 +507,7 @@
   function armasDoPacote(classe) { return D.armas.filter((a) => a.custo <= 10 && armaPermitida(classe, a)); }
   function armadurasDoPacote(classe, anc) {
     if (traco(anc, 'Blindagem integrada')) return [];
-    return armadurasPermitidas(classe).filter((a) => a.custo <= 15 && a.categoria !== 'Escudo');
+    return armadurasPermitidas(classe).filter((a) => a.custo <= 20 && a.categoria !== 'Escudo');
   }
   function itensDoPacote(m) {
     const itens = [KIT];
@@ -614,13 +633,13 @@
       if (m.arma === undefined) { const a = escolherArma(classe, pj.principal); m.arma = a ? a.nome : ''; }
       if (m.armadura === undefined) {
         const op = armadurasDoPacote(classe, anc);
-        m.armadura = op.length ? op.sort((a, b) => caDaArmadura(b, 0) - caDaArmadura(a, 0))[0].nome : '';
+        m.armadura = op.length ? melhorArmadura(op, pj.atr).nome : '';
       }
       m.equipamento = itensDoPacote(m);
     }
     pj.equipamento = m.equipamento.concat((m.equipExtra || '').split('\n')).filter((x) => x.trim());
     pj.ouro = m.ouro;
-    pj.armadura = D.armaduras.find((a) => a.categoria !== 'Escudo' && pj.equipamento.some((x) => x.toLowerCase().startsWith(a.nome.toLowerCase()))) || null;
+    pj.armadura = armaduraNoEquipamento(pj.equipamento, false);
     calcular(pj);
     return pj;
   }
@@ -733,7 +752,7 @@
         </div>` : ''}
         <div class="fj-g-passo"><h3>6. Equipamento</h3>
           ${M.nivel >= 1 ? `<div class="fj-g-acoes"><button type="button" data-acao="pacote"${M.equipModo === 'pacote' ? ' class="fj-g-primario"' : ''}>Pacote inicial</button><button type="button" data-acao="ouro"${M.equipModo === 'ouro' ? ' class="fj-g-primario"' : ''}>Ouro e loja</button></div>
-          ${M.equipModo === 'ouro' ? lojaHTML(c) : `<p><small>Pacote inicial: kit de exploração, uma arma de até 10 po e uma armadura de até 15 po.</small></p>
+          ${M.equipModo === 'ouro' ? lojaHTML(c) : `<p><small>Pacote inicial: kit de exploração, uma arma de até 10 po e uma armadura de até 20 po.</small></p>
           <div class="fj-g-grade">
             <label>Arma <select data-pacote="arma">${opcoesDe(armasDoPacote(c).map((a) => [a.nome, a.nome + ' (' + a.dano + ', ' + a.custo + ' po)']), M.arma, 'Nenhuma')}</select></label>
             ${armadurasDoPacote(c, anc).length ? `<label>Armadura <select data-pacote="armadura">${opcoesDe(armadurasDoPacote(c, anc).map((a) => [a.nome, a.nome + ' (CA ' + a.ca + ', ' + a.custo + ' po)']), M.armadura, 'Nenhuma')}</select></label>` : ''}
@@ -770,7 +789,7 @@
       const armas = D.armas.map((a) => ({ v: a.nome, custo: a.custo, t: a.nome + ' (' + a.dano + ', ' + a.custo + ' po)' + (armaPermitida(c, a) ? '' : ' · sem proficiência') }));
       const permitidas = armadurasPermitidas(c).map((a) => a.nome);
       const escudo = /escudo/i.test(c.armaduras);
-      const armaduras = D.armaduras.map((a) => ({ v: a.nome, custo: a.custo, t: a.nome + (a.categoria === 'Escudo' ? ' (+2)' : ' (CA ' + a.ca + ')') + ', ' + a.custo + ' po'
+      const armaduras = D.armaduras.map((a) => ({ v: a.nome, custo: a.custo, t: a.nome + (a.categoria === 'Escudo' ? ' (' + a.ca + ')' : ' (CA ' + a.ca + ')') + ', ' + a.custo + ' po'
         + ((a.categoria === 'Escudo' ? escudo : permitidas.includes(a.nome)) ? '' : ' · sem proficiência') }));
       const itens = [{ v: 'KIT', custo: 7, t: 'Kit de exploração, 7 po' }].concat(D.equipamentoBasico.map((x) => ({ v: x.nome, custo: x.custo, t: x.nome + ', ' + x.custo + ' po' })));
       const compras = (M.compras || []).map((x, k) => `<div class="fj-g-av">${esc(x.texto)} <small>(${x.custo} po)</small> <button type="button" data-acao="devolver" data-k="${k}" title="Devolver">✕</button></div>`).join('');

@@ -80,7 +80,7 @@ Todas são marciais. "Ataque com arma" usa o atributo e o dano normais da arma (
 | 17 | **Duro de Matar** | Passiva | Enquanto estiver morrendo, você tem 1 rodada a mais antes de morrer. | **Teimoso:** na rolagem de morte, levante com 19 ou 20. | **Recusa:** uma vez por dia, ao chegar a 0 PV, fique com 1 PV. | **Calejado:** não ganha exaustão na primeira vez que cair a 0 PV no dia. |
 | 18 | **Tiro Rápido** | 2 | Movimento. Faça um ataque à distância com arma. | **Mais força:** o ataque causa +1d6 de dano. Escalonamento: +1d6 por +1 de Mana. | **Atirar e correr:** depois do ataque, mova-se até 2 casas sem provocar ataques de oportunidade. | **Saraivada:** ataque dois alvos. Escalonamento: +1 alvo por +1 de Mana. |
 | 19 | **Intimidar** | 3 | Ação. Um inimigo até perto faz um teste de resistência (Sabedoria) ou fica amedrontado por 1 rodada. | **Duradouro:** dura 10 rodadas. | **Grupo:** mais um alvo. Escalonamento: +1 alvo por +1 de Mana. | **Debandada:** o grupo do alvo faz um teste de Moral imediatamente. |
-| 20 | **Defesa com Armadura** | Passiva | +1 de CA enquanto usar armadura. | **Reforço:** +2 de CA em vez de +1. | **Mestre do escudo:** seu escudo dá +3 de CA em vez de +2. | **Couraça:** reduza em 1 o dano de cada ataque com arma que você sofrer. |
+| 20 | **Defesa com Armadura** | Passiva | +1 de CA enquanto usar armadura. | **Reforço:** +2 de CA em vez de +1. | **Mestre do escudo:** seu escudo dá +1 de CA a mais. | **Couraça:** reduza em 1 o dano de cada ataque com arma que você sofrer. |
 
 ## TÍTULOS DO GUERREIRO
 

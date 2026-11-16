@@ -26,7 +26,7 @@ A única moeda é a **peça de ouro (po)**. Itens baratos são vendidos em lotes
 **Nível 1.** Escolha uma opção:
 
 - **Ouro.** Role 2d6 × 5 po e compre o que quiser.
-- **Pacote inicial.** Kit de exploração, uma arma de até 10 po e uma armadura de até 15 po.
+- **Pacote inicial.** Kit de exploração, uma arma de até 10 po e uma armadura de até 20 po.
 
 ## Carga
 
@@ -103,15 +103,17 @@ Além disso, você **carrega** um número de espaços igual ao seu modificador d
 | Armadura | Categoria | Custo | CA | Força | Propriedades |
 |---|---|---|---|---|---|
 | Couro | Leve | 10 po | 11 + Des | — | — |
-| Couro batido | Leve | 25 po | 12 + Des | — | — |
+| Couro batido | Leve | 20 po | 12 + Des | — | — |
 | Gibão de peles | Média | 15 po | 12 + Des | 11 | — |
 | Cota de malha | Média | 60 po | 13 + Des | 13 | Desvantagem em furtividade e natação |
+| Cota de anéis | Pesada | 20 po | 14 | 13 | Desvantagem em furtividade e natação |
 | Cota de talas | Pesada | 100 po | 15 | 13 | Desvantagem em furtividade e natação |
 | Placas | Pesada | 200 po | 16 | 15 | Desvantagem em furtividade; não pode nadar |
+| Broquel | Escudo | 5 po | +1 | — | Preso ao braço: a mão pode segurar uma tocha ou um item, mas não uma arma |
 | Escudo | Escudo | 10 po | +2 | — | Ocupa uma mão |
+| Escudo de torre | Escudo | 25 po | +3 | 13 | Ocupa uma mão. Desvantagem em furtividade |
 
 **Força.** Sem a Força mínima, seu movimento cai à metade.
-
 **Sem proficiência.** Usar uma armadura sem proficiência:
 
 - movimento à metade;

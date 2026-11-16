@@ -99,7 +99,7 @@ Dúvidas de regra em aberto. Remova o item quando for resolvido e aplicado no te
 - **Munição:** recupera metade após o combate.
 - **Armaduras:** lista, CA e Força mínima (média 11/13, pesada 13/15); sem a Força mínima = movimento à metade.
 - **Sem proficiência em armadura:** falha no teste de For 15 = habilidade não funciona e a Mana é gasta.
-- **Equipamento básico**, tabela d12 do nível 0, **pacote inicial** (kit + arma até 10 po + armadura até 15 po).
+- **Equipamento básico**, tabela d12 do nível 0, **pacote inicial** (kit + arma até 10 po + armadura até 20 po).
 - **Kit de exploração:** 7 po, ocupa 2 espaços.
 - **Montarias, veículos, serviços e poções** (incluindo Poção de Mana e Elixir da calma).
 - **Mochila +5 espaços** (sugestão do Claude; o autor aprovou que a mochila dê espaços extras).
