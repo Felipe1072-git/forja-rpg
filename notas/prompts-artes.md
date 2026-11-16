@@ -158,6 +158,86 @@ Scene: [CENA]
 | nadar | no fim de Armaduras, logo antes de `## Equipamento Básico` | `![Um cavaleiro de placas afunda no rio enquanto um ladino de couro passa nadando](assets/images/equipamento/nadar.webp){ .fj-arte-vinheta .fj-arte-fim loading=lazy }` |
 | kit | depois do parágrafo do Kit de Exploração | `![A mochila aberta, vista de cima, com o kit de exploração espalhado em volta](assets/images/equipamento/kit.webp){ .fj-arte .fj-arte-cena loading=lazy }` |
 
+### Armas
+
+Quatro artes para a seção Armas, cada prompt completo. Mesmo tratamento e mesma pasta das outras de Equipamento.
+
+| Arquivo | Formato | Lugar | Classes |
+|---|---|---|---|
+| armas-simples | 16:9 | logo depois de `## Armas`, antes da tabela, com legenda | `.fj-arte .fj-arte-cena` |
+| armas-marciais | 16:9 | logo depois da tabela, antes de `**Desarmado.**`, com legenda | `.fj-arte .fj-arte-cena` |
+| propriedades | 3:2 | logo depois de `### PROPRIEDADES` | `.fj-arte .fj-arte-cena` |
+| pesada | 1:1 | no fim de Propriedades, antes de `## Armaduras` | `.fj-arte-vinheta .fj-arte-fim` |
+
+Legendas: *Da esquerda para a direita: Adaga, Azagaia, Bumerangue, Bordão, Clava, Lança, Boleadeira, Shuriken, Zarabatana, Arco curto e Besta leve.* e *Em cima: Chicote, Cimitarra, Corrente de lâminas, Espada curta, Florete, Machadinha, Maça, Mangual e Espada longa. Embaixo: Machado de batalha, Martelo de guerra, Alabarda, Pique, Espadão, Machado grande, Arco longo e Besta pesada.*
+
+**armas-simples** (16:9)
+
+```text
+Black and white pen-and-ink illustration for an old-school fantasy RPG rulebook, in the gritty OSR style of books like Shadowdark: bold black ink lines, heavy solid blacks, crosshatching and stippling for shadows, rough hand-drawn texture, high contrast, no gray tones, no color.
+
+Composition: an equipment catalog plate, wide horizontal 16:9 format. Background: pure flat white (#FFFFFF) everywhere outside the drawing: no wall, no paper texture, no beige, no gradient, no vignette, no frame, no border.
+
+No text, no letters, no numbers, no labels, no signature, no watermark.
+
+Scene: eleven simple weapons standing upright side by side in one straight row on a plain wooden weapon rack, at realistic relative sizes, each one separate and easy to read, from left to right:
+1. a dagger;
+2. a javelin;
+3. a wooden boomerang;
+4. a quarterstaff;
+5. a rough wooden club;
+6. a spear;
+7. a bola: three weights tied together by cords, hanging from a peg;
+8. three shuriken throwing stars hanging from a peg;
+9. a blowgun with a few darts;
+10. a short bow with a quiver of arrows;
+11. a light crossbow.
+```
+
+**armas-marciais** (16:9)
+
+```text
+Black and white pen-and-ink illustration for an old-school fantasy RPG rulebook, in the gritty OSR style of books like Shadowdark: bold black ink lines, heavy solid blacks, crosshatching and stippling for shadows, rough hand-drawn texture, high contrast, no gray tones, no color.
+
+Composition: an equipment catalog plate, wide horizontal 16:9 format. Background: pure flat white (#FFFFFF) everywhere outside the drawing: no wall, no paper texture, no beige, no gradient, no vignette, no frame, no border.
+
+No text, no letters, no numbers, no labels, no signature, no watermark.
+
+Scene: a plain wooden weapon rack with two tiers, the weapons standing upright side by side, at realistic relative sizes, each one separate and easy to read.
+Top tier, nine one-handed weapons, left to right: 1. a coiled leather whip hanging from a peg; 2. a curved scimitar; 3. a coiled chain with small blades along its links, hanging from a peg; 4. a short sword; 5. a slender rapier with a swept hilt; 6. a hand axe; 7. a flanged mace; 8. a flail with a spiked ball on a chain; 9. a longsword.
+Bottom tier, eight big weapons, left to right: 1. a battleaxe; 2. a warhammer; 3. a halberd; 4. a very long pike; 5. a greatsword; 6. a huge two-handed greataxe; 7. a longbow; 8. a heavy crossbow with a crank.
+```
+
+**propriedades** (3:2)
+
+```text
+Black and white pen-and-ink illustration for an old-school fantasy RPG rulebook, in the gritty OSR style of books like Shadowdark: bold black ink lines, heavy solid blacks, crosshatching and stippling for shadows, rough hand-drawn texture, high contrast, no gray tones, no color. A touch of dark humor is welcome.
+
+Composition: one wide action scene, horizontal 3:2 format, with only four fighters so it reads clearly. The edges of the scene fade into pure flat white (#FFFFFF): no paper texture, no beige, no gradient, no vignette, no frame, no border.
+
+No text, no letters, no numbers, no labels, no signature, no watermark.
+
+Scene: four adventurers fight a charging band of orcs in a ruined courtyard:
+1. two separate soldiers, each with his own weapon: in front, a shield-bearer crouches behind a big round shield, holding only the shield and a short sword; behind him, a pikeman ALONE grips a very long pike with both of his own hands and thrusts it over the shield-bearer's head at an orc two steps away. The shield-bearer does not touch the pike;
+2. a dwarf throws a hand axe that spins through the air toward an orc;
+3. a sweating crossbowman frantically cranks his heavy crossbow while an orc runs straight at him;
+4. a warrior swings a longsword with both hands in a wide arc.
+```
+
+Se só a dupla do pique sair errada, peça a correção na mesma conversa, em vez de gerar tudo de novo: "Keep everything else exactly the same. Fix the two soldiers on the left: the man in front holds only a round shield and a short sword and does not touch the pike; the man behind holds the pike alone, with both of his hands."
+
+**pesada** (1:1)
+
+```text
+Black and white pen-and-ink illustration for an old-school fantasy RPG rulebook, in the gritty OSR style of books like Shadowdark: bold black ink lines, heavy solid blacks, crosshatching and stippling for shadows, rough hand-drawn texture, high contrast, no gray tones, no color. A touch of dark humor is welcome.
+
+Composition: a small vignette, square 1:1 format, centered, with lots of empty space around it. Few elements, big clear shapes that still read clearly when printed small. Background: pure flat white (#FFFFFF) everywhere outside the drawing: no paper texture, no beige, no gradient, no vignette, no frame, no border.
+
+No text, no letters, no numbers, no labels, no signature, no watermark.
+
+Scene: a small, skinny halfling tries to swing a huge greatsword much taller than himself; the weight of the blade pulls him off balance and he topples backward, feet in the air. Beside him, a big bored orc with arms crossed watches, unimpressed.
+```
+
 **Vinheta.** A classe `fj-arte-vinheta` deixa a arte pequena, à direita do texto corrido, que passa ao lado dela (como num livro de RPG). Títulos, tabelas e listas de regras começam sempre abaixo dela, então ponha a vinheta antes de um trecho de texto comum. Onde não há texto comum (como em Armaduras), some `.fj-arte-fim`: ela fica pequena e centralizada, fechando a seção. No celular a vinheta vai para o centro.
 
 ## NPCs de Campanha

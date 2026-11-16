@@ -51,6 +51,10 @@ Além disso, você **carrega** um número de espaços igual ao seu modificador d
 
 ## Armas
 
+![As onze armas simples num suporte de madeira, na ordem da tabela](assets/images/equipamento/armas-simples.webp){ .fj-arte .fj-arte-cena loading=lazy }
+
+*Da esquerda para a direita: Adaga, Azagaia, Bumerangue, Bordão, Clava, Lança, Boleadeira, Shuriken, Zarabatana, Arco curto e Besta leve.*
+
 | Arma | Categoria | Custo | Dano | Tipo | Alcance | Propriedades |
 |---|---|---|---|---|---|---|
 | Adaga | Simples | 2 po | 1d4 | Perfurante | Adjacente | Acuidade, arremesso |
@@ -82,9 +86,15 @@ Além disso, você **carrega** um número de espaços igual ao seu modificador d
 | Arco longo | Marcial | 12 po | 1d8 | Perfurante | Muito longe | Duas mãos, munição, pesada |
 | Besta pesada | Marcial | 15 po | 1d10 | Perfurante | Muito longe | Duas mãos, munição, recarga, pesada |
 
+![As dezessete armas marciais num suporte de duas prateleiras, na ordem da tabela](assets/images/equipamento/armas-marciais.webp){ .fj-arte .fj-arte-cena loading=lazy }
+
+*Em cima: Chicote, Cimitarra, Corrente de lâminas, Espada curta, Florete, Machadinha, Maça, Mangual e Espada longa. Embaixo: Machado de batalha, Martelo de guerra, Alabarda, Pique, Espadão, Machado grande, Arco longo e Besta pesada.*
+
 **Desarmado.** Qualquer um pode socar ou chutar: 1 + modificador de Força de dano de contusão.
 
 ### PROPRIEDADES
+
+![Um piqueiro ataca por cima do companheiro de escudo, um anão arremessa uma machadinha, um besteiro recarrega desesperado e um guerreiro gira a espada longa com as duas mãos, contra orcs numa ruína](assets/images/equipamento/propriedades.webp){ .fj-arte .fj-arte-cena loading=lazy }
 
 **Acuidade.** Use Força ou Destreza no ataque e no dano.
 
@@ -103,6 +113,8 @@ Além disso, você **carrega** um número de espaços igual ao seu modificador d
 **Versátil.** Use com uma ou duas mãos. Com duas mãos, use o dado entre parênteses.
 
 **Arma de prata.** Qualquer arma pode ser banhada em prata por +20 po. Ela vence a resistência a armas comuns de criaturas malignas e sobrenaturais (veja Armas comuns em Combate).
+
+![Um halfling magrelo tenta erguer um espadão maior que ele e cai de costas, enquanto um orc de braços cruzados assiste](assets/images/equipamento/pesada.webp){ .fj-arte-vinheta .fj-arte-fim loading=lazy }
 
 ## Armaduras
 

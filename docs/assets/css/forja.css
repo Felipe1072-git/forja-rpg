@@ -161,8 +161,8 @@
 
 /* vinheta (marcada com { .fj-arte-vinheta }): arte pequena à direita, com o
    texto corrido ao lado, como num livro de RPG; títulos, tabelas e listas de
-   regras começam abaixo dela. Com { .fj-arte-fim }: centralizada e mais larga
-   (cabe uma faixa horizontal), no fim de uma seção. No celular vai para o centro. Mesmo tratamento de cor da arte de classe. */
+   regras começam abaixo dela. Com { .fj-arte-fim }: centralizada, no fim de
+   uma seção; até 28rem de largura e 18rem de altura (serve faixa ou quadrado). No celular vai para o centro. Mesmo tratamento de cor da arte de classe. */
 .md-typeset img.fj-arte-vinheta {
   float: right;
   width: min(42%, 15rem);
@@ -174,7 +174,9 @@
 .md-typeset img.fj-arte-vinheta.fj-arte-fim {
   float: none;
   display: block;
-  width: min(100%, 28rem);
+  width: auto;
+  max-width: min(100%, 28rem);
+  max-height: 18rem;
   margin: 1.2em auto;
 }
 
