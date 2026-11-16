@@ -22,6 +22,15 @@ No text, no letters, no logo, no signature, no watermark.
 Character: [CLASSE]
 ```
 
+**Como o autor preenche [CLASSE].** O nome da classe em inglês, e na linha de baixo a epígrafe da página da classe (a frase em itálico logo abaixo do título), traduzida para o inglês. Exemplo:
+
+```text
+Character: Arcane Legionary
+Soldier-mages trained in war academies. On the front lines, magic courses through their blades; behind the ranks, it rains from the sky like artillery. A legionary knows when to advance and when to fall back, and never wastes a single spell.
+```
+
+A coluna da tabela abaixo é uma descrição visual opcional: dá para acrescentá-la depois da epígrafe quando a arte precisar de algum detalhe (uma arma, um animal, uma pose).
+
 ## Classes
 
 | Classe | Arquivo | Linha para [CLASSE] |

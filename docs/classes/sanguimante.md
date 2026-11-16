@@ -3,6 +3,8 @@
 Magos que descobriram que o sangue guarda mais poder do que qualquer livro. Cortam a própria mão para lançar um feitiço e, quando o próprio sangue não basta, tomam o dos outros. Poucos os aceitam; quase todos os temem.
 { .epigrafe }
 
+![Mago encapuzado com uma adaga ritual, cercado por fitas de sangue que giram ao redor do corpo](../assets/images/classes/sanguimante.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Classe exótica.** Fica fora do Personagem Aleatório. Combine com o Mestre antes de escolher (veja Classes exóticas).
 
 **Base.** d8: 3 habilidades iniciais, 3 de Mana por nível, 2 avanços nos níveis 3, 6 e 9 (1 nos outros).
