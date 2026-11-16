@@ -32,17 +32,51 @@ Boatos da taverna da vila. Alguns são verdade.
 
 ## Quem Mora na Vila
 
-**Ariadna e Ambrozy.** Os irmãos donos da Jaula, a taverna construída dentro da costela de um gigante. Um hóspede deles sumiu há uma semana.
+<div class="fj-npcs" markdown>
 
-**Agniezka.** A ferreira, veterana de guerra, honesta e sempre resmungando.
+![Retrato de Wislaw Broz](../assets/images/cidadela-escarlate/npcs/broz.webp){ loading=lazy }
+**Wislaw Broz** *Prefeito, Prefeitura.* Bochechas rosadas, roupa fina de cidade grande. Recebe todo aventureiro com comida e bebida e oferece uma "autorização" para descontos nas lojas.
 
-**Cecylia.** Sacerdotisa de Woltander. Compra qualquer sucata estranha.
+![Retrato de Roch](../assets/images/cidadela-escarlate/npcs/roch.webp){ loading=lazy }
+**Roch** *Condestável, Prefeitura.* Calado, cheira a cachimbo. Chefia a milícia de 20 voluntários. Prende bêbados e briguentos: 25 po de multa ou uma noite na cela.
 
-**Eva.** Cuida do pomar e sabe da vida de todo mundo.
+![Retrato de Ariadna e Ambrozy](../assets/images/cidadela-escarlate/npcs/ariadna-ambrozy.webp){ loading=lazy }
+**Ariadna e Ambrozy** *Donos da Jaula.* Irmãos Gjorski, batedores aposentados. A taverna fica na costela do gigante que a bisavó deles matou. O hóspede Ichbon, um halfling, sumiu há uma semana.
 
-**Tobiasz.** O velho eremita do outro lado do rio. Xinga todo mundo que vai para a Cidadela.
+![Retrato de Agniezka](../assets/images/cidadela-escarlate/npcs/agniezka.webp){ loading=lazy }
+**Agniezka** *Ferreira, Ferraria.* Uns 50 anos, cicatrizes de guerra. Preço justo e reclamação de graça. Compra metal estranho.
 
-**Roch.** O condestável da vila.
+![Retrato de Cecylia](../assets/images/cidadela-escarlate/npcs/cecylia.webp){ loading=lazy }
+**Cecylia** *Sacerdotisa de Woltander, Capela.* Séria e estudiosa. Cura por 10 po, vende pergaminhos e compra sucata trazida da Cidadela.
+
+![Retrato de Norneth](../assets/images/cidadela-escarlate/npcs/norneth.webp){ loading=lazy }
+**Norneth** *Acólita, Capela.* Meio-elfa, veio de longe. Quase não fala. Cuida da sucata que chega à capela.
+
+![Retrato de Konrad](../assets/images/cidadela-escarlate/npcs/konrad.webp){ loading=lazy }
+**Konrad** *Mago de guerra aposentado, Casa.* Rico e falante. Voltou vivo da Cidadela. Convida aventureiros para jantar, conta histórias de guerra e vende itens mágicos.
+
+![Retrato de Eva](../assets/images/cidadela-escarlate/npcs/eva.webp){ loading=lazy }
+**Eva** *Do pomar.* Sidra, torta e todas as fofocas da vila. O que alguém conta a ela, a vila inteira sabe no dia seguinte.
+
+![Retrato de Gabe](../assets/images/cidadela-escarlate/npcs/gabe.webp){ loading=lazy }
+**Gabe** *Filho de Eva, Pomar.* Adolescente, líder dos jovens da vila. Anda com olheiras fundas e finge que está tudo bem.
+
+![Retrato de Cibor](../assets/images/cidadela-escarlate/npcs/cibor.webp){ loading=lazy }
+**Cibor** *Marido de Eva, Pomar.* Quase não vem à vila. Troca frutas com as Corças do santuário da mata.
+
+![Retrato de Remy e Mags](../assets/images/cidadela-escarlate/npcs/remy-mags.webp){ loading=lazy }
+**Remy e Mags** *Cervejaria Seiva Doce.* Casal halfling, sempre meio bêbado. Dão amostras da cerveja nova na porta. Quase todo halfling da vila é parente deles.
+
+![Retrato de Witek](../assets/images/cidadela-escarlate/npcs/witek.webp){ loading=lazy }
+**Witek** *Curtidor, Curtume.* Supersticioso, coberto de amuletos. Vende pés de coelho da sorte. O aprendiz dele, Hubert, derruba tudo.
+
+![Retrato de Tobiasz](../assets/images/cidadela-escarlate/npcs/tobiasz.webp){ loading=lazy }
+**Tobiasz** *Eremita, do outro lado do rio.* Velho carpinteiro. Odeia quem vai à Cidadela e diz isso na cara. Um urso-coruja vive derrubando a cabana dele.
+
+![Retrato de Zula](../assets/images/cidadela-escarlate/npcs/zula.webp){ loading=lazy }
+**Zula** *Bruxa, no mato, perto da estrada de Java.* Vende poções mais baratas que a capela. Bichos mortos pendurados na varanda. Quase ninguém da vila vai lá.
+
+</div>
 
 ## Como Jogamos
 
