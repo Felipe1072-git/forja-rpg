@@ -36,7 +36,7 @@ Boatos da taverna da vila. Alguns são verdade.
 
 **Agniezka.** A ferreira, veterana de guerra, honesta e sempre resmungando.
 
-**Cecylia.** Sacerdotisa de uma deusa das engrenagens. Compra qualquer sucata estranha.
+**Cecylia.** Sacerdotisa de Woltander. Compra qualquer sucata estranha.
 
 **Eva.** Cuida do pomar e sabe da vida de todo mundo.
 
