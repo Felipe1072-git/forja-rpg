@@ -121,6 +121,45 @@ Symbol: [SÍMBOLO]
 |---|---|---|
 | Woltander (Aethelgard) | aethelgard/woltander | A straight longsword pointing down, its blade driven into a flat horizon line; a half sun rises from the horizon behind the crossguard, with straight rays fanning out. The crossguard and the horizon together suggest a cross, but it must not look like a Christian cross. |
 
+## NPCs de Campanha
+
+Retratos para as folhas de "Quem É Quem" que o Mestre mostra aos jogadores. Escolha a proporção **1:1** no Gemini. Use uma conversa nova para cada vila, com o prompt abaixo na primeira e depois "Same style, same rules. Next:" + a linha.
+
+Salve do jeito que vier (png ou jpg) em `campanhas/<campanha>/retratos/<arquivo>.png`, com o nome da tabela. Rode `python campanhas/aethelgard/gerar.py`: o retrato entra no cartão sozinho. Quem ainda não tem arte sai com um quadro vazio.
+
+```text
+Black and white pen-and-ink portrait for an old-school fantasy RPG rulebook, in the gritty OSR style of books like Shadowdark: bold black ink lines, solid blacks, crosshatching for shadows, rough hand-drawn texture, high contrast, no gray tones, no color.
+
+Composition: one head-and-shoulders portrait in three-quarter view, centered, square 1:1 format, with a little empty space around it. If the line describes two people, draw them side by side at the same scale and eye level, turned slightly toward each other. Simple, strong shapes and a clear, memorable face that still read clearly when printed small (about 4 cm wide): big shadows, few fine details.
+
+Background: pure flat white (#FFFFFF) everywhere outside the drawing. No paper texture, no beige, no gradient, no vignette, no frame, no border, no circle or panel behind the head.
+
+No text, no letters, no logo, no signature, no watermark.
+
+Person: [NPC]
+```
+
+### Torre Vermelha (Aethelgard)
+
+Pasta: `campanhas/aethelgard/retratos/`.
+
+| NPC | Arquivo | Linha para [NPC] |
+|---|---|---|
+| Wislaw Broz | broz | A plump, rosy-cheeked human mayor in his fifties, in fine city clothes with a fur collar and a heavy chain of office, smiling a too-friendly salesman's smile. |
+| Roch | roch | A stern middle-aged human constable with a short beard and narrowed, suspicious eyes, a long pipe in his mouth, a padded jerkin over a chain shirt. |
+| Ariadna e Ambrozy | ariadna-ambrozy | A human sister and brother in their forties, innkeepers and retired scouts, in leather vests: she has braided hair and a scar on her cheek; he is broad with a thick mustache. Both cheerful, ready to tell a story. |
+| Agniezka | agniezka | A stocky human woman blacksmith in her fifties, short gray hair, muscular scarred arms, leather apron, a hammer on her shoulder and a grumpy frown. |
+| Cecylia | cecylia | A serious, studious human priestess with short hair and a plain robe, holding an open book; on her chest, a holy symbol of a sword driven point-down into the horizon with a half sun rising behind the crossguard. |
+| Norneth | norneth | A young half-elf acolyte woman with slightly pointed ears, in a plain hooded robe, quiet and watchful, her sharp eyes glancing sideways at the viewer's belongings. |
+| Konrad | konrad | An old, wealthy human battlemage with a neat white beard, an embroidered robe with military medals and a jeweled ring, smiling warmly but with calculating eyes. |
+| Eva | eva | A cheerful human woman in her forties with a headscarf, holding an apple pie, leaning in with a curious, gossiping smile. |
+| Gabe | gabe | A human teenage boy with messy hair and a cocky grin, but deep dark circles under his eyes, rubbing his temple. |
+| Cibor | cibor | A quiet, weathered human farmer in a wide straw hat, holding a basket of enormous apples, with a calm, distant gaze. |
+| Remy e Mags | remy-mags | A halfling husband and wife, merry brewers in aprons, both a little tipsy, with rosy noses and foaming mugs raised in a toast. |
+| Witek | witek | A wiry, nervous human tanner with many charms, amulets and rabbit's feet hanging from his neck, a stained leather apron and darting eyes. |
+| Tobiasz | tobiasz | An old human hermit carpenter with wild white hair and beard, patched clothes and a carpenter's hammer, shouting angrily with a pointing finger. |
+| Zula | zula | A pale human witch with long dark hair and tattoos on her face, small dead animals hanging behind her shoulder, smiling as if she knows a secret. |
+
 ## Cenas de Sessão
 
 Uma arte por sessão para o Diário de cada campanha, feita a partir das miniaturas da mesa. Proporção **3:2** horizontal no Gemini. Mande primeiro o prompt completo; se ele embolar os personagens, peça ajustes um por vez ("Make the dwarf bald with a grey beard", "Remove the extra drow"). Salve como `docs/assets/images/<campanha>/sessao-<n>.webp`. No Diário, logo depois do título da sessão:

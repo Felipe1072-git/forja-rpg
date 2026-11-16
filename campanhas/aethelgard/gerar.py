@@ -8,6 +8,7 @@ Cada "###" vira um cartão com borda. A linha de material do encontro
 
     python campanhas/aethelgard/gerar.py
 """
+import base64
 import html
 import importlib.util
 import pathlib
@@ -28,6 +29,7 @@ DOCUMENTOS = [
     ('mae-dos-morros-mestre.md', 'mae-dos-morros'),
     ('mina-da-treva-mestre.md', 'mina-da-treva'),
     ('torre-vermelha-mestre.md', 'torre-vermelha'),
+    ('torre-vermelha-npcs.md', 'torre-vermelha-npcs'),
 ]
 
 CSS = ev.CSS_EN + """
@@ -141,6 +143,78 @@ def pagina(arquivo):
     return ev.documento(corpo_html, titulo, CSS, ev.MEDIDA_EN)
 
 
+RETRATOS = AQUI / 'retratos'
+
+CSS_NPC = ev.CSS_EN + """
+.npc-grade { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, minmax(0, 1fr)); gap: 3mm 4mm; }
+.npc { border: 1.3px solid #111; border-radius: 2mm; padding: 2mm 2.4mm; display: grid; overflow: hidden;
+  grid-template-columns: 40mm 1fr; grid-template-rows: auto 1fr auto; column-gap: 3.5mm; }
+.npc-foto { grid-row: 1 / 3; width: 40mm; height: 40mm; object-fit: contain; }
+.npc-vazio { grid-row: 1 / 3; width: 40mm; height: 40mm; border: 1px dashed #888; border-radius: 1.5mm; }
+.npc h3 { font-family: "IM Fell English SC", serif; font-weight: normal; font-size: 14.5pt; margin: 0;
+  border-bottom: 1px solid #111; line-height: 1.15; }
+.npc .papel { font-style: italic; font-size: 10.4pt; margin: .5mm 0 1mm; line-height: 1.15; }
+.npc .texto { font-size: 11.2pt; line-height: 1.24; }
+.npc .texto p { margin: 0; }
+.npc .notas { grid-column: 1 / -1; margin-top: 1.5mm; font-size: 8.5pt; font-family: "IM Fell English SC", serif; }
+.npc .linha { border-bottom: 1px solid #999; height: 5.2mm; }
+.npc.branco h3, .npc.branco .papel { border-bottom: 1px solid #999; min-height: 6mm; }
+"""
+
+MEDIDA_NPC = (
+    '<script>addEventListener("load", () => setTimeout(() => {'
+    'const m = document.createElement("pre"); m.id = "medida"; m.style.display = "none";'
+    'const ruins = [...document.querySelectorAll(".npc")].filter(c => c.scrollHeight > c.clientHeight + 2)'
+    '.map(c => c.querySelector("h3").textContent);'
+    'm.textContent = ruins.length ? "PASSOU: " + ruins.join(", ") : "todos cabem";'
+    'document.body.appendChild(m); }, 300));</script>'
+)
+
+
+def retrato(nome):
+    """A arte do NPC em data URI, ou None se ainda não existe."""
+    for ext, mime in (('webp', 'webp'), ('png', 'png'), ('jpg', 'jpeg'), ('jpeg', 'jpeg')):
+        arquivo = RETRATOS / f'{nome}.{ext}'
+        if arquivo.exists():
+            return f'data:image/{mime};base64,' + base64.b64encode(arquivo.read_bytes()).decode()
+    return None
+
+
+def pagina_npcs(arquivo):
+    """Folha de NPCs para os jogadores: 8 cartões por página, com retrato, papel, texto e linhas de notas."""
+    texto = (AQUI / arquivo).read_text(encoding='utf-8')
+    titulo, _, corpo = texto.partition('\n')
+    titulo = titulo.lstrip('# ').strip()
+    paginas = [p for p in corpo.split('<!-- pagina -->') if '### ' in p]
+
+    def cartao(bloco):
+        nome, _, resto = bloco.partition('\n')
+        nome = nome.strip()
+        campos = dict(re.findall(r'^(retrato|papel):[ \t]*(.*)$', resto, flags=re.M))
+        texto_npc = re.sub(r'^(retrato|papel):.*$', '', resto, flags=re.M).strip()
+        foto = retrato(campos.get('retrato', '').strip()) if campos.get('retrato', '-').strip() != '-' else None
+        imagem = f'<img class="npc-foto" src="{foto}" alt="">' if foto else '<div class="npc-vazio"></div>'
+        branco = nome == '—'
+        return (
+            f'<div class="npc{" branco" if branco else ""}">{imagem}'
+            f'<div><h3>{"" if branco else html.escape(nome)}</h3>'
+            f'<div class="papel">{html.escape(campos.get("papel", "").strip())}</div>'
+            f'<div class="texto">{ev.md(texto_npc) if texto_npc else ""}</div></div>'
+            '<div class="notas">Notas<div class="linha"></div><div class="linha"></div></div></div>'
+        )
+
+    folhas = []
+    for n, pag in enumerate(paginas, 1):
+        blocos = re.split(r'^### ', pag, flags=re.M)[1:]
+        folhas.append(
+            f'<section class="fh-folha"><header class="en-topo"><div>{ev.gf.LOGO}<h1>{html.escape(titulo)}</h1></div>'
+            f'<div class="en-lado">Para os jogadores · Aethelgard<br>Página {n} de {len(paginas)}</div></header>'
+            f'<div class="npc-grade">{"".join(cartao(b) for b in blocos)}</div></section>'
+        )
+    return ev.documento(''.join(folhas), titulo, CSS_NPC, MEDIDA_NPC)
+
+
 def main():
     BUILD.mkdir(parents=True, exist_ok=True)
     SAIDA.mkdir(parents=True, exist_ok=True)
@@ -149,7 +223,8 @@ def main():
         if not (AQUI / arquivo).exists():
             continue
         html_path = BUILD / f'{nome}.html'
-        html_path.write_text(pagina(arquivo), encoding='utf-8')
+        montar = pagina_npcs if arquivo.endswith('-npcs.md') else pagina
+        html_path.write_text(montar(arquivo), encoding='utf-8')
         # Imprime no build e só depois copia: o Chrome não avisa quando não consegue gravar
         # (por exemplo, com o PDF aberto num leitor), e o arquivo velho ficaria no lugar.
         temp = BUILD / f'{nome}.pdf'
