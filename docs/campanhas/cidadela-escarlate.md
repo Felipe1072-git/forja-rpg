@@ -20,6 +20,8 @@ Torre Vermelha fica ao norte do lago, a 7 hexágonos a oeste de Java (veja Viage
 
 ## O Que Se Diz na Jaula
 
+![A Jaula no mapa da vila: a taverna e, ao lado, as costelas do gigante saindo da grama](../assets/images/cidadela-escarlate/jaula.webp){ .fj-recorte loading=lazy }
+
 Boatos da taverna da vila. Alguns são verdade.
 
 - O castelo era de uma família de feiticeiros. Cavaleiros o queimaram há mais de cem anos.
@@ -27,8 +29,6 @@ Boatos da taverna da vila. Alguns são verdade.
 - Cada vez que alguém morre na Cidadela, uma pedra da torre da vila amanhece pintada de vermelho.
 - Ursos-corujas e harpias guardam as ruínas.
 - Lá embaixo há ouro antigo, livros proibidos e uma magia que corre pela terra.
-
-![Aventureiros recuam por uma escadaria em chamas, perseguidos por mortos-vivos ensanguentados](../assets/images/cidadela-escarlate/capa.webp){ .fj-arte .fj-arte-retrato loading=lazy }
 
 ## Quem Mora na Vila
 
@@ -79,6 +79,8 @@ Boatos da taverna da vila. Alguns são verdade.
 </div>
 
 ## Como Jogamos
+
+![Aventureiros recuam por uma escadaria em chamas, perseguidos por mortos-vivos ensanguentados](../assets/images/cidadela-escarlate/capa.webp){ .fj-arte .fj-arte-retrato loading=lazy }
 
 **Recuar é esperado.** Há inimigos fortes demais para vocês, de propósito. Fujam e voltem com um plano.
 

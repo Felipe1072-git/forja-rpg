@@ -286,6 +286,29 @@
   margin: 0.4em 0 0.4em;
 }
 
+/* recorte colorido de um mapa (marcado com { .fj-recorte }): à direita do texto,
+   com moldura; não inverte no tema escuro, porque é colorido */
+.md-typeset img.fj-recorte {
+  float: right;
+  width: min(20rem, 45%);
+  height: auto;
+  margin: 0.3em 0 0.8em 1.2em;
+  border: 2px solid var(--fj-linha);
+}
+
+.md-typeset h2 + p:has(> img.fj-recorte) ~ ul {
+  overflow: hidden;
+}
+
+@media screen and (max-width: 36em) {
+  .md-typeset img.fj-recorte {
+    float: none;
+    display: block;
+    width: 100%;
+    margin: 0.6em 0 1em;
+  }
+}
+
 /* galeria de NPCs (<div class="fj-npcs" markdown>): um cartão por parágrafo,
    com o retrato à esquerda, o nome, o papel em itálico e o texto */
 .md-typeset .fj-npcs {
