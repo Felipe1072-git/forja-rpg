@@ -32,6 +32,8 @@ Para criar um personagem, siga as seções deste capítulo e anote na ficha:
 
 **Mana.** O combustível de todas as habilidades, mágicas ou não.
 
+**CD de habilidade.** 10 + modificador do atributo principal. É a CD dos testes de resistência contra as suas habilidades.
+
 **CA.** Classe de Armadura.
 
 **Habilidades e magias.** Vêm da lista da sua classe.

@@ -76,7 +76,9 @@ Cada habilidade usa um atributo, quase sempre o atributo principal.
 
 **Ataque.** Role d20 + modificador do atributo contra a CA do alvo.
 
-**Resistência.** O alvo rola d20 + modificador do atributo que a habilidade indicar contra a sua **CD de habilidade** = 10 + modificador do atributo da habilidade. Com sucesso, o alvo sofre metade do dano e ignora as condições.
+**Resistência.** O alvo rola d20 + modificador do atributo que a habilidade indicar contra a sua CD de habilidade. Com sucesso, o alvo sofre metade do dano e ignora as condições.
+
+**CD de habilidade.** 10 + modificador do atributo da habilidade (quase sempre o atributo principal). Ex.: um mago com Inteligência 16 (+3) tem CD 13.
 
 **Nenhum.** O efeito acontece automaticamente.
 

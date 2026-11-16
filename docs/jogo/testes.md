@@ -43,6 +43,10 @@ O Mestre pede um teste quando:
 | Difícil | 15 | Nadar contra a correnteza, estabilizar um moribundo |
 | Extrema | 18 | Escalar um penhasco liso com uma mão, segurar um leão furioso |
 
+### TESTES DE RESISTÊNCIA
+
+Quando um perigo, um monstro ou uma habilidade pede um teste de resistência, role d20 + modificador do atributo indicado contra a CD. Contra a habilidade de um personagem, a CD é a **CD de habilidade** dele: 10 + modificador do atributo principal (veja Testes em Habilidades).
+
 ### TESTES RESISTIDOS
 
 Quando duas criaturas disputam a mesma coisa, cada uma rola um teste do atributo adequado. O maior resultado vence. Em caso de empate, rolem de novo.
