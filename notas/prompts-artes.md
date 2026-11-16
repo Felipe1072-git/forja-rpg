@@ -127,6 +127,12 @@ Retratos para as folhas de "Quem É Quem" que o Mestre mostra aos jogadores. Esc
 
 Salve do jeito que vier (png ou jpg) em `campanhas/<campanha>/retratos/<arquivo>.png`, com o nome da tabela. Rode `python campanhas/aethelgard/gerar.py`: o retrato entra no cartão sozinho. Quem ainda não tem arte sai com um quadro vazio.
 
+**Vários numa imagem só.** Dá para pedir todos numa grade (14 em 4 × 4 deu certo para Torre Vermelha, mas cada retrato sai com uns 250 pixels). Para cortar a grade em um arquivo por NPC, na ordem de leitura:
+
+```bash
+python campanhas/aethelgard/recortar_retratos.py grade.png broz roch ariadna-ambrozy agniezka cecylia norneth konrad eva gabe cibor remy-mags witek tobiasz zula
+```
+
 ```text
 Black and white pen-and-ink portrait for an old-school fantasy RPG rulebook, in the gritty OSR style of books like Shadowdark: bold black ink lines, solid blacks, crosshatching for shadows, rough hand-drawn texture, high contrast, no gray tones, no color.
 
