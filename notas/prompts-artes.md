@@ -121,6 +121,45 @@ Symbol: [SÍMBOLO]
 |---|---|---|
 | Woltander (Aethelgard) | aethelgard/woltander | A straight longsword pointing down, its blade driven into a flat horizon line; a half sun rises from the horizon behind the crossguard, with straight rays fanning out. The crossguard and the horizon together suggest a cross, but it must not look like a Christian cross. |
 
+## Equipamento
+
+Artes da página Equipamento: **pranchas** (o equipamento exposto, como num catálogo antigo) e **vinhetas** (uma regra acontecendo, com um pouco de humor). Use uma conversa nova só para elas: mande o prompt abaixo com a primeira linha e depois "Same style, same rules. Next:" + a linha. **Troque a proporção no Gemini a cada arte**, conforme a coluna Formato.
+
+Salve como `docs/assets/images/equipamento/<arquivo>.webp` (mesmo tratamento das classes: fundo transparente, alfa saindo do traço). As artes não têm texto; quando for preciso dizer o que é cada peça, a legenda vai em itálico logo abaixo da arte.
+
+```text
+Black and white pen-and-ink illustration for an old-school fantasy RPG rulebook, in the gritty OSR style of books like Shadowdark: bold black ink lines, heavy solid blacks, crosshatching and stippling for shadows, rough hand-drawn texture, high contrast, no gray tones, no color. A touch of dark humor is welcome.
+
+Background: pure flat white (#FFFFFF) everywhere outside the drawing; the edges of the scene fade into white. No paper texture, no beige, no gradient, no vignette, no frame, no border.
+
+No text, no letters, no numbers, no labels, no signature, no watermark.
+
+Format: [FORMATO]
+Scene: [CENA]
+```
+
+| Arte | Arquivo | Formato | Linha para [CENA] |
+|---|---|---|---|
+| Abertura | loja | horizontal 3:2 | A cramped, cluttered blacksmith and outfitter shop. Behind the counter, a stocky dwarf smith proudly shows a longsword. In front, three adventurers shop: one tries on a helmet far too big that falls over his eyes, one counts a small pile of gold coins on the counter with a suspicious frown, one inspects a crossbow. Weapons and armor hang on every wall, a forge glows in the back. |
+| Funil | funil | horizontal 3:2 | Four frightened peasants at the entrance of a dark dungeon, armed with whatever they found: a farmer gripping a crowbar, a woman holding a long wooden pole, a boy wearing a frying pan as a helmet and clutching a sack of caltrops, an old man holding a torch as far from his body as he can. Muddy clothes, no armor, nervous faces. |
+| Carga | carga | quadrado 1:1 | An adventurer bent almost double under an absurdly tall backpack: rope, pots, a ladder, a chest, a shovel, torches and a stuffed deer head tied on top, sweat running down the face. Beside him, a mule carrying nothing looks at him with contempt. |
+| Armaduras | armaduras | horizontal 16:9 | An armor catalog plate: eight suits of armor on wooden armor stands, in one straight row, all at the same scale and facing the viewer, from lightest on the left to heaviest on the right: 1. plain leather armor; 2. studded leather armor with metal rivets; 3. hide armor of thick furs and pelts; 4. a chain mail shirt; 5. a polished steel breastplate over a padded coat; 6. a heavy coat of large iron rings sewn on leather; 7. splint armor of vertical metal strips; 8. full plate armor with a closed helm. On the wall above them hang three shields, left to right: a small round buckler, a round wooden shield, a tall tower shield. |
+| Não pode nadar | nadar | quadrado 1:1 | Seen from the side, at water level, with nothing drawn underwater: a calm river surface drawn as a few simple horizontal ink lines. On the left, only the closed helm of a knight in full plate sticks out of the water, sinking, with a few bubbles and one gauntlet raised above it. On the right, a grinning rogue in light leather armor swims on the surface with easy strokes, head and shoulders above the water, a dagger held in the teeth, looking back at the knight. Few elements, big clear shapes, lots of white around them. (A primeira versão, com o corte embaixo d'água, ficou confusa.) |
+| Kit de exploração | kit | horizontal 3:2 | Flat lay seen from directly above, like a plate in an old equipment catalog: an open leather backpack in the center, and its contents laid out neatly around it, every object separate and easy to read: a flint and steel, five torches, three rations wrapped in cloth, a coiled rope, a grappling hook, ten iron spikes. |
+
+**Onde entra cada uma** (em `docs/equipamento.md`):
+
+| Arquivo | Lugar | Markdown |
+|---|---|---|
+| loja | entre `# Equipamento` e `## Moeda` | `![Uma loja de ferreiro: o anão mostra uma espada longa, um aventureiro experimenta um elmo grande demais e outro conta moedas no balcão](assets/images/equipamento/loja.webp){ .fj-arte .fj-arte-cena loading=lazy }` |
+| funil | depois da tabela d12 do Nível 0 | `![Quatro camponeses do Funil na entrada da masmorra, com pé de cabra, vara, frigideira na cabeça e uma tocha](assets/images/equipamento/funil.webp){ .fj-arte .fj-arte-cena loading=lazy }` |
+| carga | logo depois de `## Carga` | `![Um aventureiro curvado sob uma mochila enorme, ao lado de uma mula sem carga](assets/images/equipamento/carga.webp){ .fj-arte-vinheta loading=lazy }` |
+| armaduras | logo depois de `## Armaduras`, com a legenda na linha de baixo: `*Da esquerda para a direita: Couro, Couro batido, Gibão de peles, Cota de malha, Peitoral, Cota de anéis, Cota de talas e Placas. Na parede: Broquel, Escudo e Escudo de torre.*` | `![As oito armaduras em suportes, da mais leve à mais pesada, com os três escudos na parede](assets/images/equipamento/armaduras.webp){ .fj-arte .fj-arte-cena loading=lazy }` |
+| nadar | no fim de Armaduras, logo antes de `## Equipamento Básico` | `![Um cavaleiro de placas afunda no rio enquanto um ladino de couro passa nadando](assets/images/equipamento/nadar.webp){ .fj-arte-vinheta .fj-arte-fim loading=lazy }` |
+| kit | depois do parágrafo do Kit de Exploração | `![A mochila aberta, vista de cima, com o kit de exploração espalhado em volta](assets/images/equipamento/kit.webp){ .fj-arte .fj-arte-cena loading=lazy }` |
+
+**Vinheta.** A classe `fj-arte-vinheta` deixa a arte pequena, à direita do texto corrido, que passa ao lado dela (como num livro de RPG). Títulos, tabelas e listas de regras começam sempre abaixo dela, então ponha a vinheta antes de um trecho de texto comum. Onde não há texto comum (como em Armaduras), some `.fj-arte-fim`: ela fica pequena e centralizada, fechando a seção. No celular a vinheta vai para o centro.
+
 ## NPCs de Campanha
 
 Retratos para as folhas de "Quem É Quem" que o Mestre mostra aos jogadores. Escolha a proporção **1:1** no Gemini. Use uma conversa nova para cada vila, com o prompt abaixo na primeira e depois "Same style, same rules. Next:" + a linha.

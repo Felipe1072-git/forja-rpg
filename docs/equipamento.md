@@ -1,5 +1,7 @@
 # Equipamento
 
+![Uma loja de ferreiro: o anão mostra uma espada longa, um aventureiro experimenta um elmo grande demais, outro conta moedas no balcão e outro examina uma besta](assets/images/equipamento/loja.webp){ .fj-arte .fj-arte-cena loading=lazy }
+
 ## Moeda
 
 A única moeda é a **peça de ouro (po)**. Itens baratos são vendidos em lotes (ex.: 5 tochas por 1 po).
@@ -23,12 +25,16 @@ A única moeda é a **peça de ouro (po)**. Itens baratos são vendidos em lotes
 | 11 | Clava |
 | 12 | Saco de estrepes |
 
+![Quatro camponeses do Funil na entrada da masmorra, com pé de cabra, vara, uma frigideira na cabeça e uma tocha](assets/images/equipamento/funil.webp){ .fj-arte .fj-arte-cena loading=lazy }
+
 **Nível 1.** Escolha uma opção:
 
 - **Ouro.** Role 2d6 × 5 po e compre o que quiser.
 - **Pacote inicial.** Kit de exploração, uma arma de até 10 po e uma armadura de até 20 po.
 
 ## Carga
+
+![Um aventureiro curvado sob uma mochila enorme, ao lado de uma mula sem carga que o olha com desprezo](assets/images/equipamento/carga.webp){ .fj-arte-vinheta loading=lazy }
 
 Você pode **usar** sem ocupar carga:
 
@@ -100,6 +106,10 @@ Além disso, você **carrega** um número de espaços igual ao seu modificador d
 
 ## Armaduras
 
+![As oito armaduras em suportes, da mais leve à mais pesada, com os três escudos acima](assets/images/equipamento/armaduras.webp){ .fj-arte .fj-arte-cena loading=lazy }
+
+*Da esquerda para a direita: Couro, Couro batido, Gibão de peles, Cota de malha, Peitoral, Cota de anéis, Cota de talas e Placas. Acima: Broquel, Escudo e Escudo de torre.*
+
 | Armadura | Categoria | Custo | CA | Força | Propriedades |
 |---|---|---|---|---|---|
 | Couro | Leve | 10 po | 11 + Des | — | — |
@@ -115,11 +125,14 @@ Além disso, você **carrega** um número de espaços igual ao seu modificador d
 | Escudo de torre | Escudo | 25 po | +3 | 13 | Ocupa uma mão. Desvantagem em furtividade |
 
 **Força.** Sem a Força mínima, seu movimento cai à metade.
+
 **Sem proficiência.** Usar uma armadura sem proficiência:
 
 - movimento à metade;
 - desvantagem em ataques e em testes de Força e Destreza;
 - para usar uma habilidade, faça antes um teste de Força CD 15. Se falhar, a habilidade não funciona e a Mana é gasta.
+
+![Só o elmo de um cavaleiro de placas aparece acima da água enquanto ele afunda; ao lado, um ladino de couro passa nadando com a adaga nos dentes](assets/images/equipamento/nadar.webp){ .fj-arte-vinheta .fj-arte-fim loading=lazy }
 
 ## Equipamento Básico
 
@@ -152,6 +165,8 @@ Além disso, você **carrega** um número de espaços igual ao seu modificador d
 ### KIT DE EXPLORAÇÃO
 
 Custa 7 po e ocupa 2 espaços. Contém: mochila, pederneira, 5 tochas, 3 rações, corda de 15 m, gancho de escalada e 10 cravos de ferro.
+
+![A mochila aberta, vista de cima, com o kit de exploração em volta: corda, gancho, rações, tochas, pederneira e cravos](assets/images/equipamento/kit.webp){ .fj-arte .fj-arte-cena loading=lazy }
 
 ## Montarias e Veículos
 
