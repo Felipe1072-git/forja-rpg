@@ -14,9 +14,9 @@ Depois da primeira descida, a campanha é descer, recuar, voltar à vila e desce
 
 ## Como Chegar
 
-Torre Vermelha fica na margem norte do lago, a 7 hexágonos a oeste de Java (veja Viagem). O castelo fica dentro da floresta, a noroeste da vila.
+Torre Vermelha fica ao norte do lago, a 7 hexágonos a oeste de Java (veja Viagem). O castelo fica dentro da floresta, a noroeste da vila.
 
-![Mapa da região com o hexágono de Torre Vermelha marcado em azul, na margem norte do lago](../assets/images/aethelgard/mapa-cidadela.webp){ .fj-arte loading=lazy }
+![Mapa da região com o hexágono de Torre Vermelha marcado em azul, ao norte do lago](../assets/images/aethelgard/mapa-cidadela.webp){ .fj-arte loading=lazy }
 
 ## O Que Se Diz na Jaula
 
