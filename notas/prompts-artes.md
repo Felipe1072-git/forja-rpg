@@ -52,6 +52,7 @@ Character: [CLASSE]
 | Quebra-Feitiço | quebra-feitico | A muscular young warrior in torn simple clothes and light armor, gripping a huge rough sword wreathed in black, shredding anti-magic energy, cracked magic runes and broken spell circles shattering around him. |
 | Carcereiro do Abismo | carcereiro-do-abismo | A sinister robed summoner with a hood and a chained grimoire, standing inside a burning ritual circle, holding a heavy chain that binds a snarling horned demon hound, small imps hiding in the smoke behind. |
 | Legionário Arcano | legionario-arcano | A battle mage soldier in a steel breastplate and a military cloak, a longsword crackling with arcane lightning in one hand, the other hand raised casting a glowing rune, a small spellbook chained to the belt, ready to charge. |
+| Sanguimante | sanguimante | A gaunt blood mage in a dark hooded robe with a bloody cut across the palm, ribbons of blood swirling out of the wound and forming a floating spear in the air, a ritual dagger in the other hand, faint veins glowing across the face. |
 | Malvidente | malvidente | A hunched seer-witch with milky white eyes, casting bones from one hand, a raven on the shoulder and a bubbling cauldron behind. |
 
 ## Dicas
