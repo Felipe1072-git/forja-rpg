@@ -358,6 +358,7 @@ def referencia_jogador():
                   ['Couro batido (leve)', '12 + Des', '—', ''],
                   ['Gibão de peles (média)', '12 + Des', '11', ''],
                   ['Cota de malha (média)', '13 + Des', '13', 'desv. furtividade, nado'],
+                  ['Peitoral (média)', '13 + Des', '11', ''],
                   ['Cota de anéis (pesada)', '14', '13', 'desv. furtividade, nado'],
                   ['Cota de talas (pesada)', '15', '13', 'desv. furtividade, nado'],
                   ['Placas (pesada)', '16', '15', 'desv. furtividade; não nada'],
@@ -620,7 +621,7 @@ def guia_criacao():
               quadro(['Armadura', 'Custo', 'CA', 'For'], [
                   ['Couro (L)', '10 po', '11 + Des', '—'], ['Couro batido (L)', '20 po', '12 + Des', '—'],
                   ['Gibão de peles (M)', '15 po', '12 + Des', '11'], ['Cota de malha (M)', '60 po', '13 + Des', '13'],
-                  ['Cota de anéis (P)', '20 po', '14', '13'],
+                  ['Peitoral (M)', '120 po', '13 + Des', '11'], ['Cota de anéis (P)', '20 po', '14', '13'],
                   ['Cota de talas (P)', '100 po', '15', '13'], ['Placas (P)', '200 po', '16', '15'],
                   ['Broquel', '5 po', '+1', '—'], ['Escudo', '10 po', '+2', '—'], ['Escudo de torre', '25 po', '+3', '13'],
               ], 'rf-armaduras')),

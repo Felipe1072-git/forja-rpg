@@ -106,6 +106,7 @@ Além disso, você **carrega** um número de espaços igual ao seu modificador d
 | Couro batido | Leve | 20 po | 12 + Des | — | — |
 | Gibão de peles | Média | 15 po | 12 + Des | 11 | — |
 | Cota de malha | Média | 60 po | 13 + Des | 13 | Desvantagem em furtividade e natação |
+| Peitoral | Média | 120 po | 13 + Des | 11 | — |
 | Cota de anéis | Pesada | 20 po | 14 | 13 | Desvantagem em furtividade e natação |
 | Cota de talas | Pesada | 100 po | 15 | 13 | Desvantagem em furtividade e natação |
 | Placas | Pesada | 200 po | 16 | 15 | Desvantagem em furtividade; não pode nadar |
