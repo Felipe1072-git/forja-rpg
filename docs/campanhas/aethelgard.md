@@ -94,6 +94,29 @@ A cidade inicial. Fica perto da costa e vive de exportar café.
 
 **O moinho.** Destruído por uma explosão de farinha. Por baixo dele há passagens até as criptas da capela.
 
+## Gente de Java
+
+Quem o grupo já conhece.
+
+<div class="fj-npcs" markdown>
+
+![Retrato de Barão de Java](../assets/images/aethelgard/npcs/barao-java.webp){ loading=lazy }
+**O Barão de Java** *Senhor de Java.* Manda em Java: nas fazendas de café e na sede.
+
+![Retrato de Tonho](../assets/images/aethelgard/npcs/tonho.webp){ loading=lazy }
+**Tonho** *Centro de Distribuição.* Trabalha no Centro, para onde vai o café antes de seguir para a costa. Discutiu com os trabalhadores que queriam tocar o negócio sozinhos.
+
+![Retrato de Maren Dovel](../assets/images/aethelgard/npcs/maren.webp){ loading=lazy }
+**Maren Dovel** *Sumida.* Esposa do dono do Centro de Distribuição. Uma carta mostrou que ela vendia os vizinhos aos drows em troca de ouro. Ninguém sabe onde está.
+
+![Retrato de Odo](../assets/images/aethelgard/npcs/odo.webp){ loading=lazy }
+**Odo** *O moleiro, morto.* Atacou o grupo nas criptas e morreu com uma flecha na cabeça. Um diabrete o possuía e saiu do corpo quando ele morreu.
+
+![Retrato de Velistra](../assets/images/aethelgard/npcs/velistra.webp){ loading=lazy }
+**Velistra** *Drow da Treva.* Levava os moradores de Java pela fenda para virar escravos. Fugiu muito ferida, nas garras de um demônio alado.
+
+</div>
+
 ## A Região
 
 Uma região de Drayone. Java fica no leste, perto da costa, cercada pelas fazendas de café.

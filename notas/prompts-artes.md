@@ -166,6 +166,92 @@ Pasta: `campanhas/aethelgard/retratos/`.
 | Tobiasz | tobiasz | An old human hermit carpenter with wild white hair and beard, patched clothes and a carpenter's hammer, shouting angrily with a pointing finger. |
 | Zula | zula | A pale human witch with long dark hair and tattoos on her face, small dead animals hanging behind her shoulder, smiling as if she knows a secret. |
 
+### Aethelgard: grades prontas
+
+Duas grades para colar inteiras no Gemini (1:1). Salve cada uma em `campanhas/aethelgard/retratos/` e corte com o comando embaixo dela. Se algum sair errado, refaça só ele com o prompt de retrato único acima.
+
+**Grade 1: Java e a estrada** (16 retratos, 4 × 4).
+
+```text
+Black and white pen-and-ink portraits for an old-school fantasy RPG rulebook, in the gritty OSR style of books like Shadowdark: bold black ink lines, solid blacks, crosshatching for shadows, rough hand-drawn texture, high contrast, no gray tones, no color.
+
+Composition: a sheet of 16 separate head-and-shoulders portraits in a strict grid of 4 columns and 4 rows, square 1:1 format. Every cell is the same size, with wide white gutters between cells; portraits must not touch each other. Fill the cells in reading order (left to right, top to bottom). Each portrait is in three-quarter view, centered in its cell, with a clear, memorable face and simple, strong shapes. Each person must look clearly different from the others. Cells with two or three people show them side by side at the same scale. All humans have round human ears; only the drow and the goblin have pointed ears.
+
+Background: pure flat white (#FFFFFF) everywhere. No paper texture, no frames, no borders, no lines between cells, no circles behind the heads.
+
+No text, no letters, no numbers, no labels, no signature, no watermark.
+
+1. A dignified human baron in his sixties, neat gray beard, fur-trimmed coat, signet ring, holding a small cup of coffee.
+2. A sturdy human warehouse foreman in his thirties, rolled sleeves, a sack of coffee beans on his shoulder, stubborn defiant look.
+3. An elegant, cold human woman in her forties, fine dark dress with a lace collar, rings on her fingers, a sealed letter in her hand, thin calculating smile.
+4. A burly human miller covered in flour, half of his face weeping and the other half grinning madly, the shadow of a small horned imp behind his shoulder.
+5. A drow woman, skin rendered in solid black ink with hatching, long white hair, a spiky crown, a fresh wound across her cheek, cruel proud gaze, holding a chain.
+6. A cheerful gnome peddler with a big nose and wild hair, pots and pans hanging from his pack, a mule's head peeking in beside him.
+7. An old weathered human boatman, white stubble, wool cap, an oar on his shoulder, skeptical grin.
+8. Three people: burly human woodcutters with axes on their shoulders; one bearded, one young, one bald.
+9. A young, nervous human soldier, round helmet, chain mail, holding a spear and a shield, wide scared eyes.
+10. A young, stubborn human shepherdess, wind-blown hair, a crook staff, a goat beside her.
+11. A thin, starving human villager in rags, a broken chain hanging from an iron collar, terrified eyes.
+12. A grizzled human bandit captain, reddish-gray hair and beard, chain mail, a scar across the nose, hard smirk.
+13. A goblin chief with huge ears and a crooked grin, wearing a torn tabard with a castle crest, a heavy club on his shoulder.
+14. Three people: tired human hunters in leather and fur with bows, dark circles under their eyes; an older leader with a scruffy beard and two young brothers.
+15. A drow overseer, skin rendered in solid black ink with hatching, short white hair, chain shirt, a coiled whip, cold sneer.
+16. A gaunt human mother in her forties, torn clothes, shackle marks on her wrists, fierce, determined eyes.
+```
+
+```bash
+python campanhas/aethelgard/recortar_retratos.py grade-java.png barao-java tonho maren odo velistra pipo tadeu lenhadores lauro ilsa bento ruco gorgo cacadores zarek marta
+```
+
+| Nº | NPC | Onde aparece |
+|---|---|---|
+| 1 | Barão de Java | guia de Aethelgard |
+| 2 | Tonho | sessão 1 (Centro de Distribuição) |
+| 3 | Maren Dovel | sessão 1, Viagem (o retrato falado) |
+| 4 | Odo, o moleiro | sessão 1 |
+| 5 | Velistra | sessão 1, Mina da Treva |
+| 6 | Pipo Latão | Viagem, bom 1 |
+| 7 | Tadeu, o barqueiro | Viagem, bom 3 |
+| 8 | Borys, Janek e Olek | Viagem, bom 4 |
+| 9 | Lauro | Viagem, bom 6 |
+| 10 | Ilsa, a pastora | Viagem, ruim 4 |
+| 11 | Bento | Viagem, ruim 6; Mina da Treva |
+| 12 | Capitão Ruço | Viagem, ruim 1 |
+| 13 | Gorgo, chefe goblin | Viagem, ruim 3 |
+| 14 | Dobek e os irmãos Wilk | Mãe dos Morros |
+| 15 | Zarek, o feitor | Mina da Treva |
+| 16 | Marta | Mina da Treva |
+
+**Grade 2: Torre Vermelha, os que faltam** (5 retratos, 3 × 2).
+
+```text
+Black and white pen-and-ink portraits for an old-school fantasy RPG rulebook, in the gritty OSR style of books like Shadowdark: bold black ink lines, solid blacks, crosshatching for shadows, rough hand-drawn texture, high contrast, no gray tones, no color.
+
+Composition: a sheet of 5 separate head-and-shoulders portraits in a strict grid of 3 columns and 2 rows, horizontal 3:2 format. Every cell is the same size, with wide white gutters between cells; portraits must not touch each other. Fill the cells in reading order (left to right, top to bottom); the last cell stays empty white. Each portrait is in three-quarter view, centered in its cell, with a clear, memorable face. Each person must look clearly different from the others. All humans have round human ears.
+
+Background: pure flat white (#FFFFFF) everywhere. No paper texture, no frames, no borders, no lines between cells.
+
+No text, no letters, no numbers, no labels, no signature, no watermark.
+
+1. A halfling naturalist with curly hair and round spectacles, exhausted and bruised, holding sample jars and a small shovel.
+2. A human merchant woman in her forties, practical travel coat, a ledger under her arm, exhausted but sharp-eyed.
+3. A battered human knight bodyguard with a red stag on his tabard and an antler crest on his helmet, bandaged face, stern and loyal.
+4. A portly human merchant with a fur hat and a big mustache, holding a ledger and a coin purse, shrewd smile.
+5. A clumsy young human apprentice tanner in an apron, dropping a stack of hides, embarrassed grin.
+```
+
+```bash
+python campanhas/aethelgard/recortar_retratos.py grade-torre-2.png ichbon dugan barrett kazimierz hubert
+```
+
+| Nº | NPC | Onde aparece |
+|---|---|---|
+| 1 | Ichbon | Torre Vermelha, presos na Cidadela |
+| 2 | Dugan Lovay | Torre Vermelha, presos na Cidadela |
+| 3 | Barrett, o Cervo Vermelho | Torre Vermelha, presos na Cidadela |
+| 4 | Kazimierz | Torre Vermelha, comitê de mercadores (sugestão) |
+| 5 | Hubert | Torre Vermelha, aprendiz de Witek |
+
 ## Cenas de Sessão
 
 Uma arte por sessão para o Diário de cada campanha, feita a partir das miniaturas da mesa. Proporção **3:2** horizontal no Gemini. Mande primeiro o prompt completo; se ele embolar os personagens, peça ajustes um por vez ("Make the dwarf bald with a grey beard", "Remove the extra drow"). Salve como `docs/assets/images/<campanha>/sessao-<n>.webp`. No Diário, logo depois do título da sessão:
