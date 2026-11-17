@@ -108,7 +108,32 @@ def _ancestralidades(docs):
             if alvo:
                 alvo[1] += ''.join(f' {l[0]}: {tab[0][1]} {l[1]}. {l[2]}.' for l in tab[1:])
         lista.append({'nome': nome, 'epigrafe': epi.group(1).strip() if epi else '', 'tracos': tracos})
+    _misturas(lista)
     return rolagem, lista
+
+
+_LADO = re.compile(r'\bd[oa]s? ([A-ZÀ-Ý][\w\-À-ÿ]*(?: [\w\-À-ÿ]+)*?) \(([^)]+)\)')
+
+
+def _misturas(lista):
+    """Traço do tipo "Escolha um traço do Humano (A ou B) e um do Orc (C ou D)" (Dois sangues,
+    Dois mundos): guarda, para cada lado, a ancestralidade de origem e as opções que a regra lista.
+    O gerador deixa escolher no Montar e sorteia no Aleatório e no Funil."""
+    por_nome = {a['nome']: a for a in lista}
+    for anc in lista:
+        for nome, texto in anc['tracos']:
+            if not texto.startswith('Escolha um traço'):
+                continue
+            lados = []
+            for origem, opcoes in _LADO.findall(texto):
+                fonte = por_nome.get(origem)
+                nomes = [o.strip() for o in re.split(r',| ou ', opcoes) if o.strip()]
+                if not fonte or not all(any(t[0] == o for t in fonte['tracos']) for o in nomes):
+                    lados = []
+                    break
+                lados.append({'anc': origem, 'opcoes': nomes})
+            if len(lados) >= 2:
+                anc['mistura'] = {'traco': nome, 'lados': lados}
 
 
 def _nomes(docs):

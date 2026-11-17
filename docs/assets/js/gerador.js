@@ -39,6 +39,27 @@
   }
 
   function traco(anc, nome) { return anc.tracos.find(([t]) => t === nome); }
+
+  // Ancestralidade mestiça (Dois sangues, Dois mundos): um traço de cada ancestralidade de origem,
+  // entre as opções da regra (o hook as lê do livro). Escolhas em m.mistura, uma por lado.
+  function sortearMistura(anc) { return anc && anc.mistura ? anc.mistura.lados.map((l) => um(l.opcoes)) : []; }
+  function misturaValida(anc, escolhas) {
+    return !!(anc.mistura && escolhas && anc.mistura.lados.every((l, k) => l.opcoes.includes(escolhas[k])));
+  }
+  // Cópia da ancestralidade com o traço da regra trocado pelos traços escolhidos (com o texto
+  // da origem), para o resto do gerador (Ambicioso, Robusto...) achá-los pelo nome.
+  function ancDoEstado(m) {
+    const anc = D.ancestralidades.find((a) => a.nome === m.anc);
+    if (!anc || !misturaValida(anc, m.mistura)) return anc;
+    const escolhidos = anc.mistura.lados.map((l, k) => {
+      const t = traco(D.ancestralidades.find((a) => a.nome === l.anc), m.mistura[k]);
+      return [t[0], t[1], l.anc];
+    });
+    const tracos = [];
+    anc.tracos.forEach((t) => { if (t[0] === anc.mistura.traco) tracos.push(...escolhidos); else tracos.push(t); });
+    return Object.assign({}, anc, { tracos });
+  }
+  function tracoHTML([t, x, origem]) { return `<p><b>${esc(t)}${origem ? ' (' + esc(origem) + ')' : ''}.</b> ${md(x)}</p>`; }
   function regraDe(classe, prefixo) { return classe.regras.find(([t]) => t.startsWith(prefixo)); }
   function vocacao(classe) { const r = regraDe(classe, 'Vocação'); return r ? [r[0].replace('Vocação: ', ''), r[1]] : null; }
   function exigeDivindade(classe) {
@@ -122,6 +143,7 @@
     m.nivel = op.nivel;
     m.classe = classe.nome;
     m.anc = anc.nome;
+    m.mistura = sortearMistura(anc);
     m.principal = um(classe.atributos);
     if (op.nivel === 0) {
       m.atr = ATR.map(rolar4d6);
@@ -434,7 +456,7 @@
 
   function estadoNovo() {
     return {
-      versao: 2, nome: '', nivel: 1, classe: null, anc: null, antecedente: null, bem: null, ordem: null,
+      versao: 2, nome: '', nivel: 1, classe: null, anc: null, mistura: [], antecedente: null, bem: null, ordem: null,
       titulo: '', divindade: 'auto', atr: [10, 10, 10, 10, 10, 10], principal: null, pv: [],
       habilidades: [], melhorias: [], outros: [], elemento: null,
       equipModo: 'pacote', equipamento: null, equipExtra: '', compras: [], ouroInicial: null, compraLivre: false, ouro: 0, extras: null, extrasChave: '',
@@ -530,7 +552,7 @@
   // Constrói o personagem a partir do estado. Com sortearBrancos, preenche os avanços livres.
   function personagemDoEstado(m, sortearBrancos) {
     const classe = D.classes.find((c) => c.nome === m.classe);
-    const anc = D.ancestralidades.find((a) => a.nome === m.anc);
+    const anc = ancDoEstado(m);
     const pj = { nivel: m.nivel, classe, anc, avancos: [], treinos: 0, atr: m.atr.slice() };
     const ordemAtr = classe.atributos.slice().sort((a, b) => pj.atr[ATR.indexOf(b)] - pj.atr[ATR.indexOf(a)]);
     pj.principal = classe.atributos.includes(m.principal) ? m.principal : ordemAtr[0];
@@ -648,7 +670,16 @@
     M = estadoNovo();
     const $ = (sel) => painel.querySelector(sel);
     const classeAtual = () => D.classes.find((x) => x.nome === M.classe);
-    const ancAtual = () => D.ancestralidades.find((x) => x.nome === M.anc);
+    const ancAtual = () => ancDoEstado(M);
+    const ancBase = () => D.ancestralidades.find((x) => x.nome === M.anc);
+
+    // Traços da ancestralidade mestiça: um seletor por ancestralidade de origem.
+    function misturaHTML() {
+      const base = M.anc ? ancBase() : null;
+      if (!base || !base.mistura) return '';
+      return base.mistura.lados.map((l, k) => `<label>${esc(base.mistura.traco)}: traço do ${esc(l.anc)}
+        <span class="fj-g-linha"><select data-mist="${k}">${opcoesDe(l.opcoes.map((o) => [o, o]), (M.mistura || [])[k], 'Escolha')}</select><button type="button" data-acao="mist" data-k="${k}" title="Sortear">🎲</button></span></label>`).join('');
+    }
 
     function opcoesDe(lista, sel, vazio) {
       return (vazio != null ? `<option value="">${vazio}</option>` : '')
@@ -672,6 +703,7 @@
             <label>Nível <span class="fj-g-linha"><select data-m="nivel">${opcoesDe(Array.from({ length: 11 }, (_, i) => [i, i]), M.nivel)}</select><button type="button" data-acao="subir" title="Subir de nível">Subir ↑</button></span></label>
             <label>Classe <select data-m="classe">${opcoesDe(D.classes.map((x) => [x.nome, x.nome + (x.exotica ? ' (exótica)' : '')]), M.classe, 'Escolha')}</select></label>
             <label>Ancestralidade <select data-m="anc">${opcoesDe(D.ancestralidades.map((x) => [x.nome, x.nome]), M.anc, 'Escolha')}</select></label>
+            ${misturaHTML()}
             <label>Antecedente <select data-m="antecedente">${opcoesDe(D.antecedentes.map((x) => [x[0], x[0]]), M.antecedente, 'Sortear')}</select></label>
             <label>Bem x Mal <select data-m="bem">${opcoesDe([[0, 'Bem'], [1, 'Neutro'], [2, 'Mal']], M.bem, 'Sortear')}</select></label>
             <label>Ordem x Caos <select data-m="ordem">${opcoesDe([[0, 'Ordem'], [1, 'Neutro'], [2, 'Caos']], M.ordem, 'Sortear')}</select></label>
@@ -877,6 +909,7 @@
           Object.assign(M, { habilidades: [], melhorias: [], outros: [], titulo: '', elemento: null, extras: null, principal: null, equipamento: null, divindade: 'auto', arma: undefined, armadura: undefined, compras: [] });
         }
         if (k === 'ordem') M.titulo = '';
+        if (k === 'anc' && v !== M.anc) M.mistura = [];
         M[k] = v;
         if (['nivel', 'classe', 'anc', 'ordem'].includes(k)) render(); else previa();
       }));
@@ -923,6 +956,12 @@
         }
         render();
       }));
+      // Ambicioso muda os avanços, então a tela toda se refaz.
+      painel.querySelectorAll('[data-mist]').forEach((el) => el.addEventListener('change', () => {
+        M.mistura = (M.mistura || []).slice();
+        M.mistura[parseInt(el.dataset.mist, 10)] = el.value || null;
+        render();
+      }));
       painel.querySelectorAll('[data-e0]').forEach((el) => el.addEventListener('change', () => {
         M.equip0[parseInt(el.dataset.e0, 10)] = el.value;
         previa();
@@ -959,6 +998,12 @@
           const c = M.classe ? classeAtual() : null;
           if (acao === 'nome') { M.nome = um(D.nomes[M.anc] || D.nomes.Humano); render(); }
           if (acao === 'subir' && M.nivel < 10) { M.nivel += 1; render(); }
+          if (acao === 'mist') {
+            const k = parseInt(el.dataset.k, 10);
+            M.mistura = (M.mistura || []).slice();
+            M.mistura[k] = um(ancBase().mistura.lados[k].opcoes);
+            render();
+          }
           if (acao === 'rolar-atr') { M.atr = ATR.map(rolar4d6); render(); }
           if (acao === 'pv') { M.pv[parseInt(el.dataset.k, 10)] = d(c.base); render(); }
           if (acao === 'pv-todos') { for (let k = 0; k < Math.max(1, M.nivel); k++) if (M.pv[k] == null) M.pv[k] = d(c.base); render(); }
@@ -1143,7 +1188,7 @@
     const voc = vocacao(c);
     const habs = pj.habilidades.map((h) => { const t = textoHabilidade(pj, h); return `<tr><td>${t.nome}</td><td>${esc(t.custo)}</td><td>${t.efeito}</td></tr>`; }).join('');
     const regras = c.regras.filter(([t]) => !t.startsWith('Vocação')).map(([t, x]) => `<p><b>${esc(t)}.</b> ${md(x)}</p>`).join('');
-    const tracos = pj.anc.tracos.map(([t, x]) => `<p><b>${esc(t)}.</b> ${md(x)}</p>`).join('');
+    const tracos = pj.anc.tracos.map(tracoHTML).join('');
     const av = pj.avancos.map((a) => `<li><b>Nível ${a.nivel}${a.motivo ? ' (' + a.motivo + ')' : ''}:</b> ${a.itens.map(esc).join(' · ')}</li>`).join('');
     const ben = bencaos(pj);
     return `
@@ -1173,7 +1218,7 @@
       <p><b>${esc(pj.nome)}</b>, ${esc(pj.anc.nome)} ${esc(pj.classe.nome)} (${esc(pj.antecedente[0])}, ${esc(pj.tendencia)})</p>
       <p>${linhaAtributos(pj)} · <b>PV</b> ${pj.pv} · <b>CA</b> ${pj.ca} · <b>Sanidade</b> ${pj.sanidade}</p>
       <p>${voc ? `<b>Vocação, ${esc(voc[0])}:</b> ${md(voc[1])} ` : ''}${pj.extras.map((e) => `<b>${esc(e.titulo)}:</b> ${e.itens.join(', ')}. `).join('')}<b>Equipamento:</b> ${pj.equipamento.map(esc).join(', ')}</p>
-      <details><summary>Traços de ${esc(pj.anc.nome)}</summary>${pj.anc.tracos.map(([t, x]) => `<p><b>${esc(t)}.</b> ${md(x)}</p>`).join('')}</details>
+      <details><summary>Traços de ${esc(pj.anc.nome)}</summary>${pj.anc.tracos.map(tracoHTML).join('')}</details>
       <div class="fj-g-acoes"><button type="button" data-vaga="${k}" data-acao="de-novo">🎲 Gerar de novo</button><button type="button" data-vaga="${k}" data-acao="editar">Editar no Montar</button></div>
     </div>`;
   }
@@ -1229,7 +1274,7 @@
       .map(([t, v]) => `<div class="caixa"><b>${t}</b><span>${v}</span></div>`).join('');
     const habs = pj.habilidades.map((h) => { const t = textoHabilidade(pj, h); return `<tr><td>${t.nome}</td><td>${esc(t.custo)}</td><td>${t.efeito}</td></tr>`; }).join('');
     const regras = c.regras.filter(([t]) => !t.startsWith('Vocação')).map(([t, x]) => `<p><b>${esc(t)}.</b> ${md(x)}</p>`).join('');
-    const tracos = pj.anc.tracos.map(([t, x]) => `<p><b>${esc(t)}.</b> ${md(x)}</p>`).join('');
+    const tracos = pj.anc.tracos.map(tracoHTML).join('');
     const av = pj.avancos.map((a) => `<p><b>Nível ${a.nivel}${a.motivo ? ' (' + a.motivo + ')' : ''}:</b> ${a.itens.map(esc).join(' · ')}</p>`).join('');
     const ben = bencaos(pj);
     return `
@@ -1260,7 +1305,7 @@
           <div class="linha tres"><div class="caixa"><b>PV</b><span>${pj.pv}</span></div><div class="caixa"><b>CA</b><span>${pj.ca}</span></div><div class="caixa"><b>Sanidade</b><span>${pj.sanidade}</span></div></div>
           ${voc ? `<p><b>Vocação, ${esc(voc[0])}.</b> ${md(voc[1])}</p>` : ''}
           ${pj.extras.map((e) => `<p><b>${esc(e.titulo)}:</b> ${e.itens.join(', ')}.</p>`).join('')}
-          <div class="tracos">${pj.anc.tracos.filter(([t]) => t !== 'Tamanho').map(([t, x]) => `<p><b>${esc(t)}.</b> ${md(x)}</p>`).join('')}</div>
+          <div class="tracos">${pj.anc.tracos.filter(([t]) => t !== 'Tamanho').map(tracoHTML).join('')}</div>
           <p><b>Equipamento:</b> ${pj.equipamento.map(esc).join(', ')}</p>
           <p>☐ Morreu &nbsp; ☐ Sobreviveu</p>
         </div>`;
