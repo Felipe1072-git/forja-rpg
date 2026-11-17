@@ -352,6 +352,14 @@ python campanhas/aethelgard/recortar_retratos.py grade-java.png barao-java tonho
 | 15 | Zarek, o feitor | Mina da Treva |
 | 16 | Marta | Mina da Treva |
 
+**Avulso: Valdo Dovel** (`valdo`, guia de Aethelgard). Use o prompt de retrato único com esta linha:
+
+> A lean, tall human coffee merchant in his late fifties with deep dark brown skin rendered in dense crosshatching, a shaved head, a thick white mustache, round wire spectacles pushed up on his forehead, a long high-collared coat with a coffee-branch embroidery on the lapel, a pocket watch chain across his chest, holding a small burlap pouch of coffee beans, a warm, wise half-smile.
+
+Na primeira tentativa saiu parecido com o Tonho. Ao gerar retratos de um mesmo lugar, varie tom de pele, idade, corpo, cabelo e roupa de propósito; só "human" faz o Gemini repetir o mesmo homem branco de barba.
+
+Salve em `campanhas/aethelgard/retratos/valdo.png` e troque o quadro vazio de `docs/assets/images/aethelgard/npcs/valdo.webp` por ele (360 × 360, webp).
+
 **Grade 2: Torre Vermelha, os que faltam** (5 retratos, 3 × 2).
 
 ```text

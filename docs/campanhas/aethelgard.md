@@ -90,7 +90,7 @@ A cidade inicial. Fica perto da costa e vive de exportar café.
 
 **O problema.** Pessoas desaparecendo. Foi a primeira aventura (veja Diário).
 
-**O Centro de Distribuição.** Para onde vai o café das fazendas antes de seguir para a costa. É do marido de Maren Dovel. Tonho trabalha lá.
+**O Centro de Distribuição.** Para onde vai o café das fazendas antes de seguir para a costa. É de Valdo Dovel, marido de Maren. Tonho trabalha lá.
 
 **O moinho.** Destruído por uma explosão de farinha. Por baixo dele há passagens até as criptas da capela.
 
@@ -106,8 +106,11 @@ Quem o grupo já conhece.
 ![Retrato de Tonho](../assets/images/aethelgard/npcs/tonho.webp){ loading=lazy }
 **Tonho** *Centro de Distribuição.* Trabalha no Centro, para onde vai o café antes de seguir para a costa. Discutiu com os trabalhadores que queriam tocar o negócio sozinhos.
 
+![Retrato de Valdo Dovel](../assets/images/aethelgard/npcs/valdo.webp){ loading=lazy }
+**Valdo Dovel** *Sumido.* Dono do Centro de Distribuição e marido de Maren. Desapareceu, e ninguém achou o corpo nem rastro dele.
+
 ![Retrato de Maren Dovel](../assets/images/aethelgard/npcs/maren.webp){ loading=lazy }
-**Maren Dovel** *Sumida.* Esposa do dono do Centro de Distribuição. Uma carta mostrou que ela vendia os vizinhos aos drows em troca de ouro. Ninguém sabe onde está.
+**Maren Dovel** *Sumida.* Esposa de Valdo, o dono do Centro de Distribuição. Uma carta mostrou que ela vendia os vizinhos aos drows em troca de ouro. Ninguém sabe onde está.
 
 ![Retrato de Odo](../assets/images/aethelgard/npcs/odo.webp){ loading=lazy }
 **Odo** *O moleiro, morto.* Atacou o grupo nas criptas e morreu com uma flecha na cabeça. Um diabrete o possuía e saiu do corpo quando ele morreu.
