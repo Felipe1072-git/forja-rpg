@@ -132,6 +132,51 @@ Symbol: [SÍMBOLO]
 |---|---|---|
 | Woltander (Aethelgard) | aethelgard/woltander | A straight longsword pointing down, its blade driven into a flat horizon line; a half sun rises from the horizon behind the crossguard, with straight rays fanning out. The crossguard and the horizon together suggest a cross, but it must not look like a Christian cross. |
 
+## Página Inicial
+
+Duas artes no estilo charge das de Equipamento: uma cena grande na abertura e uma vinheta fechando os três pilares. O que dá o ar de quadrinho: a linha "A touch of dark humor is welcome", **uma piada visual** (alguém se dando mal ao lado de alguém tranquilo), poucos elementos, formas grandes e **personagens estranhos** (feios, tortos, nada fofos; sem isso o Gemini tende ao desenho infantil). Cada prompt está completo; dá para colar numa conversa nova.
+
+Salve como `docs/assets/images/inicio/<arquivo>.webp` (mesmo tratamento das classes).
+
+| Arquivo | Formato | Lugar em `docs/index.md` | Markdown |
+|---|---|---|---|
+| abertura | 3:2 | entre `# Forja RPG` e o primeiro parágrafo | `![Aventureiros entram na ponta dos pés no covil de um dragão adormecido sobre o tesouro, enquanto um halfling enche a camisa de moedas](assets/images/inicio/abertura.webp){ .fj-arte .fj-arte-cena loading=lazy }` |
+| forja | 1:1 | depois de **Criatividade acima das regras**, antes de `## POR ONDE COMEÇAR` | `![Um ferreiro anão martela um aventureiro recém-forjado na bigorna; as pernas de outro saem do barril de têmpera](assets/images/inicio/forja.webp){ .fj-arte-vinheta .fj-arte-fim loading=lazy }` |
+
+**abertura** (3:2)
+
+A primeira versão saiu infantil: halfling com cara de criança, olhos grandes, gotas de suor de mangá, dragão bonitinho. O autor gosta de **personagens estranhos**: feios, tortos, maltratados. Esta versão pede isso.
+
+```text
+Black and white pen-and-ink illustration for an old-school fantasy RPG rulebook, in the gritty OSR style of books like Shadowdark and of 1980s underground comix and dungeon zines: bold black ink lines, heavy solid blacks, crosshatching and stippling for shadows, rough hand-drawn texture, high contrast, no gray tones, no color. A touch of dark humor is welcome.
+
+The characters are strange, ugly and grotesque, not cute: odd proportions, crooked noses, bad teeth, warts, scars, bags under the eyes, gaunt or lumpy faces, dirty and worn-out gear. Not cartoonish, not manga, not for children: no big round eyes, no sweat drops, no emotion marks, no chibi proportions.
+
+Composition: one wide scene, horizontal 3:2 format. The edges of the scene fade into pure flat white (#FFFFFF): no paper texture, no beige, no gradient, no vignette, no frame, no border.
+
+No text, no letters, no numbers, no labels, no signature, no watermark.
+
+Scene: a dragon's lair in a deep cave, bones scattered among the treasure. An ancient, scarred dragon with warty hide, a torn wing and broken teeth sleeps curled on a mountain of gold coins, cups and crowns, smoke curling from its nostrils. Four adventurers sneak in on tiptoe: a squat, one-eyed dwarf in dented armor freezes mid-step, grimacing, as a coin rolls away from his boot; a middle-aged halfling thief with a stubbly face, a crooked nose and rotten teeth is already on the pile, stuffing coins into his shirt with a greedy leer; a gaunt, wild-eyed old wizard with long dirty fingernails holds up a guttering candle and presses a finger to his lips; a pale, hollow-cheeked knight in an ill-fitting helm slowly draws his sword at the back. One of the dragon's eyes is half open, watching them.
+```
+
+Na mesma conversa do Gemini, dá para pedir só o ajuste: "Same scene and composition, but make every character strange, ugly and grotesque, like 1980s underground comix: odd proportions, crooked noses, bad teeth, warts, scars, gaunt faces. Not cute or cartoonish: no big eyes, no sweat drops. The halfling is a middle-aged man with stubble, not a child."
+
+Feito com o prompt novo: está em `docs/assets/images/inicio/abertura.webp` (995 × 659) e na página inicial.
+
+**forja** (1:1)
+
+```text
+Black and white pen-and-ink illustration for an old-school fantasy RPG rulebook, in the gritty OSR style of books like Shadowdark: bold black ink lines, heavy solid blacks, crosshatching and stippling for shadows, rough hand-drawn texture, high contrast, no gray tones, no color. A touch of dark humor is welcome.
+
+Composition: a small vignette, square 1:1 format, centered, with lots of empty space around it. Few elements, big clear shapes that still read clearly when printed small. Background: pure flat white (#FFFFFF) everywhere outside the drawing: no paper texture, no beige, no gradient, no vignette, no frame, no border.
+
+No text, no letters, no numbers, no labels, no signature, no watermark.
+
+Scene: a stocky dwarf blacksmith with a big beard and a leather apron raises his hammer over an anvil, sparks flying, proudly forging a brand new adventurer: a small, dazed human warrior sitting on the anvil in fresh armor, steaming hot, with a sword already in hand. Beside the anvil, the legs of another freshly forged adventurer stick out of a quenching barrel, steam rising.
+```
+
+Feito: está em `docs/assets/images/inicio/forja.webp` (669 × 682) e na página inicial.
+
 ## Equipamento
 
 Artes da página Equipamento: **pranchas** (o equipamento exposto, como num catálogo antigo) e **vinhetas** (uma regra acontecendo, com um pouco de humor). Use uma conversa nova só para elas: mande o prompt abaixo com a primeira linha e depois "Same style, same rules. Next:" + a linha. **Troque a proporção no Gemini a cada arte**, conforme a coluna Formato.

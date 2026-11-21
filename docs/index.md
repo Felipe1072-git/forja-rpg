@@ -1,5 +1,7 @@
 # Forja RPG
 
+![Aventureiros entram na ponta dos pés no covil de um dragão adormecido sobre o tesouro, enquanto um halfling enche a camisa de moedas](assets/images/inicio/abertura.webp){ .fj-arte .fj-arte-cena loading=lazy }
+
 Forja RPG é um jogo de aventura e fantasia. Você e seus companheiros exploram ruínas esquecidas, florestas assombradas e covis de monstros em busca de ouro, glória e segredos.
 
 Forja RPG não tem um mundo próprio. Use-o em qualquer cenário de fantasia: um mundo inventado pelo Mestre, um cenário publicado ou o de seu livro favorito.
@@ -13,6 +15,8 @@ Um jogador é o **Mestre**. Ele descreve o mundo, controla os monstros e decide 
 **Regras simples.** Forja RPG é uma versão enxuta do jogo de fantasia clássico. As regras são poucas e diretas. Decida rápido e jogue, em vez de procurar respostas no livro.
 
 **Criatividade acima das regras.** Se você consegue descrever, pode tentar. O Mestre decide como as regras se aplicam.
+
+![Um ferreiro anão martela um aventureiro recém-forjado na bigorna; as pernas de outro saem do barril de têmpera](assets/images/inicio/forja.webp){ .fj-arte-vinheta .fj-arte-fim loading=lazy }
 
 ## POR ONDE COMEÇAR
 
