@@ -3,6 +3,8 @@
 Algo lá do céu mais alto escolheu você e está descendo para dentro do seu corpo, uma asa de cada vez. Você não aprende truques nem estuda feitiços: você só cresce. E cada vez que fica mais forte, fica um pouco menos humano.
 { .epigrafe }
 
+![Figura de armadura pesada com olhos brancos, auréola de fogo torta, um olho na palma da mão erguida, rachaduras de luz no corpo e seis asas meio formadas, umas com penas e outras só osso](../assets/images/classes/empireo.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Classe exótica.** Fica fora do Personagem Aleatório. Combine com o Mestre antes de escolher (veja Classes exóticas).
 
 **Base.** d12: 2 de Mana por nível, 1 avanço por nível. Sem habilidades iniciais (veja Despertar).
