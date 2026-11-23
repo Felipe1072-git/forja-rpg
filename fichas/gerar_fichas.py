@@ -1116,6 +1116,81 @@ def ficha_cemiterio():
     return documento('Cemitério do Funil', frente + verso)
 
 
+# ------------------------------------------------------------ tabelas de tesouro (Mestre)
+
+TESOUROS = 'mestre/tesouros.md'
+
+
+def tz_regras(secao):
+    """Parágrafos **Termo.** de uma seção de Tesouros."""
+    return ''.join(f'<p>{qv_negrito(l)}</p>' for l in qv_secao(secao, TESOUROS) if l.startswith('**'))
+
+
+def tz_intro(secao):
+    """Primeira frase solta da seção (o degrau e o XP)."""
+    for l in qv_secao(secao, TESOUROS):
+        if l and not l.startswith(('|', '**', '#')):
+            return f'<p class="tz-intro">{qv_negrito(l)}</p>'
+    return ''
+
+
+def tz_tabela(secao, cls=''):
+    """Tabela d20 da seção. A coluna Tipo, quando existe, vai junto do nome."""
+    linhas = qv_linhas(qv_secao(secao, TESOUROS))
+    cab = linhas[0]
+    tipo = cab.index('Tipo') if 'Tipo' in cab else None
+    if tipo is not None:
+        linhas = [l[:tipo] + l[tipo + 1:] for l in linhas]
+        tipos = [l[tipo] for l in qv_linhas(qv_secao(secao, TESOUROS))]
+        for i in range(1, len(linhas)):
+            if tipos[i] not in ('—', ''):
+                linhas[i][1] += f' <i>{tipos[i].lower()}</i>'
+    th = ''.join(f'<th>{c}</th>' for c in linhas[0])
+    tr = ''.join('<tr>' + ''.join(f'<td>{qv_negrito(c)}</td>' for c in l) + '</tr>' for l in linhas[1:])
+    return f'<table class="tz-tab {cls}"><thead><tr>{th}</tr></thead><tbody>{tr}</tbody></table>'
+
+
+def tz_bloco(nome, *partes, cls=''):
+    c = f' {cls}' if cls else ''
+    return f'<div class="rf-bloco tz-bloco{c}"><h2>{nome}</h2>' + ''.join(partes) + '</div>'
+
+
+def tz_folha(titulo_doc, subtitulo, blocos):
+    return (
+        '<div class="fh-folha rf-folha tz-folha">'
+        '<header class="rf-topo">' + LOGO +
+        f'<div class="rf-titulo">{titulo_doc}</div><div class="rf-sub">{subtitulo}</div></header>'
+        '<div class="rf-colunas tz-colunas">' + ''.join(blocos) + '</div>'
+        '</div>'
+    )
+
+
+def ficha_tesouros():
+    encontro = qv_linhas(qv_secao('Encontrando Tesouro', TESOUROS))
+    p1 = tz_folha('Tabelas de Tesouro', 'role 1d6 depois de cada encontro vencido', [
+        tz_bloco('Encontrando Tesouro', tz_regras('Encontrando Tesouro'),
+                 qv_render(encontro, 'tz-perigo')),
+        tz_bloco('Baús', tz_regras('Baús')),
+        tz_bloco('Itens', tz_regras('Itens')),
+        tz_bloco('Comum', tz_intro('COMUM'), tz_tabela('COMUM')),
+        tz_bloco('Bom', tz_intro('BOM'), tz_tabela('BOM')),
+        tz_bloco('Fabuloso', tz_intro('FABULOSO'), tz_tabela('FABULOSO')),
+    ])
+    p2 = tz_folha('Tesouros Raros', 'lendário, bizarro e amaldiçoado', [
+        tz_bloco('Lendário', tz_intro('LENDÁRIO'), tz_tabela('LENDÁRIO')),
+        tz_bloco('Bizarro', tz_intro('Tesouro Bizarro'), tz_tabela('Tesouro Bizarro')),
+        tz_bloco('Amaldiçoado', tz_intro('Tesouro Amaldiçoado'), tz_regras('Tesouro Amaldiçoado'),
+                 tz_tabela('Tesouro Amaldiçoado', 'tz-maldito')),
+    ])
+    p3 = tz_folha('Comida e Carne', 'efeito bom e ruim: os jogadores escolhem se vale a pena', [
+        tz_bloco('Comida', tz_intro('Comida'), tz_regras('Comida'), tz_tabela('Comida', 'tz-comida')),
+        tz_bloco('Carne de Monstro', tz_intro('Carne de Monstro'), tz_regras('Carne de Monstro'),
+                 tz_tabela('Carne de Monstro', 'tz-comida')),
+        tz_bloco('Relíquias de Classe', tz_regras('Relíquias de Classe')),
+    ])
+    return documento('Tabelas de Tesouro', p1 + p2 + p3)
+
+
 # ------------------------------------------------------------ impressão
 
 def achar_chrome():
@@ -1145,7 +1220,7 @@ def main():
         ('guia-criacao', guia_criacao), ('ficha-exploracao', ficha_exploracao),
         ('ficha-mundo', ficha_mundo), ('ficha-quem-e-voce', ficha_quem_e_voce),
         ('ficha-divindade', ficha_divindade), ('ficha-plano', ficha_plano),
-        ('ficha-cemiterio', ficha_cemiterio),
+        ('ficha-cemiterio', ficha_cemiterio), ('ficha-tesouros', ficha_tesouros),
     ]
     for nome, gerar in fichas:
         html = BUILD / f'{nome}.html'

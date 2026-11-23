@@ -2,6 +2,8 @@
 
 Tesouro é o que os personagens levam da aventura: ouro, itens mágicos, comida estranha e coisas que ninguém sabe para que servem. Cada tesouro dá XP pelo seu degrau (veja XP em O Mestre).
 
+Para a mesa, imprima as [Tabelas de Tesouro](../fichas/tesouros.md): todas as regras e tabelas desta página em três folhas.
+
 ## Encontrando Tesouro
 
 **Depois do encontro.** Quando o grupo vence um encontro (derrota, expulsa ou convence os inimigos), role 1d6. Se o resultado aparecer na tabela, há tesouro: role 1d20 na tabela indicada.

@@ -1490,3 +1490,51 @@ body {
 .cm-vivos th:nth-child(2) {
   width: 18%;
 }
+
+/* ------------------------------------------------------------ tabelas de tesouro (Mestre) */
+
+.tz-folha {
+  font-size: 7.4pt;
+  line-height: 1.14;
+}
+
+.tz-colunas {
+  column-count: 2;
+  column-gap: 4mm;
+}
+
+.tz-bloco p {
+  margin: 0 0 0.4mm;
+}
+
+.tz-intro {
+  font-style: italic;
+}
+
+.tz-folha table.tz-tab td:first-child,
+.tz-folha table.tz-tab th:first-child {
+  width: 4.5mm;
+  text-align: center;
+  padding: 0.2mm 0.3mm;
+}
+
+.tz-folha table.tz-tab td:nth-child(2) {
+  width: 27mm;
+}
+
+.tz-folha table.tz-tab td:nth-child(2) i {
+  font-size: 0.9em;
+  color: #444;
+}
+
+.tz-folha table.tz-maldito td:nth-child(2) {
+  width: 21mm;
+}
+
+.tz-folha table.tz-comida td:nth-child(2) {
+  width: 21mm;
+}
+
+.tz-folha table.tz-comida td:nth-child(3) {
+  width: 46%;
+}

@@ -4,8 +4,26 @@
     {
       "name": "forja-site",
       "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "mkdocs", "serve", "-a", "127.0.0.1:8000"],
+      "runtimeArgs": [
+        "-m",
+        "mkdocs",
+        "serve",
+        "-a",
+        "127.0.0.1:8000"
+      ],
       "port": 8000
+    },
+    {
+      "name": "fichas-build",
+      "runtimeExecutable": "python",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8010",
+        "-d",
+        "fichas"
+      ],
+      "port": 8010
     }
   ]
 }
