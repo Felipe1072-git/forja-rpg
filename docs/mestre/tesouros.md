@@ -38,7 +38,7 @@ Tesouro é o que os personagens levam da aventura: ouro, itens mágicos, comida 
 
 ## Itens
 
-**Mágico.** Armas e armaduras das tabelas Bom em diante são mágicas: vencem a resistência a armas comuns (veja Combate).
+**Mágico.** Só é mágico o item que a tabela chama de mágico. Uma arma mágica vence a resistência a armas comuns (veja Armas comuns em Combate).
 
 **Mana.** Um item que diz "X de Mana" gasta a sua Mana para funcionar, como uma habilidade. Sem Mana, pague com Sanidade (veja Sem Mana em Habilidades).
 

@@ -33,7 +33,15 @@ Ao acertar, role o dano. O alvo perde essa quantidade de PV.
 
 **Habilidades.** Só os dados da habilidade. Habilidades com dano de arma somam o modificador normalmente.
 
-**Armas comuns.** Algumas criaturas (licantropos, espectros, vampiros, demônios) têm resistência a armas comuns: sofrem metade do dano de armas não mágicas, ou nenhum, se forem imunes. Armas mágicas e habilidades mágicas vencem essa resistência. Armas de prata também vencem, contra criaturas malignas e sobrenaturais (mortos-vivos, licantropos, demônios, fadas). Golpes marciais com arma comum continuam sendo arma comum.
+**Resistência.** Você sofre metade do dano daquele tipo.
+
+**Vulnerabilidade.** Você sofre o dobro do dano daquele tipo.
+
+**Imunidade.** Você não sofre dano daquele tipo.
+
+**Não se somam.** Duas resistências ao mesmo tipo de dano, de fontes diferentes, continuam sendo metade. O mesmo vale para vulnerabilidades.
+
+**Armas comuns.** Algumas criaturas (licantropos, espectros, vampiros, demônios) têm resistência ou imunidade a armas comuns. Armas mágicas e dano elemental vencem essa resistência. Armas de prata também vencem, contra criaturas malignas e sobrenaturais (mortos-vivos, licantropos, demônios, fadas).
 
 **Nocaute.** Ao reduzir uma criatura a 0 PV, você pode deixá-la inconsciente em vez de matá-la.
 

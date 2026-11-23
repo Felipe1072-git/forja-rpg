@@ -116,15 +116,11 @@ Magias causam dano elemental e pertencem a uma escola.
 | Alma | Radiante ⇄ Necrótico · Arcano ⇄ Psíquico |
 | Corpo | Veneno · Ácido |
 
-**Opostos se vencem.** Elementos ligados por ⇄ vencem um ao outro. Criaturas e efeitos podem ter um elemento. Uma criatura de um elemento é **resistente** ao próprio elemento (sofre metade do dano) e **vulnerável** ao seu oposto (sofre o dobro do dano).
+**Dano elemental é mágico.** Ele vence a resistência a armas comuns (veja Dano em Combate).
 
-**Sem acúmulo.** Resistências ao mesmo elemento, de fontes diferentes (ancestralidade, classe, item), não se somam: você continua sofrendo metade do dano. O mesmo vale para vulnerabilidades.
+**Opostos.** Elementos ligados por ⇄ são opostos. Veneno e ácido não têm oposto. Uma criatura só é resistente ou vulnerável a um elemento quando a ficha dela diz (veja Dano em Combate).
 
-**Exemplo.** Um elemental de fogo é resistente a fogo e vulnerável a gelo. Um elemental de gelo é resistente a gelo e vulnerável a fogo.
-
-**Terra não é contusão.** Dano de terra é a pedra, a areia e o tremor movidos por magia. Ele é mágico: vence a resistência a armas comuns e não é reduzido por quem resiste a contusão.
-
-**Corpo.** Veneno e ácido não têm oposto. Eles atacam a carne: mortos-vivos, constructos e elementais costumam ser imunes a veneno.
+**Exemplo.** Um elemental de fogo costuma ser resistente a fogo e vulnerável a gelo, o oposto.
 
 **Escolas.** Abjuração, adivinhação, conjuração, encantamento, evocação, ilusão, necromancia, transmutação. Escolas são só uma classificação. Elas não têm efeito mecânico próprio.
 
