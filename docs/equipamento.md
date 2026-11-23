@@ -144,6 +144,8 @@ Além disso, você **carrega** um número de espaços igual ao seu modificador d
 - desvantagem em ataques e em testes de Força e Destreza;
 - para usar uma habilidade, faça antes um teste de Força CD 15. Se falhar, a habilidade não funciona e a Mana é gasta.
 
+**Sacrificar o escudo.** Quando um ataque acertar você, use sua reação para sacrificar o escudo: você sofre metade do dano e o escudo quebra.
+
 ![Só o elmo de um cavaleiro de placas aparece acima da água enquanto ele afunda; ao lado, um ladino de couro passa nadando com a adaga nos dentes](assets/images/equipamento/nadar.webp){ .fj-arte-vinheta .fj-arte-fim loading=lazy }
 
 ## Equipamento Básico

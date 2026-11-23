@@ -123,3 +123,8 @@ Dúvidas de regra em aberto. Remova o item quando for resolvido e aplicado no te
 - **O Plano** (o autor pediu a folha; o conteúdo é sugestão): campos do plano do grupo, 8 perguntas, d20 de truques, d12 do que pode dar errado. Só ideias, sem regra nova; o resumo de regras repete Exploração, O Básico, Combate e Equipamento.
 - **Cemitério do Funil** (o autor pediu a folha; o conteúdo é sugestão): 12 lápides, d20 de últimas palavras, d20 de epitáfios, 6 prêmios por voto que só valem a glória.
 - **Todas as tabelas de 08-geradores.md.**
+- **Tesouros** (o autor aprovou as ideias e pediu as tabelas; os números e os itens são sugestão): chance por encontro (fácil 6 → Comum, difícil 5–6 → Bom, chefe sempre → Fabuloso num baú); lendário só colocado pelo Mestre; baú trancado CD 12 (1 turno com ferramentas, sem teste), reforçado 3 sucessos CD 15, 1 turno cada, 20 natural rola duas vezes, baú pequeno 3 espaços; venda de itens mágicos (bom 50 po, fabuloso 250 po); conserto de itens quebrados; todos os itens das tabelas d20; Comida e Carne de Monstro (cortar com Sabedoria CD 12, crua com Constituição CD 12, só vale o último monstro comido).
+- **Sacrificar o escudo** (em Equipamento; o autor aprovou itens que quebram): reação, metade do dano, o escudo quebra. Ainda não está na Referência do Jogador.
+
+### Perguntas em aberto
+- **Limite de itens mágicos:** quantos itens mágicos um personagem pode usar ao mesmo tempo? Hoje acessórios não ocupam carga e não há limite.

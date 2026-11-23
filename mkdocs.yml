@@ -121,6 +121,7 @@ nav:
   - Mestre:
     - mestre/index.md
     - Encontros e Perigos: mestre/encontros.md
+    - Tesouros: mestre/tesouros.md
     - Modos de Jogo e Monstros: mestre/modos-e-monstros.md
     - Geradores: mestre/geradores.md
   - Fichas:

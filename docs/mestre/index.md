@@ -83,7 +83,7 @@ O personagem ganha XP no fim de cada sessão. Para subir de nível, ele precisa 
 
 | Fonte | XP |
 |---|---|
-| Tesouro comum (bolsa de prata, adaga usada) | 0 |
+| Tesouro comum (punhado de moedas, adaga usada) | 0 |
 | Tesouro bom (bolsa de ouro, gema, armadura fina) | 1 |
 | Tesouro fabuloso (espada mágica, diamante enorme) | 3 |
 | Tesouro lendário (artefato, tesouro de dragão) | 10 |
@@ -92,7 +92,7 @@ O personagem ganha XP no fim de cada sessão. Para subir de nível, ele precisa 
 | Marco menor (resgatar um refém, descobrir um segredo) | 2 |
 | Marco maior (derrotar o vilão, concluir uma aventura) | 5 |
 
-Cada personagem recebe o XP inteiro de cada fonte.
+Cada personagem recebe o XP inteiro de cada fonte. Para sortear tesouros, veja Tesouros.
 
 ## O Funil
 
