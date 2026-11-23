@@ -49,6 +49,7 @@ Classes estranhas, raras ou poderosas demais para todo mundo. Ficam fora do Pers
 | Carcereiro do Abismo | d6 | Inteligência ou Carisma | Adaga, bordão, bestas | Leves |
 | Legionário Arcano | d8 | Inteligência | Todas as corpo a corpo | Leves, médias e escudo |
 | Sanguimante | d8 | Constituição | Adaga, bordão, chicote | Leves |
+| Empíreo | d12 | O maior atributo | Todas | Todas e escudo |
 
 **Vocação.** Toda classe tem uma vocação: um talento simples, sem Mana, que mostra para o que o personagem nasceu. Ela vale desde o nível 0 e nunca se perde.
 

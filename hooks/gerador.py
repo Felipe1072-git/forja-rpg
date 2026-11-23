@@ -12,6 +12,9 @@ import re
 
 _TRACO = re.compile(r'^\*\*(.+?)\.\*\*\s*(.+)$')
 _FORA = {'Base', 'Atributo principal', 'Armas', 'Armaduras', 'Habilidades iniciais', 'Classe exótica'}
+_ATRIBUTOS = ['Força', 'Destreza', 'Constituição', 'Inteligência', 'Sabedoria', 'Carisma']
+# Dons do Empíreo: uma seção "### ASA DA <ATRIBUTO>" com a tabela | Valor | Dom |.
+_ASA = re.compile(r'^### ASA D[AO] (.+)\n\n((?:\|.*\n?)+)', re.M)
 
 
 def _ler(docs, rel):
@@ -81,12 +84,20 @@ def _classe(docs, rel, exoticas):
                 if len(linha) < 7:
                     continue
                 habilidades.append({'nome': linha[1], 'custo': linha[2], 'partes': linha[3:7]})
+    dons = []
+    for m in _ASA.finditer(texto):
+        atributo = next(a for a in _ATRIBUTOS if a.upper() == m.group(1).strip())
+        degraus = [[int(l[0]), l[1]] for l in _tabelas(m.group(2))[0][1:]]
+        dons.append({'atributo': atributo, 'degraus': degraus})
+    # "O seu maior atributo" (Empíreo): qualquer um dos seis pode ser o principal.
+    atributos = _ATRIBUTOS[:] if 'maior atributo' in attr else [a.strip() for a in attr.split(' ou ')]
     return {
         'nome': nome, 'arquivo': rel, 'exotica': nome in exoticas,
         'epigrafe': epigrafe.group(1).strip() if epigrafe else '',
-        'base': base, 'atributos': [a.strip() for a in attr.split(' ou ')],
+        'base': base, 'atributos': atributos,
         'armas': armas, 'armaduras': armaduras, 'regras': regras,
         'colunas': colunas, 'habilidades': habilidades, 'tabelas': tabelas, 'titulos': titulos,
+        'dons': dons,
     }
 
 

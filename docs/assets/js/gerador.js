@@ -65,8 +65,67 @@
   function exigeDivindade(classe) {
     return classe.regras.some(([t, txt]) => (t === 'Divindade' && txt.startsWith('Obrigatória')) || t === 'Demônio interior');
   }
-  function temColunas(classe) { return classe.colunas[0] !== 'Efeito'; }
+  function temColunas(classe) { return classe.colunas.length > 0 && classe.colunas[0] !== 'Efeito'; }
   function temDados(texto) { return /\d+d\d+/.test(texto); }
+
+  // ---------------------------------------------------------------- Dons (Empíreo)
+  // A classe não escolhe habilidades: cada atributo abre degraus pelo valor. Atributos rolados
+  // em ordem, Despertar (+4, máximo 18) no nível 1 e todo avanço é Atributos.
+
+  function temDons(classe) { return !!(classe.dons && classe.dons.length); }
+  function iniciaisDe(classe) { return temDons(classe) ? 0 : BASES[classe.base].iniciais; }
+
+  // Onde pôr n pontos: primeiro no atributo ímpar (11 ou mais) mais alto, que abre um degrau
+  // com um ponto só; senão, no mais alto. Nunca acima do teto.
+  function pontosUteis(atr, n, teto) {
+    const v = atr.slice();
+    const r = [];
+    for (let q = 0; q < n; q++) {
+      const cand = [0, 1, 2, 3, 4, 5].filter((i) => v[i] < teto);
+      if (!cand.length) break;
+      const abre = (i) => Number(v[i] >= 11 && v[i] % 2 === 1);
+      cand.sort((a, b) => abre(b) - abre(a) || v[b] - v[a]);
+      r.push(cand[0]);
+      v[cand[0]] += 1;
+    }
+    return r;
+  }
+
+  function preencherDespertar(m) {
+    const atr = m.atr.slice();
+    const lista = (m.despertar || []).slice(0, 4);
+    while (lista.length < 4) lista.push(null);
+    lista.forEach((a) => { if (a != null && atr[a] < 18) atr[a] += 1; });
+    m.despertar = lista.map((a) => {
+      if (a != null) return a;
+      const [i] = pontosUteis(atr, 1, 18);
+      if (i == null) return null;
+      atr[i] += 1;
+      return i;
+    });
+  }
+
+  function donsAbertos(pj) {
+    if (!temDons(pj.classe) || pj.nivel < 1) return [];
+    const lista = [];
+    pj.classe.dons.forEach((dom) => {
+      const i = ATR.indexOf(dom.atributo);
+      dom.degraus.filter(([v]) => v <= pj.atr[i]).forEach(([v, texto]) => {
+        const m = texto.match(/^\*\*(.+?)\.\*\*\s*([\s\S]*)$/);
+        let resto = m ? m[2] : texto;
+        let custo = '—';
+        const c = resto.match(/^(Passiva|Custo (\d+))\.\s*/);
+        if (c) { custo = c[2] || 'Passiva'; resto = resto.slice(c[0].length); }
+        lista.push({ nome: md(m ? m[1] : dom.atributo) + ` <small>(${ABR[i]} ${v})</small>`, custo, efeito: md(resto) });
+      });
+    });
+    return lista;
+  }
+
+  // Linhas da tabela de habilidades da ficha (ou de Dons, no Empíreo).
+  function linhasHabilidades(pj) {
+    return temDons(pj.classe) ? donsAbertos(pj) : pj.habilidades.map((h) => textoHabilidade(pj, h));
+  }
 
   // ---------------------------------------------------------------- equipamento
 
@@ -144,8 +203,8 @@
     m.classe = classe.nome;
     m.anc = anc.nome;
     m.mistura = sortearMistura(anc);
-    m.principal = um(classe.atributos);
-    if (op.nivel === 0) {
+    m.principal = temDons(classe) ? null : um(classe.atributos);
+    if (op.nivel === 0 || temDons(classe)) {
       m.atr = ATR.map(rolar4d6);
     } else {
       const valores = ATR.map(rolar4d6).sort((a, b) => b - a);
@@ -193,7 +252,16 @@
     if (t['Origem do vazio']) {
       extras.push({ titulo: 'Origem do vazio', itens: [md(um(t['Origem do vazio'])[0])] });
     }
+    // Origem do celeste (Empíreo): só história, vale desde o nível 0.
+    if (t['Origem'] && temDons(pj.classe)) {
+      extras.push({ titulo: 'Origem', itens: [md(um(t['Origem'])[0])] });
+    }
     if (pj.nivel < 1) return extras;
+    // Marcas (Empíreo): uma por degrau aberto; repetida fica mais forte.
+    if (t['Marca'] && temDons(pj.classe)) {
+      const n = donsAbertos(pj).length;
+      if (n) extras.push({ titulo: 'Marcas', itens: Array.from({ length: n }, () => md(um(t['Marca'])[0])) });
+    }
     // Lótus Negro: 1d12; com 1, role duas vezes (de novo nos outros 1); sem repetir.
     if (t['Dom do lótus']) {
       const tab = t['Dom do lótus'];
@@ -245,6 +313,7 @@
   function opcoesDeAvanco(pj, usados) {
     const c = pj.classe;
     const op = [];
+    if (temDons(c)) return [['atributos', 1]].filter(([t]) => !usados.includes(t));
     const livres = c.habilidades.map((_, i) => i).filter((i) => !pj.habilidades.some((h) => h.i === i));
     if (livres.length) op.push(['nova', 35]);
     const podeMelhorar = pj.habilidades.some((h) => temColunas(c) ? h.colunas.length < 4
@@ -342,7 +411,11 @@
       const conAntes = mod(pj.atr[2]);
       const ip = ATR.indexOf(pj.principal);
       let txt;
-      if (pj.atr[ip] <= 18) { pj.atr[ip] += 2; txt = '+2 em ' + pj.principal; }
+      if (temDons(c)) {
+        const pts = pontosUteis(pj.atr, 2, 20);
+        pts.forEach((i) => { pj.atr[i] += 1; });
+        txt = pts.map((i) => '+1 em ' + ATR[i]).join(', ');
+      } else if (pj.atr[ip] <= 18) { pj.atr[ip] += 2; txt = '+2 em ' + pj.principal; }
       else {
         const outros = embaralhar([0, 1, 2, 3, 4, 5].filter((i) => pj.atr[i] < 20)).slice(0, 2);
         outros.forEach((i) => { pj.atr[i] += 1; });
@@ -383,6 +456,8 @@
 
   function calcular(pj) {
     const m = pj.atr.map(mod);
+    // Empíreo: o atributo principal é o maior, depois dos avanços.
+    if (temDons(pj.classe)) pj.principal = ATR[pj.atr.indexOf(Math.max(...pj.atr))];
     const ip = ATR.indexOf(pj.principal);
     const des = m[1];
     let ca = 10 + des;
@@ -458,7 +533,7 @@
     return {
       versao: 2, nome: '', nivel: 1, classe: null, anc: null, mistura: [], antecedente: null, bem: null, ordem: null,
       titulo: '', divindade: 'auto', atr: [10, 10, 10, 10, 10, 10], principal: null, pv: [],
-      habilidades: [], melhorias: [], outros: [], elemento: null,
+      habilidades: [], melhorias: [], outros: [], elemento: null, despertar: [null, null, null, null],
       equipModo: 'pacote', equipamento: null, equipExtra: '', compras: [], ouroInicial: null, compraLivre: false, ouro: 0, extras: null, extrasChave: '',
     };
   }
@@ -495,7 +570,7 @@
 
   function contaAvancos(m, classe, anc) {
     const total = vagasDeAvanco(classe, anc, m.nivel).reduce((s, v) => s + v.qtd, 0);
-    const n = m.nivel >= 1 ? BASES[classe.base].iniciais : 0;
+    const n = m.nivel >= 1 ? iniciaisDe(classe) : 0;
     const usados = Math.max(0, m.habilidades.length - n) + m.melhorias.length + m.outros.length;
     return { total, usados, livres: total - usados, iniciais: n };
   }
@@ -517,6 +592,10 @@
     }
     if (t === 'dado') return { tipo: 'dado', i: um(pj.habilidades.filter((x) => temDados(c.habilidades[x.i].partes.join(' ')))).i };
     if (t === 'atributos') {
+      if (temDons(c)) {
+        const [a1, a2] = pontosUteis(pj.atr, 2, 20);
+        return { tipo: 'atributos', a1, a2: a2 != null ? a2 : a1 };
+      }
       const ip = ATR.indexOf(pj.principal);
       if (pj.atr[ip] <= 18) return { tipo: 'atributos', a1: ip, a2: ip };
       const outros = embaralhar([0, 1, 2, 3, 4, 5].filter((i) => pj.atr[i] < 20));
@@ -544,7 +623,7 @@
   }
 
   function preencherHabilidades(m, classe) {
-    const n = BASES[classe.base].iniciais;
+    const n = iniciaisDe(classe);
     const resto = embaralhar(classe.habilidades.map((_, i) => i)).filter((i) => !m.habilidades.some((h) => h.i === i));
     while (m.habilidades.length < n) m.habilidades.push({ i: resto.shift(), col: m.elemento || 0 });
   }
@@ -583,9 +662,22 @@
     if (m.elemento == null) m.elemento = temColunas(classe) ? d(4) - 1 : 0;
     pj.elemento = m.elemento;
     pj.habilidades = [];
-    const n = m.nivel >= 1 ? BASES[classe.base].iniciais : 0;
+    const n = m.nivel >= 1 ? iniciaisDe(classe) : 0;
     if (sortearBrancos && m.nivel >= 1) preencherHabilidades(m, classe);
     m.habilidades.slice(0, n).forEach((h) => adicionarHabilidade(pj, h.i, h.col || 0));
+
+    // Despertar (Empíreo): +4 em atributos no nível 1, máximo 18, antes dos PV.
+    let despertar = null;
+    if (temDons(classe) && m.nivel >= 1) {
+      if (sortearBrancos) preencherDespertar(m);
+      const itens = [];
+      (m.despertar || []).forEach((a) => {
+        if (a == null) itens.push('a escolher');
+        else if (pj.atr[a] >= 18) itens.push('+1 em ' + ATR[a] + ' (perdido: máximo 18)');
+        else { pj.atr[a] += 1; itens.push('+1 em ' + ATR[a]); }
+      });
+      despertar = { nivel: 1, motivo: 'Despertar', itens };
+    }
 
     const robusto = !!traco(anc, 'Robusto');
     const dv = () => { let r = d(classe.base); if (robusto) r = Math.max(r, d(classe.base)); return r; };
@@ -638,8 +730,10 @@
       pj.avancos.push({ nivel: v.nivel, motivo: v.motivo, itens });
     });
     pj.sobras = fila;
+    if (despertar) pj.avancos.unshift(despertar);
 
-    const chave = classe.nome + '|' + m.nivel + '|' + pj.habilidades.map((h) => h.i + '.' + h.melhorias.join('')).join(',');
+    const chave = classe.nome + '|' + m.nivel + '|' + pj.habilidades.map((h) => h.i + '.' + h.melhorias.join('')).join(',')
+      + (temDons(classe) ? '|' + donsAbertos(pj).length : '');
     if (!m.extras || m.extrasChave !== chave) { m.extras = rolarExtras(pj); m.extrasChave = chave; }
     pj.extras = m.extras;
 
@@ -719,7 +813,7 @@
     function passos(c, anc) {
       const conta = contaAvancos(M, c, anc);
       const n = conta.iniciais;
-      const principal = c.atributos.length > 1
+      const principal = c.atributos.length > 1 && !temDons(c)
         ? `<label>Atributo principal <select data-m="principal">${opcoesDe(c.atributos.map((a) => [a, a]), M.principal, 'O maior')}</select></label>` : '';
       const robusto = traco(anc, 'Robusto') ? ' +1 (Robusto)' : '';
       const pvLinhas = Array.from({ length: Math.max(1, M.nivel) }, (_, k) => `<div class="fj-g-pv"><span>Nível ${M.nivel === 0 ? 0 : k + 1}</span>
@@ -767,18 +861,23 @@
           <div class="fj-g-pvs">${pvLinhas}</div>
           <div class="fj-g-acoes"><button type="button" data-acao="pv-todos">Rolar os que faltam</button></div>
         </div>
-        ${M.nivel >= 1 ? `<div class="fj-g-passo"><h3>4. Habilidades <small>(passe o mouse para ler o efeito)</small></h3>
+        ${M.nivel >= 1 && temDons(c) ? `<div class="fj-g-passo"><h3>4. Despertar <small>(+4 em atributos, máximo 18)</small></h3>
+          <p><small>O ${esc(c.nome)} não escolhe habilidades: os Dons se abrem pelo valor dos atributos e aparecem na ficha abaixo. Cada +1 vai num atributo; pode repetir. Role os atributos em ordem.</small></p>
+          <div class="fj-g-grade">${[0, 1, 2, 3].map((k) => `<label>+1 em <select data-desp="${k}">${opcoesDe(ATR.map((a, i) => [i, a]), (M.despertar || [])[k], 'Escolha')}</select></label>`).join('')}</div>
+          <div class="fj-g-acoes"><button type="button" data-acao="sortear-desp">🎲 Sortear os que faltam</button></div>
+        </div>` : ''}
+        ${M.nivel >= 1 && !temDons(c) ? `<div class="fj-g-passo"><h3>4. Habilidades <small>(passe o mouse para ler o efeito)</small></h3>
           <p><small>As ${n} primeiras são as iniciais. Cada habilidade a mais${temColunas(c) ? ' e cada elemento a mais' : ' e cada melhoria'} gasta um avanço.</small></p>
           ${resumo}<div class="fj-g-aviso" hidden></div>
           <div class="fj-g-habs">${habs}</div>
           <div class="fj-g-acoes"><button type="button" data-acao="sortear-habs">Sortear as iniciais que faltam</button></div>
         </div>` : ''}
-        ${conta.total ? `<div class="fj-g-passo"><h3>5. Outros avanços</h3>
-          <p><small>Avanços que não são habilidade nem melhoria. O gerador distribui todos os avanços pelos níveis.</small></p>
+        ${conta.total ? `<div class="fj-g-passo"><h3>5. ${temDons(c) ? 'Avanços' : 'Outros avanços'}</h3>
+          <p><small>${temDons(c) ? 'Todo avanço do ' + esc(c.nome) + ' é Atributos (+2, máximo 20).' : 'Avanços que não são habilidade nem melhoria.'} O gerador distribui todos os avanços pelos níveis.</small></p>
           ${resumo}<div class="fj-g-aviso" hidden></div>
           <div class="fj-g-outros">${outros || '<em>Nenhum.</em>'}</div>
           <div class="fj-g-acoes">
-            <select data-acao="add-outro"${conta.livres > 0 ? '' : ' disabled'}><option value="">+ Adicionar avanço</option><option value="dado">+1 dado</option><option value="atributos">Atributos</option><option value="vigor">Vigor</option><option value="treino">Treino</option></select>
+            <select data-acao="add-outro"${conta.livres > 0 ? '' : ' disabled'}><option value="">+ Adicionar avanço</option>${temDons(c) ? '<option value="atributos">Atributos</option>' : '<option value="dado">+1 dado</option><option value="atributos">Atributos</option><option value="vigor">Vigor</option><option value="treino">Treino</option>'}</select>
             <button type="button" data-acao="sortear-avancos"${conta.livres > 0 ? '' : ' disabled'}>Sortear os livres</button>
           </div>
         </div>` : ''}
@@ -933,6 +1032,12 @@
         M.extras = null;
         render();
       }));
+      painel.querySelectorAll('[data-desp]').forEach((el) => el.addEventListener('change', () => {
+        M.despertar = (M.despertar || [null, null, null, null]).slice();
+        M.despertar[parseInt(el.dataset.desp, 10)] = el.value === '' ? null : parseInt(el.value, 10);
+        M.extras = null;
+        previa();
+      }));
       painel.querySelectorAll('[data-mel]').forEach((el) => el.addEventListener('change', () => {
         const [i, k] = el.dataset.mel.split(':').map((x) => parseInt(x, 10));
         if (el.checked) M.melhorias.push({ i, k });
@@ -1011,6 +1116,7 @@
           if (acao === 'tirar') { M.outros.splice(parseInt(el.dataset.j, 10), 1); render(); }
           if (acao === 'sortear-avancos') { personagemDoEstado(M, true); M.extras = null; render(); }
           if (acao === 'sortear-habs') { preencherHabilidades(M, c); M.extras = null; render(); }
+          if (acao === 'sortear-desp') { preencherDespertar(M); M.extras = null; render(); }
           if (acao === 'pacote' || acao === 'ouro') {
             M.equipModo = acao;
             if (acao === 'ouro' && M.ouroInicial == null) { M.ouroInicial = (d(6) + d(6)) * 5; M.compras = []; }
@@ -1186,7 +1292,8 @@
   function cartao(pj) {
     const c = pj.classe;
     const voc = vocacao(c);
-    const habs = pj.habilidades.map((h) => { const t = textoHabilidade(pj, h); return `<tr><td>${t.nome}</td><td>${esc(t.custo)}</td><td>${t.efeito}</td></tr>`; }).join('');
+    const habs = linhasHabilidades(pj).map((t) => `<tr><td>${t.nome}</td><td>${esc(t.custo)}</td><td>${t.efeito}</td></tr>`).join('');
+    const coluna = temDons(c) ? 'Dom' : 'Habilidade';
     const regras = c.regras.filter(([t]) => !t.startsWith('Vocação')).map(([t, x]) => `<p><b>${esc(t)}.</b> ${md(x)}</p>`).join('');
     const tracos = pj.anc.tracos.map(tracoHTML).join('');
     const av = pj.avancos.map((a) => `<li><b>Nível ${a.nivel}${a.motivo ? ' (' + a.motivo + ')' : ''}:</b> ${a.itens.map(esc).join(' · ')}</li>`).join('');
@@ -1206,7 +1313,7 @@
         ${pj.extras.map((e) => `<p><b>${esc(e.titulo)}:</b></p><ul>${e.itens.map((i) => '<li>' + i + '</li>').join('')}</ul>`).join('')}
         <details><summary>Traços de ${esc(pj.anc.nome)}</summary>${tracos}</details>
         ${pj.divindade ? `<p><b>Divindade:</b> ${esc(pj.divindade.nome)} (${esc(pj.divindade.entidade)}, ${esc(pj.divindade.dominio)}, ${esc(pj.divindade.vinculo)}). <i>Responsabilidades:</i> ${esc(pj.divindade.responsabilidades)}${ben.length ? ' <i>Bênçãos:</i> ' + ben.map(esc).join(' ') : ''}</p>` : ''}
-        ${habs ? `<table class="fj-g-tabela"><thead><tr><th>Habilidade</th><th>Custo</th><th>Efeito</th></tr></thead><tbody>${habs}</tbody></table>` : ''}
+        ${habs ? `<table class="fj-g-tabela"><thead><tr><th>${coluna}</th><th>Custo</th><th>Efeito</th></tr></thead><tbody>${habs}</tbody></table>` : ''}
         ${av ? `<p><b>Avanços</b></p><ul>${av}</ul>` : ''}
         <p><b>Equipamento:</b> ${pj.equipamento.length ? pj.equipamento.map(esc).join(' · ') : ''}${pj.ouro ? (pj.equipamento.length ? ' · ' : '') + pj.ouro + ' po' : ''}</p>
       </div>`;
@@ -1272,7 +1379,8 @@
     const nums = [['PV', pj.pv], ['CA', pj.ca], ['Sanidade', pj.sanidade]]
       .concat(pj.nivel >= 1 ? [['Mana', pj.mana], ['CD', pj.cd], ['Mana extra', pj.nivel]] : [['Movimento', pj.movimento + ' casas'], ['Dado de vida', 'd' + c.base], ['Nível', 0]])
       .map(([t, v]) => `<div class="caixa"><b>${t}</b><span>${v}</span></div>`).join('');
-    const habs = pj.habilidades.map((h) => { const t = textoHabilidade(pj, h); return `<tr><td>${t.nome}</td><td>${esc(t.custo)}</td><td>${t.efeito}</td></tr>`; }).join('');
+    const habs = linhasHabilidades(pj).map((t) => `<tr><td>${t.nome}</td><td>${esc(t.custo)}</td><td>${t.efeito}</td></tr>`).join('');
+    const coluna = temDons(c) ? 'Dom' : 'Habilidade';
     const regras = c.regras.filter(([t]) => !t.startsWith('Vocação')).map(([t, x]) => `<p><b>${esc(t)}.</b> ${md(x)}</p>`).join('');
     const tracos = pj.anc.tracos.map(tracoHTML).join('');
     const av = pj.avancos.map((a) => `<p><b>Nível ${a.nivel}${a.motivo ? ' (' + a.motivo + ')' : ''}:</b> ${a.itens.map(esc).join(' · ')}</p>`).join('');
@@ -1288,7 +1396,7 @@
       ${pj.extras.map((e) => `<h2>${esc(e.titulo)}</h2>${e.itens.map((i) => '<p>' + i + '</p>').join('')}`).join('')}
       <h2>Traços de ${esc(pj.anc.nome)}</h2>${tracos}
       ${pj.divindade ? `<h2>Divindade</h2><p><b>${esc(pj.divindade.nome)}</b> (${esc(pj.divindade.entidade)}, ${esc(pj.divindade.dominio)}, ${esc(pj.divindade.vinculo)}). <b>Responsabilidades:</b> ${esc(pj.divindade.responsabilidades)}</p>${ben.length ? `<p><b>Bênçãos:</b> ${ben.map(esc).join(' ')}</p>` : ''}` : ''}
-      ${habs ? `<h2>Habilidades</h2><table><thead><tr><th>Habilidade</th><th>Custo</th><th>Efeito</th></tr></thead><tbody>${habs}</tbody></table>` : ''}
+      ${habs ? `<h2>${coluna === 'Dom' ? 'Dons' : 'Habilidades'}</h2><table><thead><tr><th>${coluna}</th><th>Custo</th><th>Efeito</th></tr></thead><tbody>${habs}</tbody></table>` : ''}
       ${av ? `<h2>Avanços</h2>${av}` : ''}
       <h2>Equipamento</h2><p>${pj.equipamento.map(esc).join(' · ')}${pj.ouro ? (pj.equipamento.length ? ' · ' : '') + pj.ouro + ' po' : ''}</p>
       <h2>Notas</h2><div class="notas"></div>`;
