@@ -63,6 +63,7 @@ A coluna da tabela abaixo é uma descrição visual opcional: dá para acrescent
 | Legionário Arcano | legionario-arcano | A battle mage soldier in a steel breastplate and a military cloak, a longsword crackling with arcane lightning in one hand, the other hand raised casting a glowing rune, a small spellbook chained to the belt, ready to charge. |
 | Sanguimante | sanguimante | A gaunt blood mage in a dark hooded robe with a bloody cut across the palm, ribbons of blood swirling out of the wound and forming a floating spear in the air, a ritual dagger in the other hand, faint veins glowing across the face. |
 | Empíreo | empireo | A tall, unsettling figure in heavy plate armor and a torn tabard, a greatsword in one hand, the other hand raised with an extra eye open in the palm; a cracked halo of fire hovering crooked over the head, completely white eyes, cracks in the skin leaking light like broken porcelain, six half-formed wings bursting from the back, some feathered, some bare bone and torn skin. Strange and grotesque, not beautiful or cute. |
+| Retornado | retornado | The same undead warrior shown four times side by side, left to right, as the body rots: a fresh corpse with grey skin and dead eyes; a rotting ghoul with long claws and torn flesh; a bare skeleton in the same rusted armor; a pale floating ghost, faded at the edges. Same armor scraps, same weapon, same pose in all four. |
 | Malvidente | malvidente | A hunched seer-witch with milky white eyes, casting bones from one hand, a raven on the shoulder and a bubbling cauldron behind. |
 
 ## Dicas

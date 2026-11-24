@@ -73,6 +73,17 @@
   // em ordem, Despertar (+4, máximo 18) no nível 1 e todo avanço é Atributos.
 
   function temDons(classe) { return !!(classe.dons && classe.dons.length); }
+  // Retornado: lista comum mais a lista do tipo de morto-vivo (rolado no d6 dos Tipos).
+  // comAntigos libera também os tipos de degraus acima, deixados para trás ao morrer de novo.
+  function temTipos(classe) { return !!(classe.tipos && classe.tipos.length); }
+  function sortearTipoMorto(classe) { const r = d(6); return (classe.tipos.find((t) => r >= t.faixa[0] && r <= t.faixa[1]) || classe.tipos[0]).nome; }
+  function permitidas(classe, tipo, comAntigos) {
+    const todas = classe.habilidades.map((_, i) => i);
+    if (!temTipos(classe)) return todas;
+    const pos = classe.tipos.findIndex((t) => t.nome === tipo);
+    const ok = classe.tipos.filter((t, k) => k === pos || (comAntigos && k < pos)).map((t) => t.nome);
+    return todas.filter((i) => !classe.habilidades[i].grupo || ok.includes(classe.habilidades[i].grupo));
+  }
   function iniciaisDe(classe) { return temDons(classe) ? 0 : BASES[classe.base].iniciais; }
 
   // Onde pôr n pontos: primeiro no atributo ímpar (11 ou mais) mais alto, que abre um degrau
@@ -204,6 +215,7 @@
     m.anc = anc.nome;
     m.mistura = sortearMistura(anc);
     m.principal = temDons(classe) ? null : um(classe.atributos);
+    if (temTipos(classe)) m.tipoMorto = sortearTipoMorto(classe);
     if (op.nivel === 0 || temDons(classe)) {
       m.atr = ATR.map(rolar4d6);
     } else {
@@ -256,6 +268,12 @@
     if (t['Origem'] && temDons(pj.classe)) {
       extras.push({ titulo: 'Origem', itens: [md(um(t['Origem'])[0])] });
     }
+    // Tipo de morto-vivo (Retornado): os traços do tipo atual, e o assunto inacabado.
+    if (temTipos(pj.classe) && pj.tipoMorto) {
+      const tipo = pj.classe.tipos.find((x) => x.nome === pj.tipoMorto);
+      extras.push({ titulo: 'Tipo: ' + tipo.nome, itens: tipo.tracos.map(([n, x]) => `<b>${esc(n)}.</b> ${md(x)}`) });
+    }
+    if (t['Assunto inacabado']) extras.push({ titulo: 'Assunto inacabado', itens: [md(um(t['Assunto inacabado'])[0])] });
     if (pj.nivel < 1) return extras;
     // Marcas (Empíreo): uma por degrau aberto; repetida fica mais forte.
     if (t['Marca'] && temDons(pj.classe)) {
@@ -314,7 +332,7 @@
     const c = pj.classe;
     const op = [];
     if (temDons(c)) return [['atributos', 1]].filter(([t]) => !usados.includes(t));
-    const livres = c.habilidades.map((_, i) => i).filter((i) => !pj.habilidades.some((h) => h.i === i));
+    const livres = permitidas(c, pj.tipoMorto).filter((i) => !pj.habilidades.some((h) => h.i === i));
     if (livres.length) op.push(['nova', 35]);
     const podeMelhorar = pj.habilidades.some((h) => temColunas(c) ? h.colunas.length < 4
       : c.habilidades[h.i].partes.slice(1).some((p, k) => p && !h.melhorias.includes(k)));
@@ -382,7 +400,7 @@
   function aplicarAvanco(pj, tipo) {
     const c = pj.classe;
     if (tipo === 'nova') {
-      const livres = c.habilidades.map((_, i) => i).filter((i) => !pj.habilidades.some((h) => h.i === i));
+      const livres = permitidas(c, pj.tipoMorto).filter((i) => !pj.habilidades.some((h) => h.i === i));
       const i = um(livres);
       adicionarHabilidade(pj, i, pj.elemento);
       return 'Nova habilidade: ' + limpo(c.habilidades[i].nome) + (temColunas(c) ? ' (' + c.colunas[pj.elemento] + ')' : '');
@@ -533,7 +551,7 @@
     return {
       versao: 2, nome: '', nivel: 1, classe: null, anc: null, mistura: [], antecedente: null, bem: null, ordem: null,
       titulo: '', divindade: 'auto', atr: [10, 10, 10, 10, 10, 10], principal: null, pv: [],
-      habilidades: [], melhorias: [], outros: [], elemento: null, despertar: [null, null, null, null],
+      habilidades: [], melhorias: [], outros: [], elemento: null, despertar: [null, null, null, null], tipoMorto: null,
       equipModo: 'pacote', equipamento: null, equipExtra: '', compras: [], ouroInicial: null, compraLivre: false, ouro: 0, extras: null, extrasChave: '',
     };
   }
@@ -579,7 +597,7 @@
     const t = sortearTipo(pj, usados);
     const c = pj.classe;
     if (t === 'nova') {
-      const livres = c.habilidades.map((_, i) => i).filter((i) => !pj.habilidades.some((h) => h.i === i));
+      const livres = permitidas(c, pj.tipoMorto).filter((i) => !pj.habilidades.some((h) => h.i === i));
       return { tipo: 'nova', i: um(livres), col: pj.elemento };
     }
     if (t === 'melhoria') {
@@ -624,7 +642,12 @@
 
   function preencherHabilidades(m, classe) {
     const n = iniciaisDe(classe);
-    const resto = embaralhar(classe.habilidades.map((_, i) => i)).filter((i) => !m.habilidades.some((h) => h.i === i));
+    const resto = embaralhar(permitidas(classe, m.tipoMorto)).filter((i) => !m.habilidades.some((h) => h.i === i));
+    // Retornado: pelo menos uma inicial do próprio tipo.
+    if (temTipos(classe) && m.habilidades.length < n && !m.habilidades.some((h) => classe.habilidades[h.i].grupo === m.tipoMorto)) {
+      const k = resto.findIndex((i) => classe.habilidades[i].grupo === m.tipoMorto);
+      if (k >= 0) m.habilidades.push({ i: resto.splice(k, 1)[0], col: 0 });
+    }
     while (m.habilidades.length < n) m.habilidades.push({ i: resto.shift(), col: m.elemento || 0 });
   }
 
@@ -661,6 +684,8 @@
 
     if (m.elemento == null) m.elemento = temColunas(classe) ? d(4) - 1 : 0;
     pj.elemento = m.elemento;
+    if (temTipos(classe) && !classe.tipos.some((x) => x.nome === m.tipoMorto)) m.tipoMorto = sortearTipoMorto(classe);
+    pj.tipoMorto = temTipos(classe) ? m.tipoMorto : null;
     pj.habilidades = [];
     const n = m.nivel >= 1 ? iniciaisDe(classe) : 0;
     if (sortearBrancos && m.nivel >= 1) preencherHabilidades(m, classe);
@@ -733,7 +758,7 @@
     if (despertar) pj.avancos.unshift(despertar);
 
     const chave = classe.nome + '|' + m.nivel + '|' + pj.habilidades.map((h) => h.i + '.' + h.melhorias.join('')).join(',')
-      + (temDons(classe) ? '|' + donsAbertos(pj).length : '');
+      + (temDons(classe) ? '|' + donsAbertos(pj).length : '') + (pj.tipoMorto ? '|' + pj.tipoMorto : '');
     if (!m.extras || m.extrasChave !== chave) { m.extras = rolarExtras(pj); m.extrasChave = chave; }
     pj.extras = m.extras;
 
@@ -815,6 +840,10 @@
       const n = conta.iniciais;
       const principal = c.atributos.length > 1 && !temDons(c)
         ? `<label>Atributo principal <select data-m="principal">${opcoesDe(c.atributos.map((a) => [a, a]), M.principal, 'O maior')}</select></label>` : '';
+      if (temTipos(c) && !c.tipos.some((x) => x.nome === M.tipoMorto)) M.tipoMorto = sortearTipoMorto(c);
+      const tipoSel = temTipos(c)
+        ? `<label>Tipo de morto-vivo <select data-m="tipoMorto">${opcoesDe(c.tipos.map((x) => [x.nome, x.nome + ' (d6: ' + (x.faixa[0] === x.faixa[1] ? x.faixa[0] : x.faixa[0] + '–' + x.faixa[1]) + ')']), M.tipoMorto)}</select></label>` : '';
+      const liberadas = permitidas(c, M.tipoMorto, true);
       const robusto = traco(anc, 'Robusto') ? ' +1 (Robusto)' : '';
       const pvLinhas = Array.from({ length: Math.max(1, M.nivel) }, (_, k) => `<div class="fj-g-pv"><span>Nível ${M.nivel === 0 ? 0 : k + 1}</span>
         <input type="number" min="1" max="${c.base}" data-pv="${k}" value="${M.pv[k] != null ? M.pv[k] : ''}" placeholder="d${c.base}">
@@ -822,6 +851,7 @@
         <small>${k === 0 ? 'd' + c.base + ' + mod. de Con' : 'd' + c.base}${robusto}</small></div>`).join('');
       const cheio = conta.livres <= 0;
       const habs = c.habilidades.map((h, i) => {
+        if (!liberadas.includes(i)) return '';
         const pos = M.habilidades.findIndex((x) => x.i === i);
         const marcada = pos >= 0;
         const podeMarcar = marcada || M.habilidades.length < n || !cheio;
@@ -844,7 +874,7 @@
         }
         const etiqueta = marcada ? (pos < n ? '<small class="fj-g-tag">inicial</small>' : '<small class="fj-g-tag">avanço</small>') : '';
         const caixa = temColunas(c) ? '' : `<input type="checkbox" data-hab="${i}"${marcada ? ' checked' : ''}${podeMarcar ? '' : ' disabled'}> `;
-        return `<div class="fj-g-hab"><label title="${efeito}">${caixa}${md(h.nome)} <small>(${esc(h.custo)})</small> ${etiqueta}</label>${extra}</div>`;
+        return `<div class="fj-g-hab"><label title="${efeito}">${caixa}${md(h.nome)} <small>(${esc(h.custo)})</small>${h.grupo ? ' <small class="fj-g-tag">' + esc(h.grupo) + '</small>' : ''} ${etiqueta}</label>${extra}</div>`;
       }).join('');
       const outros = M.outros.map((e, j) => outroHTML(c, e, j)).join('');
       const equip = (M.equipamento || []).join('\n');
@@ -854,7 +884,7 @@
         <div class="fj-g-passo"><h3>2. Atributos</h3>
           <div class="fj-g-acoes"><button type="button" data-acao="rolar-atr">Rolar 4d6 seis vezes</button></div>
           <div class="fj-g-atr">${ATR.map((a, i) => `<label>${a}<input type="number" min="3" max="20" data-atr="${i}" value="${M.atr[i]}"></label>`).join('')}</div>
-          <div class="fj-g-grade">${principal}</div>
+          <div class="fj-g-grade">${principal}${tipoSel}</div>
         </div>
         <div class="fj-g-passo"><h3>3. Pontos de Vida</h3>
           <p><small>Digite o resultado do dado ou role. Em branco, o gerador rola. O Vigor tem o próprio dado, nos Avanços.</small></p>
@@ -1005,12 +1035,19 @@
         if (k === 'compraLivre') { M.compraLivre = el.checked; render(); return; }
         if (v === '' && ['antecedente', 'titulo', 'classe', 'anc', 'principal'].includes(k)) v = k === 'titulo' ? '' : null;
         if (k === 'classe' && v !== M.classe) {
-          Object.assign(M, { habilidades: [], melhorias: [], outros: [], titulo: '', elemento: null, extras: null, principal: null, equipamento: null, divindade: 'auto', arma: undefined, armadura: undefined, compras: [] });
+          Object.assign(M, { habilidades: [], melhorias: [], outros: [], titulo: '', elemento: null, tipoMorto: null, extras: null, principal: null, equipamento: null, divindade: 'auto', arma: undefined, armadura: undefined, compras: [] });
         }
         if (k === 'ordem') M.titulo = '';
+        if (k === 'tipoMorto') {
+          const ok = permitidas(classeAtual(), v, true);
+          M.habilidades = M.habilidades.filter((h) => ok.includes(h.i));
+          M.melhorias = M.melhorias.filter((x) => ok.includes(x.i));
+          M.outros = M.outros.filter((x) => !(x.tipo === 'dado' && !ok.includes(x.i)));
+          M.extras = null;
+        }
         if (k === 'anc' && v !== M.anc) M.mistura = [];
         M[k] = v;
-        if (['nivel', 'classe', 'anc', 'ordem'].includes(k)) render(); else previa();
+        if (['nivel', 'classe', 'anc', 'ordem', 'tipoMorto'].includes(k)) render(); else previa();
       }));
       painel.querySelectorAll('[data-atr]').forEach((el) => el.addEventListener('change', () => {
         M.atr[parseInt(el.dataset.atr, 10)] = Math.max(3, Math.min(20, parseInt(el.value, 10) || 10));

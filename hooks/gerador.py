@@ -84,6 +84,28 @@ def _classe(docs, rel, exoticas):
                 if len(linha) < 7:
                     continue
                 habilidades.append({'nome': linha[1], 'custo': linha[2], 'partes': linha[3:7]})
+    # Retornado: lista comum e uma lista por tipo de morto-vivo, cada uma numa seção "### NOME"
+    # com a tabela | d12 | Habilidade | ...; a tabela | d6 | Tipo | ... diz a faixa de cada tipo.
+    tipos = []
+    for tab in _tabelas(texto):
+        if tab[0][:2] == ['d6', 'Tipo']:
+            for l in tab[1:]:
+                faixa = [int(x) for x in re.findall(r'\d+', l[0])]
+                tipos.append({'nome': l[1], 'faixa': [faixa[0], faixa[-1]], 'tracos': []})
+    secoes = re.split(r'^### (.+)$', texto, flags=re.M)
+    for titulo, corpo in zip(secoes[1::2], secoes[2::2]):
+        corpo = corpo.split('\n## ')[0]
+        tipo = next((t for t in tipos if t['nome'].upper() == titulo.strip()), None)
+        if tipo:
+            tipo['tracos'] = [[m.group(1), m.group(2)] for m in (_TRACO.match(l) for l in corpo.split('\n')) if m]
+        for tab in _tabelas(corpo):
+            cab = tab[0]
+            if cab[0] == 'd12' and len(cab) >= 7 and cab[1] == 'Habilidade':
+                colunas = cab[3:]
+                for linha in tab[1:]:
+                    if len(linha) >= 7:
+                        habilidades.append({'nome': linha[1], 'custo': linha[2], 'partes': linha[3:7],
+                                            'grupo': tipo['nome'] if tipo else ''})
     dons = []
     for m in _ASA.finditer(texto):
         atributo = next(a for a in _ATRIBUTOS if a.upper() == m.group(1).strip())
@@ -97,7 +119,7 @@ def _classe(docs, rel, exoticas):
         'base': base, 'atributos': atributos,
         'armas': armas, 'armaduras': armaduras, 'regras': regras,
         'colunas': colunas, 'habilidades': habilidades, 'tabelas': tabelas, 'titulos': titulos,
-        'dons': dons,
+        'dons': dons, 'tipos': tipos,
     }
 
 
