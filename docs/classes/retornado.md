@@ -3,6 +3,8 @@
 Você morreu, e a terra não quis você. Agora anda entre os vivos com uma ferida que não fecha e um assunto que não acabou. Cada vez que cai de novo, volta um pouco mais podre, até não sobrar nada além de um sussurro.
 { .epigrafe }
 
+![Retornado de armadura e capa rasgada, com uma cicatriz costurada no peito; atrás dele, as formas seguintes: um carniçal, um esqueleto encapuzado e um fantasma](../assets/images/classes/retornado.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Classe exótica.** Fica fora do Personagem Aleatório. Combine com o Mestre antes de escolher (veja Classes exóticas).
 
 **Base.** d8: 3 habilidades iniciais, 3 de Mana por nível, 2 avanços nos níveis 3, 6 e 9 (1 nos outros).
