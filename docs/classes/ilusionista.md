@@ -3,6 +3,8 @@
 Magos do engano que não lançam fogo: lançam dúvida. Uma parede que não existe, uma ponte de névoa, uma fera feita de medo. Para quem o ilusionista escolhe, tudo isso é real.
 { .epigrafe }
 
+![Goblin encapuzado de manto remendado e sorriso de dentes, puxando fios dos dedos; ao redor, cópias dele, uma se partindo como vidro, e um lobo fantasma saltando](../assets/images/classes/ilusionista.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Base.** d4: 4 habilidades iniciais, 5 de Mana por nível, 2 avanços em todo nível.
 
 **Atributo principal.** Inteligência ou Carisma.
