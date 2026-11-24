@@ -51,6 +51,7 @@ Classes estranhas, raras ou poderosas demais para todo mundo. Ficam fora do Pers
 | Sanguimante | d8 | Constituição | Adaga, bordão, chicote | Leves |
 | Empíreo | d12 | O maior atributo | Todas | Todas e escudo |
 | Retornado | d8 | Constituição ou Carisma | Todas | Leves, médias e escudo |
+| Mente Mestra | d6 | Inteligência | Adaga, besta leve, bordão, clava, espada curta | Leves |
 
 **Vocação.** Toda classe tem uma vocação: um talento simples, sem Mana, que mostra para o que o personagem nasceu. Ela vale desde o nível 0 e nunca se perde.
 
