@@ -275,6 +275,14 @@
     }
     if (t['Assunto inacabado']) extras.push({ titulo: 'Assunto inacabado', itens: [md(um(t['Assunto inacabado'])[0])] });
     if (pj.nivel < 1) return extras;
+    // Espíritos ligados (Xamã): Origem e Papel rolados (o Papel 6, "escolha", vira um dos outros) e o desejo.
+    if (t['Origem'] && t['Papel'] && t['Desejo']) {
+      const laco = habilidadePorNome(pj, 'Mais um Laço');
+      const n = 1 + [3, 6, 9].filter((v) => pj.nivel >= v).length + (pj.principal === 'Carisma' ? 1 : 0)
+        + (laco ? 1 + (laco.melhorias.includes(0) ? 1 : 0) : 0);
+      const espirito = () => `${md(um(t['Origem'])[0])} ${md(um(t['Papel'].slice(0, 5))[0])}: quer ${md(um(t['Desejo'])[0]).replace(/\.$/, '').replace(/^./, (c) => c.toLowerCase())}.`;
+      extras.push({ titulo: 'Espíritos ligados', itens: Array.from({ length: n }, espirito) });
+    }
     // Marcas (Empíreo): uma por degrau aberto; repetida fica mais forte.
     if (t['Marca'] && temDons(pj.classe)) {
       const n = donsAbertos(pj).length;
@@ -758,7 +766,7 @@
     if (despertar) pj.avancos.unshift(despertar);
 
     const chave = classe.nome + '|' + m.nivel + '|' + pj.habilidades.map((h) => h.i + '.' + h.melhorias.join('')).join(',')
-      + (temDons(classe) ? '|' + donsAbertos(pj).length : '') + (pj.tipoMorto ? '|' + pj.tipoMorto : '');
+      + (temDons(classe) ? '|' + donsAbertos(pj).length : '') + (pj.tipoMorto ? '|' + pj.tipoMorto : '') + ((classe.tabelas || {})['Papel'] ? '|' + pj.principal : '');
     if (!m.extras || m.extrasChave !== chave) { m.extras = rolarExtras(pj); m.extrasChave = chave; }
     pj.extras = m.extras;
 

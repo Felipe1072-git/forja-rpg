@@ -26,6 +26,7 @@ Sua classe é o seu ofício. Ela define seu dado de vida, suas proficiências, s
 | Malvidente | d4 | Sabedoria ou Carisma | Adaga, bordão, lança | Leves |
 | Bastião | d12 | Força ou Constituição | Todas as corpo a corpo | Todas e escudo |
 | Ilusionista | d4 | Inteligência ou Carisma | Adaga, besta leve, bordão, espada curta | Leves |
+| Xamã | d8 | Sabedoria, Inteligência ou Carisma | Adaga, azagaia, bordão, clava, lança, machadinha | Leves e médias |
 
 **Base.** Toda classe usa uma base, que define o dado de vida, a Mana por nível (veja Mana), quantas habilidades você tem no nível 1 e quantos avanços você ganha por nível.
 

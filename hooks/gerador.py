@@ -112,7 +112,7 @@ def _classe(docs, rel, exoticas):
         degraus = [[int(l[0]), l[1]] for l in _tabelas(m.group(2))[0][1:]]
         dons.append({'atributo': atributo, 'degraus': degraus})
     # "O seu maior atributo" (Empíreo): qualquer um dos seis pode ser o principal.
-    atributos = _ATRIBUTOS[:] if 'maior atributo' in attr else [a.strip() for a in attr.split(' ou ')]
+    atributos = _ATRIBUTOS[:] if 'maior atributo' in attr else [a.strip() for a in re.split(r', | ou ', attr)]
     return {
         'nome': nome, 'arquivo': rel, 'exotica': nome in exoticas,
         'epigrafe': epigrafe.group(1).strip() if epigrafe else '',
