@@ -84,26 +84,27 @@ nav:
     - Personagem Forjado: personagem/forjado.md
   - Classes:
     - classes/index.md
-    - Guerreiro: classes/guerreiro.md
-    - Sacerdote: classes/sacerdote.md
-    - Ladino: classes/ladino.md
-    - Mago: classes/mago.md
-    - Bárbaro: classes/barbaro.md
-    - Patrulheiro: classes/patrulheiro.md
-    - Bardo: classes/bardo.md
-    - Druida: classes/druida.md
-    - Paladino: classes/paladino.md
-    - Feiticeiro: classes/feiticeiro.md
-    - Monge: classes/monge.md
-    - Alquimista: classes/alquimista.md
-    - Guerreiro Basilisco: classes/guerreiro-basilisco.md
-    - Duelista: classes/duelista.md
-    - Cavaleiro Verde: classes/cavaleiro-verde.md
-    - Cavaleiro Profano: classes/cavaleiro-profano.md
-    - Necromante: classes/necromante.md
-    - Lâmina Silenciosa: classes/lamina-silenciosa.md
-    - Lobo do Mar: classes/lobo-do-mar.md
-    - Malvidente: classes/malvidente.md
+    - Clássicas:
+      - Guerreiro: classes/guerreiro.md
+      - Sacerdote: classes/sacerdote.md
+      - Ladino: classes/ladino.md
+      - Mago: classes/mago.md
+      - Bárbaro: classes/barbaro.md
+      - Patrulheiro: classes/patrulheiro.md
+      - Bardo: classes/bardo.md
+      - Druida: classes/druida.md
+      - Paladino: classes/paladino.md
+      - Feiticeiro: classes/feiticeiro.md
+      - Monge: classes/monge.md
+      - Alquimista: classes/alquimista.md
+      - Guerreiro Basilisco: classes/guerreiro-basilisco.md
+      - Duelista: classes/duelista.md
+      - Cavaleiro Verde: classes/cavaleiro-verde.md
+      - Cavaleiro Profano: classes/cavaleiro-profano.md
+      - Necromante: classes/necromante.md
+      - Lâmina Silenciosa: classes/lamina-silenciosa.md
+      - Lobo do Mar: classes/lobo-do-mar.md
+      - Malvidente: classes/malvidente.md
     - Exóticas:
       - Ferreiro de Guerra: classes/ferreiro-de-guerra.md
       - Sangue de Dragão: classes/sangue-de-dragao.md
