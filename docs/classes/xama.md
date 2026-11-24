@@ -3,6 +3,8 @@
 Gente que fala com o que os outros não veem: feras mortas, ancestrais, o rio, a montanha, a espada que matou cem homens. O xamã não manda nos espíritos por poder. Negocia, convence e honra, e eles lutam ao seu lado.
 { .epigrafe }
 
+![Meio-orc de peles e colar de ossos batendo num tambor de guerra; atrás dele, espíritos translúcidos: um lobo enorme, um guerreiro ancestral com machado e um corvo](../assets/images/classes/xama.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Base.** d8: 3 habilidades iniciais, 3 de Mana por nível, 2 avanços nos níveis 3, 6 e 9 (1 nos outros).
 
 **Atributo principal.** Sabedoria, Inteligência ou Carisma.
