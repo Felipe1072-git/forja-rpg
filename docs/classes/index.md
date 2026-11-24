@@ -25,6 +25,7 @@ Sua classe é o seu ofício. Ela define seu dado de vida, suas proficiências, s
 | Lobo do Mar | d8 | Força ou Constituição | Adaga, arco longo, espada longa, lança, machadinha, machado de batalha, machado grande | Leves, médias e escudo |
 | Malvidente | d4 | Sabedoria ou Carisma | Adaga, bordão, lança | Leves |
 | Bastião | d12 | Força ou Constituição | Todas as corpo a corpo | Todas e escudo |
+| Ilusionista | d4 | Inteligência ou Carisma | Adaga, besta leve, bordão, espada curta | Leves |
 
 **Base.** Toda classe usa uma base, que define o dado de vida, a Mana por nível (veja Mana), quantas habilidades você tem no nível 1 e quantos avanços você ganha por nível.
 
