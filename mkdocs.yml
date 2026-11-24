@@ -97,25 +97,25 @@ nav:
       - Feiticeiro: classes/feiticeiro.md
       - Monge: classes/monge.md
       - Alquimista: classes/alquimista.md
-      - Guerreiro Basilisco: classes/guerreiro-basilisco.md
       - Duelista: classes/duelista.md
-      - Cavaleiro Verde: classes/cavaleiro-verde.md
-      - Cavaleiro Profano: classes/cavaleiro-profano.md
       - Necromante: classes/necromante.md
-      - Lâmina Silenciosa: classes/lamina-silenciosa.md
-      - Lobo do Mar: classes/lobo-do-mar.md
       - Malvidente: classes/malvidente.md
+      - Caçador de Prata: classes/cacador-de-prata.md
+      - Legionário Arcano: classes/legionario-arcano.md
       - Bastião: classes/bastiao.md
       - Ilusionista: classes/ilusionista.md
       - Xamã: classes/xama.md
     - Exóticas:
+      - Guerreiro Basilisco: classes/guerreiro-basilisco.md
+      - Cavaleiro Verde: classes/cavaleiro-verde.md
+      - Cavaleiro Profano: classes/cavaleiro-profano.md
+      - Lâmina Silenciosa: classes/lamina-silenciosa.md
+      - Lobo do Mar: classes/lobo-do-mar.md
       - Ferreiro de Guerra: classes/ferreiro-de-guerra.md
       - Sangue de Dragão: classes/sangue-de-dragao.md
-      - Caçador de Prata: classes/cacador-de-prata.md
       - Dobrador Elemental: classes/dobrador-elemental.md
       - Quebra-Feitiço: classes/quebra-feitico.md
       - Carcereiro do Abismo: classes/carcereiro-do-abismo.md
-      - Legionário Arcano: classes/legionario-arcano.md
       - Sanguimante: classes/sanguimante.md
       - Empíreo: classes/empireo.md
       - Retornado: classes/retornado.md

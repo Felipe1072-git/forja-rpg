@@ -5,6 +5,8 @@ Cavaleiros de armadura coberta de musgo e elmo de galhada, juramentados ao bosqu
 
 ![Cavaleiro de armadura coberta de folhas e elmo de chifres, com espadão e escudo](../assets/images/classes/cavaleiro-verde.webp){ .fj-arte .fj-arte-classe loading=lazy }
 
+**Classe exótica.** Fica fora do Personagem Aleatório. Combine com o Mestre antes de escolher (veja Classes exóticas).
+
 **Base.** d8: 3 habilidades iniciais, 3 de Mana por nível, 2 avanços nos níveis 3, 6 e 9 (1 nos outros).
 
 **Atributo principal.** Força ou Sabedoria.

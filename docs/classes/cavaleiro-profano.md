@@ -5,6 +5,8 @@ Cavaleiros que deixaram um demônio entrar e nunca mais o deixaram sair. Vestem 
 
 ![Cavaleiro de armadura negra cheia de espinhos, com uma lança, entre ossos e mãos de mortos](../assets/images/classes/cavaleiro-profano.webp){ .fj-arte .fj-arte-classe loading=lazy }
 
+**Classe exótica.** Fica fora do Personagem Aleatório. Combine com o Mestre antes de escolher (veja Classes exóticas).
+
 **Base.** d10: 2 habilidades iniciais, 2 de Mana por nível, 2 avanços nos níveis 5 e 10 (1 nos outros).
 
 **Atributo principal.** Força ou Carisma.

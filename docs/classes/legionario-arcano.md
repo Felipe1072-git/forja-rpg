@@ -5,8 +5,6 @@ Soldados-magos formados nas academias de guerra. Na linha de frente, a magia cor
 
 ![Legionário de elmo e armadura com runas, espada envolta em raios numa mão e chamas arcanas na outra](../assets/images/classes/legionario-arcano.webp){ .fj-arte .fj-arte-classe loading=lazy }
 
-**Classe exótica.** Fica fora do Personagem Aleatório. Combine com o Mestre antes de escolher (veja Classes exóticas).
-
 **Base.** d8: 3 habilidades iniciais, 3 de Mana por nível, 2 avanços nos níveis 3, 6 e 9 (1 nos outros).
 
 **Atributo principal.** Inteligência.

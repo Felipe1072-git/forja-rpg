@@ -16,14 +16,11 @@ Sua classe é o seu ofício. Ela define seu dado de vida, suas proficiências, s
 | Feiticeiro | d6 | Carisma ou Constituição | Adaga, bordão, besta leve | Nenhuma |
 | Monge | d8 | Destreza ou Sabedoria | Simples e espada curta | Nenhuma |
 | Alquimista | d8 | Inteligência | Simples | Leves |
-| Guerreiro Basilisco | d8 | Constituição | Adaga, azagaia, bumerangue, clava, lança | Nenhuma |
 | Duelista | d8 | Destreza ou Carisma | Adaga e todas as espadas | Leves |
-| Cavaleiro Verde | d8 | Força ou Sabedoria | Adaga, bestas, bordão, espada longa, espadão, lança, machadinha, machado grande | Todas e escudo |
-| Cavaleiro Profano | d10 | Força ou Carisma | Todas as corpo a corpo e bestas | Todas e escudo |
 | Necromante | d6 | Inteligência | Adaga, bordão, cimitarra, espada longa, bestas | Leves e médias |
-| Lâmina Silenciosa | d8 | Destreza | Adaga, boleadeira, cimitarra, corrente de lâminas, lança, shuriken, zarabatana | Leves |
-| Lobo do Mar | d8 | Força ou Constituição | Adaga, arco longo, espada longa, lança, machadinha, machado de batalha, machado grande | Leves, médias e escudo |
 | Malvidente | d4 | Sabedoria ou Carisma | Adaga, bordão, lança | Leves |
+| Caçador de Prata | d8 | Destreza ou Inteligência | Adaga, bestas, chicote, espada curta, espada longa, machadinha | Leves, médias e escudo |
+| Legionário Arcano | d8 | Inteligência | Todas as corpo a corpo | Leves, médias e escudo |
 | Bastião | d12 | Força ou Constituição | Todas as corpo a corpo | Todas e escudo |
 | Ilusionista | d4 | Inteligência ou Carisma | Adaga, besta leve, bordão, espada curta | Leves |
 | Xamã | d8 | Sabedoria, Inteligência ou Carisma | Adaga, azagaia, bordão, clava, lança, machadinha | Leves e médias |
@@ -44,13 +41,16 @@ Classes estranhas, raras ou poderosas demais para todo mundo. Ficam fora do Pers
 
 | Classe | Base | Atributo principal | Armas | Armaduras |
 |---|---|---|---|---|
+| Guerreiro Basilisco | d8 | Constituição | Adaga, azagaia, bumerangue, clava, lança | Nenhuma |
+| Cavaleiro Verde | d8 | Força ou Sabedoria | Adaga, bestas, bordão, espada longa, espadão, lança, machadinha, machado grande | Todas e escudo |
+| Cavaleiro Profano | d10 | Força ou Carisma | Todas as corpo a corpo e bestas | Todas e escudo |
+| Lâmina Silenciosa | d8 | Destreza | Adaga, boleadeira, cimitarra, corrente de lâminas, lança, shuriken, zarabatana | Leves |
+| Lobo do Mar | d8 | Força ou Constituição | Adaga, arco longo, espada longa, lança, machadinha, machado de batalha, machado grande | Leves, médias e escudo |
 | Ferreiro de Guerra | d8 | Inteligência | Simples, maça, martelo de guerra, bestas | Leves, médias e escudo |
 | Sangue de Dragão | d10 | Constituição ou Carisma | Todas | Leves, médias e escudo |
-| Caçador de Prata | d8 | Destreza ou Inteligência | Adaga, bestas, chicote, espada curta, espada longa, machadinha | Leves, médias e escudo |
 | Dobrador Elemental | d8 | Destreza ou Sabedoria | Simples | Nenhuma |
 | Quebra-Feitiço | d10 | Força ou Constituição | Todas | Leves e médias |
 | Carcereiro do Abismo | d6 | Inteligência ou Carisma | Adaga, bordão, bestas | Leves |
-| Legionário Arcano | d8 | Inteligência | Todas as corpo a corpo | Leves, médias e escudo |
 | Sanguimante | d8 | Constituição | Adaga, bordão, chicote | Leves |
 | Empíreo | d12 | O maior atributo | Todas | Todas e escudo |
 | Retornado | d8 | Constituição ou Carisma | Todas | Leves, médias e escudo |
