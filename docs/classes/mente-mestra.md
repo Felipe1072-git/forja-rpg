@@ -3,6 +3,8 @@
 Gênios frios que leem uma pessoa num olhar e um lugar em um minuto. Não preveem o futuro: só pensaram nele antes de todo mundo. Quando a luta começa, o plano já está pronto, e os outros são peças no tabuleiro.
 { .epigrafe }
 
+![Elfo velho de casaco comprido e bengala, segurando um cavalo de xadrez; fios saem dos dedos dele até peças de xadrez e bilhetes no chão](../assets/images/classes/mente-mestra.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Classe exótica.** Fica fora do Personagem Aleatório. Combine com o Mestre antes de escolher (veja Classes exóticas).
 
 **Base.** d6: 3 habilidades iniciais, 4 de Mana por nível, 2 avanços nos níveis 3, 5, 7, 9 e 10 (1 nos outros).
