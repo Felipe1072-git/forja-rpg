@@ -3,6 +3,8 @@
 Cavaleiros de aço da cabeça aos pés, com um escudo do tamanho de uma porta. Não vencem pela força do golpe: entram na frente, chamam todos os inimigos para si e aguentam. Quando o inimigo cansa de bater, o Bastião devolve tudo de uma vez.
 { .epigrafe }
 
+![Anão de armadura pesada e barba trançada, firme atrás de um escudo de torre cravado no chão e cheio de flechas, com um martelo de guerra na outra mão](../assets/images/classes/bastiao.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Base.** d12: 2 habilidades iniciais, 2 de Mana por nível, 1 avanço por nível.
 
 **Atributo principal.** Força ou Constituição.
