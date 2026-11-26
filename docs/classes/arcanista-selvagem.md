@@ -3,6 +3,8 @@
 Magos que não estudaram a magia: agarraram-na pelo pescoço. Cada magia é uma aposta que pode sair fraca, sair lendária ou explodir na cara. E cada aposta perdida deixa uma marca: o cabelo cai, a pele azula, a sombra começa a andar sozinha.
 { .epigrafe }
 
+![A mesma tiefling três vezes, da esquerda para a direita: inteira e encantada com a magia, depois marcada por escamas e lutando com o fogo, depois quase desfeita, com terceiro olho e tentáculos, rindo no meio de uma explosão](../assets/images/classes/arcanista-selvagem.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Classe exótica.** Fica fora do Personagem Aleatório. Combine com o Mestre antes de escolher (veja Classes exóticas).
 
 **Base.** d6: 3 habilidades iniciais, 4 de Mana por nível, 2 avanços nos níveis 3, 5, 7, 9 e 10 (1 nos outros).
