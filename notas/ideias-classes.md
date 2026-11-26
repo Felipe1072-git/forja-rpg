@@ -33,7 +33,3 @@ Guerreiro com uma armadura sagrada, abençoado por constelações. Não pode par
 ## Alquimista do Metal (inspirado em Fullmetal Alchemist)
 
 Dobra e transmuta metal (um pouco de terra, mas sem repetir o Dobrador Elemental). Cria as próprias armas e troca o tipo delas, faz armaduras para si e para os aliados, transmutações absurdas na hora (bolas de canhão, propulsão). Bem flexível. Nome provisório "Full Metal", a trocar.
-
-## Feiticeiro da Magia Selvagem
-
-Classe separada do Feiticeiro (que mantém a passiva Magia Selvagem). No estilo Dungeon Crawl Classics: magias muito aleatórias, mais poderosas, e que corrompem quem usa (fica careca, pele azul, enlouquece). A progressão pode ser diferente da lista d20 de sempre. Nome próprio a definir.

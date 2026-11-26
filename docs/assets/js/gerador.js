@@ -275,6 +275,10 @@
     }
     if (t['Assunto inacabado']) extras.push({ titulo: 'Assunto inacabado', itens: [md(um(t['Assunto inacabado'])[0])] });
     if (pj.nivel < 1) return extras;
+    // Caprichos (Arcanista Selvagem): um por magia, sorteado na hora em que ela é aprendida.
+    if (t['Capricho']) {
+      extras.push({ titulo: 'Caprichos', itens: pj.habilidades.map((h) => `<b>${md(limpo(pj.classe.habilidades[h.i].nome))}:</b> ${md(um(t['Capricho'])[0])}`) });
+    }
     // Espíritos ligados (Xamã): Origem e Papel rolados (o Papel 6, "escolha", vira um dos outros) e o desejo.
     if (t['Origem'] && t['Papel'] && t['Desejo']) {
       const laco = habilidadePorNome(pj, 'Mais um Laço');
@@ -535,7 +539,8 @@
     const c = pj.classe;
     const hab = c.habilidades[h.i];
     let custo = hab.custo;
-    if (/^\d+$/.test(custo)) custo = String(parseInt(custo, 10) + h.melhorias.length);
+    // Domínio (Arcanista Selvagem) não aumenta o custo.
+    if (/^\d+$/.test(custo)) custo = String(parseInt(custo, 10) + h.melhorias.filter((k) => !/^\*\*Domínio/.test(hab.partes[k + 1])).length);
     let efeito;
     if (temColunas(c)) {
       efeito = h.colunas.map((col) => '<b>' + c.colunas[col] + ':</b> ' + md(comDados(hab.partes[col], h.dados))).join('<br>');

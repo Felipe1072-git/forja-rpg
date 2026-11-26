@@ -80,10 +80,20 @@ def _classe(docs, rel, exoticas):
             tabelas[cab[1]] = [l[1:] for l in tab[1:]]
         if cab[0] == 'd20' and len(cab) >= 7 and cab[1] in ('Habilidade', 'Magia'):
             colunas = cab[3:]
+            # Arcanista Selvagem: colunas Normal, Forte, Lendário e Desastre, sem melhorias. Viram um
+            # efeito só, e o avanço Domínio entra no lugar da primeira melhoria (não muda o custo).
+            escada = colunas[:2] == ['Normal', 'Forte']
+            if escada:
+                colunas = ['Efeito', 'Domínio', '', '']
             for linha in tab[1:]:
                 if len(linha) < 7:
                     continue
-                habilidades.append({'nome': linha[1], 'custo': linha[2], 'partes': linha[3:7]})
+                partes = linha[3:7]
+                if escada:
+                    partes = [partes[0] + ' **Forte:** ' + partes[1] + ' **Lendário:** ' + partes[2]
+                              + ' **Desastre:** ' + partes[3],
+                              '**Domínio:** +2 nos testes de conjuração desta magia.', '', '']
+                habilidades.append({'nome': linha[1], 'custo': linha[2], 'partes': partes})
     # Retornado: lista comum e uma lista por tipo de morto-vivo, cada uma numa seção "### NOME"
     # com a tabela | d12 | Habilidade | ...; a tabela | d6 | Tipo | ... diz a faixa de cada tipo.
     tipos = []
