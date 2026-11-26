@@ -104,6 +104,8 @@ Todas são marciais. As habilidades de uma forma só funcionam transformado nela
 
 O lobisomem: rápido, faminto, feito para caçar em bando.
 
+![Lobisomem em pleno salto, de garras abertas e boca escancarada, com restos de camisa e uma algema quebrada no pulso](../assets/images/classes/metamorfo-lobo.webp){ .fj-arte-vinheta .fj-arte-fim loading=lazy }
+
 **Ataque natural.** Garras e presas: 1d8 de dano cortante.
 
 **Faro.** Você sente o cheiro de criaturas até longe e segue rastros sem teste.
@@ -124,6 +126,8 @@ O lobisomem: rápido, faminto, feito para caçar em bando.
 ### BESTA
 
 A outra metade: o brutamontes que só sabe bater.
+
+![Brutamontes careca e musculoso esmurrando o chão com os dois punhos, pedras voando, uma algema quebrada no pulso](../assets/images/classes/metamorfo-besta.webp){ .fj-arte-vinheta .fj-arte-fim loading=lazy }
 
 **Ataque natural.** Punhos: 1d10 de dano contundente.
 
@@ -146,6 +150,8 @@ A outra metade: o brutamontes que só sabe bater.
 
 O horror sem nome: carne que se abre em bocas, olhos e tentáculos.
 
+![Corpo humano aberto em tentáculos, olhos e bocas cheias de dentes, com uma algema quebrada pendurada](../assets/images/classes/metamorfo-abominacao.webp){ .fj-arte-vinheta .fj-arte-fim loading=lazy }
+
 **Ataque natural.** Tentáculos: 1d6 de dano contundente, alcance 2 casas.
 
 **Horror.** Na primeira vez que uma criatura vê você transformado, ela perde 1d4 de Sanidade (num monstro, teste de Moral). Seus aliados também, uma vez por dia.
@@ -166,6 +172,8 @@ O horror sem nome: carne que se abre em bocas, olhos e tentáculos.
 ### ENXAME
 
 O corpo que se desfaz em mil: corvos, ratos, moscas ou morcegos.
+
+![Um homem se desfazendo em corvos, ratos e moscas, com um rosto gritando no meio do enxame e uma algema quebrada](../assets/images/classes/metamorfo-enxame.webp){ .fj-arte-vinheta .fj-arte-fim loading=lazy }
 
 **Ataque natural.** Mil bocas: no lugar do ataque, cada inimigo adjacente sofre 1d4 de dano cortante, sem teste.
 
@@ -188,6 +196,8 @@ O corpo que se desfaz em mil: corvos, ratos, moscas ou morcegos.
 
 O corpo frio e escamado, a língua que prova o ar e a presa cheia de veneno.
 
+![Serpente enorme enrolada, de boca escancarada e presas pingando veneno, com um tronco e um braço ainda humanos e uma algema quebrada no pulso](../assets/images/classes/metamorfo-serpente.webp){ .fj-arte-vinheta .fj-arte-fim loading=lazy }
+
 **Ataque natural.** Mordida: 1d6 de dano perfurante e 1d4 de veneno.
 
 **Escamas.** +1 de CA. Imunidade a veneno.
@@ -208,6 +218,8 @@ O corpo frio e escamado, a língua que prova o ar e a presa cheia de veneno.
 ### PEDRA
 
 A gárgula: um corpo que endurece, ganha asas de pedra e fica imóvel como uma estátua.
+
+![Gárgula de pedra agachada, de asas abertas e chifres, rosnando, com uma algema quebrada no pulso](../assets/images/classes/metamorfo-pedra.webp){ .fj-arte-vinheta .fj-arte-fim loading=lazy }
 
 **Ataque natural.** Punhos de pedra: 1d8 de dano contundente.
 

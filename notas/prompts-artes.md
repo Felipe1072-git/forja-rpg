@@ -475,3 +475,28 @@ The enemies (drow, dark elves): skin rendered in solid black ink, wild white hai
 - One drow soldier kneels, aiming a hand crossbow.
 - Behind them, the drow sorceress Velistra, wounded, retreats toward the glowing crack in the floor, holding a staff topped with a spiked iron ring. Above her, a demon with huge ragged feathered wings swoops down to carry her away.
 ```
+
+## Formas do Metamorfo
+
+Artes pequenas e horizontais (3:2), uma por forma, logo abaixo do título de cada forma na página do Metamorfo, com `{ .fj-arte .fj-arte-fim loading=lazy }`. Arquivos em `docs/assets/images/classes/metamorfo-<forma>.webp`. Todas trazem uma algema de ferro quebrada com um pedaço de corrente, que liga as formas ao homem acorrentado da arte da classe. Mande o prompt base uma vez e depois "Same style, same rules. Next:" com a linha da forma.
+
+```text
+Black and white pen-and-ink illustration for an old-school fantasy RPG rulebook, in the gritty OSR style of books like Shadowdark and Dungeon Crawl Classics: bold black ink lines, heavy solid blacks, crosshatching and stippling for shadows, rough hand-drawn texture, high contrast, no gray tones, no color. No brown.
+
+Composition: horizontal 3:2 format, one creature, full body, dynamic pose, centered, with empty space around it. A broken iron manacle with a short length of chain hangs from one of its limbs. Loose ink splatter or a few debris strokes at the base are fine, but no scenery box.
+
+Background: pure flat white (#FFFFFF) everywhere outside the drawing. No paper texture, no beige, no gradient, no vignette, no frame, no border.
+
+No text, no letters, no logo, no signature, no watermark.
+
+Creature: [FORMA]
+```
+
+| Forma | Arquivo | Creature |
+|---|---|---|
+| Lobo | metamorfo-lobo | A werewolf mid-leap, lean and savage, fur bristling, long clawed hands spread, jaws wide open, still wearing the torn rags of a man's shirt. |
+| Besta | metamorfo-besta | A hulking brute like a monstrous ogre-man: small bald head sunk between enormous shoulders, crooked teeth, veins bulging, smashing the ground with both giant fists, cracks and rubble flying. |
+| Abominação | metamorfo-abominacao | A writhing horror of flesh: a vaguely human torso splitting open into tentacles, extra eyes and toothed mouths along its arms and ribs, reaching out in every direction. |
+| Enxame | metamorfo-enxame | A man's silhouette coming apart into a swarm of crows, rats and flies, the shape of a screaming face still visible in the middle of the cloud of creatures. |
+| Serpente | metamorfo-serpente | A huge serpent coiled to strike, snake head with jaws wide open and long fangs dripping venom, but a still-human muscular torso and arm rising from the coils, a broken manacle with chain on the wrist. |
+| Pedra | metamorfo-pedra | A stone gargoyle crouched on its haunches with heavy stone wings half open, cracked skin like old granite, horns and a snarling face, as if it just woke up from being a statue. |
