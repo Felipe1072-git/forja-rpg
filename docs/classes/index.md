@@ -56,6 +56,7 @@ Classes estranhas, raras ou poderosas demais para todo mundo. Ficam fora do Pers
 | Retornado | d8 | Constituição ou Carisma | Todas | Leves, médias e escudo |
 | Mente Mestra | d6 | Inteligência | Adaga, besta leve, bordão, clava, espada curta | Leves |
 | Arcanista Selvagem | d6 | Inteligência ou Carisma | Adaga, bordão, besta leve | Nenhuma |
+| Metamorfo | d12 | Constituição ou Força | Todas as corpo a corpo | Leves e médias |
 
 **Vocação.** Toda classe tem uma vocação: um talento simples, sem Mana, que mostra para o que o personagem nasceu. Ela vale desde o nível 0 e nunca se perde.
 

@@ -96,9 +96,11 @@ def _classe(docs, rel, exoticas):
                 habilidades.append({'nome': linha[1], 'custo': linha[2], 'partes': partes})
     # Retornado: lista comum e uma lista por tipo de morto-vivo, cada uma numa seção "### NOME"
     # com a tabela | d12 | Habilidade | ...; a tabela | d6 | Tipo | ... diz a faixa de cada tipo.
-    tipos = []
+    # Metamorfo: a mesma estrutura, com | d6 | Forma | ...; formas não são degraus de uma escada.
+    tipos, escada = [], True
     for tab in _tabelas(texto):
-        if tab[0][:2] == ['d6', 'Tipo']:
+        if tab[0][:2] in (['d6', 'Tipo'], ['d6', 'Forma']):
+            escada = tab[0][1] == 'Tipo'
             for l in tab[1:]:
                 faixa = [int(x) for x in re.findall(r'\d+', l[0])]
                 tipos.append({'nome': l[1], 'faixa': [faixa[0], faixa[-1]], 'tracos': []})
@@ -129,7 +131,7 @@ def _classe(docs, rel, exoticas):
         'base': base, 'atributos': atributos,
         'armas': armas, 'armaduras': armaduras, 'regras': regras,
         'colunas': colunas, 'habilidades': habilidades, 'tabelas': tabelas, 'titulos': titulos,
-        'dons': dons, 'tipos': tipos,
+        'dons': dons, 'tipos': tipos, 'escada': escada,
     }
 
 

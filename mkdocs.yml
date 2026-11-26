@@ -121,6 +121,7 @@ nav:
       - Retornado: classes/retornado.md
       - Mente Mestra: classes/mente-mestra.md
       - Arcanista Selvagem: classes/arcanista-selvagem.md
+      - Metamorfo: classes/metamorfo.md
   - Habilidades:
     - habilidades/index.md
     - Criando Habilidades: habilidades/criando.md

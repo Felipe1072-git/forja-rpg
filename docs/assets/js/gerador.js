@@ -81,8 +81,10 @@
     const todas = classe.habilidades.map((_, i) => i);
     if (!temTipos(classe)) return todas;
     const pos = classe.tipos.findIndex((t) => t.nome === tipo);
-    const ok = classe.tipos.filter((t, k) => k === pos || (comAntigos && k < pos)).map((t) => t.nome);
-    return todas.filter((i) => !classe.habilidades[i].grupo || ok.includes(classe.habilidades[i].grupo));
+    const ok = classe.tipos.filter((t, k) => k === pos || (comAntigos && classe.escada && k < pos)).map((t) => t.nome);
+    // No sorteio (sem comAntigos), fora as que têm pré-requisito ("Precisa de..."): Mistura, Forma Plena.
+    return todas.filter((i) => (!classe.habilidades[i].grupo || ok.includes(classe.habilidades[i].grupo))
+      && (comAntigos || !/^Precisa de/.test(classe.habilidades[i].partes[0])));
   }
   function iniciaisDe(classe) { return temDons(classe) ? 0 : BASES[classe.base].iniciais; }
 
@@ -271,7 +273,7 @@
     // Tipo de morto-vivo (Retornado): os traços do tipo atual, e o assunto inacabado.
     if (temTipos(pj.classe) && pj.tipoMorto) {
       const tipo = pj.classe.tipos.find((x) => x.nome === pj.tipoMorto);
-      extras.push({ titulo: 'Tipo: ' + tipo.nome, itens: tipo.tracos.map(([n, x]) => `<b>${esc(n)}.</b> ${md(x)}`) });
+      extras.push({ titulo: (pj.classe.escada ? 'Tipo: ' : 'Forma: ') + tipo.nome, itens: tipo.tracos.map(([n, x]) => `<b>${esc(n)}.</b> ${md(x)}`) });
     }
     if (t['Assunto inacabado']) extras.push({ titulo: 'Assunto inacabado', itens: [md(um(t['Assunto inacabado'])[0])] });
     if (pj.nivel < 1) return extras;
@@ -855,7 +857,7 @@
         ? `<label>Atributo principal <select data-m="principal">${opcoesDe(c.atributos.map((a) => [a, a]), M.principal, 'O maior')}</select></label>` : '';
       if (temTipos(c) && !c.tipos.some((x) => x.nome === M.tipoMorto)) M.tipoMorto = sortearTipoMorto(c);
       const tipoSel = temTipos(c)
-        ? `<label>Tipo de morto-vivo <select data-m="tipoMorto">${opcoesDe(c.tipos.map((x) => [x.nome, x.nome + ' (d6: ' + (x.faixa[0] === x.faixa[1] ? x.faixa[0] : x.faixa[0] + '–' + x.faixa[1]) + ')']), M.tipoMorto)}</select></label>` : '';
+        ? `<label>${c.escada ? 'Tipo de morto-vivo' : 'Forma inicial'} <select data-m="tipoMorto">${opcoesDe(c.tipos.map((x) => [x.nome, x.nome + ' (d6: ' + (x.faixa[0] === x.faixa[1] ? x.faixa[0] : x.faixa[0] + '–' + x.faixa[1]) + ')']), M.tipoMorto)}</select></label>` : '';
       const liberadas = permitidas(c, M.tipoMorto, true);
       const robusto = traco(anc, 'Robusto') ? ' +1 (Robusto)' : '';
       const pvLinhas = Array.from({ length: Math.max(1, M.nivel) }, (_, k) => `<div class="fj-g-pv"><span>Nível ${M.nivel === 0 ? 0 : k + 1}</span>
