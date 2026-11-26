@@ -3,7 +3,7 @@
 Gente com outra coisa por baixo da pele: um lobo, uma besta, um enxame, algo sem nome. Quando a pele rasga, eles aguentam o que ninguém aguenta. O preço é que a coisa de baixo quer ficar, e cada rodada transformado é uma rodada a menos de controle.
 { .epigrafe }
 
-![Homem de cabeça raspada e cheia de cicatrizes, preso em correntes com um cadeado no peito; atrás dele, saindo da sua sombra, as formas: lobo, besta, tentáculos com bocas, corvos e ratos, serpente e gárgula](../assets/images/classes/metamorfo.webp){ .fj-arte .fj-arte-classe loading=lazy }
+![Homem de cabeça raspada e cheia de cicatrizes, preso em correntes com um cadeado no peito; atrás dele, saindo da sua sombra, as formas: lobisomem de garras abertas, um brutamontes de punho fechado, tentáculos com bocas, corvos e ratos, serpente e gárgula](../assets/images/classes/metamorfo.webp){ .fj-arte .fj-arte-classe loading=lazy }
 
 **Classe exótica.** Fica fora do Personagem Aleatório. Combine com o Mestre antes de escolher (veja Classes exóticas).
 
