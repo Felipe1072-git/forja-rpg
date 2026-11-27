@@ -6,10 +6,6 @@ Lista do autor (24/11/2026) para fazer com calma, uma por vez. Todas seriam clas
 
 Elementalista do gelo, separado do Dobrador Elemental. Dois caminhos dentro da classe: o **cavaleiro de gelo** (guerreiro, corpo a corpo) e o **feiticeiro de gelo** (criomante, à distância). O jogador escolhe qual seguir.
 
-## Mago do Tempo e do Espaço
-
-Magia focada em tempo e espaço: mudar o futuro e o passado, divinação, teleportar a si e a outras criaturas, gravidade e antigravidade. Algo que cubra tudo o que é tempo e espaço.
-
 ## Aberração
 
 Classe lovecraftiana, no clima de Darkest Dungeon: o personagem é ou vira uma aberração.
