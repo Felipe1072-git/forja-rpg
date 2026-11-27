@@ -3,6 +3,8 @@
 Magos que aprenderam que o tempo e o espaço são só um tecido, e que todo tecido pode ser dobrado, rasgado e costurado de novo. Voltam um instante, pulam uma rodada, abrem portas para outro lugar. Mas o tempo cobra cada ponto que é puxado.
 { .epigrafe }
 
+![Cronomante humano com metade do rosto jovem e metade velha, erguendo uma ampulheta e abrindo um rasgo no ar; atrás dele, ecos do próprio corpo, um relógio partido e uma flecha parada no ar](../assets/images/classes/cronomante.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Classe exótica.** Fica fora do Personagem Aleatório. Combine com o Mestre antes de escolher (veja Classes exóticas).
 
 **Base.** d6: 3 habilidades iniciais, 4 de Mana por nível, 2 avanços nos níveis 3, 5, 7, 9 e 10 (1 nos outros).
