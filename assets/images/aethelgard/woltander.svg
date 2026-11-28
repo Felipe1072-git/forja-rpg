@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="400" height="400">
+<title>Símbolo de Woltander</title>
+<g fill="#000">
+<polygon points="163.4,119.3 161.5,110.1 191.9,108.5"/>
+<polygon points="159.0,103.2 155.9,96.8 173.7,92.1"/>
+<polygon points="151.9,90.6 145.9,83.4 172.0,67.6"/>
+<polygon points="140.4,78.4 134.7,74.2 148.2,61.7"/>
+<polygon points="128.3,70.6 119.6,67.1 135.2,40.8"/>
+<polygon points="79.4,67.4 72.8,70.1 69.3,52.0"/>
+<polygon points="66.3,73.6 58.7,79.1 44.7,52.0"/>
+<polygon points="53.3,84.2 48.8,89.7 37.2,75.3"/>
+<polygon points="44.7,95.8 40.6,104.2 15.5,86.8"/>
+<polygon points="38.2,111.2 36.8,118.2 19.8,111.0"/>
+<path d="M44,128 A56,56 0 0 1 156,128 Z"/>
+</g>
+<g stroke="#000" stroke-linecap="round" fill="none">
+<line x1="14" y1="128" x2="186" y2="128" stroke-width="5"/>
+<line x1="34" y1="141" x2="166" y2="141" stroke-width="3.5"/>
+<line x1="56" y1="153" x2="144" y2="153" stroke-width="2.5"/>
+<line x1="76" y1="164" x2="124" y2="164" stroke-width="1.8"/>
+</g>
+<g stroke="#fff" stroke-width="9" stroke-linejoin="round" fill="#fff">
+<path d="M91,77 L109,77 L109,150 L100,176 L91,150 Z"/>
+<path d="M60,66 Q64,71 60,76 L140,76 Q136,71 140,66 Z"/>
+<rect x="95" y="36" width="10" height="30"/>
+<circle cx="100" cy="29" r="8"/>
+</g>
+<g stroke="#000" stroke-width="3" stroke-linejoin="round" fill="#fff">
+<path d="M91,77 L109,77 L109,150 L100,176 L91,150 Z"/>
+<path d="M60,66 Q64,71 60,76 L140,76 Q136,71 140,66 Z"/>
+<rect x="95" y="36" width="10" height="30"/>
+<circle cx="100" cy="29" r="8"/>
+</g>
+<g stroke="#000" stroke-linecap="round">
+<line x1="100" y1="82" x2="100" y2="146" stroke-width="2.5"/>
+<line x1="96" y1="44" x2="104" y2="44" stroke-width="2"/>
+<line x1="96" y1="51" x2="104" y2="51" stroke-width="2"/>
+<line x1="96" y1="58" x2="104" y2="58" stroke-width="2"/>
+<circle cx="100" cy="71" r="2.6" fill="#000"/>
+<circle cx="100" cy="29" r="2.6" fill="#000"/>
+</g>
+</svg>
