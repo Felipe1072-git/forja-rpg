@@ -25,7 +25,3 @@ Hoje dá para fazer um pirata com o Duelista (que já tem Bravata e Panache) ou 
 ## Guerreiro de armadura sagrada (inspirado em Cavaleiros do Zodíaco)
 
 Guerreiro com uma armadura sagrada, abençoado por constelações. Não pode parecer só um Monge com outra roupagem. Inspirações de golpes: a parede de cristal, a explosão galáctica, os golpes de luz do Leão, a espada no braço (Excalibur). Sem usar os signos do zodíaco ao pé da letra: nomes próprios, como o Lobo do Mar fez com os deuses (o Pai da Guerra, a Senhora da Sorte, o Enganador). Cuidado para não complicar com armaduras demais: focar em algumas habilidades.
-
-## Alquimista do Metal (inspirado em Fullmetal Alchemist)
-
-Dobra e transmuta metal (um pouco de terra, mas sem repetir o Dobrador Elemental). Cria as próprias armas e troca o tipo delas, faz armaduras para si e para os aliados, transmutações absurdas na hora (bolas de canhão, propulsão). Bem flexível. Nome provisório "Full Metal", a trocar.
