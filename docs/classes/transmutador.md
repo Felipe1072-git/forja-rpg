@@ -27,11 +27,11 @@ Alquimistas que leem a matéria como um texto e reescrevem o que está escrito n
 
 **Duração.** O que você cria dura 10 rodadas, salvo se a habilidade disser outra coisa. Depois, desfaz-se e volta a ser o que era.
 
-**Resistência.** Paredes, jaulas, pontes e tudo mais que você cria podem ser quebrados. Cada casa da criação tem a CA e os PV do material, na tabela abaixo. Destruir uma casa abre um buraco do tamanho de uma criatura. Criações não fazem testes de resistência e não sofrem dano psíquico nem de veneno.
+**Resistência.** Paredes, jaulas, pontes e tudo mais que você cria podem ser quebrados. Cada casa da criação tem a CA e os PV do material, na tabela abaixo. Destruir uma casa abre um buraco do tamanho de uma criatura. Criações não fazem testes de resistência e não sofrem dano psíquico, necrótico nem de veneno (veja Objetos e Estruturas).
 
 | Material | CA | PV por casa | Ponto fraco |
 |---|---|---|---|
-| Terra ou areia | 10 | 5 | Água: dano dobrado |
+| Terra ou areia | 10 | 5 | Tempestade: dano dobrado |
 | Madeira | 11 | 5 | Fogo: dano dobrado |
 | Pedra | 15 | 10 | Contundente: dano dobrado |
 | Metal | 17 | 15 | Ácido: dano dobrado |

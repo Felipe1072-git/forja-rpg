@@ -123,3 +123,65 @@ Quando algo fere e não tem dano definido, escolha pela gravidade. As faixas sã
 | Grave | 2d8 | Pisar numa fogueira, ser atingido por um raio |
 | Mortal | 3d10 | Ser soterrado num túnel, cair num tonel de ácido |
 | Catastrófico | 6d10 | Ser esmagado por paredes, cair na lava |
+
+## Objetos e Estruturas
+
+Portas, grades, paredes e baús também quebram. Trate-os como criaturas que não se mexem: eles têm CA e PV.
+
+**CA e PV.** Ataques contra um objeto usam a CA do material. Os PV dependem do tamanho: pequeno (cabe na mão) tem um quarto dos PV por casa, no mínimo 1; médio (até uma casa: uma porta, um baú, uma estátua do tamanho de uma pessoa) tem os PV por casa; grande (uma parede, uma ponte) tem os PV por casa em cada casa.
+
+**Uma casa de cada vez.** Numa estrutura grande, cada casa quebra separada. Destruir uma casa de uma parede abre um buraco do tamanho de uma criatura.
+
+**Ponto fraco.** Dano do tipo do ponto fraco é dobrado.
+
+**Armas erradas.** Contra pedra, tijolo e metal, armas cortantes e perfurantes causam metade do dano. Uma espada não derruba uma parede.
+
+**Imune.** Objetos não sofrem dano psíquico, necrótico nem de veneno, e não fazem testes de resistência.
+
+**Mágico.** Objetos mágicos têm o dobro dos PV e resistência a armas comuns.
+
+**Arrombar.** Em vez de causar dano, faça um teste de Força contra a CD de arrombar. Cada tentativa leva uma ação e faz barulho: fora de combate, o Mestre rola encontro. Pé de cabra dá vantagem.
+
+**Ferramenta certa.** Machado contra madeira e picareta ou marreta contra pedra causam dano dobrado. Não se soma com o ponto fraco.
+
+### MATERIAIS
+
+| Material | CA | PV por casa | Ponto fraco |
+|---|---|---|---|
+| Papel, pergaminho | 8 | 1 | Fogo |
+| Tecido, corda, couro | 9 | 3 | Fogo, cortante |
+| Vidro, cerâmica | 10 | 2 | Contundente |
+| Terra, areia | 10 | 5 | Tempestade |
+| Madeira | 11 | 5 | Fogo |
+| Gelo | 11 | 8 | Fogo |
+| Osso | 12 | 5 | Contundente |
+| Cristal | 13 | 10 | Tempestade (trovão) |
+| Madeira reforçada com ferro | 13 | 10 | Fogo |
+| Tijolo | 13 | 8 | Contundente |
+| Pedra | 15 | 10 | Contundente |
+| Ferro | 17 | 15 | Ácido |
+| Aço | 19 | 20 | Ácido |
+
+### OBJETOS PRONTOS
+
+| Objeto | CA | PV | Arrombar | Nota |
+|---|---|---|---|---|
+| Porta de madeira | 11 | 5 | CD 12 | Um chute bem dado |
+| Porta reforçada | 13 | 10 | CD 15 | A porta comum de masmorra |
+| Porta de ferro | 17 | 15 | CD 18 | Cofres, celas, câmaras de tesouro |
+| Portão de castelo | 13 | 30 | — | Precisa de aríete ou de fogo |
+| Grade de ferro | 17 | 15 | CD 18 | Arrombar é entortar as barras |
+| Corrente ou cadeado | 17 | 5 | CD 15 | Fechaduras se abrem com ferramentas de ladrão |
+| Corda | 9 | 2 | CD 15 | Cortar é mais fácil que arrebentar |
+| Ponte de corda | 9 | 3 por corda | — | Cortar as duas cordas de um lado derruba a ponte |
+| Baú de madeira | 11 | 5 | CD 12 | Veja Baús, em Tesouros |
+| Janela ou vitral | 10 | 2 | — | Quebrar faz barulho |
+| Mesa, barricada de móveis | 11 | 5 | — | Dá cobertura até quebrar |
+| Carroça, barco a remo | 11 | 15 | — | Quebrar uma roda ou o casco já basta |
+| Estátua de pedra | 15 | 10 | — | Do tamanho de uma pessoa |
+| Coluna de pedra | 15 | 20 | — | Derrubar pode trazer o teto junto (Dano Improvisado, mortal) |
+| Parede de tijolo | 13 | 8 por casa | — | Paredes de casas e de vilas |
+| Parede de pedra | 15 | 10 por casa | — | Paredes de masmorra e de castelo |
+| Muralha de fortaleza | 15 | 20 por casa | — | Pedra grossa: só máquinas de cerco ou magia |
+
+**Exemplo.** O guerreiro ataca uma porta reforçada com o machado: CA 13, 10 PV. Ele acerta e tira 7; com o machado contra madeira, o dano dobra para 14, e a porta cai. Se ele tentasse com a espada, causaria só 7: a porta resistiria. Se o mago jogasse uma Bola de Fogo, a porta sofreria o dobro pelo ponto fraco.
