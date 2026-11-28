@@ -3,6 +3,8 @@
 Alquimistas que leem a matéria como um texto e reescrevem o que está escrito nela. Batem a mão no chão e a pedra vira lança, a grade vira ponte, a espada vira martelo. Mas nada sai do nada: tudo que se ganha, se paga. E quem tenta reescrever a carne paga com a própria.
 { .epigrafe }
 
+![Transmutador halfling de trança e braço direito de aço, agachado com a mão de metal batendo num círculo de transmutação; lanças e lâminas brotam do chão de pedra, e na outra mão a espada vira lança](../assets/images/classes/transmutador.webp){ .fj-arte .fj-arte-classe loading=lazy }
+
 **Classe exótica.** Fica fora do Personagem Aleatório. Combine com o Mestre antes de escolher (veja Classes exóticas).
 
 **Base.** d8: 3 habilidades iniciais, 3 de Mana por nível, 2 avanços nos níveis 3, 6 e 9 (1 nos outros).
